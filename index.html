@@ -1,12 +1,710 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Hasik</title>
-  </head>
-  <body>
-    <h1>Gabriel Hasik</h1>
-    <p>Site coming soon.</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gabriel Hasik â Cyber, Risk & Beyond</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    /* âââ RESET & BASE âââ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #0e0e0e;
+      --bg2:       #141414;
+      --bg3:       #1a1a1a;
+      --border:    #242424;
+      --muted:     #3a3a3a;
+      --text-dim:  #666;
+      --text-mid:  #999;
+      --text:      #d8d0c4;
+      --text-hi:   #f0e8dc;
+      --accent:    #d4821a;
+      --accent2:   #e8a84c;
+      --accent-dim:#3a2208;
+      --serif:     'Playfair Display', Georgia, serif;
+      --mono:      'DM Mono', 'Courier New', monospace;
+      --sans:      'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* âââ GRAIN OVERLAY âââ */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: 0.35;
+    }
+
+    /* âââ SCROLLBAR âââ */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+
+    /* âââ NAV âââ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+      color: var(--text-hi); text-decoration: none; letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* âââ HERO âââ */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 8rem 3rem 5rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 40px; height: 1px; background: var(--accent);
+    }
+    h1.hero-name {
+      font-family: var(--serif); font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 900; line-height: 0.95; color: var(--text-hi);
+      letter-spacing: -0.02em; margin-bottom: 0.5rem;
+    }
+    h1.hero-name em { color: var(--accent); font-style: italic; }
+    .hero-tagline {
+      font-family: var(--sans); font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 300; color: var(--text-mid); margin: 1.5rem 0 2.5rem;
+      max-width: 560px; line-height: 1.6;
+    }
+    .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .tag {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 5px 14px;
+      border: 1px solid var(--muted); color: var(--text-dim); border-radius: 2px;
+    }
+    .tag.accent { border-color: var(--accent-dim); color: var(--accent); background: var(--accent-dim); }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; right: 3rem;
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.2em;
+      color: var(--muted); text-transform: uppercase;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-scroll::after {
+      content: ''; display: block; width: 1px; height: 50px; background: var(--muted);
+    }
+    /* decorative grid lines */
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .hero-grid::before {
+      content: '';
+      position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+      background: repeating-linear-gradient(
+        90deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 60px
+      );
+      opacity: 0.4;
+    }
+    .hero-grid::after {
+      content: '';
+      position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+      background: repeating-linear-gradient(
+        180deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 60px
+      );
+      opacity: 0.4;
+    }
+
+    /* âââ SECTION WRAPPER âââ */
+    section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+    .section-label {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 3rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .section-label::after {
+      content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--accent-dim);
+    }
+    h2.section-title {
+      font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: var(--text-hi); line-height: 1.15;
+      margin-bottom: 1rem; letter-spacing: -0.01em;
+    }
+
+    /* âââ ABOUT âââ */
+    #about .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+      margin-top: 3rem;
+    }
+    .about-bio p { color: var(--text); font-size: 1.05rem; margin-bottom: 1.25rem; line-height: 1.8; }
+    .about-bio p:first-child::first-letter {
+      font-family: var(--serif); font-size: 3.5rem; font-weight: 900;
+      color: var(--accent); float: left; line-height: 0.8;
+      margin: 0.1em 0.12em 0 0;
+    }
+    .about-sidebar {}
+    .sidebar-block { margin-bottom: 2.5rem; }
+    .sidebar-block h4 {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    }
+    .expertise-list { list-style: none; }
+    .expertise-list li {
+      font-size: 0.9rem; color: var(--text-mid); padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .expertise-list li::before {
+      content: 'â'; color: var(--accent); font-size: 0.75rem; flex-shrink: 0;
+    }
+    .expertise-list li:last-child { border-bottom: none; }
+
+    /* âââ BLOG âââ */
+    #blog .blog-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5px; margin-top: 3rem;
+      border: 1px solid var(--border);
+    }
+    .blog-card {
+      background: var(--bg);
+      padding: 2rem;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+      cursor: pointer; text-decoration: none;
+      display: block; color: inherit;
+    }
+    .blog-card:hover { background: var(--bg2); }
+    .blog-card-meta {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .blog-card-meta .cat {
+      color: var(--accent); border: 1px solid var(--accent-dim);
+      padding: 2px 8px; border-radius: 2px;
+    }
+    .blog-card h3 {
+      font-family: var(--serif); font-size: 1.3rem; font-weight: 700;
+      color: var(--text-hi); line-height: 1.3; margin-bottom: 0.75rem;
+    }
+    .blog-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.65; }
+    .blog-card-footer {
+      margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem;
+      font-family: var(--mono); font-size: 0.65rem; color: var(--muted);
+    }
+    .blog-card-footer::before { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .blog-all {
+      margin-top: 2rem; display: inline-flex; align-items: center; gap: 0.75rem;
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .blog-all:hover { gap: 1.25rem; }
+
+    /* âââ PROJECTS âââ */
+    #projects .projects-list { margin-top: 3rem; }
+    .project-row {
+      display: grid; grid-template-columns: 3rem 1fr auto;
+      gap: 1.5rem; align-items: center;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: padding-left 0.2s;
+      cursor: default;
+    }
+    .project-row:hover { padding-left: 0.5rem; }
+    .project-num {
+      font-family: var(--mono); font-size: 0.7rem; color: var(--muted); text-align: right;
+    }
+    .project-body h3 {
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 700;
+      color: var(--text-hi); margin-bottom: 0.3rem;
+    }
+    .project-body p { font-size: 0.88rem; color: var(--text-dim); }
+    .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end; }
+    .ptag {
+      font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 3px 9px;
+      border: 1px solid var(--border); color: var(--text-dim); border-radius: 2px;
+    }
+
+    /* âââ CONTACT âââ */
+    #contact .contact-inner {
+      max-width: 680px;
+    }
+    #contact .contact-lead {
+      font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700; color: var(--text-hi); line-height: 1.35;
+      margin-top: 2rem; margin-bottom: 3rem;
+    }
+    #contact .contact-lead em { color: var(--accent); font-style: italic; }
+    .contact-links { display: flex; flex-direction: column; gap: 0; }
+    .contact-link {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 0; border-bottom: 1px solid var(--border);
+      text-decoration: none; color: inherit;
+      transition: padding-left 0.2s;
+    }
+    .contact-link:hover { padding-left: 0.75rem; }
+    .contact-link:hover .cl-arrow { color: var(--accent); }
+    .cl-left { display: flex; align-items: center; gap: 1rem; }
+    .cl-icon {
+      width: 36px; height: 36px; border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; color: var(--text-dim); flex-shrink: 0;
+    }
+    .cl-label {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-dim); display: block;
+    }
+    .cl-value { font-size: 0.95rem; color: var(--text-hi); }
+    .cl-arrow { color: var(--muted); font-size: 1rem; transition: color 0.2s; }
+
+    /* âââ COMMENTS âââ */
+    #comments {
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .comments-intro {
+      max-width: 640px; margin-bottom: 3rem;
+    }
+    .comments-intro p {
+      font-size: 0.95rem; color: var(--text-dim); margin-top: 0.75rem; line-height: 1.7;
+    }
+    .giscus-wrap {
+      max-width: 780px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+    }
+    .giscus-placeholder {
+      text-align: center; padding: 3rem 2rem;
+    }
+    .giscus-placeholder .ph-icon {
+      font-size: 2rem; margin-bottom: 1rem; opacity: 0.4;
+    }
+    .giscus-placeholder h4 {
+      font-family: var(--serif); font-size: 1.2rem; color: var(--text-hi);
+      margin-bottom: 0.5rem;
+    }
+    .giscus-placeholder p {
+      font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; max-width: 480px; margin: 0 auto 1.5rem;
+    }
+    .giscus-placeholder code {
+      font-family: var(--mono); font-size: 0.78rem; background: var(--bg3);
+      border: 1px solid var(--border); padding: 0.75rem 1.25rem;
+      display: block; margin: 1rem auto; max-width: 520px;
+      color: var(--accent2); text-align: left; border-radius: 3px;
+      line-height: 1.8;
+    }
+    .giscus-steps {
+      display: flex; flex-direction: column; gap: 0;
+      margin-top: 2rem; max-width: 780px;
+    }
+    .giscus-step {
+      display: flex; align-items: flex-start; gap: 1.25rem;
+      padding: 1.25rem 0; border-bottom: 1px solid var(--border);
+    }
+    .giscus-step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--mono); font-size: 0.65rem; color: var(--accent);
+      background: var(--accent-dim); border: 1px solid var(--accent-dim);
+      width: 28px; height: 28px; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0; border-radius: 2px; font-weight: 600;
+    }
+    .step-body { flex: 1; }
+    .step-body strong {
+      font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-hi); display: block; margin-bottom: 0.3rem;
+    }
+    .step-body p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; }
+    .step-body a { color: var(--accent); text-decoration: none; }
+    .step-body a:hover { text-decoration: underline; }
+    .step-body .inline-code {
+      font-family: var(--mono); font-size: 0.78rem; background: var(--bg3);
+      border: 1px solid var(--border); padding: 1px 6px; border-radius: 2px;
+      color: var(--accent2);
+    }
+
+    /* âââ FOOTER âââ */
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
+      color: var(--muted); text-transform: uppercase;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* âââ ANIMATIONS âââ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .fade-up:nth-child(1) { animation-delay: 0.1s; }
+    .fade-up:nth-child(2) { animation-delay: 0.25s; }
+    .fade-up:nth-child(3) { animation-delay: 0.4s; }
+    .fade-up:nth-child(4) { animation-delay: 0.55s; }
+
+    /* âââ RESPONSIVE âââ */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      #hero { padding: 7rem 1.5rem 4rem; }
+      section { padding: 4rem 1.5rem; }
+      #about .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .project-row { grid-template-columns: 2rem 1fr; }
+      .project-tags { display: none; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ââ NAV ââ -->
+  <nav>
+    <a class="nav-logo" href="#hero">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#blog">Writing</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ââ HERO ââ -->
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-eyebrow fade-up">Cyber Â· Third-Party Risk Â· Supply Chain</div>
+    <h1 class="hero-name fade-up">
+      Gabriel<br/><em>Hasik</em>
+    </h1>
+    <p class="hero-tagline fade-up">
+      Security practitioner, risk thinker, and occasional builder.
+      Writing about the systems that break â and the people trying to fix them.
+    </p>
+    <div class="hero-tags fade-up">
+      <span class="tag accent">Cybersecurity</span>
+      <span class="tag">Third-Party Risk</span>
+      <span class="tag">Supply Chain Security</span>
+      <span class="tag">Personal Projects</span>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- ââ ABOUT ââ -->
+  <section id="about">
+    <div class="section-label">01 â About</div>
+    <div class="about-grid">
+      <div class="about-bio">
+        <p>
+          I work at the intersection of cybersecurity, third-party risk, and supply chain
+          integrity â domains where the weakest link is rarely the one you're watching.
+          Over the years I've helped organisations map their exposure, stress-test their
+          vendor relationships, and build programs that hold up when things go sideways.
+        </p>
+        <p>
+          This site is where I think out loud. You'll find long-form writing on risk
+          management, notes on tools I'm building, and the occasional essay on topics
+          that don't fit neatly into a slide deck.
+        </p>
+        <p>
+          When I'm not hunting for attack surface, I'm probably working on a side project,
+          reading about complex systems, or figuring out why something broke in a way
+          nobody anticipated.
+        </p>
+      </div>
+      <div class="about-sidebar">
+        <div class="sidebar-block">
+          <h4>Areas of Focus</h4>
+          <ul class="expertise-list">
+            <li>Third-Party Risk Management (TPRM)</li>
+            <li>Supply Chain Security</li>
+            <li>Cyber Risk Frameworks</li>
+            <li>Vendor Assessment & Due Diligence</li>
+            <li>Threat Modelling</li>
+            <li>Security Program Design</li>
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <h4>Currently</h4>
+          <ul class="expertise-list">
+            <li>Writing about TPRM in practice</li>
+            <li>Building tools for risk teams</li>
+            <li>Exploring AI in supply chain risk</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ââ BLOG ââ -->
+  <section id="blog">
+    <div class="section-label">02 â Writing</div>
+    <h2 class="section-title">Selected Articles</h2>
+
+    <div class="blog-grid">
+      <a class="blog-card" href="#post-vendor-risk">
+        <div class="blog-card-meta">
+          <span class="cat">Supply Chain</span>
+          <span>March 2025</span>
+        </div>
+        <h3>Why Your Vendor Risk Program Misses the Point</h3>
+        <p>Most TPRM programs are built to pass audits, not to manage actual risk. Here's what changes when you treat it as an intelligence function instead.</p>
+        <div class="blog-card-footer">8 min read â</div>
+      </a>
+
+      <a class="blog-card" href="#post-inherited-trust">
+        <div class="blog-card-meta">
+          <span class="cat">Cyber</span>
+          <span>Jan 2025</span>
+        </div>
+        <h3>The Quiet Failure Mode: Inherited Trust in Software Supply Chains</h3>
+        <p>Open-source dependencies, build pipelines, and the uncomfortable truth about software you didn't write but fully own.</p>
+        <div class="blog-card-footer">11 min read â</div>
+      </a>
+
+      <a class="blog-card" href="#post-concentration-risk">
+        <div class="blog-card-meta">
+          <span class="cat">Risk</span>
+          <span>Nov 2024</span>
+        </div>
+        <h3>Concentration Risk Isn't Just a Finance Problem</h3>
+        <p>When three vendors underpin half your critical processes, you don't have a vendor programme â you have a single point of failure with good documentation.</p>
+        <div class="blog-card-footer">6 min read â</div>
+      </a>
+
+      <a class="blog-card" href="#post-vendor-dashboard">
+        <div class="blog-card-meta">
+          <span class="cat">Projects</span>
+          <span>Sep 2024</span>
+        </div>
+        <h3>Building a Lightweight Vendor Intelligence Dashboard</h3>
+        <p>A walkthrough of a tool I built to aggregate threat intel, news, and breach data for a watchlist of third-party vendors â under 300 lines of Python.</p>
+        <div class="blog-card-footer">14 min read â</div>
+      </a>
+    </div>
+
+    <a class="blog-all" href="#blog">View all articles ââ</a>
+  </section>
+
+  <!-- ââ COMMENTS ââ -->
+  <section id="comments">
+    <div class="section-label">02b â Discussion</div>
+    <div class="comments-intro">
+      <h2 class="section-title">Join the Conversation</h2>
+      <p>Comments are powered by <strong>Giscus</strong> â backed by GitHub Discussions.
+         You'll need a free GitHub account to post. Your comments live in this site's
+         repository, not on a third-party ad platform.</p>
+    </div>
+
+    <!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+         GISCUS LIVE EMBED â replace the placeholder below once you've
+         generated your snippet at https://giscus.app
+         âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+
+    <div class="giscus-wrap">
+      <div class="giscus-placeholder">
+        <div class="ph-icon">ð¬</div>
+        <h4>Comments coming soon</h4>
+        <p>
+          This is where Giscus will load once configured. Follow the 3 steps below,
+          then replace this block with the script tag from giscus.app.
+        </p>
+        <code>
+          &lt;!-- REPLACE THIS BLOCK WITH YOUR GISCUS SCRIPT --&gt;<br/>
+          &lt;script src="https://giscus.app/client.js"<br/>
+          &nbsp;&nbsp;data-repo="gabrielhasik/gabrielhasik.github.io"<br/>
+          &nbsp;&nbsp;data-repo-id="YOUR_REPO_ID"<br/>
+          &nbsp;&nbsp;data-category="General"<br/>
+          &nbsp;&nbsp;data-category-id="YOUR_CATEGORY_ID"<br/>
+          &nbsp;&nbsp;data-mapping="pathname"<br/>
+          &nbsp;&nbsp;data-theme="dark"<br/>
+          &nbsp;&nbsp;crossorigin="anonymous" async&gt;<br/>
+          &lt;/script&gt;
+        </code>
+      </div>
+    </div>
+
+    <!-- Setup guide -->
+    <div class="giscus-steps">
+      <div class="giscus-step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <strong>Enable Discussions in your repo</strong>
+          <p>Go to your GitHub repository â <span class="inline-code">Settings</span>
+             â scroll to <span class="inline-code">Features</span>
+             â tick <span class="inline-code">Discussions</span>. Takes 5 seconds.</p>
+        </div>
+      </div>
+      <div class="giscus-step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <strong>Generate your embed code</strong>
+          <p>Visit <a href="https://giscus.app" target="_blank">giscus.app</a>,
+             enter your repo name, choose the <em>Dark</em> theme to match this site,
+             and copy the generated <span class="inline-code">&lt;script&gt;</span> tag.</p>
+        </div>
+      </div>
+      <div class="giscus-step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <strong>Replace the placeholder above</strong>
+          <p>In your <span class="inline-code">index.html</span>, find the comment that says
+             <span class="inline-code">REPLACE THIS BLOCK</span> and swap the entire
+             <span class="inline-code">&lt;div class="giscus-wrap"&gt;</span>
+             block with your script tag. Push to GitHub â done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ââ PROJECTS ââ -->
+  <section id="projects">
+    <div class="section-label">03 â Projects &amp; Tools</div>
+    <h2 class="section-title">Things I've Built</h2>
+
+    <div class="projects-list">
+      <div class="project-row">
+        <div class="project-num">01</div>
+        <div class="project-body">
+          <h3>VendorWatch</h3>
+          <p>Lightweight vendor intelligence aggregator. Pulls breach news, OSINT signals, and threat feeds for a custom watchlist. Built for small risk teams with no budget for enterprise tools.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">Python</span>
+          <span class="ptag">OSINT</span>
+          <span class="ptag">TPRM</span>
+        </div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-num">02</div>
+        <div class="project-body">
+          <h3>RiskMatrix CLI</h3>
+          <p>A terminal tool for scoring and comparing vendor risk across a configurable framework. Outputs to CSV, JSON, or a printable HTML report.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">CLI</span>
+          <span class="ptag">Risk Scoring</span>
+          <span class="ptag">Open Source</span>
+        </div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-num">03</div>
+        <div class="project-body">
+          <h3>SupplyGraph</h3>
+          <p>Experimental visualisation of n-tier supplier relationships. Maps dependency chains and highlights concentration risk nodes in an interactive graph view.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">D3.js</span>
+          <span class="ptag">Supply Chain</span>
+          <span class="ptag">Visualisation</span>
+        </div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-num">04</div>
+        <div class="project-body">
+          <h3>Domain Recon Tool</h3>
+          <p>A fast domain availability checker built as an artifact. Uses Cloudflare DNS-over-HTTPS to check registration status across multiple TLDs in real time.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">React</span>
+          <span class="ptag">DNS</span>
+          <span class="ptag">Tool</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ââ CONTACT ââ -->
+  <section id="contact">
+    <div class="section-label">04 â Contact</div>
+    <div class="contact-inner">
+      <p class="contact-lead">
+        Working on something in the risk space?<br/>
+        Let's <em>talk.</em>
+      </p>
+
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:gabriel@hasik.io">
+          <div class="cl-left">
+            <div class="cl-icon">â</div>
+            <div>
+              <span class="cl-label">Email</span>
+              <span class="cl-value">gabriel@hasik.io</span>
+            </div>
+          </div>
+          <span class="cl-arrow">â</span>
+        </a>
+
+        <a class="contact-link" href="https://linkedin.com/in/gabrielhasik" target="_blank">
+           <div class="cl-left">
+            <div class="cl-icon">in</div>
+            <div>
+              <span class="cl-label">LinkedIn</span>
+              <span class="cl-value">linkedin.com/in/gabrielhasik</span>
+            </div>
+          </div>
+          <span class="cl-arrow">â</span>
+        </a>
+
+        <a class="contact-link" href="https://github.com/gabrielhasik" target="_blank">
+          <div class="cl-left">
+            <div class="cl-icon">â¥</div>
+            <div>
+              <span class="cl-label">GitHub</span>
+              <span class="cl-value">github.com/gabrielhasik</span>
+            </div>
+          </div>
+          <span class="cl-arrow">â</span>
+        </a>
+
+        <a class="contact-link" href="https://twitter.com/gabrielhasik" target="_blank">
+          <div class="cl-left">
+            <div class="cl-icon">ð</div>
+            <div>
+              <span class="cl-label">X / Twitter</span>
+              <span class="cl-value">@gabrielhasik</span>
+            </div>
+          </div>
+          <span class="cl-arrow">â</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ââ FOOTER ââ -->
+  <footer>
+    <span>Â© 2026 Gabriel Hasik</span>
+    <span>Built with intention Â· <a href="https://hasik.io">hasik.io</a></span>
+    <span>Cyber Â· Risk Â· Supply Chain</span>
+  </footer>
+
+</>
+  </footer>
+
 </body>
 </html>
