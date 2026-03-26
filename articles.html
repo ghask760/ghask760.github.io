@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Quiet Failure Mode: Inherited Trust in Software Supply Chains — Gabriel Hasik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #0e0e0e;
+      --bg2:       #141414;
+      --bg3:       #1a1a1a;
+      --border:    #242424;
+      --muted:     #3a3a3a;
+      --text-dim:  #666;
+      --text-mid:  #999;
+      --text:      #d8d0c4;
+      --text-hi:   #f0e8dc;
+      --accent:    #d4821a;
+      --accent2:   #e8a84c;
+      --accent-dim:#3a2208;
+      --serif:     'Playfair Display', Georgia, serif;
+      --mono:      'DM Mono', 'Courier New', monospace;
+      --sans:      'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: 0.35;
+    }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+      color: var(--text-hi); text-decoration: none; letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .article-hero {
+      padding: 9rem 3rem 4rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 860px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-dim); text-decoration: none;
+      transition: color 0.2s; margin-bottom: 2.5rem;
+    }
+    .back-link:hover { color: var(--accent); }
+    .back-link::before { content: '←'; }
+    .article-cat {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent);
+      border: 1px solid var(--accent-dim); padding: 3px 10px; border-radius: 2px;
+      display: inline-block; margin-bottom: 1.5rem;
+    }
+    .article-title {
+      font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700; color: var(--text-hi); line-height: 1.15;
+      letter-spacing: -0.02em; margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim);
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .article-meta .sep { color: var(--muted); }
+    .article-body {
+      max-width: 720px;
+      padding: 4rem 3rem 5rem;
+    }
+    .article-body p {
+      font-size: 1.05rem; color: var(--text); margin-bottom: 1.5rem;
+      line-height: 1.85;
+    }
+    .article-body p:first-of-type::first-letter {
+      font-family: var(--serif); font-size: 3.2rem; font-weight: 900;
+      color: var(--accent); float: left; line-height: 0.8;
+      margin: 0.1em 0.12em 0 0;
+    }
+    .article-body h2 {
+      font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700; color: var(--text-hi); line-height: 1.2;
+      margin: 3rem 0 1rem; letter-spacing: -0.01em;
+    }
+    .article-body h3 {
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 700;
+      color: var(--text-hi); margin: 2rem 0 0.75rem;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem 1.5rem; color: var(--text);
+    }
+    .article-body li { margin-bottom: 0.5rem; font-size: 1rem; line-height: 1.75; }
+    .article-body strong { color: var(--text-hi); font-weight: 500; }
+    .article-body em { color: var(--accent2); font-style: italic; }
+    .article-body code {
+      font-family: var(--mono); font-size: 0.85rem; background: var(--bg3);
+      border: 1px solid var(--border); padding: 1px 6px; border-radius: 2px;
+      color: var(--accent2);
+    }
+    .article-body pre {
+      background: var(--bg3); border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem; border-radius: 3px; overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none; border: none; padding: 0;
+      font-size: 0.82rem; line-height: 1.7; color: var(--accent2);
+    }
+    .article-body blockquote {
+      border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0; color: var(--text-mid); font-style: italic;
+    }
+    .article-body blockquote p { margin-bottom: 0; color: var(--text-mid); }
+    .review-note {
+      background: var(--bg3); border: 1px solid var(--accent-dim);
+      border-left: 3px solid var(--accent); padding: 0.75rem 1rem;
+      font-family: var(--mono); font-size: 0.75rem; color: var(--accent2);
+      margin: 1.5rem 0; border-radius: 2px;
+    }
+    .article-divider {
+      border: none; border-top: 1px solid var(--border); margin: 2.5rem 0;
+    }
+    .back-link-bottom {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-dim); text-decoration: none;
+      transition: color 0.2s; margin-top: 2rem;
+    }
+    .back-link-bottom:hover { color: var(--accent); }
+    .back-link-bottom::before { content: '←'; }
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
+      color: var(--muted); text-transform: uppercase;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .article-hero { padding: 7rem 1.5rem 3rem; }
+      .article-body { padding: 3rem 1.5rem 4rem; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-hero">
+    <a class="back-link" href="index.html#blog">Back to Writing</a>
+    <div class="article-cat">Cyber</div>
+    <h1 class="article-title">The Quiet Failure Mode: Inherited Trust in Software Supply Chains</h1>
+    <div class="article-meta">
+      <span>January 2025</span>
+      <span class="sep">·</span>
+      <span>11 min read</span>
+      <span class="sep">·</span>
+      <span>Gabriel Hasik</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>There's a category of security failure that gets less attention than it deserves, partly because it tends to be quiet, and partly because the organisations affected can argue — with some technical justification — that they did nothing wrong. The failure mode is inherited trust: the security posture you implicitly accept every time you pull in a dependency, run a build pipeline, or deploy software that relies on components you didn't write and have never audited.</p>
+
+    <p>The XZ Utils backdoor, the SolarWinds compromise, the npm package hijacking campaigns — these events are the visible edge of a much broader structural problem. For every incident that makes headlines, there are dozens of quiet failures: outdated packages with known vulnerabilities running in production, build pipelines with write access to source repositories, open-source maintainers with commit rights to widely-deployed code who haven't been heard from in two years. The failure mode isn't dramatic. It accumulates.</p>
+
+    <h2>What Inherited Trust Actually Means</h2>
+
+    <p>When you include a dependency in your software, you are not merely including code. You are inheriting the entire trust chain of that code — its maintainers, their operational security practices, their personal threat surface, the infrastructure their project depends on, and every transitive dependency they've pulled in. This inheritance happens without a handshake, without diligence, and usually without awareness.</p>
+
+    <p>The typical enterprise application has hundreds of direct dependencies. Each of those dependencies has its own dependency tree. The total count of packages a single application trusts implicitly — transitively — often runs into the thousands. You have, in effect, granted implicit trust to code written by people you've never heard of, maintained on infrastructure you've never examined, potentially controlled by parties whose interests may not align with yours.</p>
+
+    <p>This isn't a new observation. The security community has been talking about supply chain risk since at least the early SBOM discussions in 2014. What's changed is the scale, the speed at which dependencies are introduced, and the growing sophistication of adversaries who've noticed that the software supply chain is a high-leverage attack surface.</p>
+
+    <div class="review-note">[GABRIEL TO REVIEW] — Add a specific statistic or data point here about average transitive dependency counts in enterprise software, or a concrete example from your experience of auditing a codebase and finding the actual dependency tree size.</div>
+
+    <h2>The Trust Model Nobody Designed</h2>
+
+    <p>Here's the thing that bothers me most about inherited trust: it's not a deliberate design choice. It's an accidental architecture that emerged from a combination of developer productivity norms, package registry design, and the social dynamics of open-source communities.</p>
+
+    <p>The <em>de facto</em> trust model for most software supply chains works like this: if a package is available on a public registry (npm, PyPI, Maven Central, etc.) and has enough downloads to seem legitimate, developers treat it as safe. The download count functions as a proxy for trust. So does the presence of stars on GitHub, or the fact that a known company appears to use it. None of these signals are actually evidence of security. They're popularity metrics.</p>
+
+    <p>This is the same failure mode as security questionnaires in TPRM — trusting signals that measure something adjacent to security rather than security itself. A package can be widely downloaded, actively maintained, and thoroughly backdoored. SolarWinds had an impressive customer list right up until it didn't.</p>
+
+    <h3>The Maintainer Problem</h3>
+
+    <p>Open-source maintainers are the unacknowledged infrastructure of the modern software supply chain. Many are individuals working on widely-deployed software in their spare time, with no meaningful security support, no incident response capability, and no consistent security review process. The trust organisations place in their code is wildly disproportionate to the resources those maintainers have to defend it.</p>
+
+    <p>The XZ Utils case illustrated this starkly. A sophisticated, patient actor spent nearly two years building a trusted identity as a maintainer of a widely-used compression library, gradually accumulating commit rights, and ultimately inserting a backdoor that would have affected a significant portion of Linux systems worldwide if it hadn't been caught by an accident of performance profiling. The attack surface wasn't a technical vulnerability in the traditional sense — it was the social and operational structure of open-source maintenance itself.</p>
+
+    <div class="review-note">[GABRIEL TO REVIEW] — Add your own analysis of the XZ Utils case or a comparable incident here. What specifically about the attack methodology do you think is underappreciated? Are there similar patterns you've observed in your work?</div>
+
+    <h2>Build Pipelines as Attack Surface</h2>
+
+    <p>If the dependency problem is about what code runs in production, the build pipeline problem is about who has write access to the path that gets it there. CI/CD pipelines have become one of the most consequential and least scrutinised parts of the modern software supply chain.</p>
+
+    <p>A typical build pipeline touches an enormous amount of sensitive infrastructure: source repositories, signing keys, deployment credentials, cloud provider APIs, artifact registries. Compromise the pipeline and you don't need to compromise the application code — you can inject malicious behaviour upstream and have it deployed as a trusted artefact, signed with legitimate credentials, through legitimate channels.</p>
+
+    <p>The Codecov breach of 2021 is the canonical example. An attacker modified a bash uploader script used by thousands of organisations in their CI pipelines, exfiltrating environment variables — including credentials — from every build that ran it. The attack was low-noise, affected a huge number of organisations, and demonstrated exactly why build pipeline security should be treated as a first-class concern rather than an afterthought.</p>
+
+    <p>Most organisations treat their CI/CD configuration the way they treat their <code>.bashrc</code>: something that grew organically over time, nobody fully understands, and everyone is slightly nervous to touch. The security properties of that configuration are rarely formally reviewed. The principle of least privilege is rarely applied. The blast radius of a pipeline compromise is rarely modelled.</p>
+
+    <div class="review-note">[GABRIEL TO REVIEW] — Add specific observations from pipeline security reviews you've conducted. What are the most common misconfigurations you've found? What's the gap between how teams think their pipeline is configured and how it actually is?</div>
+
+    <h2>The SBOM Promise and Its Limits</h2>
+
+    <p>Software Bill of Materials documents — SBOMs — have emerged as the primary policy response to software supply chain risk. The logic is sensible: if organisations don't know what's in their software, they can't manage the risk. An SBOM provides an inventory of components, versions, and licences, creating the foundation for vulnerability tracking and risk assessment.</p>
+
+    <p>The US Executive Order 14028 mandated SBOM adoption for federal software suppliers. The NTIA published minimum element standards. The tooling ecosystem has matured considerably. SBOMs are, by most measures, a genuine improvement on both previous state of affairs, which was "nobody knows what's in this software."</p>
+
+    <p>But SBOMs have limits that are worth being clear-eyed about. A complete, accurate SBOM tells you what components are present. It doesn't tell you how they're used, how they're configured, what permissions they have at runtime, or whether they contain malicious code that hasn't been detected yet. Vulnerability scanning against an SBOM is valuable, but it's vulnerability management — identifying known-bad components — isn't supply chain security.</p>
+
+    <p>The gap is significant. The XZ Utils backdoor was inserted into a version of a legitimate package. An SBOM that listed the correct package name and version would have told you nothing about it. The threat that most worries practitioners isn't the known vulnerability in a named package — it's the malicious code that doesn't have a CVE yet because nobody's found it.</p>
+
+    <h2>What Realistic Mitigation Looks Like</h2>
+
+    <p>I want to be careful not to write a piece that ends with "and therefore the problem is unsolvable." It isn't unsolvable. It's hard, resource-intensive, and requires treating software supply chain security as a continuous programme rather than a one-time project. Here's what realistic mitigation looks like:</p>
+
+    <p><strong>Dependency pinning and lock file hygiene.</strong> Lock files — <code>package-lock.json</code>, <code>Pipfile.lock</code>, <code>cargo.lock</code> — pin dependency versions and (crucially) their hashes. This means a compromised upstream package that changes its content without changing its version number won't silently land in your builds. Dependency pinning is table stakes. It's alarming how often it's absent.</p>
+
+    <p><strong>Private registries and artifact proxying.</strong> Running your own artifact registry (Artifactory, Nexus, or similar) and proxying public registries through it gives you a control point. You can enforce policies — block packages older than a certain date, flag packages with no upstream maintenance, require internal review before a new package is approved. This doesn't eliminate the risk; it creates friction in the right places.</p>
+
+    <p><strong>Pipeline hardening.</strong> CI/CD systems should follow the same least-privilege principles as any other sensitive system. Pipeline credentials should be scoped to what they need and rotated. Secrets shouldn't live in environment variables accessible to arbitrary pipeline steps. Infrastructure-as-code for pipelines should be reviewed with the same rigour as application code.</p>
+
+    <div class="review-note">[GABRIEL TO REVIEW] — Add your recommended toolset here: specific tools for dependency review, pipeline security scanning, SBOM generation. Include any tools you've built or significantly customised for this purpose.</div>
+
+    <p><strong>Supplier security assessments that ask the right questions.</strong> When evaluating software vendors, the relevant questions are about their development and release practices: Do they publish SBOMs? Do they have a documented secure development lifecycle? What's their process for responding to discovered vulnerabilities in their dependencies? How are their build pipelines secured? These questions are more useful than generic "do you have a security policy" inquiries.</p>
+
+    <h2>The Ownership Question</h2>
+
+    <p>One question that comes up in almost every supply chain security conversation: who owns this? Is software supply chain security an application security problem? A TPRM problem? An infrastructure problem? A policy problem?</p>
+
+    <p>The honest answer is that it spans all of these, which means that in most organisations, it's owned by nobody in particular. Security teams focus on external threats. Development teams focus on shipping software. TPRM teams focus on vendors with contracts. The build pipeline and the dependency tree fall into the gap.</p>
+
+    <p>Closing that gap requires deliberate ownership assignment, which usually means a cross-functional programme with a dedicated owner and mandate. It also requires making the invisible visible — actually knowing what's in your software, how it gets built, and where the trust boundaries are. Most organisations have never done that exercise. The ones that have are consistently surprised by what they find.</p>
+
+    <div class="review-note">[GABRIEL TO REVIEW] — Close with a practical call to action or framing that's specific to your audience (risk teams, security practitioners). What's the single most important thing an organisation that hasn't started on this should do first?</div>
+
+    <hr class="article-divider"/>
+
+    <p>The software supply chain is not an exotic attack surface reserved for nation-state adversaries. It's the infrastructure every organisation depends on, built on a trust model that was never designed with adversarial conditions in mind. Inherited trust is quiet, pervasive, and consequential. The organisations that are serious about managing it are starting from a position of honest accounting — understanding what they own, what they've inherited, and where the trust chains actually lead.</p>
+
+    <a class="back-link-bottom" href="index.html#blog">Back to Writing</a>
+
+  </div>
+
+  <footer>
+    <span>&copy; 2026 Gabriel Hasik</span>
+    <span>Built with intention &middot; <a href="https://hasik.io">hasik.io</a></span>
+    <span>Cyber &middot; Risk &middot; Supply Chain</span>
+  </footer>
+
+</body>
+</html>
