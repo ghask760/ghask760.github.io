@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Why Your Vendor Risk Program Misses the Point â Gabriel Hasik</title>
+  <title>Why Your Vendor Risk Program Misses the Point — Gabriel Hasik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
@@ -79,7 +79,7 @@
       transition: color 0.2s; margin-bottom: 2.5rem;
     }
     .back-link:hover { color: var(--accent); }
-    .back-link::before { content: 'â'; }
+    .back-link::before { content: '←'; }
     .article-cat {
       font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--accent);
@@ -153,7 +153,7 @@
       transition: color 0.2s; margin-top: 2rem;
     }
     .back-link-bottom:hover { color: var(--accent); }
-    .back-link-bottom::before { content: 'â'; }
+    .back-link-bottom::before { content: '←'; }
 
     /* FOOTER */
     footer {
@@ -194,9 +194,9 @@
     <h1 class="article-title">Why Your Vendor Risk Program Misses the Point</h1>
     <div class="article-meta">
       <span>March 2025</span>
-      <span class="sep">Â·</span>
+      <span class="sep">·</span>
       <span>8 min read</span>
-      <span class="sep">Â·</span>
+      <span class="sep">·</span>
       <span>Gabriel Hasik</span>
     </div>
   </div>
@@ -206,31 +206,31 @@
 
     <p>Most vendor risk programs share a common architecture: a questionnaire sent annually, responses filed in a spreadsheet or GRC tool, a risk rating assigned, and a checkbox ticked confirming "vendor assessed." Leadership sees a completion rate. Auditors see evidence. Nobody sees actual risk.</p>
 
-    <p>This is the central dysfunction of third-party risk management as it's practiced today. The program exists to demonstrate compliance with a framework â SOC 2, ISO 27001, NIST CSF, take your pick â rather than to develop genuine intelligence about the organisations that underpin your operations. The output is documentation. The outcome is comfort. Neither is the same as security.</p>
+    <p>This is the central dysfunction of third-party risk management as it's practiced today. The program exists to demonstrate compliance with a framework — SOC 2, ISO 27001, NIST CSF, take your pick — rather than to develop genuine intelligence about the organisations that underpin your operations. The output is documentation. The outcome is comfort. Neither is the same as security.</p>
 
     <p>After years of building and stress-testing TPRM programs, I've come to a simple conclusion: the programs that work treat vendor risk as an <em>intelligence function</em>, not an administrative one. The ones that don't are sophisticated ways of not knowing what you don't know.</p>
 
     <h2>The Questionnaire Illusion</h2>
 
-    <p>The annual security questionnaire is the backbone of most TPRM programs. It is also one of the least reliable signals of actual vendor security posture available to you. Not because vendors lie â though they do, sometimes â but because the questionnaire measures what vendors say they do, at a point in time, filtered through whoever fills it out.</p>
+    <p>The annual security questionnaire is the backbone of most TPRM programs. It is also one of the least reliable signals of actual vendor security posture available to you. Not because vendors lie — though they do, sometimes — but because the questionnaire measures what vendors say they do, at a point in time, filtered through whoever fills it out.</p>
 
-    <p>The person completing your questionnaire is probably not the person who runs your vendor's security program. They're someone in procurement, legal, or a junior analyst who's been handed a template. They're answering questions like "Do you have a patch management policy?" with "Yes" because there is, somewhere, a document that says so. Whether that policy is enforced, whether it covers the systems relevant to your integration, whether it was last reviewed in 2019 â none of that surfaces.</p>
+    <p>The person completing your questionnaire is probably not the person who runs your vendor's security program. They're someone in procurement, legal, or a junior analyst who's been handed a template. They're answering questions like "Do you have a patch management policy?" with "Yes" because there is, somewhere, a document that says so. Whether that policy is enforced, whether it covers the systems relevant to your integration, whether it was last reviewed in 2019 — none of that surfaces.</p>
 
-    <div class="review-note">[GABRIEL TO REVIEW] â Add a specific example or anecdote here: a real scenario where a questionnaire response gave false assurance before an incident or assessment finding.</div>
+    <div class="review-note">[GABRIEL TO REVIEW] — Add a specific example or anecdote here: a real scenario where a questionnaire response gave false assurance before an incident or assessment finding.</div>
 
     <p>Worse, questionnaires are static. A vendor that scores well in January may have suffered a breach, changed security leadership, or undergone a major infrastructure migration by the time you're thinking about them again. Your documentation shows "low risk." Your exposure may have changed materially.</p>
 
-    <p>This doesn't mean questionnaires have no value. They establish a baseline, create accountability, and sometimes surface genuine gaps. But treating them as the primary â and only â source of truth about vendor security posture is a category error.</p>
+    <p>This doesn't mean questionnaires have no value. They establish a baseline, create accountability, and sometimes surface genuine gaps. But treating them as the primary — and only — source of truth about vendor security posture is a category error.</p>
 
     <h2>Risk Tiering Without Substance</h2>
 
     <p>The second structural problem is how organisations tier vendors. The typical approach: high/medium/low based on data sensitivity and business criticality. Critical vendors get more scrutiny. Tier 3 vendors get a lighter-touch questionnaire. This logic is sound in theory and broken in practice.</p>
 
-    <p>The problem is that tiering is usually done at onboarding and rarely revisited. A vendor that started as Tier 2 â moderate data access, non-critical processes â can become deeply embedded in your operations over time. Systems get integrated. Dependencies form. An outage that would have been a nuisance two years ago is now a critical incident.</p>
+    <p>The problem is that tiering is usually done at onboarding and rarely revisited. A vendor that started as Tier 2 — moderate data access, non-critical processes — can become deeply embedded in your operations over time. Systems get integrated. Dependencies form. An outage that would have been a nuisance two years ago is now a critical incident.</p>
 
-    <p>Tiering also systematically underweights what I'd call <em>operational criticality</em> versus data criticality. Security teams naturally focus on who has access to sensitive data. But the vendor whose SaaS platform your operations team uses every day â no PII, limited data exposure â is more operationally critical than the vendor holding HR records in a segregated, encrypted environment. When they go down, your business goes down. That's a risk that most tiering models fail to capture adequately.</p>
+    <p>Tiering also systematically underweights what I'd call <em>operational criticality</em> versus data criticality. Security teams naturally focus on who has access to sensitive data. But the vendor whose SaaS platform your operations team uses every day — no PII, limited data exposure — { may be more operationally critical than the vendor holding HR records in a segregated, encrypted environment. When they go down, your business goes down. That's a risk that most tiering models fail to capture adequately.</p>
 
-    <div class="review-note">[GABRIEL TO REVIEW] â Consider adding a specific tiering framework variant you've used or seen that does this better. Even a rough scoring matrix reference would strengthen this section.</div>
+    <div class="review-note">[GABRIEL TO REVIEW] — Consider adding a specific tiering framework variant you've used or seen that does this better. Even a rough scoring matrix reference would strengthen this section.</div>
 
     <h2>The Compliance Mindset vs. the Intelligence Mindset</h2>
 
@@ -238,35 +238,35 @@
 
     <p>A compliance mindset asks: "Do we have documentation showing this vendor was assessed?" An intelligence mindset asks: "What do we actually know about this vendor's security posture right now, and does that knowledge change how we operate?"</p>
 
-    <p>The practical difference shows up in resource allocation. Compliance programs allocate effort proportionally to vendor tier and audit requirements. Intelligence programs allocate effort based on what would most change your understanding of risk â which often means paying attention to signals that don't show up in questionnaires at all.</p>
+    <p>The practical difference shows up in resource allocation. Compliance programs allocate effort proportionally to vendor tier and audit requirements. Intelligence programs allocate effort based on what would most change your understanding of risk — which often means paying attention to signals that don't show up in questionnaires at all.</p>
 
-    <p>Those signals include: changes in vendor leadership or ownership, breach news and CVE disclosures, OSINT on exposed infrastructure, threat intelligence about campaigns targeting your vendordor's sector, and changes in vendor financial health. None of these are captured in a point-in-time questionnaire. All of them are relevant to your actual exposure.</p>
+    <p>Those signals include: changes in vendor leadership or ownership, breach news and CVE disclosures, OSINT on exposed infrastructure, threat intelligence about campaigns targeting your vendor's sector, and changes in vendor financial health. None of these are captured in a point-in-time questionnaire. All of them are relevant to your actual exposure.</p>
 
     <h2>What an Intelligence-Oriented Program Looks Like</h2>
 
-    <p>Rebuilding TPRM as an intelligence function doesn't require a larger budget â it requires a different allocation of the budget you have. A few structural changes make an outsized difference:</p>
+    <p>Rebuilding TPRM as an intelligence function doesn't require a larger budget — it requires a different allocation of the budget you have. A few structural changes make an outsized difference:</p>
 
-    <p><strong>Continuous monitoring over periodic assessment.</strong> Replace the annual questionnaire cycle with ongoing signal monitoring for your Tier 1 vendors. This means watching breach databases, CVE feeds, news monitoring, and basic OSINT on exposed infrastructure. The goal isn't to monitor everything â it's to maintain situational awareness on the vendors where a surprise would hurt most.</p>
+    <p><strong>Continuous monitoring over periodic assessment.</strong> Replace the annual questionnaire cycle with ongoing signal monitoring for your Tier 1 vendors. This means watching breach databases, CVE feeds, news monitoring, and basic OSINT on exposed infrastructure. The goal isn't to monitor everything — it's to maintain situational awareness on the vendors where a surprise would hurt most.</p>
 
-    <p><strong>Treat vendor risk data as a feed, not a record.</strong> Most GRC tools are designed to store and retrieve static records. That's fine for compliance evidence. It's inadequate for risk intelligence. The data you care about is dynamic â it changes as vendors change. Build processes that treat vendor risk as a live feed rather than a filed document.</p>
+    <p><strong>Treat vendor risk data as a feed, not a record.</strong> Most GRC tools are designed to store and retrieve static records. That's fine for compliance evidence. It's inadequate for risk intelligence. The data you care about is dynamic — it changes as vendors change. Build processes that treat vendor risk as a live feed rather than a filed document.</p>
 
-    <p><strong>Integrate with procurement and architecture decisions.</strong> Vendor risk teams typically find out about new vendor relationships after the contract is signed. By then, the leverage to negotiate security requirements is largely gone. Getting upstream â into the architecture and procurement conversations â is where TPRM can genuinely influence risk, not just document it.</p>
+    <p><strong>Integrate with procurement and architecture decisions.</strong> Vendor risk teams typically find out about new vendor relationships after the contract is signed. By then, the leverage to negotiate security requirements is largely gone. Getting upstream — into the architecture and procurement conversations — is where TPRM can genuinely influence risk, not just document it.</p>
 
-    <div class="review-note">[GABRIEL TO REVIEW] â Add specific tooling or workflow details here. For example, how you've set up monitoring pipelines, which data sources have proven most signal-dense vs. noisy, and any specific numbers (e.g. how many Tier 1 vendors a monitoring setup like this is practical for).</div>
+    <div class="review-note">[GABRIEL TO REVIEW] — Add specific tooling or workflow details here. For example, how you've set up monitoring pipelines, which data sources have proven most signal-dense vs. noisy, and any specific numbers (e.g. how many Tier 1 vendors a monitoring setup like this is practical for).</div>
 
     <p><strong>Separate the evidence function from the intelligence function.</strong> The work of producing audit evidence and the work of developing risk intelligence are different activities. They can live in the same team, but they shouldn't be conflated. The person whose job is to ensure the questionnaire spreadsheet is up to date should not be the same function as the person thinking about what you actually know about your vendor estate.</p>
 
     <h2>The Honest Conversation Nobody Wants to Have</h2>
 
-    <p>Most TPRM programs exist because they're required â by regulators, by frameworks, by contract terms. The people building them often know they're not producing real intelligence. But the incentive structure rewards completion rates and audit readiness, not genuine risk reduction. This creates a situation where everyone is doing the right things for the wrong reasons, and the output is a program that looks robust but isn't.</p>
+    <p>Most TPRM programs exist because they're required — by regulators, by frameworks, by contract terms. The people building them often know they're not producing real intelligence. But the incentive structure rewards completion rates and audit readiness, not genuine risk reduction. This creates a situation where everyone is doing the right things for the wrong reasons, and the output is a program that looks robust but isn't.</p>
 
     <p>Changing this requires something harder than changing processes: it requires changing the conversation with leadership about what the program is for. If the CISO thinks TPRM exists to pass audits, the program will be optimised for that. If they understand that TPRM should inform decisions about concentration risk, operational dependency, and supply chain exposure, you have a chance to build something that actually matters.</p>
 
-    <div class="review-note">[GABRIEL TO REVIEW] â This is a good place for a brief closing anecdote or observation from a real engagement â a moment where the intelligence-oriented approach surfaced something the compliance approach would have missed.</div>
+    <div class="review-note">[GABRIEL TO REVIEW] — This is a good place for a brief closing anecdote or observation from a real engagement — a moment where the intelligence-oriented approach surfaced something the compliance approach would have missed.</div>
 
     <hr class="article-divider"/>
 
-    <p>The goal isn't to abolish questionnaires or discard compliance frameworks. They have a role. The goal is to stop treating them as a proxy for actual risk understanding. When something goes wrong through a third party â and it will â the question you'll face is: did your program actually tell you anything useful about this vendor, or did it just tell you that a box was checked? The answer to that question is the test of whether your TPRM program is real.</p>
+    <p>The goal isn't to abolish questionnaires or discard compliance frameworks. They have a role. The goal is to stop treating them as a proxy for actual risk understanding. When something goes wrong through a third party — and it will — the question you'll face is: did your program actually tell you anything useful about this vendor, or did it just tell you that a box was checked? The answer to that question is the test of whether your TPRM program is real.</p>
 
     <a class="back-link-bottom" href="index.html#blog">Back to Writing</a>
 
