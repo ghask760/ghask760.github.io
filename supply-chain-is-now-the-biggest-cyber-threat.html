@@ -7,23 +7,33 @@
 <!-- ============================================================ -->
 
   <div style="width:100%; margin: 2rem 0;">
-  <svg width="100%" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" style="display:block; border-radius:8px;">
-<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" style="display:block; border-radius:8px;">
 <defs>
- 
-  <!-- Background gradient -->
+
+  <style>
+    @keyframes ring-out      { 0%{r:28px;opacity:0.55} 100%{r:72px;opacity:0} }
+    @keyframes ring-out-slow { 0%{r:32px;opacity:0.35} 100%{r:88px;opacity:0} }
+    @keyframes flicker-hot   { 0%,100%{opacity:1} 42%{opacity:0.82} 54%{opacity:0.72} 60%{opacity:0.9} }
+    @keyframes flicker-warm  { 0%,100%{opacity:0.9} 50%{opacity:0.65} }
+    @keyframes flicker-line  { 0%,100%{opacity:0.76} 50%{opacity:0.52} }
+    .ring1      { animation: ring-out      2.4s ease-out        infinite; }
+    .ring2      { animation: ring-out      2.4s ease-out 1.2s   infinite; }
+    .ring3      { animation: ring-out-slow 3.2s ease-out 0.6s   infinite; }
+    .hot        { animation: flicker-hot   3.1s ease-in-out     infinite; }
+    .warm       { animation: flicker-warm  4.0s ease-in-out     infinite; }
+    .line-pulse { animation: flicker-line  3.4s ease-in-out     infinite; }
+  </style>
+
   <radialGradient id="bg" cx="32%" cy="50%" r="62%">
     <stop offset="0%"   stop-color="#0C1E36"/>
     <stop offset="50%"  stop-color="#06101E"/>
     <stop offset="100%" stop-color="#020509"/>
   </radialGradient>
- 
-  <!-- Dot pattern texture -->
+
   <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
     <circle cx="18" cy="18" r="0.65" fill="rgba(148,163,184,0.22)"/>
   </pattern>
- 
-  <!-- Glow halos (radial gradients) -->
+
   <radialGradient id="halo-p0" cx="50%" cy="50%" r="50%">
     <stop offset="0%"   stop-color="#EF4444" stop-opacity="0.38"/>
     <stop offset="100%" stop-color="#EF4444" stop-opacity="0"/>
@@ -44,59 +54,43 @@
     <stop offset="0%"   stop-color="#FBBF24" stop-opacity="0.09"/>
     <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
   </radialGradient>
- 
+
 </defs>
- 
-<!-- ─── BACKGROUND ─── -->
+
 <rect width="1200" height="628" fill="url(#bg)"/>
 <rect width="1200" height="628" fill="url(#dots)" opacity="0.55"/>
- 
-<!-- ─── GLOW HALOS (drawn first, behind everything) ─── -->
- 
-<!-- P0 -->
-<circle cx="148" cy="314" r="90"  fill="url(#halo-p0)" class="hot"/>
-<circle cx="148" cy="314" r="58"  fill="url(#halo-p0)" class="hot"/>
- 
-<!-- L1 -->
-<circle cx="290" cy="186" r="55"  fill="url(#halo-l1)" class="hot"/>
-<circle cx="308" cy="382" r="55"  fill="url(#halo-l1)" class="hot"/>
-<circle cx="268" cy="492" r="48"  fill="url(#halo-l1)" class="warm"/>
- 
-<!-- L2 -->
-<circle cx="442" cy="116" r="46"  fill="url(#halo-l2)" class="warm"/>
-<circle cx="462" cy="272" r="46"  fill="url(#halo-l2)" class="warm"/>
-<circle cx="456" cy="432" r="42"  fill="url(#halo-l2)"/>
-<circle cx="396" cy="556" r="38"  fill="url(#halo-l2)"/>
- 
-<!-- L3 -->
-<circle cx="608" cy="72"  r="36"  fill="url(#halo-l3)"/>
-<circle cx="626" cy="218" r="36"  fill="url(#halo-l3)"/>
-<circle cx="636" cy="374" r="34"  fill="url(#halo-l3)"/>
-<circle cx="602" cy="524" r="32"  fill="url(#halo-l3)"/>
- 
-<!-- L4 -->
-<circle cx="766" cy="138" r="28"  fill="url(#halo-l4)"/>
-<circle cx="782" cy="296" r="28"  fill="url(#halo-l4)"/>
-<circle cx="762" cy="456" r="26"  fill="url(#halo-l4)"/>
-<circle cx="812" cy="576" r="22"  fill="url(#halo-l4)"/>
- 
- 
-<!-- ─── CONNECTIONS ─── -->
- 
-<!-- P0 → L1  bright red -->
+
+<!-- GLOW HALOS -->
+<circle cx="148" cy="314" r="90" fill="url(#halo-p0)" class="hot"/>
+<circle cx="148" cy="314" r="58" fill="url(#halo-p0)" class="hot"/>
+<circle cx="290" cy="186" r="55" fill="url(#halo-l1)" class="hot"/>
+<circle cx="308" cy="382" r="55" fill="url(#halo-l1)" class="hot"/>
+<circle cx="268" cy="492" r="48" fill="url(#halo-l1)" class="warm"/>
+<circle cx="442" cy="116" r="46" fill="url(#halo-l2)" class="warm"/>
+<circle cx="462" cy="272" r="46" fill="url(#halo-l2)" class="warm"/>
+<circle cx="456" cy="432" r="42" fill="url(#halo-l2)"/>
+<circle cx="396" cy="556" r="38" fill="url(#halo-l2)"/>
+<circle cx="608" cy="72"  r="36" fill="url(#halo-l3)"/>
+<circle cx="626" cy="218" r="36" fill="url(#halo-l3)"/>
+<circle cx="636" cy="374" r="34" fill="url(#halo-l3)"/>
+<circle cx="602" cy="524" r="32" fill="url(#halo-l3)"/>
+<circle cx="766" cy="138" r="28" fill="url(#halo-l4)"/>
+<circle cx="782" cy="296" r="28" fill="url(#halo-l4)"/>
+<circle cx="762" cy="456" r="26" fill="url(#halo-l4)"/>
+<circle cx="812" cy="576" r="22" fill="url(#halo-l4)"/>
+
+<!-- CONNECTIONS P0→L1 -->
 <line x1="148" y1="314" x2="290" y2="186" stroke="#EF4444" stroke-width="1.9" opacity="0.78" class="line-pulse"/>
 <line x1="148" y1="314" x2="308" y2="382" stroke="#EF4444" stroke-width="1.9" opacity="0.76" class="line-pulse"/>
 <line x1="148" y1="314" x2="268" y2="492" stroke="#EF4444" stroke-width="1.6" opacity="0.66" class="line-pulse"/>
- 
-<!-- L1 → L2  red -->
+<!-- L1→L2 -->
 <line x1="290" y1="186" x2="442" y2="116" stroke="#EF4444" stroke-width="1.5" opacity="0.70" class="line-pulse"/>
 <line x1="290" y1="186" x2="462" y2="272" stroke="#EF4444" stroke-width="1.5" opacity="0.67" class="line-pulse"/>
 <line x1="308" y1="382" x2="462" y2="272" stroke="#EF4444" stroke-width="1.4" opacity="0.64"/>
 <line x1="308" y1="382" x2="456" y2="432" stroke="#EF4444" stroke-width="1.4" opacity="0.62"/>
 <line x1="268" y1="492" x2="456" y2="432" stroke="#EF4444" stroke-width="1.3" opacity="0.58"/>
 <line x1="268" y1="492" x2="396" y2="556" stroke="#EF4444" stroke-width="1.2" opacity="0.54"/>
- 
-<!-- L2 → L3  orange-red -->
+<!-- L2→L3 -->
 <line x1="442" y1="116" x2="608" y2="72"  stroke="#F97316" stroke-width="1.3" opacity="0.62"/>
 <line x1="442" y1="116" x2="626" y2="218" stroke="#F97316" stroke-width="1.2" opacity="0.58"/>
 <line x1="462" y1="272" x2="626" y2="218" stroke="#F97316" stroke-width="1.2" opacity="0.56"/>
@@ -104,8 +98,7 @@
 <line x1="456" y1="432" x2="636" y2="374" stroke="#F97316" stroke-width="1.1" opacity="0.50"/>
 <line x1="456" y1="432" x2="602" y2="524" stroke="#F97316" stroke-width="1.0" opacity="0.48"/>
 <line x1="396" y1="556" x2="602" y2="524" stroke="#F97316" stroke-width="1.0" opacity="0.44"/>
- 
-<!-- L3 → L4  amber -->
+<!-- L3→L4 -->
 <line x1="608" y1="72"  x2="766" y2="138" stroke="#FBBF24" stroke-width="1.0" opacity="0.38"/>
 <line x1="626" y1="218" x2="766" y2="138" stroke="#FBBF24" stroke-width="1.0" opacity="0.36"/>
 <line x1="626" y1="218" x2="782" y2="296" stroke="#FBBF24" stroke-width="0.9" opacity="0.35"/>
@@ -113,8 +106,7 @@
 <line x1="636" y1="374" x2="762" y2="456" stroke="#FBBF24" stroke-width="0.9" opacity="0.31"/>
 <line x1="602" y1="524" x2="762" y2="456" stroke="#FBBF24" stroke-width="0.8" opacity="0.28"/>
 <line x1="602" y1="524" x2="812" y2="576" stroke="#FBBF24" stroke-width="0.8" opacity="0.26"/>
- 
-<!-- L4 → L5  dark slate -->
+<!-- L4→L5 -->
 <line x1="766" y1="138" x2="930" y2="78"  stroke="#475569" stroke-width="0.8" opacity="0.27"/>
 <line x1="766" y1="138" x2="946" y2="232" stroke="#475569" stroke-width="0.8" opacity="0.26"/>
 <line x1="782" y1="296" x2="946" y2="232" stroke="#475569" stroke-width="0.8" opacity="0.25"/>
@@ -122,100 +114,79 @@
 <line x1="762" y1="456" x2="940" y2="402" stroke="#475569" stroke-width="0.7" opacity="0.22"/>
 <line x1="762" y1="456" x2="916" y2="558" stroke="#475569" stroke-width="0.7" opacity="0.21"/>
 <line x1="812" y1="576" x2="916" y2="558" stroke="#475569" stroke-width="0.6" opacity="0.19"/>
- 
-<!-- L5 → L6  very dim -->
+<!-- L5→L6 -->
 <line x1="930" y1="78"  x2="1076" y2="148" stroke="#334155" stroke-width="0.7" opacity="0.20"/>
 <line x1="946" y1="232" x2="1076" y2="148" stroke="#334155" stroke-width="0.7" opacity="0.19"/>
 <line x1="946" y1="232" x2="1096" y2="322" stroke="#334155" stroke-width="0.6" opacity="0.18"/>
 <line x1="940" y1="402" x2="1096" y2="322" stroke="#334155" stroke-width="0.6" opacity="0.17"/>
 <line x1="940" y1="402" x2="1062" y2="508" stroke="#334155" stroke-width="0.6" opacity="0.16"/>
 <line x1="916" y1="558" x2="1062" y2="508" stroke="#334155" stroke-width="0.5" opacity="0.15"/>
- 
-<!-- Skip connections (dashed, for realistic network look) -->
+<!-- Skip/dashed -->
 <line x1="290" y1="186" x2="608" y2="72"  stroke="#EF4444" stroke-width="0.8" opacity="0.22" stroke-dasharray="4 7"/>
 <line x1="462" y1="272" x2="782" y2="296" stroke="#F97316" stroke-width="0.6" opacity="0.20" stroke-dasharray="3 7"/>
 <line x1="442" y1="116" x2="766" y2="138" stroke="#FBBF24" stroke-width="0.6" opacity="0.17" stroke-dasharray="3 8"/>
 <line x1="626" y1="218" x2="946" y2="232" stroke="#475569" stroke-width="0.5" opacity="0.15" stroke-dasharray="3 9"/>
 <line x1="148" y1="314" x2="396" y2="556" stroke="#EF4444" stroke-width="0.6" opacity="0.14" stroke-dasharray="3 9"/>
- 
-<!-- Ghost edges to canvas border nodes -->
+<!-- Ghost edges -->
 <line x1="148" y1="314" x2="48"   y2="100" stroke="#EF4444" stroke-width="0.7" opacity="0.18" stroke-dasharray="2 9"/>
 <line x1="148" y1="314" x2="56"   y2="506" stroke="#EF4444" stroke-width="0.7" opacity="0.17" stroke-dasharray="2 9"/>
 <line x1="1076" y1="148" x2="1158" y2="70"  stroke="#1E3A5F" stroke-width="0.5" opacity="0.16"/>
 <line x1="1096" y1="322" x2="1148" y2="422" stroke="#1E3A5F" stroke-width="0.5" opacity="0.14"/>
 <line x1="1062" y1="508" x2="1162" y2="558" stroke="#1E3A5F" stroke-width="0.4" opacity="0.13"/>
- 
- 
-<!-- ─── PULSE RINGS on P0 ─── -->
+
+<!-- PULSE RINGS -->
 <circle class="ring1" cx="148" cy="314" r="28" fill="none" stroke="#EF4444" stroke-width="1.8"/>
 <circle class="ring2" cx="148" cy="314" r="28" fill="none" stroke="#EF4444" stroke-width="1.2"/>
 <circle class="ring3" cx="148" cy="314" r="32" fill="none" stroke="#EF4444" stroke-width="0.8" opacity="0.5"/>
- 
- 
-<!-- ─── NODES ─── -->
- 
-<!-- P0 — patient zero, largest, brightest -->
-<circle cx="148" cy="314" r="22"  fill="#EF4444"            class="hot"/>
-<circle cx="148" cy="314" r="22"  fill="none" stroke="#FF7070" stroke-width="2.5" class="hot"/>
-<circle cx="148" cy="314" r="9"   fill="#FF9090"            class="hot"/>
- 
-<!-- L1 — immediate victims, bright red -->
-<circle cx="290" cy="186" r="14"  fill="#EF4444"            class="hot"/>
-<circle cx="290" cy="186" r="14"  fill="none" stroke="#FF7E7E" stroke-width="1.9"/>
-<circle cx="308" cy="382" r="14"  fill="#EF4444"            class="hot"/>
-<circle cx="308" cy="382" r="14"  fill="none" stroke="#FF7E7E" stroke-width="1.9"/>
-<circle cx="268" cy="492" r="12"  fill="#EF4444"            class="warm"/>
-<circle cx="268" cy="492" r="12"  fill="none" stroke="#DC2626" stroke-width="1.5"/>
- 
-<!-- L2 — second wave, red fading -->
-<circle cx="442" cy="116" r="12"  fill="#EF4444"            class="warm"/>
-<circle cx="442" cy="116" r="12"  fill="none" stroke="#DC2626" stroke-width="1.4"/>
-<circle cx="462" cy="272" r="12"  fill="#EF4444"            class="warm"/>
-<circle cx="462" cy="272" r="12"  fill="none" stroke="#DC2626" stroke-width="1.4"/>
-<circle cx="456" cy="432" r="11"  fill="#DC2626"/>
-<circle cx="456" cy="432" r="11"  fill="none" stroke="#B91C1C" stroke-width="1.2"/>
-<circle cx="396" cy="556" r="10"  fill="#B91C1C"/>
-<circle cx="396" cy="556" r="10"  fill="none" stroke="#991B1B" stroke-width="1.1"/>
- 
-<!-- L3 — spreading, orange -->
-<circle cx="608" cy="72"  r="11"  fill="#F97316"/>
-<circle cx="608" cy="72"  r="11"  fill="none" stroke="#EA580C" stroke-width="1.2"/>
-<circle cx="626" cy="218" r="11"  fill="#F97316"/>
-<circle cx="626" cy="218" r="11"  fill="none" stroke="#EA580C" stroke-width="1.2"/>
-<circle cx="636" cy="374" r="10"  fill="#EA580C"/>
-<circle cx="636" cy="374" r="10"  fill="none" stroke="#C2410C" stroke-width="1.0"/>
-<circle cx="602" cy="524" r="10"  fill="#C2410C"/>
-<circle cx="602" cy="524" r="10"  fill="none" stroke="#9A3412" stroke-width="1.0"/>
- 
-<!-- L4 — just touched, amber darkening -->
-<circle cx="766" cy="138" r="10"  fill="#D97706"/>
-<circle cx="766" cy="138" r="10"  fill="none" stroke="#92400E" stroke-width="1.0"/>
-<circle cx="782" cy="296" r="10"  fill="#B45309"/>
-<circle cx="782" cy="296" r="10"  fill="none" stroke="#78350F" stroke-width="0.9"/>
-<circle cx="762" cy="456" r="9"   fill="#92400E"/>
-<circle cx="762" cy="456" r="9"   fill="none" stroke="#6B2D0A" stroke-width="0.9"/>
-<circle cx="812" cy="576" r="9"   fill="#78350F"/>
-<circle cx="812" cy="576" r="9"   fill="none" stroke="#451A03" stroke-width="0.8"/>
- 
-<!-- L5 — clean, dark steel blue -->
-<circle cx="930" cy="78"  r="9"   fill="#1E3A5F" stroke="#2D4A6B" stroke-width="1.0"/>
-<circle cx="946" cy="232" r="9"   fill="#1E3A5F" stroke="#2D4A6B" stroke-width="1.0"/>
-<circle cx="940" cy="402" r="8"   fill="#1A3350" stroke="#253F5E" stroke-width="0.9"/>
-<circle cx="916" cy="558" r="8"   fill="#1A3350" stroke="#253F5E" stroke-width="0.9"/>
- 
-<!-- L6 — clean, very dark -->
-<circle cx="1076" cy="148" r="8"  fill="#132235" stroke="#1E3A5F" stroke-width="0.8"/>
-<circle cx="1096" cy="322" r="7"  fill="#0F1A29" stroke="#1E3A5F" stroke-width="0.8"/>
-<circle cx="1062" cy="508" r="7"  fill="#0F1A29" stroke="#1A2E48" stroke-width="0.7"/>
- 
-<!-- Ghost edge nodes (border, very faint) -->
-<circle cx="48"  cy="100" r="4"   fill="none" stroke="#1E3A5F" stroke-width="0.7" opacity="0.38"/>
-<circle cx="56"  cy="506" r="5"   fill="none" stroke="#1E3A5F" stroke-width="0.7" opacity="0.38"/>
-<circle cx="48"  cy="370" r="4"   fill="none" stroke="#1E3A5F" stroke-width="0.6" opacity="0.30"/>
-<circle cx="1158" cy="70" r="5"   fill="none" stroke="#132235" stroke-width="0.6" opacity="0.30"/>
-<circle cx="1148" cy="422" r="5"  fill="none" stroke="#132235" stroke-width="0.6" opacity="0.27"/>
-<circle cx="1162" cy="558" r="4"  fill="none" stroke="#0F1A29" stroke-width="0.5" opacity="0.25"/>
- 
+
+<!-- NODES -->
+<circle cx="148" cy="314" r="22" fill="#EF4444" class="hot"/>
+<circle cx="148" cy="314" r="22" fill="none" stroke="#FF7070" stroke-width="2.5" class="hot"/>
+<circle cx="148" cy="314" r="9"  fill="#FF9090" class="hot"/>
+<circle cx="290" cy="186" r="14" fill="#EF4444" class="hot"/>
+<circle cx="290" cy="186" r="14" fill="none" stroke="#FF7E7E" stroke-width="1.9"/>
+<circle cx="308" cy="382" r="14" fill="#EF4444" class="hot"/>
+<circle cx="308" cy="382" r="14" fill="none" stroke="#FF7E7E" stroke-width="1.9"/>
+<circle cx="268" cy="492" r="12" fill="#EF4444" class="warm"/>
+<circle cx="268" cy="492" r="12" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+<circle cx="442" cy="116" r="12" fill="#EF4444" class="warm"/>
+<circle cx="442" cy="116" r="12" fill="none" stroke="#DC2626" stroke-width="1.4"/>
+<circle cx="462" cy="272" r="12" fill="#EF4444" class="warm"/>
+<circle cx="462" cy="272" r="12" fill="none" stroke="#DC2626" stroke-width="1.4"/>
+<circle cx="456" cy="432" r="11" fill="#DC2626"/>
+<circle cx="456" cy="432" r="11" fill="none" stroke="#B91C1C" stroke-width="1.2"/>
+<circle cx="396" cy="556" r="10" fill="#B91C1C"/>
+<circle cx="396" cy="556" r="10" fill="none" stroke="#991B1B" stroke-width="1.1"/>
+<circle cx="608" cy="72"  r="11" fill="#F97316"/>
+<circle cx="608" cy="72"  r="11" fill="none" stroke="#EA580C" stroke-width="1.2"/>
+<circle cx="626" cy="218" r="11" fill="#F97316"/>
+<circle cx="626" cy="218" r="11" fill="none" stroke="#EA580C" stroke-width="1.2"/>
+<circle cx="636" cy="374" r="10" fill="#EA580C"/>
+<circle cx="636" cy="374" r="10" fill="none" stroke="#C2410C" stroke-width="1.0"/>
+<circle cx="602" cy="524" r="10" fill="#C2410C"/>
+<circle cx="602" cy="524" r="10" fill="none" stroke="#9A3412" stroke-width="1.0"/>
+<circle cx="766" cy="138" r="10" fill="#D97706"/>
+<circle cx="766" cy="138" r="10" fill="none" stroke="#92400E" stroke-width="1.0"/>
+<circle cx="782" cy="296" r="10" fill="#B45309"/>
+<circle cx="782" cy="296" r="10" fill="none" stroke="#78350F" stroke-width="0.9"/>
+<circle cx="762" cy="456" r="9"  fill="#92400E"/>
+<circle cx="762" cy="456" r="9"  fill="none" stroke="#6B2D0A" stroke-width="0.9"/>
+<circle cx="812" cy="576" r="9"  fill="#78350F"/>
+<circle cx="812" cy="576" r="9"  fill="none" stroke="#451A03" stroke-width="0.8"/>
+<circle cx="930" cy="78"  r="9"  fill="#1E3A5F" stroke="#2D4A6B" stroke-width="1.0"/>
+<circle cx="946" cy="232" r="9"  fill="#1E3A5F" stroke="#2D4A6B" stroke-width="1.0"/>
+<circle cx="940" cy="402" r="8"  fill="#1A3350" stroke="#253F5E" stroke-width="0.9"/>
+<circle cx="916" cy="558" r="8"  fill="#1A3350" stroke="#253F5E" stroke-width="0.9"/>
+<circle cx="1076" cy="148" r="8" fill="#132235" stroke="#1E3A5F" stroke-width="0.8"/>
+<circle cx="1096" cy="322" r="7" fill="#0F1A29" stroke="#1E3A5F" stroke-width="0.8"/>
+<circle cx="1062" cy="508" r="7" fill="#0F1A29" stroke="#1A2E48" stroke-width="0.7"/>
+<circle cx="48"  cy="100" r="4"  fill="none" stroke="#1E3A5F" stroke-width="0.7" opacity="0.38"/>
+<circle cx="56"  cy="506" r="5"  fill="none" stroke="#1E3A5F" stroke-width="0.7" opacity="0.38"/>
+<circle cx="48"  cy="370" r="4"  fill="none" stroke="#1E3A5F" stroke-width="0.6" opacity="0.30"/>
+<circle cx="1158" cy="70"  r="5" fill="none" stroke="#132235" stroke-width="0.6" opacity="0.30"/>
+<circle cx="1148" cy="422" r="5" fill="none" stroke="#132235" stroke-width="0.6" opacity="0.27"/>
+<circle cx="1162" cy="558" r="4" fill="none" stroke="#0F1A29" stroke-width="0.5" opacity="0.25"/>
+
 </svg>
 </div>
   
