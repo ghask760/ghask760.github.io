@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Regulators Now Require for Supply Chain Security — Gabriel Hasik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e;
+      --bg2: #141414;
+      --bg3: #1a1a1a;
+      --border: #242424;
+      --muted: #3a3a3a;
+      --text-dim: #666;
+      --text-mid: #999;
+      --text: #d8d0c4;
+      --text-hi: #f0e8dc;
+      --accent: #d4821a;
+      --accent2: #e8a84c;
+      --accent-dim: #3a2208;
+      --serif: 'Playfair Display', Georgia, serif;
+      --mono: 'DM Mono', 'Courier New', monospace;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .article-hero {
+      padding: 9rem 3rem 4rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 860px;
+    }
+    .back-link, .back-link-bottom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link { margin-bottom: 2.5rem; }
+    .back-link-bottom { margin-top: 2rem; }
+    .back-link:hover, .back-link-bottom:hover { color: var(--accent); }
+    .back-link::before, .back-link-bottom::before { content: '←'; }
+    .article-cat, .annex-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-dim);
+      padding: 3px 10px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .annex-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+    .article-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .article-meta .sep { color: var(--muted); }
+    .article-body {
+      max-width: 720px;
+      padding: 4rem 3rem 5rem;
+    }
+    .article-body p {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.85;
+    }
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.2;
+      margin: 3rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .article-body h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-body h4 {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-hi);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: var(--text);
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .article-body strong {
+      color: var(--text-hi);
+      font-weight: 500;
+    }
+    .article-body em {
+      color: var(--accent2);
+      font-style: italic;
+    }
+    .article-body code {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 2px;
+      color: var(--accent2);
+    }
+    .article-body pre {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 3px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--accent2);
+    }
+    .article-body blockquote {
+      border-left: 2px solid var(--accent);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+    .article-body blockquote p {
+      margin-bottom: 0;
+      color: var(--text-mid);
+    }
+    .article-body a {
+      color: var(--accent2);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+      word-break: break-word;
+    }
+    .article-body a:hover { color: var(--accent); }
+    .article-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .article-body table th {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 2px solid var(--accent-dim);
+      background: var(--bg2);
+      vertical-align: top;
+    }
+    .article-body table td {
+      padding: 0.7rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+    .article-body table tr:hover td { background: var(--bg2); }
+    .insight-box {
+      background: linear-gradient(180deg, rgba(212,130,26,0.08), rgba(212,130,26,0.02));
+      border: 1px solid var(--accent-dim);
+      padding: 1.25rem 1.25rem 0.25rem;
+      border-radius: 4px;
+      margin: 1.75rem 0 2rem;
+    }
+    .insight-box h4 {
+      margin-top: 0;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      .article-hero { padding: 7rem 1.5rem 3rem; }
+      .article-body { padding: 3rem 1.5rem 4rem; }
+      .article-body table { font-size: 0.8rem; }
+      .article-body table th, .article-body table td { padding: 0.4rem 0.5rem; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-hero">
+    <a class="back-link" href="index.html#blog">Back to Writing</a>
+    <div class="article-cat">Regulation &amp; Supply Chain Security</div>
+    <h1 class="article-title">What Regulators Now Require for Supply Chain Security</h1>
+    <div class="article-meta">
+      <span>April 2026</span>
+      <span class="sep">·</span>
+      <span>24 min read</span>
+      <span class="sep">·</span>
+      <span>Gabriel Hasik</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <div style="width:100%; margin: 2rem 0;">
+  <svg width="100%" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" style="display:block; border-radius:8px;">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#06101e"/>
+        <stop offset="55%" stop-color="#07172d"/>
+        <stop offset="100%" stop-color="#020509"/>
+      </linearGradient>
+
+      <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+        <circle cx="16" cy="16" r="0.75" fill="rgba(120,160,220,0.18)"/>
+      </pattern>
+
+      <filter id="glowSoft" x="-120%" y="-120%" width="340%" height="340%">
+        <feGaussianBlur stdDeviation="10" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <filter id="glowHot" x="-150%" y="-150%" width="400%" height="400%">
+        <feGaussianBlur stdDeviation="18" result="blur1"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2"/>
+        <feMerge>
+          <feMergeNode in="blur1"/>
+          <feMergeNode in="blur2"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <linearGradient id="lineWarm" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ff535c" stop-opacity="0.8"/>
+        <stop offset="65%" stop-color="#ff941f" stop-opacity="0.45"/>
+        <stop offset="100%" stop-color="#2a4f7c" stop-opacity="0.18"/>
+      </linearGradient>
+
+      <radialGradient id="panelGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#d4821a" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#d4821a" stop-opacity="0"/>
+      </radialGradient>
+
+      <style>
+        @keyframes pulseRing {
+          0%   { transform: scale(0.84); opacity: 0.58; }
+          70%  { transform: scale(1.34); opacity: 0.08; }
+          100% { transform: scale(1.44); opacity: 0; }
+        }
+        @keyframes flicker {
+          0%,100% { opacity: 0.98; }
+          42% { opacity: 0.82; }
+          64% { opacity: 0.9; }
+        }
+        @keyframes linePulse {
+          0%,100% { opacity: 0.34; }
+          50% { opacity: 0.18; }
+        }
+        .ringA { animation: pulseRing 3.2s ease-out infinite; transform-origin: 116px 314px; }
+        .ringB { animation: pulseRing 3.2s ease-out 1.2s infinite; transform-origin: 116px 314px; }
+        .flicker { animation: flicker 3.3s ease-in-out infinite; }
+        .linePulse { animation: linePulse 4.6s ease-in-out infinite; }
+      </style>
+    </defs>
+
+    <rect width="1200" height="628" rx="18" fill="url(#bg)"/>
+    <rect width="1200" height="628" rx="18" fill="url(#dots)" opacity="0.7"/>
+
+    <!-- ambient fields -->
+    <circle cx="220" cy="314" r="230" fill="#0d3d78" opacity="0.16" filter="url(#glowSoft)"/>
+    <circle cx="680" cy="314" r="170" fill="#d4821a" opacity="0.07" filter="url(#glowSoft)"/>
+
+    <!-- left supply chain dependency network -->
+    <g fill="none" stroke-linecap="round">
+      <line x1="116" y1="314" x2="248" y2="170" stroke="#ff5a62" stroke-width="2.15" opacity="0.62" class="linePulse"/>
+      <line x1="116" y1="314" x2="266" y2="286" stroke="#ff6c4a" stroke-width="2.05" opacity="0.54" class="linePulse"/>
+      <line x1="116" y1="314" x2="246" y2="430" stroke="#ff5a62" stroke-width="2.0" opacity="0.5" class="linePulse"/>
+
+      <line x1="248" y1="170" x2="402" y2="116" stroke="#ff7145" stroke-width="1.65" opacity="0.44"/>
+      <line x1="248" y1="170" x2="424" y2="238" stroke="#ff8e24" stroke-width="1.65" opacity="0.38"/>
+      <line x1="266" y1="286" x2="424" y2="238" stroke="#ff8e24" stroke-width="1.6" opacity="0.38"/>
+      <line x1="266" y1="286" x2="438" y2="388" stroke="#ff7a2f" stroke-width="1.55" opacity="0.34"/>
+      <line x1="246" y1="430" x2="438" y2="388" stroke="#ff7a2f" stroke-width="1.55" opacity="0.3"/>
+      <line x1="246" y1="430" x2="390" y2="520" stroke="#ff5948" stroke-width="1.45" opacity="0.24"/>
+
+      <line x1="402" y1="116" x2="550" y2="210" stroke="#ff9b1f" stroke-width="1.4" opacity="0.26"/>
+      <line x1="424" y1="238" x2="550" y2="210" stroke="#ffb12b" stroke-width="1.35" opacity="0.24"/>
+      <line x1="424" y1="238" x2="548" y2="418" stroke="#ff8f1f" stroke-width="1.35" opacity="0.22"/>
+      <line x1="438" y1="388" x2="548" y2="418" stroke="#ff8f1f" stroke-width="1.3" opacity="0.2"/>
+      <line x1="390" y1="520" x2="548" y2="418" stroke="#ff6f26" stroke-width="1.25" opacity="0.18"/>
+
+      <line x1="550" y1="210" x2="646" y2="314" stroke="#e8a84c" stroke-width="1.9" opacity="0.34"/>
+      <line x1="548" y1="418" x2="646" y2="314" stroke="#e8a84c" stroke-width="1.9" opacity="0.34"/>
+    </g>
+
+    <!-- center regulatory control panel -->
+    <g>
+      <circle cx="646" cy="314" r="124" fill="url(#panelGlow)"/>
+      <rect x="558" y="210" width="176" height="208" rx="16" fill="#0f1520" stroke="#3a2208" stroke-width="1.2"/>
+      <rect x="578" y="236" width="136" height="30" rx="8" fill="#141c28" stroke="#3a2208"/>
+      <text x="646" y="255" fill="#e8a84c" font-size="13" font-family="DM Mono, monospace" text-anchor="middle" letter-spacing="2">CONTROL LAYER</text>
+
+      <rect x="578" y="284" width="136" height="24" rx="6" fill="#121926"/>
+      <rect x="578" y="320" width="136" height="24" rx="6" fill="#121926"/>
+      <rect x="578" y="356" width="136" height="24" rx="6" fill="#121926"/>
+      <rect x="578" y="392" width="136" height="24" rx="6" fill="#121926"/>
+
+      <text x="606" y="300" fill="#ff9454" font-size="12" font-family="DM Mono, monospace">NIS2</text>
+      <text x="646" y="300" fill="#d8d0c4" font-size="12" font-family="DM Sans, sans-serif">Dependencies</text>
+
+      <text x="606" y="336" fill="#ff9454" font-size="12" font-family="DM Mono, monospace">DORA</text>
+      <text x="646" y="336" fill="#d8d0c4" font-size="12" font-family="DM Sans, sans-serif">Oversight</text>
+
+      <text x="598" y="372" fill="#ff9454" font-size="12" font-family="DM Mono, monospace">ISO</text>
+      <text x="646" y="372" fill="#d8d0c4" font-size="12" font-family="DM Sans, sans-serif">Controls</text>
+
+      <text x="592" y="408" fill="#ff9454" font-size="12" font-family="DM Mono, monospace">NIST</text>
+      <text x="646" y="408" fill="#d8d0c4" font-size="12" font-family="DM Sans, sans-serif">Governance</text>
+
+      <text x="646" y="440" fill="#e8a84c" font-size="11" font-family="DM Mono, monospace" text-anchor="middle" letter-spacing="1.3">EVIDENCE • MONITORING • RESPONSE</text>
+    </g>
+
+    <!-- right evidence/output network -->
+    <g fill="none" stroke-linecap="round">
+      <line x1="734" y1="314" x2="840" y2="190" stroke="#547db1" stroke-width="1.35" opacity="0.22"/>
+      <line x1="734" y1="314" x2="866" y2="314" stroke="#587cab" stroke-width="1.45" opacity="0.24"/>
+      <line x1="734" y1="314" x2="842" y2="438" stroke="#476f9a" stroke-width="1.35" opacity="0.22"/>
+
+      <line x1="840" y1="190" x2="988" y2="126" stroke="#355a87" stroke-width="1.0" opacity="0.16"/>
+      <line x1="840" y1="190" x2="998" y2="244" stroke="#355a87" stroke-width="1.0" opacity="0.15"/>
+      <line x1="866" y1="314" x2="998" y2="244" stroke="#2d4f79" stroke-width="1.0" opacity="0.15"/>
+      <line x1="866" y1="314" x2="1002" y2="384" stroke="#2d4f79" stroke-width="1.0" opacity="0.14"/>
+      <line x1="842" y1="438" x2="1002" y2="384" stroke="#27476d" stroke-width="1.0" opacity="0.13"/>
+      <line x1="842" y1="438" x2="978" y2="504" stroke="#23415f" stroke-width="0.95" opacity="0.12"/>
+    </g>
+
+    <!-- pulse source -->
+    <g>
+      <circle cx="116" cy="314" r="72" fill="#ff3f4f" opacity="0.14" filter="url(#glowHot)"/>
+      <circle cx="116" cy="314" r="28" fill="none" stroke="#ff5f6b" stroke-width="2.1" opacity="0.4" class="ringA"/>
+      <circle cx="116" cy="314" r="28" fill="none" stroke="#ff7e88" stroke-width="1.25" opacity="0.3" class="ringB"/>
+      <circle cx="116" cy="314" r="22" fill="#ff5260" filter="url(#glowHot)" class="flicker"/>
+      <circle cx="116" cy="314" r="10" fill="#ffc6bb" class="flicker"/>
+    </g>
+
+    <!-- dependency nodes -->
+    <g>
+      <circle cx="248" cy="170" r="14" fill="#ff6c76" filter="url(#glowSoft)" class="flicker"/>
+      <circle cx="266" cy="286" r="13" fill="#ff694f" filter="url(#glowSoft)" class="flicker"/>
+      <circle cx="246" cy="430" r="12" fill="#ef4a50" filter="url(#glowSoft)" class="flicker"/>
+
+      <circle cx="402" cy="116" r="11" fill="#d93b45" filter="url(#glowSoft)"/>
+      <circle cx="424" cy="238" r="11" fill="#ff8a28" filter="url(#glowSoft)"/>
+      <circle cx="438" cy="388" r="10" fill="#ff4b3c" filter="url(#glowSoft)"/>
+      <circle cx="390" cy="520" r="8" fill="#d52831" filter="url(#glowSoft)"/>
+
+      <circle cx="550" cy="210" r="10" fill="#f3a11e" filter="url(#glowSoft)"/>
+      <circle cx="548" cy="418" r="10" fill="#b85a0b" filter="url(#glowSoft)"/>
+    </g>
+
+    <!-- output nodes as symbolic outcomes -->
+    <g>
+      <circle cx="840" cy="190" r="10" fill="#294f7d"/>
+      <circle cx="866" cy="314" r="10" fill="#2f5786"/>
+      <circle cx="842" cy="438" r="10" fill="#24476d"/>
+
+      <rect x="968" y="108" width="44" height="36" rx="7" fill="#111926" stroke="#203b5a"/>
+      <line x1="980" y1="120" x2="1000" y2="120" stroke="#7da0cc" stroke-width="1.2" opacity="0.6"/>
+      <line x1="980" y1="128" x2="1002" y2="128" stroke="#7da0cc" stroke-width="1.2" opacity="0.55"/>
+      <line x1="980" y1="136" x2="996" y2="136" stroke="#7da0cc" stroke-width="1.2" opacity="0.48"/>
+
+      <rect x="978" y="226" width="40" height="36" rx="7" fill="#111926" stroke="#203b5a"/>
+      <path d="M990 249 l6 6 l12 -14" fill="none" stroke="#88b7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <rect x="982" y="366" width="40" height="36" rx="7" fill="#111926" stroke="#203b5a"/>
+      <circle cx="996" cy="384" r="6.5" fill="none" stroke="#88b7ff" stroke-width="1.8"/>
+      <line x1="1001" y1="389" x2="1008" y2="396" stroke="#88b7ff" stroke-width="1.8" stroke-linecap="round"/>
+
+      <rect x="960" y="486" width="40" height="36" rx="7" fill="#111926" stroke="#203b5a"/>
+      <line x1="970" y1="496" x2="990" y2="496" stroke="#88b7ff" stroke-width="1.2" opacity="0.65"/>
+      <line x1="970" y1="504" x2="988" y2="504" stroke="#88b7ff" stroke-width="1.2" opacity="0.55"/>
+      <line x1="970" y1="512" x2="984" y2="512" stroke="#88b7ff" stroke-width="1.2" opacity="0.45"/>
+    </g>
+  </svg>
+</div>
+
+    <h2>Management Summary</h2>
+
+    <p>Regulators no longer treat supply chain security as optional good practice. It is increasingly an <strong>explicit legal and supervisory expectation</strong>. The common theme across NIS2, DORA, ISO 27001:2022, and NIST CSF 2.0 is simple: organizations must know their dependencies, manage supplier risk proportionately, maintain evidence, and be able to respond quickly when third-party incidents occur.</p>
+
+    <p>For security leaders, the practical implication is that supply chain security now sits at the intersection of <strong>legal compliance, operational resilience, and audit readiness</strong>. The four frameworks differ in scope and enforcement mechanism, but they converge on the same five expectations:</p>
+
+    <ol>
+      <li><strong>Know your dependencies</strong></li>
+      <li><strong>Apply risk-based due diligence and contractual controls</strong></li>
+      <li><strong>Monitor suppliers continuously, not annually</strong></li>
+      <li><strong>Control and segment third-party access</strong></li>
+      <li><strong>Prepare to detect, report, and contain supply chain incidents fast</strong></li>
+    </ol>
+
+    <p>The sections below explain each framework's specific requirements, what they mean in practice, and how to implement them — including sample solutions, evidence expectations, and ownership recommendations.</p>
+
+    <div class="insight-box">
+      <h4>Executive lens</h4>
+      <p>The most efficient path is not to build four separate compliance workstreams. It is to build <strong>one integrated supply chain risk program</strong> and map its evidence to each framework.</p>
+    </div>
+
+    <hr class="article-divider" />
+
+    <h2>1. NIS2 Makes Supply Chain Security a Legal Obligation</h2>
+
+    <h3>The big picture</h3>
+
+    <p>NIS2 explicitly requires entities to address <strong>supply chain security</strong>, including supplier relationships, supplier-specific vulnerabilities, cybersecurity practices, and secure development aspects where relevant. It also increases pressure through strict incident reporting timelines.</p>
+
+    <p><strong>NIS2 Article 21(2)(d)</strong> explicitly mandates “supply chain security, including security-related aspects concerning the relationships between each entity and its direct suppliers or service providers.” Article 21(3) requires entities to consider <strong>vulnerabilities specific to each supplier</strong>, their <strong>cybersecurity practices</strong>, and <strong>secure development procedures</strong>. Non-compliance carries fines up to <strong>€10 million or 2% of worldwide turnover</strong> for essential entities and <strong>€7 million or 1.4%</strong> for important entities.</p>
+
+    <p>NIS2’s <strong>three-stage incident reporting</strong> under <strong>Article 23</strong> creates urgency for supply chain breaches:</p>
+
+    <ol>
+      <li><strong>24-hour early warning</strong> — must flag potential cross-border impact</li>
+      <li><strong>72-hour incident notification</strong> — severity assessment, indicators of compromise, actions taken</li>
+      <li><strong>1-month final report</strong> — root cause analysis, complete chronology, lessons learned</li>
+    </ol>
+
+    <p>As of 2025, the European Commission had sent <strong>reasoned opinions to 19 of 27 Member States</strong> for failing to complete transposition by the October 2024 deadline.</p>
+
+    <p><strong>Key references:</strong></p>
+    <ul>
+      <li><a href="https://www.nis-2-directive.com/NIS_2_Directive_Article_21.html" target="_blank" rel="noopener noreferrer">NIS2 Article 21</a></li>
+      <li><a href="https://www.nis-2-directive.com/NIS_2_Directive_Article_23.html" target="_blank" rel="noopener noreferrer">NIS2 Article 23</a></li>
+      <li><a href="https://digital-strategy.ec.europa.eu/en/policies/nis-transposition" target="_blank" rel="noopener noreferrer">European Commission transposition tracker</a></li>
+    </ul>
+
+    <h3>What this means in practice</h3>
+
+    <p>A NIS2-covered organization should be able to demonstrate that it:</p>
+    <ul>
+      <li>knows which suppliers support critical services,</li>
+      <li>classifies supplier criticality and risk,</li>
+      <li>imposes baseline security requirements,</li>
+      <li>monitors changes in supplier risk,</li>
+      <li>and can report supply chain incidents within the required timelines.</li>
+    </ul>
+
+    <h3>Sample solution to fulfill the requirement</h3>
+    <h4>Practical implementation model</h4>
+    <ol>
+      <li><strong>Create a critical supplier inventory</strong> — Identify suppliers supporting critical or important services, including IT, cloud, MSPs, SaaS, software vendors, and key sub-processors.</li>
+      <li><strong>Risk-tier the supplier base</strong> — Use criteria such as business criticality, privileged access, data sensitivity, concentration risk, and recovery dependency.</li>
+      <li><strong>Introduce minimum security requirements</strong> — MFA, incident notification clauses, vulnerability management expectations, encryption, logging, and access control standards.</li>
+      <li><strong>Establish supplier monitoring</strong> — Annual reassessment for lower-tier suppliers; continuous monitoring and quarterly review for high-risk suppliers.</li>
+      <li><strong>Integrate suppliers into incident response</strong> — Define points of contact, notification paths, evidence-sharing expectations, and escalation timelines aligned to 24h / 72h / 1 month reporting.</li>
+      <li><strong>Maintain evidence</strong> — Keep risk assessments, contractual clauses, monitoring outputs, action plans, and incident logs.</li>
+    </ol>
+
+    <h3>Example artifacts / evidence</h3>
+    <ul>
+      <li>supplier inventory and criticality matrix,</li>
+      <li>third-party risk methodology,</li>
+      <li>security requirements standard,</li>
+      <li>signed contracts with notification clauses,</li>
+      <li>incident playbooks including supplier scenarios,</li>
+      <li>breach reporting decision tree,</li>
+      <li>management reports.</li>
+    </ul>
+
+    <h3>Suggested owners</h3>
+    <ul>
+      <li><strong>Primary:</strong> CISO / ISO / Third-Party Risk Lead</li>
+      <li><strong>Supporting:</strong> Procurement, Legal, Enterprise Risk, IT Operations, Business Service Owners</li>
+    </ul>
+
+    <hr class="article-divider" />
+
+    <h2>2. DORA Mandates Oversight of ICT Third-Party Risk</h2>
+
+    <h3>The big picture</h3>
+
+    <p>DORA expects financial entities to maintain a <strong>Register of Information</strong>, conduct <strong>pre-contract due diligence</strong>, assess <strong>ICT concentration risk</strong>, and ensure resilience in the use of ICT third-party services.</p>
+
+    <p>The <a href="https://www.digital-operational-resilience-act.com/" target="_blank" rel="noopener noreferrer">Digital Operational Resilience Act</a>, directly applicable since January 17, 2025, requires financial entities under <strong>Article 28(3)</strong> to maintain a <strong>comprehensive Register of Information</strong> documenting all contractual arrangements with ICT third-party service providers — at entity, sub-consolidated, and consolidated levels. First submissions were due <strong>April 30, 2025</strong>. Article 28(4) requires pre-contractual <strong>due diligence</strong>; <strong>Article 29</strong> mandates <strong>ICT concentration risk assessment</strong>; Article 28(5) requires use of the <strong>most up-to-date and highest quality information security standards</strong> for critical functions.</p>
+
+    <p>DORA’s Critical Third-Party Provider oversight framework (Articles 31–44) empowers European Supervisory Authorities — EBA, EIOPA, and ESMA — to designate, investigate, and inspect systemically important ICT providers.</p>
+
+    <p><strong>Key references:</strong></p>
+    <ul>
+      <li><a href="https://www.digital-operational-resilience-act.com/Article_28.html" target="_blank" rel="noopener noreferrer">DORA Article 28</a></li>
+      <li><a href="https://www.digital-operational-resilience-act.com/Article_29.html" target="_blank" rel="noopener noreferrer">DORA Article 29</a></li>
+      <li><a href="https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en" target="_blank" rel="noopener noreferrer">EIOPA DORA hub</a></li>
+    </ul>
+
+    <h3>What this means in practice</h3>
+
+    <p>For a financial entity, this is not just a vendor register exercise. It is a control framework around:</p>
+    <ul>
+      <li>which ICT providers are used,</li>
+      <li>what critical or important functions they support,</li>
+      <li>whether concentration risk exists,</li>
+      <li>whether contracts contain the required resilience and oversight elements,</li>
+      <li>and whether management can evidence effective oversight.</li>
+    </ul>
+
+    <h3>Sample solution to fulfill the requirement</h3>
+    <h4>Practical implementation model</h4>
+    <ol>
+      <li><strong>Build a DORA-aligned Register of Information</strong> — Centralize all ICT third-party arrangements, including service descriptions, supported functions, subcontractors, geographic delivery, data locations, contract terms, exit dependencies, and criticality.</li>
+      <li><strong>Perform pre-contract due diligence</strong> — Review security posture, resilience controls, certifications, incident history, financial stability, subcontracting model, and dependency on fourth parties.</li>
+      <li><strong>Assess concentration risk</strong> — Identify where multiple critical services rely on the same cloud provider, software vendor, telecom provider, or data transfer platform.</li>
+      <li><strong>Strengthen contractual controls</strong> — Include audit rights, notification timelines, security requirements, testing expectations, data access provisions, termination support, and exit assistance.</li>
+      <li><strong>Link monitoring to governance</strong> — Review critical ICT providers at least quarterly, escalate material issues to management, and ensure the Register stays current.</li>
+      <li><strong>Test operational resilience</strong> — Include third-party failure and outage scenarios in business continuity and incident response exercises.</li>
+    </ol>
+
+    <h3>Example artifacts / evidence</h3>
+    <ul>
+      <li>DORA Register of Information,</li>
+      <li>critical / important function mapping,</li>
+      <li>due diligence checklist and assessments,</li>
+      <li>concentration risk analysis,</li>
+      <li>contract clause library,</li>
+      <li>governance committee minutes,</li>
+      <li>exit plans and test results.</li>
+    </ul>
+
+    <h3>Suggested owners</h3>
+    <ul>
+      <li><strong>Primary:</strong> Operational Resilience Lead / CISO / ICT Risk Lead</li>
+      <li><strong>Supporting:</strong> Procurement, Legal, Compliance, BCM, Architecture, Internal Audit</li>
+    </ul>
+
+    <hr class="article-divider" />
+
+    <h2>3. ISO 27001:2022 Annex A Provides the Implementation Blueprint</h2>
+
+    <h3>The big picture</h3>
+
+    <p>ISO 27001:2022 offers the clearest implementation controls for supplier security through four dedicated controls:</p>
+    <ul>
+      <li><strong>A.5.19</strong> — Supplier relationships</li>
+      <li><strong>A.5.20</strong> — Supplier agreements</li>
+      <li><strong>A.5.21</strong> — ICT supply chain</li>
+      <li><strong>A.5.22</strong> — Monitoring and change management</li>
+    </ul>
+
+    <p>These four controls directly address supply chain security:</p>
+    <ul>
+      <li><strong>A.5.19 — Information Security in Supplier Relationships</strong>: supplier vetting, due diligence, criticality segmentation, and a formal supplier security policy</li>
+      <li><strong>A.5.20 — Addressing Information Security Within Supplier Agreements</strong>: contractual security clauses, right-to-audit provisions, breach notification timeframes, and formalized obligations</li>
+      <li><strong>A.5.21 — Managing Information Security in the ICT Supply Chain</strong>: new in the 2022 revision; extends into sub-processor transparency, software integrity, and ICT component assurance</li>
+      <li><strong>A.5.22 — Monitoring, Review and Change Management</strong>: continuous monitoring, triggered reassessment, and remediation tracking</li>
+    </ul>
+
+    <p><strong>Key references:</strong></p>
+    <ul>
+      <li><a href="https://www.isms.online/iso-27001/annex-a-2022/" target="_blank" rel="noopener noreferrer">ISO 27001:2022 Annex A overview</a></li>
+      <li><a href="https://www.isms.online/iso-27001/annex-a-2022/5-19-information-security-supplier-relationships-2022/" target="_blank" rel="noopener noreferrer">A.5.19</a></li>
+      <li><a href="https://www.isms.online/iso-27001/annex-a-2022/5-20-information-security-within-supplier-agreements-2022/" target="_blank" rel="noopener noreferrer">A.5.20</a></li>
+      <li><a href="https://hightable.io/iso-27001-annex-a-5-21-managing-information-security-in-the-ict-supply-chain/" target="_blank" rel="noopener noreferrer">A.5.21 implementation guide</a></li>
+    </ul>
+
+    <h3>What this means in practice</h3>
+
+    <p>ISO turns the general expectation into a manageable control set. It helps organizations translate supply chain risk into policies, contracts, reviews, technical controls, and auditable evidence.</p>
+
+    <h3>Sample solutions by control</h3>
+
+    <h4>A.5.19 — Information security in supplier relationships</h4>
+    <p><strong>Sample solution:</strong> Create a supplier security policy that requires supplier onboarding due diligence, classification by criticality, and baseline controls depending on supplier tier.</p>
+    <p><strong>Evidence:</strong></p>
+    <ul>
+      <li>supplier security policy,</li>
+      <li>onboarding checklist,</li>
+      <li>risk-tiering criteria,</li>
+      <li>approvals and exceptions.</li>
+    </ul>
+
+    <h4>A.5.20 — Security in supplier agreements</h4>
+    <p><strong>Sample solution:</strong> Use a standard contract appendix covering security controls, incident notification, right to audit, data handling, subcontracting restrictions, business continuity, and minimum authentication requirements.</p>
+    <p><strong>Evidence:</strong></p>
+    <ul>
+      <li>approved security clause library,</li>
+      <li>executed agreements,</li>
+      <li>contract deviation register.</li>
+    </ul>
+
+    <h4>A.5.21 — Managing information security in the ICT supply chain</h4>
+    <p><strong>Sample solution:</strong> For software and ICT suppliers, require secure development evidence, SBOM where feasible, vulnerability disclosure expectations, sub-processor transparency, and verification of software or artifact integrity for critical tools.</p>
+    <p><strong>Evidence:</strong></p>
+    <ul>
+      <li>SBOM requests and received artifacts,</li>
+      <li>secure development questionnaires,</li>
+      <li>software approval records,</li>
+      <li>integrity verification logs,</li>
+      <li>exception approvals.</li>
+    </ul>
+
+    <h4>A.5.22 — Monitoring, review and change management</h4>
+    <p><strong>Sample solution:</strong> Implement periodic reviews for all critical suppliers, trigger ad hoc reassessment on incidents or material changes, and track remediation through a formal action register.</p>
+    <p><strong>Evidence:</strong></p>
+    <ul>
+      <li>periodic review reports,</li>
+      <li>supplier scorecards,</li>
+      <li>issue and action trackers,</li>
+      <li>re-assessment logs,</li>
+      <li>escalation records.</li>
+    </ul>
+
+    <h3>Suggested owners</h3>
+    <ul>
+      <li><strong>Primary:</strong> ISMS Manager / ISO / CISO</li>
+      <li><strong>Supporting:</strong> Procurement, Legal, Supplier Owners, Architecture, Operations</li>
+    </ul>
+
+    <hr class="article-divider" />
+
+    <h2>4. NIST CSF 2.0 Makes Supply Chain Risk a Governance Function</h2>
+
+    <h3>The big picture</h3>
+
+    <p>NIST CSF 2.0 moves supply chain risk into the <strong>GV.SC</strong> category, which is significant because it frames supply chain security as a governance and risk management responsibility, not only a technical matter.</p>
+
+    <p>The <strong>GV.SC (Cybersecurity Supply Chain Risk Management)</strong> category is the most detailed in the framework, with <strong>10 subcategories</strong> spanning program establishment, supplier criticality prioritization, contractual requirements integration, ongoing monitoring, incident planning with suppliers, and post-termination provisions. <strong>NIST SP 800-161r1</strong> provides a much deeper C-SCRM model mapped to NIST 800-53 Rev. 5 across 20 control families.</p>
+
+    <p><strong>Key references:</strong></p>
+    <ul>
+      <li><a href="https://csf.tools/reference/nist-cybersecurity-framework/v2-0/gv/gv-sc/" target="_blank" rel="noopener noreferrer">NIST CSF 2.0 GV.SC</a></li>
+      <li><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1.pdf" target="_blank" rel="noopener noreferrer">NIST SP 800-161r1</a></li>
+    </ul>
+
+    <h3>What this means in practice</h3>
+
+    <p>Organizations should be able to show that supply chain risk management is:</p>
+    <ul>
+      <li>formally established,</li>
+      <li>aligned to enterprise risk management,</li>
+      <li>integrated into supplier selection and lifecycle management,</li>
+      <li>supported by monitoring and response processes,</li>
+      <li>and reviewed by leadership.</li>
+    </ul>
+
+    <h3>Sample solution to fulfill the requirement</h3>
+    <h4>Practical implementation model aligned to GV.SC</h4>
+    <ul>
+      <li><strong>GV.SC-01 to GV.SC-04:</strong> define a formal supply chain risk program, governance model, and criticality criteria</li>
+      <li><strong>GV.SC-05:</strong> embed security requirements into procurement and contracting</li>
+      <li><strong>GV.SC-06 / 07:</strong> assess and monitor suppliers continuously</li>
+      <li><strong>GV.SC-08:</strong> coordinate incident response expectations with suppliers</li>
+      <li><strong>GV.SC-09 / 10:</strong> manage lifecycle, exit, and offboarding risks</li>
+    </ul>
+
+    <h4>Minimal viable implementation</h4>
+    <ol>
+      <li>Issue a C-SCRM policy,</li>
+      <li>define supplier tiers,</li>
+      <li>assign accountable owners,</li>
+      <li>implement third-party assessment and continuous monitoring,</li>
+      <li>integrate suppliers into incident response and crisis management,</li>
+      <li>measure performance through board-facing KPIs.</li>
+    </ol>
+
+    <h3>Example KPIs</h3>
+    <ul>
+      <li>% of critical suppliers identified,</li>
+      <li>% of critical suppliers with current assessments,</li>
+      <li>% of critical suppliers with tested incident contacts,</li>
+      <li>% of privileged suppliers behind MFA + PAM,</li>
+      <li>number of material supplier findings overdue,</li>
+      <li>concentration risk by provider / service type.</li>
+    </ul>
+
+    <h3>Suggested owners</h3>
+    <ul>
+      <li><strong>Primary:</strong> CISO / Enterprise Risk / Security Governance</li>
+      <li><strong>Supporting:</strong> Procurement, Legal, IT Risk, Resilience, Business Service Owners</li>
+    </ul>
+
+    <hr class="article-divider" />
+
+    <h2>5. How the Frameworks Map to Real Supply Chain Incidents</h2>
+
+    <p>The frameworks become easier to operationalize when they are tied to real incidents. The table below maps recurring failure patterns from the previous article to the most relevant control expectations.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Incident</th>
+          <th>Control failure</th>
+          <th>Applicable control</th>
+          <th>Reference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SolarWinds</strong></td>
+          <td>Build-process integrity not verified</td>
+          <td>ISO A.5.21, NIST GV.SC-07</td>
+          <td><a href="https://hightable.io/iso-27001-annex-a-5-21-managing-information-security-in-the-ict-supply-chain/" target="_blank" rel="noopener noreferrer">A.5.21 guide</a></td>
+        </tr>
+        <tr>
+          <td><strong>Kaseya</strong></td>
+          <td>Unpatched critical RMM; no concentration risk assessment</td>
+          <td>ISO A.5.22, DORA Art. 29</td>
+          <td><a href="https://www.digital-operational-resilience-act.com/Article_29.html" target="_blank" rel="noopener noreferrer">DORA Art. 29</a></td>
+        </tr>
+        <tr>
+          <td><strong>MOVEit</strong></td>
+          <td>No register of critical shared dependencies</td>
+          <td>DORA Art. 28(3), NIS2 Art. 21</td>
+          <td><a href="https://www.digital-operational-resilience-act.com/Article_28.html" target="_blank" rel="noopener noreferrer">DORA Art. 28</a></td>
+        </tr>
+        <tr>
+          <td><strong>Change Healthcare</strong></td>
+          <td>No MFA; poor segmentation; concentration risk</td>
+          <td>DORA Art. 29, ISO A.5.19, NIS2 Art. 23</td>
+          <td><a href="https://www.nis-2-directive.com/NIS_2_Directive_Article_23.html" target="_blank" rel="noopener noreferrer">NIS2 Art. 23</a></td>
+        </tr>
+        <tr>
+          <td><strong>XZ Utils</strong></td>
+          <td>No open-source component criticality assessment</td>
+          <td>NIS2 Art. 22, ISO A.5.21</td>
+          <td><a href="https://www.nis-2-directive.com/NIS_2_Directive_Article_22.html" target="_blank" rel="noopener noreferrer">NIS2 Art. 22</a></td>
+        </tr>
+        <tr>
+          <td><strong>Polyfill.io</strong></td>
+          <td>No SRI on third-party scripts</td>
+          <td>ISO A.5.21 (integrity verification)</td>
+          <td><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity" target="_blank" rel="noopener noreferrer">MDN SRI</a></td>
+        </tr>
+        <tr>
+          <td><strong>tj-actions</strong></td>
+          <td>Mutable CI/CD dependency tags</td>
+          <td>NIST GV.SC-07, ISO A.5.21</td>
+          <td><a href="https://attack.mitre.org/techniques/T1677/" target="_blank" rel="noopener noreferrer">MITRE T1677</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Related article: <a href="https://gabrielhasik.com/supply-chain-is-now-the-biggest-cyber-threat.html" target="_blank" rel="noopener noreferrer">The Supply Chain Is Now the Biggest Cyber Threat</a></p>
+
+    <hr class="article-divider" />
+
+    <h2>Executive Takeaway</h2>
+
+    <p>The four frameworks are not competing standards — they are <strong>converging expectations</strong>. Whether an organization is subject to NIS2, DORA, ISO 27001, NIST CSF 2.0, or a combination, the required capabilities are the same: supplier visibility, risk-based controls, contractual governance, continuous monitoring, and incident readiness.</p>
+
+    <p>The most efficient approach is to build <strong>one integrated supply chain risk program</strong> and map it to each framework’s specific evidence requirements, rather than maintaining parallel compliance silos.</p>
+
+    <p>In practice, that means:</p>
+    <ol>
+      <li><strong>one supplier inventory,</strong></li>
+      <li><strong>one criticality and risk-tiering model,</strong></li>
+      <li><strong>one contractual security baseline,</strong></li>
+      <li><strong>one monitoring and reporting model,</strong></li>
+      <li><strong>one cross-functional incident process that includes suppliers.</strong></li>
+    </ol>
+
+    <p>Organizations that build these capabilities well will not only improve compliance. They will also improve resilience, reduce blind spots, and be better positioned to defend their decisions when regulators, auditors, customers, or boards ask the same question: <strong>how well do you actually understand and control your dependencies?</strong></p>
+
+    <hr class="article-divider" />
+
+    <div id="annex-a">
+      <span class="annex-label">Annex A</span>
+      <h2>Suggested Evidence Pack for an Audit-Ready Program</h2>
+
+      <p>For teams building a regulator-ready supply chain security capability, the following evidence pack is usually enough to satisfy most first-line, second-line, and audit-level questions:</p>
+
+      <ul>
+        <li>supplier inventory with criticality ratings,</li>
+        <li>third-party risk methodology and tiering criteria,</li>
+        <li>minimum security requirements standard,</li>
+        <li>standard contractual clauses and deviation register,</li>
+        <li>due diligence records for critical suppliers,</li>
+        <li>concentration risk analysis,</li>
+        <li>continuous monitoring outputs and review minutes,</li>
+        <li>incident response playbook with supplier scenarios,</li>
+        <li>management reporting and KPI dashboard,</li>
+        <li>evidence of remediation tracking and escalations.</li>
+      </ul>
+    </div>
+
+    <hr class="article-divider" />
+
+    <a class="back-link-bottom" href="index.html#blog">Back to Writing</a>
+  </div>
+
+  <footer>
+    <span>© 2026 Gabriel Hasik</span>
+    <span>Built with intention · <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber · Risk · Supply Chain</span>
+  </footer>
+</body>
+</html>
