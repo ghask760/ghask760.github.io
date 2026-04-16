@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NBES9XC498');
+  </script>
 
-  gtag('config', 'G-NBES9XC498');
-</script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gabriel Hasik - Cyber, Risk &amp; Beyond</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
   <style>
     /* --- RESET & BASE --- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --bg:        #0e0e0e;
       --bg2:       #141414;
@@ -35,7 +38,9 @@
       --mono:      'DM Mono', 'Courier New', monospace;
       --sans:      'DM Sans', system-ui, sans-serif;
     }
+
     html { scroll-behavior: smooth; }
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -48,9 +53,12 @@
     /* --- GRAIN OVERLAY --- */
     body::before {
       content: '';
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: 0.35;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
     }
 
     /* --- SCROLLBAR --- */
@@ -60,314 +68,533 @@
 
     /* --- NAV --- */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 1.25rem 3rem;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(8px);
     }
+
     .nav-logo {
-      font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
-      color: var(--text-hi); text-decoration: none; letter-spacing: 0.02em;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
     }
+
     .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
     .nav-links a {
-      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-dim); text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
       transition: color 0.2s;
     }
+
     .nav-links a:hover { color: var(--accent); }
 
     /* --- HERO --- */
     #hero {
       min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       padding: 8rem 3rem 5rem;
       position: relative;
       border-bottom: 1px solid var(--border);
     }
+
     .hero-eyebrow {
-      font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
-      display: flex; align-items: center; gap: 1rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
+
     .hero-eyebrow::before {
-      content: ''; display: block; width: 40px; height: 1px; background: var(--accent);
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
     }
+
     h1.hero-name {
-      font-family: var(--serif); font-size: clamp(3.5rem, 9vw, 8rem);
-      font-weight: 900; line-height: 0.95; color: var(--text-hi);
-      letter-spacing: -0.02em; margin-bottom: 0.5rem;
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 900;
+      line-height: 0.95;
+      color: var(--text-hi);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
     }
-    h1.hero-name em { color: var(--accent); font-style: italic; }
+
+    h1.hero-name em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
     .hero-tagline {
-      font-family: var(--sans); font-size: clamp(1rem, 2vw, 1.3rem);
-      font-weight: 300; color: var(--text-mid); margin: 1.5rem 0 2.5rem;
-      max-width: 560px; line-height: 1.6;
+      font-family: var(--sans);
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 300;
+      color: var(--text-mid);
+      margin: 1.5rem 0 2.5rem;
+      max-width: 560px;
+      line-height: 1.6;
     }
-    .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .hero-tags {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
     .tag {
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 5px 14px;
-      border: 1px solid var(--muted); color: var(--text-dim); border-radius: 2px;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border: 1px solid var(--muted);
+      color: var(--text-dim);
+      border-radius: 2px;
     }
-    .tag.accent { border-color: var(--accent-dim); color: var(--accent); background: var(--accent-dim); }
+
+    .tag.accent {
+      border-color: var(--accent-dim);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
     .hero-scroll {
-      position: absolute; bottom: 2.5rem; right: 3rem;
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.2em;
-      color: var(--muted); text-transform: uppercase;
-      display: flex; align-items: center; gap: 0.75rem;
+      position: absolute;
+      bottom: 2.5rem;
+      right: 3rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
+
     .hero-scroll::after {
-      content: ''; display: block; width: 1px; height: 50px; background: var(--muted);
+      content: '';
+      display: block;
+      width: 1px;
+      height: 50px;
+      background: var(--muted);
     }
-    /* decorative grid lines */
+
     .hero-grid {
-      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
     }
+
     .hero-grid::before {
       content: '';
-      position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40%;
       background: repeating-linear-gradient(
-        90deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 60px
+        90deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 1px,
+        transparent 60px
       );
       opacity: 0.4;
     }
+
     .hero-grid::after {
       content: '';
-      position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40%;
       background: repeating-linear-gradient(
-        180deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 60px
+        180deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 1px,
+        transparent 60px
       );
       opacity: 0.4;
     }
 
     /* --- SECTION WRAPPER --- */
-    section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+    section {
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
     .section-label {
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 3rem;
-      display: flex; align-items: center; gap: 1rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
+
     .section-label::after {
-      content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--accent-dim);
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--accent-dim);
     }
+
     h2.section-title {
-      font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700; color: var(--text-hi); line-height: 1.15;
-      margin-bottom: 1rem; letter-spacing: -0.01em;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
     }
 
     /* --- ABOUT --- */
     #about .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
       margin-top: 3rem;
     }
-    .about-bio p { color: var(--text); font-size: 1.05rem; margin-bottom: 1.25rem; line-height: 1.8; }
+
+    .about-bio p {
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.8;
+    }
+
     .about-bio p:first-child::first-letter {
-      font-family: var(--serif); font-size: 3.5rem; font-weight: 900;
-      color: var(--accent); float: left; line-height: 0.8;
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      float: left;
+      line-height: 0.8;
       margin: 0.1em 0.12em 0 0;
     }
+
     .sidebar-block { margin-bottom: 2.5rem; }
+
     .sidebar-block h4 {
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
-    .expertise-list { list-style: none; }
+
+    .expertise-list {
+      list-style: none;
+    }
+
     .expertise-list li {
-      font-size: 0.9rem; color: var(--text-mid); padding: 0.55rem 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      padding: 0.55rem 0;
       border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
+
     .expertise-list li::before {
-      content: '\2022'; color: var(--accent); font-size: 0.75rem; flex-shrink: 0;
+      content: '\2022';
+      color: var(--accent);
+      font-size: 0.75rem;
+      flex-shrink: 0;
     }
+
     .expertise-list li:last-child { border-bottom: none; }
 
-    /* --- BLOG --- */
-    #blog .blog-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5px; margin-top: 3rem;
+    /* --- BLOG / MONITORING GRID --- */
+    #blog .blog-grid,
+    #monitoring .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5px;
+      margin-top: 3rem;
       border: 1px solid var(--border);
     }
+
     .blog-card {
       background: var(--bg);
       padding: 2rem;
       border-right: 1px solid var(--border);
       transition: background 0.2s;
-      cursor: pointer; text-decoration: none;
-      display: block; color: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: inherit;
     }
+
     .blog-card:hover { background: var(--bg2); }
+
     .blog-card-meta {
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem;
-      display: flex; align-items: center; gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
+
     .blog-card-meta .cat {
-      color: var(--accent); border: 1px solid var(--accent-dim);
-      padding: 2px 8px; border-radius: 2px;
+      color: var(--accent);
+      border: 1px solid var(--accent-dim);
+      padding: 2px 8px;
+      border-radius: 2px;
     }
+
     .blog-card h3 {
-      font-family: var(--serif); font-size: 1.3rem; font-weight: 700;
-      color: var(--text-hi); line-height: 1.3; margin-bottom: 0.75rem;
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
     }
-    .blog-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.65; }
+
+    .blog-card p {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+
     .blog-card-footer {
-      margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem;
-      font-family: var(--mono); font-size: 0.65rem; color: var(--muted);
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
     }
-    .blog-card-footer::before { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .blog-card-footer::before {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
     .blog-all {
-      margin-top: 2rem; display: inline-flex; align-items: center; gap: 0.75rem;
-      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--accent); text-decoration: none;
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
       transition: gap 0.2s;
     }
+
     .blog-all:hover { gap: 1.25rem; }
 
     /* --- PROJECTS --- */
     #projects .projects-list { margin-top: 3rem; }
+
     .project-row {
-      display: grid; grid-template-columns: 3rem 1fr auto;
-      gap: 1.5rem; align-items: center;
+      display: grid;
+      grid-template-columns: 3rem 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
       padding: 1.75rem 0;
       border-bottom: 1px solid var(--border);
       transition: padding-left 0.2s;
       cursor: default;
     }
+
     .project-row:hover { padding-left: 0.5rem; }
+
     .project-num {
-      font-family: var(--mono); font-size: 0.7rem; color: var(--muted); text-align: right;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: right;
     }
+
     .project-body h3 {
-      font-family: var(--serif); font-size: 1.2rem; font-weight: 700;
-      color: var(--text-hi); margin-bottom: 0.3rem;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      margin-bottom: 0.3rem;
     }
-    .project-body p { font-size: 0.88rem; color: var(--text-dim); }
-    .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end; }
+
+    .project-body p {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     .ptag {
-      font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 3px 9px;
-      border: 1px solid var(--border); color: var(--text-dim); border-radius: 2px;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      border-radius: 2px;
     }
 
     /* --- CONTACT --- */
     #contact .contact-inner {
       max-width: 680px;
     }
+
     #contact .contact-lead {
-      font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 700; color: var(--text-hi); line-height: 1.35;
-      margin-top: 2rem; margin-bottom: 3rem;
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.35;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
     }
-    #contact .contact-lead em { color: var(--accent); font-style: italic; }
-    .contact-links { display: flex; flex-direction: column; gap: 0; }
+
+    #contact .contact-lead em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
     .contact-link {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem 0; border-bottom: 1px solid var(--border);
-      text-decoration: none; color: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
       transition: padding-left 0.2s;
     }
+
     .contact-link:hover { padding-left: 0.75rem; }
     .contact-link:hover .cl-arrow { color: var(--accent); }
-    .cl-left { display: flex; align-items: center; gap: 1rem; }
-    .cl-icon {
-      width: 36px; height: 36px; border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem; color: var(--text-dim); flex-shrink: 0;
-    }
-    .cl-label {
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--text-dim); display: block;
-    }
-    .cl-value { font-size: 0.95rem; color: var(--text-hi); }
-    .cl-arrow { color: var(--muted); font-size: 1rem; transition: color 0.2s; }
 
-    /* --- COMMENTS --- */
-    #comments {
-      padding: 6rem 3rem;
-      border-bottom: 1px solid var(--border);
+    .cl-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
-    .comments-intro {
-      max-width: 640px; margin-bottom: 3rem;
-    }
-    .comments-intro p {
-      font-size: 0.95rem; color: var(--text-dim); margin-top: 0.75rem; line-height: 1.7;
-    }
-    .giscus-wrap {
-      max-width: 780px;
-      background: var(--bg2);
+
+    .cl-icon {
+      width: 36px;
+      height: 36px;
       border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      flex-shrink: 0;
     }
-    .giscus-placeholder {
-      text-align: center; padding: 3rem 2rem;
+
+    .cl-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
     }
-    .giscus-placeholder .ph-icon {
-      font-size: 2rem; margin-bottom: 1rem; opacity: 0.4;
+
+    .cl-value {
+      font-size: 0.95rem;
+      color: var(--text-hi);
     }
-    .giscus-placeholder h4 {
-      font-family: var(--serif); font-size: 1.2rem; color: var(--text-hi);
-      margin-bottom: 0.5rem;
-    }
-    .giscus-placeholder p {
-      font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; max-width: 480px; margin: 0 auto 1.5rem;
-    }
-    .giscus-placeholder code {
-      font-family: var(--mono); font-size: 0.78rem; background: var(--bg3);
-      border: 1px solid var(--border); padding: 0.75rem 1.25rem;
-      display: block; margin: 1rem auto; max-width: 520px;
-      color: var(--accent2); text-align: left; border-radius: 3px;
-      line-height: 1.8;
-    }
-    .giscus-steps {
-      display: flex; flex-direction: column; gap: 0;
-      margin-top: 2rem; max-width: 780px;
-    }
-    .giscus-step {
-      display: flex; align-items: flex-start; gap: 1.25rem;
-      padding: 1.25rem 0; border-bottom: 1px solid var(--border);
-    }
-    .giscus-step:last-child { border-bottom: none; }
-    .step-num {
-      font-family: var(--mono); font-size: 0.65rem; color: var(--accent);
-      background: var(--accent-dim); border: 1px solid var(--accent-dim);
-      width: 28px; height: 28px; display: flex; align-items: center;
-      justify-content: center; flex-shrink: 0; border-radius: 2px; font-weight: 600;
-    }
-    .step-body { flex: 1; }
-    .step-body strong {
-      font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--text-hi); display: block; margin-bottom: 0.3rem;
-    }
-    .step-body p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; }
-    .step-body a { color: var(--accent); text-decoration: none; }
-    .step-body a:hover { text-decoration: underline; }
-    .step-body .inline-code {
-      font-family: var(--mono); font-size: 0.78rem; background: var(--bg3);
-      border: 1px solid var(--border); padding: 1px 6px; border-radius: 2px;
-      color: var(--accent2);
+
+    .cl-arrow {
+      color: var(--muted);
+      font-size: 1rem;
+      transition: color 0.2s;
     }
 
     /* --- FOOTER --- */
     footer {
       padding: 2.5rem 3rem;
-      display: flex; align-items: center; justify-content: space-between;
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
-      color: var(--muted); text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
     }
-    footer a { color: var(--accent); text-decoration: none; }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
     /* --- ANIMATIONS --- */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
     .fade-up { animation: fadeUp 0.7s ease both; }
     .fade-up:nth-child(1) { animation-delay: 0.1s; }
     .fade-up:nth-child(2) { animation-delay: 0.25s; }
@@ -383,7 +610,11 @@
       #about .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .project-row { grid-template-columns: 2rem 1fr; }
       .project-tags { display: none; }
-      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+      footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -395,6 +626,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#blog">Writing</a></li>
+      <li><a href="#monitoring">Monitoring</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -408,7 +640,7 @@
       Gabriel<br/><em>Hasik</em>
     </h1>
     <p class="hero-tagline fade-up">
-      Security practitioner and risk thinker with 9+ years in cybersecurity and IT risk management. 
+      Security practitioner and risk thinker with 9+ years in cybersecurity and IT risk management.
       Writing about security, compliance, and the risks hidden in today’s interconnected business ecosystems.
     </p>
     <div class="hero-tags fade-up">
@@ -426,22 +658,23 @@
     <div class="about-grid">
       <div class="about-bio">
         <p>
-          I work at the intersection of cybersecurity, third-party risk, and supply chain resilience, 
-          helping organizations understand, assess, and manage the risks that come with relying on vendors, 
-          partners, and complex ecosystems. Whether it’s a gap analysis against NIS2, 
-          a compliance assessment under DORA, or building a practical Identity and Access Management (IAM) framework, 
+          I work at the intersection of cybersecurity, third-party risk, and supply chain resilience,
+          helping organizations understand, assess, and manage the risks that come with relying on vendors,
+          partners, and complex ecosystems. Whether it’s a gap analysis against NIS2,
+          a compliance assessment under DORA, or building a practical Identity and Access Management (IAM) framework,
           my focus is always the same: making security work in the real world, not just on paper.
         </p>
         <p>
-          This site is where I think out loud. You’ll find writing on risk management, 
-          third-party security, compliance, and the tools and ideas that help turn complex requirements into 
+          This site is where I think out loud. You’ll find writing on risk management,
+          third-party security, compliance, and the tools and ideas that help turn complex requirements into
           practical programs.
         </p>
         <p>
-          When I’m not focused on security and risk, I’m probably tending the garden, 
+          When I’m not focused on security and risk, I’m probably tending the garden,
           training for my next Ironman, or spending quality time with my family.
         </p>
       </div>
+
       <div class="about-sidebar">
         <div class="sidebar-block">
           <h4>Areas of Focus</h4>
@@ -454,6 +687,7 @@
             <li>Security Program Design</li>
           </ul>
         </div>
+
         <div class="sidebar-block">
           <h4>Currently</h4>
           <ul class="expertise-list">
@@ -477,7 +711,7 @@
           <span class="cat">Supply Chain</span>
           <span>April 2026</span>
         </div>
-        <h3>The Supply Chain is Now The Biggest Cyber Threat - Here's What The Numbers Say </h3>
+        <h3>The Supply Chain is Now The Biggest Cyber Threat - Here's What The Numbers Say</h3>
         <p>The supply chain is now the primary way enterprise cyber risk materializes - here's what the numbers, the incidents, and the attackers themselves tell us about it.</p>
         <div class="blog-card-footer">45 min read -</div>
       </a>
@@ -491,7 +725,8 @@
         <p>Regulators, critical suppliers, and the uncomfortable truth that third-party risk is no longer procurement paperwork but a core security and resilience obligation.</p>
         <div class="blog-card-footer">24 min read -</div>
       </a>
-<!--
+
+      <!--
       <a class="blog-card" href="#post-concentration-risk">
         <div class="blog-card-meta">
           <span class="cat">Risk</span>
@@ -501,7 +736,8 @@
         <p>When three vendors underpin half your critical processes, you don't have a vendor programme - you have a single point of failure with good documentation.</p>
         <div class="blog-card-footer">6 min read -</div>
       </a>
--->
+      -->
+
       <!--
       <a class="blog-card" href="#post-vendor-dashboard">
         <div class="blog-card-meta">
@@ -518,108 +754,148 @@
     <a class="blog-all" href="articles.html">View all articles --</a>
   </section>
 
+  <!-- -- MONITORING -- -->
+  <section id="monitoring">
+    <div class="section-label">03 &mdash; Monitoring &amp; Intelligence</div>
+    <h2 class="section-title">Recurring Industry Monitoring</h2>
+
+    <div class="blog-grid">
+      <a class="blog-card" href="tprm-monitoring-april-2026.html">
+        <div class="blog-card-meta">
+          <span class="cat">TPRM</span>
+          <span>April 2026</span>
+        </div>
+        <h3>Third-Party Risk Monitoring</h3>
+        <p>A recurring scan of regulatory shifts, incidents, vendor failures, and emerging third-party risk signals across critical sectors.</p>
+        <div class="blog-card-footer">Monthly monitoring -</div>
+      </a>
+
+      <a class="blog-card" href="supply-chain-monitoring-april-2026.html">
+        <div class="blog-card-meta">
+          <span class="cat">Supply Chain</span>
+          <span>April 2026</span>
+        </div>
+        <h3>Supply Chain Security Monitoring</h3>
+        <p>Ongoing monitoring of supply chain incidents, dependency risks, software ecosystem disruptions, and notable attack trends.</p>
+        <div class="blog-card-footer">Monthly monitoring -</div>
+      </a>
+
+      <a class="blog-card" href="regulatory-monitoring-april-2026.html">
+        <div class="blog-card-meta">
+          <span class="cat">Regulation</span>
+          <span>April 2026</span>
+        </div>
+        <h3>Regulatory &amp; Resilience Monitoring</h3>
+        <p>A practical watchlist of updates related to NIS2, DORA, resilience expectations, supervisory focus areas, and enforcement direction.</p>
+        <div class="blog-card-footer">Monthly monitoring -</div>
+      </a>
+    </div>
+
+    <a class="blog-all" href="monitoring.html">View all monitoring --</a>
+  </section>
+
   <!-- -- PROJECTS -- -->
   <section id="projects">
-  <div class="section-label">03 &mdash; Projects</div>
-  <h2 class="section-title">Where I've Made an Impact</h2>
+    <div class="section-label">04 &mdash; Projects</div>
+    <h2 class="section-title">Where I've Made an Impact</h2>
 
-  <div class="projects-list">
-    <div class="project-row">
-      <div class="project-num">01</div>
-      <div class="project-body">
-        <h3>Energy Sector</h3>
-        <p>Led a NIS2 gap analysis, mapping regulatory requirements alongside ISO 27001, ISAE3402, and SOC2 to the organization's internal control environment &mdash; a critical step in understanding supply chain exposure.</p>
+    <div class="projects-list">
+      <div class="project-row">
+        <div class="project-num">01</div>
+        <div class="project-body">
+          <h3>Energy Sector</h3>
+          <p>Led a NIS2 gap analysis, mapping regulatory requirements alongside ISO 27001, ISAE3402, and SOC2 to the organization's internal control environment &mdash; a critical step in understanding supply chain exposure.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">NIS2</span>
+          <span class="ptag">ISO 27001</span>
+          <span class="ptag">SOC2</span>
+        </div>
       </div>
-      <div class="project-tags">
-        <span class="ptag">NIS2</span>
-        <span class="ptag">ISO 27001</span>
-        <span class="ptag">SOC2</span>
+
+      <div class="project-row">
+        <div class="project-num">02</div>
+        <div class="project-body">
+          <h3>Crypto &amp; Digital Finance</h3>
+          <p>Assessed DORA compliance for a cryptocurrency and digital finance company, focusing on operational resilience in a space where third-party dependencies are evolving faster than regulations.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">DORA</span>
+          <span class="ptag">Operational Resilience</span>
+          <span class="ptag">Third-Party Risk</span>
+        </div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-num">03</div>
+        <div class="project-body">
+          <h3>Utilities</h3>
+          <p>Performed a combined NIS2 and NIST gap analysis, advising on practical strategies to close compliance gaps across vendor-dependent infrastructure.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">NIS2</span>
+          <span class="ptag">NIST</span>
+          <span class="ptag">Gap Analysis</span>
+        </div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-num">04</div>
+        <div class="project-body">
+          <h3>Banking &amp; Financial Services</h3>
+          <p>Oversaw the IT components of external financial statement audits, digging into access management, incident response, and change management processes &mdash; all areas where third-party risk often hides in plain sight.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">IT Audit</span>
+          <span class="ptag">IAM</span>
+          <span class="ptag">Incident Response</span>
+        </div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-num">05</div>
+        <div class="project-body">
+          <h3>Export Banking</h3>
+          <p>Conducted IT and SWIFT audits, revising internal policies that directly impact how third-party transactions and communications are secured.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">SWIFT</span>
+          <span class="ptag">IT Audit</span>
+          <span class="ptag">Policy Review</span>
+        </div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-num">06</div>
+        <div class="project-body">
+          <h3>Retail</h3>
+          <p>Developed and formalized IAM policies, strengthening the security posture across a supply chain that depends heavily on external partners and systems.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">IAM</span>
+          <span class="ptag">Policy Design</span>
+          <span class="ptag">Supply Chain Security</span>
+        </div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-num">07</div>
+        <div class="project-body">
+          <h3>Professional Services</h3>
+          <p>Guided the implementation and certification of ISO 27001:2022, building a security management system designed to scale with third-party growth.</p>
+        </div>
+        <div class="project-tags">
+          <span class="ptag">ISO 27001:2022</span>
+          <span class="ptag">ISMS</span>
+          <span class="ptag">Certification</span>
+        </div>
       </div>
     </div>
-
-    <div class="project-row">
-      <div class="project-num">02</div>
-      <div class="project-body">
-        <h3>Crypto &amp; Digital Finance</h3>
-        <p>Assessed DORA compliance for a cryptocurrency and digital finance company, focusing on operational resilience in a space where third-party dependencies are evolving faster than regulations.</p>
-      </div>
-      <div class="project-tags">
-        <span class="ptag">DORA</span>
-        <span class="ptag">Operational Resilience</span>
-        <span class="ptag">Third-Party Risk</span>
-      </div>
-    </div>
-
-    <div class="project-row">
-      <div class="project-num">03</div>
-      <div class="project-body">
-        <h3>Utilities</h3>
-        <p>Performed a combined NIS2 and NIST gap analysis, advising on practical strategies to close compliance gaps across vendor-dependent infrastructure.</p>
-      </div>
-      <div class="project-tags">
-        <span class="ptag">NIS2</span>
-        <span class="ptag">NIST</span>
-        <span class="ptag">Gap Analysis</span>
-      </div>
-    </div>
-
-    <div class="project-row">
-      <div class="project-num">04</div>
-      <div class="project-body">
-        <h3>Banking &amp; Financial Services</h3>
-        <p>Oversaw the IT components of external financial statement audits, digging into access management, incident response, and change management processes &mdash; all areas where third-party risk often hides in plain sight.</p>
-      </div>
-      <div class="project-tags">
-        <span class="ptag">IT Audit</span>
-        <span class="ptag">IAM</span>
-        <span class="ptag">Incident Response</span>
-      </div>
-    </div>
-
-    <div class="project-row">
-      <div class="project-num">05</div>
-      <div class="project-body">
-        <h3>Export Banking</h3>
-        <p>Conducted IT and SWIFT audits, revising internal policies that directly impact how third-party transactions and communications are secured.</p>
-      </div>
-      <div class="project-tags">
-        <span class="ptag">SWIFT</span>
-        <span class="ptag">IT Audit</span>
-        <span class="ptag">Policy Review</span>
-      </div>
-    </div>
-
-    <div class="project-row">
-      <div class="project-num">06</div>
-      <div class="project-body">
-        <h3>Retail</h3>
-        <p>Developed and formalized IAM policies, strengthening the security posture across a supply chain that depends heavily on external partners and systems.</p>
-      </div>
-      <div class="project-tags">
-        <span class="ptag">IAM</span>
-        <span class="ptag">Policy Design</span>
-        <span class="ptag">Supply Chain Security</span>
-      </div>
-    </div>
-
-    <div class="project-row">
-      <div class="project-num">07</div>
-      <div class="project-body">
-        <h3>Professional Services</h3>
-        <p>Guided the implementation and certification of ISO 27001:2022, building a security management system designed to scale with third-party growth.</p>
-      </div>
-      <div class="project-tags">
-        <span class="ptag">ISO 27001:2022</span>
-        <span class="ptag">ISMS</span>
-        <span class="ptag">Certification</span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- -- CONTACT -- -->
   <section id="contact">
-    <div class="section-label">04 &mdash; Contact</div>
+    <div class="section-label">05 &mdash; Contact</div>
     <div class="contact-inner">
       <p class="contact-lead">
         Working on something in the risk space?<br/>
@@ -629,7 +905,12 @@
       <div class="contact-links">
         <a class="contact-link" href="mailto:ask@gabrielhasik.com">
           <div class="cl-left">
-            <div class="cl-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <div class="cl-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
             <div>
               <span class="cl-label">Email</span>
               <span class="cl-value">ask@gabrielhasik.com</span>
@@ -638,8 +919,8 @@
           <span class="cl-arrow">&#x2192;</span>
         </a>
 
-        <a class="contact-link" href="https://www.linkedin.com/in/gabriel-hasik/" target="_blank">
-           <div class="cl-left">
+        <a class="contact-link" href="https://www.linkedin.com/in/gabriel-hasik/" target="_blank" rel="noopener noreferrer">
+          <div class="cl-left">
             <div class="cl-icon">in</div>
             <div>
               <span class="cl-label">LinkedIn</span>
@@ -649,9 +930,13 @@
           <span class="cl-arrow">&#x2192;</span>
         </a>
 
-        <a class="contact-link" href="https://github.com/gabrielhasik" target="_blank">
+        <a class="contact-link" href="https://github.com/gabrielhasik" target="_blank" rel="noopener noreferrer">
           <div class="cl-left">
-            <div class="cl-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></div>
+            <div class="cl-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
             <div>
               <span class="cl-label">GitHub</span>
               <span class="cl-value">github.com/ghask760</span>
@@ -661,7 +946,7 @@
         </a>
 
         <!--
-        <a class="contact-link" href="https://twitter.com/gabrielhasik" target="_blank">
+        <a class="contact-link" href="https://twitter.com/gabrielhasik" target="_blank" rel="noopener noreferrer">
           <div class="cl-left">
             <div class="cl-icon">X</div>
             <div>
@@ -681,9 +966,6 @@
     <span>&copy; 2026 Gabriel Hasik</span>
     <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
     <span>Cyber &middot; Risk &middot; Supply Chain</span>
-  </footer>
-
-</>
   </footer>
 
 </body>
