@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NBES9XC498');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Geopolitical Supply Chain Risks — April 2026 | Gabriel Hasik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0e0e0e;
+      --bg2:        #141414;
+      --bg3:        #1a1a1a;
+      --border:     #242424;
+      --muted:      #3a3a3a;
+      --text-dim:   #666;
+      --text-mid:   #999;
+      --text:       #d8d0c4;
+      --text-hi:    #f0e8dc;
+      --accent:     #d4821a;
+      --accent2:    #e8a84c;
+      --accent-dim: #3a2208;
+
+      --critical:   #b54747;
+      --critical-bg:#2b1313;
+      --high:       #cf7f2a;
+      --high-bg:    #2f1d0c;
+      --watch:      #b8a13a;
+      --watch-bg:   #2d2810;
+      --info:       #4f8f88;
+      --info-bg:    #102423;
+
+      --serif:      'Playfair Display', Georgia, serif;
+      --mono:       'DM Mono', 'Courier New', monospace;
+      --sans:       'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(14,14,14,0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 3rem 5rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-grid::before {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+      opacity: 0.4;
+    }
+
+    .hero-grid::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(
+        180deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+      opacity: 0.4;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.96;
+      color: var(--text-hi);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+    }
+
+    .hero-title em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-text {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-mid);
+      max-width: 820px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid var(--muted);
+      color: var(--text-dim);
+      border-radius: 2px;
+    }
+
+    .tag.accent {
+      border-color: var(--accent-dim);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    section {
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--accent-dim);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      max-width: 840px;
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .panel h3 {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .panel p {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .panel p:last-child { margin-bottom: 0; }
+
+    .signal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .signal-list li {
+      color: var(--text-mid);
+      font-size: 0.94rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .signal-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .signal-list strong { color: var(--text-hi); }
+
+    .briefing-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .briefing-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .briefing-card.critical { border-left: 3px solid var(--critical); }
+    .briefing-card.high { border-left: 3px solid var(--high); }
+    .briefing-card.watch { border-left: 3px solid var(--watch); }
+
+    .briefing-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .pill.critical { color: #e58d8d; border-color: rgba(181,71,71,0.4); background: var(--critical-bg); }
+    .pill.high { color: #eab37a; border-color: rgba(207,127,42,0.4); background: var(--high-bg); }
+    .pill.watch { color: #dbc971; border-color: rgba(184,161,58,0.4); background: var(--watch-bg); }
+
+    .briefing-card h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      line-height: 1.28;
+      color: var(--text-hi);
+      margin-bottom: 1rem;
+    }
+
+    .briefing-card p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 2rem;
+      margin-top: 1.25rem;
+    }
+
+    .detail-item {
+      border-top: 1px solid var(--border);
+      padding-top: 0.9rem;
+    }
+
+    .detail-item .label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.45rem;
+    }
+
+    .detail-item .value {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .detail-item .value strong {
+      color: var(--text-hi);
+      font-weight: 500;
+    }
+
+    .action-box {
+      margin-top: 1.4rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.25rem 1.1rem;
+    }
+
+    .action-box h4 {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .action-box ol {
+      padding-left: 1.1rem;
+      color: var(--text-mid);
+    }
+
+    .action-box li {
+      margin-bottom: 0.55rem;
+      line-height: 1.75;
+    }
+
+    .action-box li:last-child { margin-bottom: 0; }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .dashboard-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .dashboard-card h3 {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .dashboard-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .dashboard-card li {
+      color: var(--text-mid);
+      font-size: 0.94rem;
+      line-height: 1.75;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.8rem;
+    }
+
+    .dashboard-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .dashboard-card strong { color: var(--text-hi); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.95rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    td { color: var(--text-mid); }
+    td strong { color: var(--text-hi); font-weight: 500; }
+
+    .source-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .source-list li {
+      color: var(--text-mid);
+      line-height: 1.8;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .source-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .note-box {
+      margin-top: 2rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+
+    .note-box h4 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .note-box p {
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .note-box p:last-child { margin-bottom: 0; }
+
+    .back-link {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .back-link:hover { gap: 1.2rem; }
+
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .summary-grid,
+      .dashboard-grid,
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero { padding: 7rem 1.5rem 4rem; min-height: 68vh; }
+      section { padding: 4rem 1.5rem; }
+      footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      th, td { padding-left: 0; padding-right: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .nav-links a { font-size: 0.64rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="monitoring.html" class="active">Monitoring</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-eyebrow">Flash intelligence report &middot; Geopolitics &middot; Supply chains</div>
+    <h1 class="hero-title">
+      Geopolitical Supply<br/><em>Chain Risks</em>
+    </h1>
+    <p class="hero-text">
+      April 2026 presents an unusually unstable geopolitical environment for third-party ecosystems. Energy disruption, sanctions expansion, tightening export controls, and a fragile US-China truce are combining into a multi-vector risk picture for vendors across energy, technology, manufacturing, and financial services.
+    </p>
+    <div class="hero-meta">
+      <span class="tag accent">April 15, 2026</span>
+      <span class="tag">Flash Intelligence</span>
+      <span class="tag">Geopolitical Risk</span>
+      <span class="tag">Supply Chain Exposure</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">01 &mdash; Executive Summary</div>
+    <h2 class="section-title">Three converging crises define this cycle</h2>
+    <p class="section-intro">
+      The current cycle is dominated by three interacting developments: the US-Iran conflict and Strait of Hormuz disruption, expanding sanctions regimes targeting Russia, Iran, and China-linked actors, and tighter US semiconductor and AI export controls. A temporary US-China trade truce reduces immediate pressure in some areas, but does not remove underlying structural dependencies. For third-party risk teams, the core issue is not a single event — it is the combined effect of energy shock, legal fragmentation, and technology restrictions hitting vendors at the same time.
+    </p>
+
+    <div class="summary-grid">
+      <div class="panel">
+        <h3>Analyst view</h3>
+        <p>
+          The dominant systemic risk in this cycle is the illusion of stability created by temporary measures. Oil waivers, sanctions carve-outs, and trade truces may soften the immediate shock, but they do not resolve the underlying fragility. When these temporary buffers expire, structural dependencies are likely to reappear quickly.
+        </p>
+        <p>
+          That makes this a classic snap-back scenario. Third-party risk teams should not only monitor what is disrupted today, but also what could become unstable the moment temporary authorizations, waivers, or diplomatic pauses end.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Top 3 pressure points</h3>
+        <ul class="signal-list">
+          <li><strong>1.</strong> Closure of the Strait of Hormuz and severe energy supply disruption.</li>
+          <li><strong>2.</strong> Rapidly evolving sanctions regimes across the US, EU, and UK.</li>
+          <li><strong>3.</strong> Extraterritorial semiconductor and AI export controls reshaping technology supply chains.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">02 &mdash; Critical</div>
+    <h2 class="section-title">Immediate geopolitical pressures on supply chains</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Energy / Transit</span>
+        </div>
+        <h3>Strait of Hormuz closure drives global energy shock</h3>
+        <p>
+          The defining geopolitical event for supply chains in this cycle is the ongoing US-Israel-Iran conflict and the effective closure of the Strait of Hormuz — the corridor through which roughly 20% of global oil supply normally transits.
+        </p>
+        <p>
+          Brent crude reportedly spiked to <strong>$119 per barrel</strong> in mid-March 2026, while governments moved into emergency response mode. Measures now include reserve releases, export bans, price caps, work-from-home mandates, and temporary sanctions waivers designed to keep energy moving through alternative channels.
+        </p>
+        <p>
+          The result is not just a market shock. It is a third-party risk event affecting logistics, manufacturing, cloud infrastructure, and any vendor whose delivery model depends on stable energy pricing or Middle Eastern transit corridors.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Key facts</span>
+            <div class="value">Brent crude rose sharply; the IEA agreed to release <strong>400 million barrels</strong> from emergency reserves; repeated attacks on energy infrastructure have intensified disruption.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Temporary measures</span>
+            <div class="value">US waivers were issued for Russian oil at sea, Venezuelan oil transactions, domestic shipping capacity, and short-term Iranian oil purchases.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Third-party risk implication</span>
+            <div class="value">Energy-dependent vendors face cost escalation, pricing volatility, and possible supply interruption. The mix of sanctions waivers creates added compliance ambiguity for vendors operating in distressed energy markets.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Exposure areas</span>
+            <div class="value">Data centers, manufacturing vendors, transport and logistics providers, import-heavy suppliers, and vendors reliant on Middle Eastern energy infrastructure or transit routes.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Map all third-party dependencies on energy sourced through the Strait of Hormuz.</li>
+            <li>Assess the continuity plans of critical vendors exposed to Middle Eastern energy infrastructure.</li>
+            <li>Review sanctions compliance programs where temporary waivers may create operational confusion.</li>
+            <li>Monitor Brent crude direction and model the impact on vendor pricing and service cost inflation.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Sanctions</span>
+        </div>
+        <h3>Expanding sanctions regimes are reshaping vendor risk</h3>
+        <p>
+          Sanctions activity remains one of the most operationally significant geopolitical forces affecting third-party ecosystems. The EU, UK, and US are all adjusting pressure points, but not in a linear way: new restrictions, selective de-listings, cyber sanctions, and secondary-sanctions logic are all occurring at once.
+        </p>
+        <p>
+          The EU’s 19th Russia package, the coming Russian LNG ban, expanded cyber sanctions, active UK secondary-sanctions behavior, and OFAC list volatility together create a compliance landscape where static annual screening is no longer credible.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Russia-related developments</span>
+            <div class="value">EU 19th package includes LNG restrictions from January 2027, lower oil price cap, export restrictions, and measures affecting roughly <strong>2,600 persons and entities</strong>.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Cyber sanctions</span>
+            <div class="value">The EU expanded its cyber sanctions framework to cover additional Chinese and Iranian-linked entities tied to attacks and disruptive operations.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">US and UK signal</span>
+            <div class="value">UK sanctions show real use of secondary-sanctions style pressure. OFAC’s list activity remains dynamic, with both de-listings and new designations occurring frequently.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Third-party risk implication</span>
+            <div class="value">Vendors with Russia, Belarus, Iran, China-linked sanctioned exposure, or indirect energy trade exposure may create legal, reputational, and continuity risks. Weekly screening is becoming the practical minimum.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Run updated sanctions screening across all third parties using the latest EU, UK, and US lists.</li>
+            <li>Assess vendor exposure to Russian LNG and gas ahead of January 2027 and January 2028 milestones.</li>
+            <li>Evaluate secondary sanctions exposure for vendors headquartered in China, India, or Southeast Asia.</li>
+            <li>Review technology vendor contracts for any exposure to EU-sanctioned Chinese cyber entities.</li>
+            <li>Ensure sanctions screening tools refresh at least weekly.</li>
+          </ol>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">03 &mdash; High Importance</div>
+    <h2 class="section-title">Structural risks with longer-term supply chain impact</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">Technology / Export Controls</span>
+        </div>
+        <h3>US semiconductor and AI export controls keep tightening</h3>
+        <p>
+          US controls on advanced semiconductors and AI remain one of the most consequential long-term geopolitical risks for European third-party ecosystems. Licensing requirements, new ECCNs, expanded Foreign Direct Product Rules, and computing-capacity caps are extending US jurisdiction far beyond US borders.
+        </p>
+        <p>
+          For organizations dependent on cloud, AI, and data-center vendors, these controls create a new class of supply chain exposure: a provider may still be commercially viable, but constrained in where it can install, transfer, or make computing resources available.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Key mechanisms</span>
+            <div class="value">Worldwide licensing requirements, new FDPRs, TPP caps, new license exceptions, and data-center VEU compliance obligations.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Trusted-country tier</span>
+            <div class="value">Includes 18 countries such as Belgium, France, Germany, Italy, Netherlands, Spain, Sweden, the UK, Japan, Korea, and others.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Third-party risk implication</span>
+            <div class="value">Cloud, AI, and data center vendors face service-delivery constraints, ownership-vetting obligations, and restrictions on cross-border compute allocation. Even non-US items may be caught due to FDPR reach.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Most exposed vendor types</span>
+            <div class="value">Cloud providers, AI model vendors, data center operators, advanced hardware suppliers, and European hardware vendors using US-origin technology.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Identify all third-party relationships involving advanced computing hardware or AI model weights.</li>
+            <li>Assess cloud and AI vendors for UVEU or NVEU authorization status.</li>
+            <li>Ensure no third-party arrangement provides controlled compute access to restricted end users.</li>
+            <li>Review AI vendor contracts for export control compliance language.</li>
+            <li>Monitor the US-China trade truce expiration as a trigger for renewed control escalation.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">Trade / China</span>
+        </div>
+        <h3>US-China trade truce reduces pressure, but only temporarily</h3>
+        <p>
+          The November 2025 US-China trade deal eased some immediate tensions, but it did not remove the strategic logic driving restrictions. China suspended some retaliatory measures and export constraints, while the US lowered some tariffs and temporarily suspended selected BIS rules.
+        </p>
+        <p>
+          The underlying risk remains unchanged: these measures are time-limited, some critical material controls remain in place, and China’s industrial strategy continues to emphasize self-reliance in strategic sectors. For third-party teams, the real question is what happens when the truce ends.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Key timelines</span>
+            <div class="value">Some suspended rare earth and materials measures run until November 2026. Full snap-back risk emerges as early as that point.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Persistent constraints</span>
+            <div class="value">Medium and heavy rare earth controls remain relevant, while domestic strategic-sector priorities continue to shape export behavior.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Third-party risk implication</span>
+            <div class="value">Vendors dependent on Chinese rare earths, semiconductors, or export-sensitive materials remain exposed to a renewed restriction cycle.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Most exposed sectors</span>
+            <div class="value">Automotive, semiconductors, electronics manufacturing, battery supply chains, and industrial producers dependent on critical minerals.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Conduct scenario planning for truce expiration and full control reinstatement.</li>
+            <li>Assess dependencies on Chinese rare earths, gallium, germanium, antimony, graphite, and adjacent materials.</li>
+            <li>Develop alternative sourcing strategies for critical minerals.</li>
+            <li>Monitor the formal direction of China’s strategic industrial planning for new control signals.</li>
+          </ol>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">04 &mdash; Moderate</div>
+    <h2 class="section-title">Resilience measures that change vendor economics</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card watch">
+        <div class="briefing-meta">
+          <span class="pill watch">Moderate</span>
+          <span class="pill">Trade Defense / Resilience</span>
+        </div>
+        <h3>EU and UK resilience measures are shifting sourcing patterns</h3>
+        <p>
+          The EU is layering trade defense with supply chain resilience measures: safeguards on steel and ferroalloys, anti-dumping duties, critical chemicals prioritization, strategic raw materials projects, mineral transparency systems, and trade partnerships aimed at diversification.
+        </p>
+        <p>
+          At the same time, the UK is moving on critical minerals strategy, NIS-related expansion, and stronger supply chain integrity measures. In the US, the Biosecure Act could create biotechnology-related vendor displacement if enacted in a restrictive form.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">EU developments</span>
+            <div class="value">Steel safeguards tightened, ferroalloy quotas extended, anti-dumping measures applied, Critical Chemicals Alliance launched, CRMA strategic projects expanded, and ReMIS introduced.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">UK / US developments</span>
+            <div class="value">UK targets lower single-country dependency for critical minerals and broader cyber-resilience scope; the US Biosecure Act may affect biotech supply chain relationships.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Third-party risk implication</span>
+            <div class="value">Manufacturing vendors may face cost increases; diversification efforts create new vendor onboarding needs; biotech supply chains may be forced to reconfigure.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Opportunity signal</span>
+            <div class="value">Trade partnerships and diversification mechanisms may open new sourcing channels in Africa, Latin America, and Southeast Asia — but only with robust due diligence.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Map third-party exposure to EU trade defense measures, especially steel, ferroalloys, and chemicals.</li>
+            <li>Identify vendors reliant on single-country sourcing for critical minerals.</li>
+            <li>Assess biotech vendor exposure to potential Biosecure Act restrictions.</li>
+            <li>Track trade diversification developments such as CEPA implementation for sourcing opportunities.</li>
+          </ol>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">05 &mdash; Geopolitical Risk Heatmap</div>
+    <h2 class="section-title">Regional and corridor exposure snapshot</h2>
+    <p class="section-intro">
+      The heatmap below summarizes where geopolitical pressure is most likely to affect vendor continuity, compliance, pricing, or sourcing decisions in the current cycle.
+    </p>
+
+    <div class="panel">
+      <h3>Risk heatmap</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Region / Corridor</th>
+            <th>Risk level</th>
+            <th>Primary drivers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Strait of Hormuz</strong></td>
+            <td>🔴 Critical</td>
+            <td>US-Iran conflict, energy transit disruption, oil price shock</td>
+          </tr>
+          <tr>
+            <td><strong>Russia / Belarus</strong></td>
+            <td>🔴 Critical</td>
+            <td>EU 19th sanctions package, LNG ban 2027, gas phase-out 2028</td>
+          </tr>
+          <tr>
+            <td><strong>China (Tech)</strong></td>
+            <td>🟠 High</td>
+            <td>US semiconductor and AI export controls, FDPR reach</td>
+          </tr>
+          <tr>
+            <td><strong>China (Trade)</strong></td>
+            <td>🟠 High</td>
+            <td>Fragile truce, rare earth restrictions, EV export licensing</td>
+          </tr>
+          <tr>
+            <td><strong>Iran</strong></td>
+            <td>🔴 Critical</td>
+            <td>Active conflict, cyber sanctions, temporary oil waivers</td>
+          </tr>
+          <tr>
+            <td><strong>Southeast Asia</strong></td>
+            <td>🟡 Moderate</td>
+            <td>Secondary sanctions risk, redirected trade flows, energy exposure</td>
+          </tr>
+          <tr>
+            <td><strong>India</strong></td>
+            <td>🟡 Moderate</td>
+            <td>Russian oil purchases, sanctions-exposure spillover</td>
+          </tr>
+          <tr>
+            <td><strong>EU Internal</strong></td>
+            <td>🟡 Moderate</td>
+            <td>Trade defense measures, supply resilience programs, fragmentation effects</td>
+          </tr>
+          <tr>
+            <td><strong>UK</strong></td>
+            <td>🟡 Moderate</td>
+            <td>Critical minerals strategy, sanctions posture, cyber-resilience reform</td>
+          </tr>
+          <tr>
+            <td><strong>Latin America</strong></td>
+            <td>🟢 Low–Moderate</td>
+            <td>Sanctions easing in parts of the energy market, diversification partnerships</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">06 &mdash; Top 5 Actions</div>
+    <h2 class="section-title">What third-party risk teams should do now</h2>
+
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3>1. Sanctions screening refresh</h3>
+        <ul>
+          <li>Run comprehensive re-screening of all third parties against updated EU, UK, and US sanctions lists.</li>
+          <li>Prioritize vendors in energy, technology, logistics, and financial services.</li>
+          <li>Set minimum refresh frequency to weekly.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>2. Energy supply chain stress test</h3>
+        <ul>
+          <li>Model the effect of sustained <strong>$100–200/barrel</strong> pricing on vendor viability and pricing.</li>
+          <li>Identify single-point-of-failure exposure to Middle Eastern energy transit.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>3. China dependency mapping</h3>
+        <ul>
+          <li>Catalog dependencies on Chinese rare earths, semiconductors, and manufactured goods.</li>
+          <li>Develop contingency plans for November 2026 snap-back scenarios.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>4. AI &amp; compute vendor compliance review</h3>
+        <ul>
+          <li>Verify compliance posture of cloud, AI, and data center vendors against US export control requirements.</li>
+          <li>Ensure no inadvertent access to controlled compute by restricted end users.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>5. Regulatory calendar alignment</h3>
+        <ul>
+          <li>Integrate geopolitical milestones into the TPRM calendar.</li>
+          <li>Track Russian LNG ban, Russian gas phase-out, CRA reporting, truce expirations, and sanctions updates as linked risk events.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Strategic takeaway</h3>
+        <ul>
+          <li>The main danger is not just disruption — it is synchronized disruption across energy, compliance, and technology domains.</li>
+          <li>Temporary relief measures should be treated as countdowns, not stabilizers.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">07 &mdash; Sources &amp; Note</div>
+    <h2 class="section-title">Confidence level and analytical framing</h2>
+
+    <div class="panel">
+      <h3>Sources</h3>
+      <ul class="source-list">
+        <li>Steptoe LLP — <em>Sanctions Update: March 23, 2026</em> (Mondaq, March 25, 2026)</li>
+        <li>Blank Rome LLP — <em>BIS Issues Significant New Round of Semiconductor Export Controls</em> (National Law Review, December 2024)</li>
+        <li>Hogan Lovells — <em>US Department of Commerce expands controls on advanced semiconductors and establishes new controls on closed AI model weights</em> (February 2025)</li>
+        <li>Eversheds Sutherland — <em>Global Supply Chain Horizons – January 2026</em> (January 6, 2026)</li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <h4>Confidence level</h4>
+      <p>
+        Confidence is <strong>high</strong> for sanctions and export control items, given the legal-source basis. Confidence is <strong>moderate</strong> for energy pricing projections due to the speed and volatility of the underlying conflict environment.
+      </p>
+
+      <h4>Analyst note</h4>
+      <p>
+        The convergence of energy crisis, sanctions expansion, and technology export controls creates an unusually dense geopolitical risk environment. The most important systemic risk is that temporary waivers and diplomatic pauses may be masking structural weaknesses rather than resolving them.
+      </p>
+      <p>
+        The practical implication for third-party risk teams is simple: plan not only for disruption, but for the reappearance of disruption the moment temporary measures expire.
+      </p>
+    </div>
+
+    <a class="back-link" href="geopolitical-supply-chain-risks.html">Back to monitoring overview --</a>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Gabriel Hasik</span>
+    <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber &middot; Risk &middot; Supply Chain</span>
+  </footer>
+
+</body>
+</html>
