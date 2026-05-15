@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NBES9XC498');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Is Now a Supply Chain Risk — Gabriel Hasik</title>
+  <meta name="description" content="AI has become one of the most concentrated and least-governed supply chains in the enterprise. Boards should be able to answer basic questions about models, data flows, agents, providers, and AI-specific incidents." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e;
+      --bg2: #141414;
+      --bg3: #1a1a1a;
+      --border: #242424;
+      --muted: #3a3a3a;
+      --text-dim: #666;
+      --text-mid: #999;
+      --text: #d8d0c4;
+      --text-hi: #f0e8dc;
+      --accent: #d4821a;
+      --accent2: #e8a84c;
+      --accent-dim: #3a2208;
+      --serif: 'Playfair Display', Georgia, serif;
+      --mono: 'DM Mono', 'Courier New', monospace;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .article-hero {
+      padding: 9rem 3rem 4rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 860px;
+    }
+    .back-link, .back-link-bottom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link { margin-bottom: 2.5rem; }
+    .back-link-bottom { margin-top: 2rem; }
+    .back-link:hover, .back-link-bottom:hover { color: var(--accent); }
+    .back-link::before, .back-link-bottom::before { content: '←'; }
+    .article-cat, .annex-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-dim);
+      padding: 3px 10px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .annex-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+    .article-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .article-meta .sep { color: var(--muted); }
+    .article-body {
+      max-width: 720px;
+      padding: 4rem 3rem 5rem;
+    }
+    .article-body p {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.85;
+    }
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.2;
+      margin: 3rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .article-body h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-body h4 {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-hi);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: var(--text);
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .article-body strong {
+      color: var(--text-hi);
+      font-weight: 500;
+    }
+    .article-body em {
+      color: var(--accent2);
+      font-style: italic;
+    }
+    .article-body code {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 2px;
+      color: var(--accent2);
+    }
+    .article-body pre {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 3px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--accent2);
+    }
+    .article-body blockquote {
+      border-left: 2px solid var(--accent);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+    .article-body blockquote p {
+      margin-bottom: 0;
+      color: var(--text-mid);
+    }
+    .article-body a {
+      color: var(--accent2);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+      word-break: break-word;
+    }
+    .article-body a:hover { color: var(--accent); }
+    .article-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .article-body table th {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 2px solid var(--accent-dim);
+      background: var(--bg2);
+      vertical-align: top;
+    }
+    .article-body table td {
+      padding: 0.7rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+    .article-body table tr:hover td { background: var(--bg2); }
+    .insight-box {
+      background: linear-gradient(180deg, rgba(212,130,26,0.08), rgba(212,130,26,0.02));
+      border: 1px solid var(--accent-dim);
+      padding: 1.25rem 1.25rem 0.25rem;
+      border-radius: 4px;
+      margin: 1.75rem 0 2rem;
+    }
+    .insight-box h4 {
+      margin-top: 0;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      .article-hero { padding: 7rem 1.5rem 3rem; }
+      .article-body { padding: 3rem 1.5rem 4rem; }
+      .article-body table { font-size: 0.8rem; }
+      .article-body table th, .article-body table td { padding: 0.4rem 0.5rem; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-hero">
+    <a class="back-link" href="index.html#blog">Back to Writing</a>
+    <div class="article-cat">AI Governance &amp; Supply Chain Security</div>
+    <h1 class="article-title">AI Is Now a Supply Chain Risk — and Most Boards Can't Answer Basic Questions About It</h1>
+    <div class="article-meta">
+      <span>May 2026</span>
+      <span class="sep">·</span>
+      <span>18 min read</span>
+      <span class="sep">·</span>
+      <span>Gabriel Hasik</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <div style="width:100%; margin: 2rem 0;">
+      <svg width="100%" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" style="display:block; border-radius:8px;">
+        <defs>
+          <linearGradient id="aiBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#07101f"/>
+            <stop offset="52%" stop-color="#111827"/>
+            <stop offset="100%" stop-color="#020509"/>
+          </linearGradient>
+
+          <pattern id="aiDots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+            <circle cx="15" cy="15" r="0.8" fill="rgba(150,180,230,0.16)"/>
+          </pattern>
+
+          <filter id="aiGlowSoft" x="-120%" y="-120%" width="340%" height="340%">
+            <feGaussianBlur stdDeviation="10" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <filter id="aiGlowHot" x="-150%" y="-150%" width="400%" height="400%">
+            <feGaussianBlur stdDeviation="18" result="blur1"/>
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2"/>
+            <feMerge>
+              <feMergeNode in="blur1"/>
+              <feMergeNode in="blur2"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <radialGradient id="aiCoreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#d4821a" stop-opacity="0.24"/>
+            <stop offset="100%" stop-color="#d4821a" stop-opacity="0"/>
+          </radialGradient>
+
+          <linearGradient id="aiWarmLine" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#ff535c" stop-opacity="0.72"/>
+            <stop offset="56%" stop-color="#ff941f" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#88b7ff" stop-opacity="0.24"/>
+          </linearGradient>
+
+          <style>
+            @keyframes aiPulseRing {
+              0%   { transform: scale(0.82); opacity: 0.5; }
+              70%  { transform: scale(1.32); opacity: 0.08; }
+              100% { transform: scale(1.42); opacity: 0; }
+            }
+            @keyframes aiFlicker {
+              0%,100% { opacity: 0.98; }
+              41% { opacity: 0.78; }
+              65% { opacity: 0.92; }
+            }
+            @keyframes aiLinePulse {
+              0%,100% { opacity: 0.33; }
+              50% { opacity: 0.16; }
+            }
+            .aiRingA { animation: aiPulseRing 3.4s ease-out infinite; transform-origin: 600px 314px; }
+            .aiRingB { animation: aiPulseRing 3.4s ease-out 1.2s infinite; transform-origin: 600px 314px; }
+            .aiFlicker { animation: aiFlicker 3.3s ease-in-out infinite; }
+            .aiLinePulse { animation: aiLinePulse 4.8s ease-in-out infinite; }
+          </style>
+        </defs>
+
+        <rect width="1200" height="628" rx="18" fill="url(#aiBg)"/>
+        <rect width="1200" height="628" rx="18" fill="url(#aiDots)" opacity="0.7"/>
+
+        <!-- ambient fields -->
+        <circle cx="600" cy="314" r="230" fill="#d4821a" opacity="0.08" filter="url(#aiGlowSoft)"/>
+        <circle cx="238" cy="318" r="180" fill="#0d3d78" opacity="0.16" filter="url(#aiGlowSoft)"/>
+        <circle cx="960" cy="318" r="180" fill="#183b68" opacity="0.13" filter="url(#aiGlowSoft)"/>
+
+        <!-- left AI inputs / suppliers -->
+        <g fill="none" stroke-linecap="round">
+          <line x1="178" y1="132" x2="456" y2="264" stroke="url(#aiWarmLine)" stroke-width="1.5" opacity="0.32" class="aiLinePulse"/>
+          <line x1="154" y1="252" x2="456" y2="294" stroke="url(#aiWarmLine)" stroke-width="1.7" opacity="0.36" class="aiLinePulse"/>
+          <line x1="178" y1="386" x2="456" y2="334" stroke="url(#aiWarmLine)" stroke-width="1.5" opacity="0.28" class="aiLinePulse"/>
+          <line x1="230" y1="510" x2="456" y2="364" stroke="url(#aiWarmLine)" stroke-width="1.4" opacity="0.24" class="aiLinePulse"/>
+
+          <line x1="312" y1="180" x2="456" y2="264" stroke="#ff8e24" stroke-width="1.2" opacity="0.26"/>
+          <line x1="302" y1="314" x2="456" y2="314" stroke="#ff8e24" stroke-width="1.2" opacity="0.24"/>
+          <line x1="322" y1="446" x2="456" y2="364" stroke="#ff8e24" stroke-width="1.2" opacity="0.2"/>
+        </g>
+
+        <!-- right AI outputs / enterprise actions -->
+        <g fill="none" stroke-linecap="round">
+          <line x1="744" y1="264" x2="1006" y2="130" stroke="#4c78ad" stroke-width="1.35" opacity="0.22"/>
+          <line x1="744" y1="294" x2="1038" y2="252" stroke="#587cab" stroke-width="1.45" opacity="0.24"/>
+          <line x1="744" y1="334" x2="1038" y2="386" stroke="#476f9a" stroke-width="1.35" opacity="0.22"/>
+          <line x1="744" y1="364" x2="998" y2="504" stroke="#3a638f" stroke-width="1.2" opacity="0.18"/>
+        </g>
+
+        <!-- central AI dependency core -->
+        <g>
+          <circle cx="600" cy="314" r="154" fill="url(#aiCoreGlow)"/>
+          <circle cx="600" cy="314" r="110" fill="#0f1520" stroke="#3a2208" stroke-width="1.4"/>
+          <circle cx="600" cy="314" r="84" fill="#121926" stroke="#253348" stroke-width="1" opacity="0.9"/>
+          <circle cx="600" cy="314" r="54" fill="#101722" stroke="#d4821a" stroke-width="1.2" opacity="0.9"/>
+          <circle cx="600" cy="314" r="126" fill="none" stroke="#ff9454" stroke-width="1.3" opacity="0.2" class="aiRingA"/>
+          <circle cx="600" cy="314" r="126" fill="none" stroke="#e8a84c" stroke-width="1" opacity="0.2" class="aiRingB"/>
+
+          <text x="600" y="296" fill="#e8a84c" font-size="13" font-family="DM Mono, monospace" text-anchor="middle" letter-spacing="2">AI SUPPLY CHAIN</text>
+          <text x="600" y="325" fill="#f0e8dc" font-size="28" font-family="Playfair Display, Georgia, serif" text-anchor="middle" font-weight="700">Opaque Core</text>
+          <text x="600" y="350" fill="#999999" font-size="12" font-family="DM Mono, monospace" text-anchor="middle" letter-spacing="1.2">MODELS • DATA • AGENTS</text>
+        </g>
+
+        <!-- supplier nodes -->
+        <g font-family="DM Mono, monospace" font-size="11" fill="#d8d0c4">
+          <circle cx="178" cy="132" r="18" fill="#ff5260" filter="url(#aiGlowHot)" class="aiFlicker"/>
+          <text x="212" y="137">MODEL PROVIDER</text>
+
+          <circle cx="154" cy="252" r="16" fill="#ff8a28" filter="url(#aiGlowSoft)"/>
+          <text x="188" y="257">VECTOR DB</text>
+
+          <circle cx="178" cy="386" r="16" fill="#d4821a" filter="url(#aiGlowSoft)"/>
+          <text x="212" y="391">SAAS COPILOT</text>
+
+          <circle cx="230" cy="510" r="14" fill="#ef4a50" filter="url(#aiGlowSoft)"/>
+          <text x="264" y="515">SHADOW AI</text>
+
+          <circle cx="312" cy="180" r="10" fill="#ff7145"/>
+          <circle cx="302" cy="314" r="10" fill="#ff9b1f"/>
+          <circle cx="322" cy="446" r="10" fill="#b85a0b"/>
+        </g>
+
+        <!-- outcome nodes -->
+        <g font-family="DM Mono, monospace" font-size="11" fill="#d8d0c4">
+          <rect x="988" y="108" width="44" height="36" rx="7" fill="#111926" stroke="#203b5a"/>
+          <line x1="1000" y1="120" x2="1020" y2="120" stroke="#88b7ff" stroke-width="1.2" opacity="0.7"/>
+          <line x1="1000" y1="128" x2="1018" y2="128" stroke="#88b7ff" stroke-width="1.2" opacity="0.55"/>
+          <line x1="1000" y1="136" x2="1014" y2="136" stroke="#88b7ff" stroke-width="1.2" opacity="0.42"/>
+          <text x="1038" y="131">DECISIONS</text>
+
+          <rect x="1018" y="234" width="40" height="36" rx="7" fill="#111926" stroke="#203b5a"/>
+          <path d="M1030 257 l6 6 l12 -14" fill="none" stroke="#88b7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="1064" y="257">ACTIONS</text>
+
+          <rect x="1018" y="368" width="40" height="36" rx="7" fill="#111926" stroke="#203b5a"/>
+          <circle cx="1032" cy="386" r="6.5" fill="none" stroke="#88b7ff" stroke-width="1.8"/>
+          <line x1="1037" y1="391" x2="1044" y2="398" stroke="#88b7ff" stroke-width="1.8" stroke-linecap="round"/>
+          <text x="1064" y="391">EVIDENCE</text>
+
+          <rect x="978" y="486" width="40" height="36" rx="7" fill="#111926" stroke="#203b5a"/>
+          <path d="M990 504 h16 m-8 -8 v16" stroke="#88b7ff" stroke-width="1.7" stroke-linecap="round"/>
+          <text x="1024" y="509">INCIDENTS</text>
+        </g>
+      </svg>
+    </div>
+
+    <h2>Management Summary</h2>
+
+    <p>AI has quietly become one of the <strong>most concentrated, least-governed supply chains</strong> in the enterprise. In the last 18 months, organizations have onboarded dozens of AI models, APIs, agents, copilots, and embedded features — often without the due diligence that would be standard for a mid-sized SaaS vendor.</p>
+
+    <p>The problem for boards and CISOs is not that AI is risky in the abstract. It is that AI supply chain risk is <strong>fundamentally different from traditional third-party risk</strong>:</p>
+
+    <ul>
+      <li>the "supplier" may be a model you cannot inspect,</li>
+      <li>the "dependency" may be a dataset you cannot audit,</li>
+      <li>the "update" may silently change model behavior overnight,</li>
+      <li>the "access path" may be an autonomous agent acting on your behalf,</li>
+      <li>and the "incident" may be invisible until data has already left the building.</li>
+    </ul>
+
+    <p>Most existing supply chain controls — SBOMs, vendor questionnaires, penetration tests, and SOC 2 reports — were <strong>not designed for probabilistic systems, opaque training data, or agentic execution</strong>. The regulatory environment is also shifting fast: the <strong>EU AI Act</strong>, <strong>NIST AI RMF</strong>, <strong>ISO/IEC 42001</strong>, and updated expectations under <strong>NIS2</strong> and <strong>DORA</strong> all now touch AI supply chain governance directly or indirectly.</p>
+
+    <p>For leadership, five questions should be answerable today:</p>
+
+    <ol>
+      <li><strong>Which AI models, providers, and agents are in production — and who owns them?</strong></li>
+      <li><strong>What data leaves our perimeter through AI APIs, copilots, or embedded features?</strong></li>
+      <li><strong>Which critical business decisions already depend on third-party AI output?</strong></li>
+      <li><strong>What happens if our primary model provider is breached, degraded, or cut off?</strong></li>
+      <li><strong>Can we detect and contain an AI-specific incident — prompt injection, model poisoning, agent compromise, or data exfiltration via inference?</strong></li>
+    </ol>
+
+    <p>If the answers are unclear, the AI supply chain is already ahead of the governance model.</p>
+
+    <div class="insight-box">
+      <h4>Executive lens</h4>
+      <p>AI governance should not start as an abstract ethics program. It should start with a practical question: <strong>what AI dependencies already exist, what data do they touch, and what would happen if they failed or were compromised?</strong></p>
+    </div>
+
+    <hr class="article-divider" />
+
+    <h2>1. Why AI Changes the Supply Chain Conversation</h2>
+
+    <h3>The big picture</h3>
+
+    <p>Traditional supply chain security assumes a vendor ships <strong>software</strong>, which can be inventoried, scanned, patched, and replaced. AI breaks most of these assumptions.</p>
+
+    <p>An AI supply chain includes:</p>
+
+    <ul>
+      <li><strong>foundation model providers</strong> such as OpenAI, Anthropic, Google, Meta, Mistral, and open-weight model ecosystems,</li>
+      <li><strong>model hosting platforms</strong> such as Azure OpenAI, AWS Bedrock, Vertex AI, and Hugging Face,</li>
+      <li><strong>training and fine-tuning data</strong>, often third-party and often difficult to verify,</li>
+      <li><strong>vector databases and retrieval systems</strong> feeding models with enterprise data,</li>
+      <li><strong>AI agents and orchestration frameworks</strong> such as LangChain, LlamaIndex, and AutoGPT-style systems,</li>
+      <li><strong>embedded AI features</strong> in SaaS tools already used by the business, including Microsoft 365, Salesforce, Zoom, Slack, and GitHub,</li>
+      <li><strong>model marketplaces and package ecosystems</strong>, including Hugging Face and npm / PyPI packages wrapping models,</li>
+      <li><strong>shadow AI</strong> — employees using consumer AI tools without IT, security, or procurement knowledge.</li>
+    </ul>
+
+    <p>Each of these is a <strong>distinct trust relationship</strong>, and most organizations have never mapped them.</p>
+
+    <h3>Why this matters for boards</h3>
+
+    <p>The uncomfortable truth is that AI adoption has <strong>outpaced AI governance by 12–24 months</strong> in many enterprises. The typical pattern is familiar:</p>
+
+    <ol>
+      <li>business units adopted AI tools during 2023–2024,</li>
+      <li>IT and security were pulled in after the fact,</li>
+      <li>procurement signed contracts without AI-specific clauses,</li>
+      <li>legal is now catching up on data, IP, and liability questions,</li>
+      <li>and the board is being asked to approve AI strategy without a full inventory of what is already running.</li>
+    </ol>
+
+    <p>This is the same dynamic that created the cloud security debt of 2015–2018 — except AI moves faster and the blast radius is larger.</p>
+
+    <hr class="article-divider" />
+
+    <h2>2. The New Attack Surface: What Is Actually Different About AI</h2>
+
+    <h3>The big picture</h3>
+
+    <p>AI does not just add new suppliers. It adds <strong>new categories of risk</strong> that existing controls were not designed to detect. The five that matter most at board level are model poisoning, prompt injection, inference-based data leakage, agentic identity risk, and foundation model concentration.</p>
+
+    <h3>2.1 Model supply chain poisoning</h3>
+
+    <p>Hugging Face hosts <strong>well over 1.5 million models</strong>. Researchers have repeatedly demonstrated malicious models containing embedded backdoors, pickle-based code execution, or subtly manipulated weights. In 2024, JFrog researchers reported around <strong>100 malicious models</strong> on Hugging Face with code execution payloads, and subsequent scanning initiatives continue to show that model repositories need to be treated as software supply chain infrastructure.</p>
+
+    <p><strong>The question for the board:</strong> <em>Do we know which models — by exact version and origin — are in production, and did any of them come from a public repository without integrity verification?</em></p>
+
+    <h3>2.2 Prompt injection as the new "SQL injection"</h3>
+
+    <p>Prompt injection is the <strong>#1 risk in the OWASP Top 10 for LLM Applications</strong>. It is not a theoretical problem. Indirect prompt injection — where malicious instructions are hidden in a document, email, webpage, or calendar invite that an AI agent reads — has been demonstrated against Microsoft Copilot, Google Gemini, ChatGPT, and most major agent frameworks.</p>
+
+    <p>The supply chain angle is simple: <strong>you do not have to be attacked directly</strong>. If your AI agent ingests content from a compromised supplier, partner, or public source, the attacker can hijack your agent's behavior through someone else's data.</p>
+
+    <h3>2.3 Data exfiltration through inference</h3>
+
+    <p>Every prompt sent to an external model is, by definition, <strong>data leaving your perimeter</strong>. The controls that matter are not abstract. They are specific operational questions:</p>
+
+    <ul>
+      <li>Is the data logged by the provider?</li>
+      <li>Is it used for training now or later, including under changed terms?</li>
+      <li>Who at the provider can access it?</li>
+      <li>What happens if the provider is breached?</li>
+      <li>What happens if the provider is acquired or shuts down?</li>
+    </ul>
+
+    <p><strong>Samsung's 2023 ChatGPT leak</strong> — employees pasting proprietary source code into a consumer tool — is now the prototype incident. Most organizations still cannot answer, with evidence, what prompts their employees sent yesterday.</p>
+
+    <h3>2.4 Agentic AI and the identity problem</h3>
+
+    <p>AI agents now execute real actions: sending emails, writing code, approving transactions, calling APIs, and clicking through SaaS interfaces on behalf of users. Each agent is effectively a <strong>non-human identity with privileged access</strong> — and most do not fit neatly into existing IAM, PAM, or zero-trust models.</p>
+
+    <p>The blast radius question is uncomfortable but necessary: <em>If our AI agent is compromised through prompt injection or a poisoned tool, what is the maximum damage it can do before anyone notices?</em></p>
+
+    <p>Most organizations have no answer.</p>
+
+    <h3>2.5 Concentration risk in foundation models</h3>
+
+    <p>A very small number of foundation model providers now underpin a large share of enterprise AI. If OpenAI, Anthropic, or a major cloud AI platform experiences a breach, outage, policy change, or geopolitical disruption, <strong>the impact is simultaneous and global</strong>.</p>
+
+    <p>This is the same concentration risk logic that DORA Article 29 was written for — except the financial sector is far from the only one exposed.</p>
+
+    <div class="insight-box">
+      <h4>Control implication</h4>
+      <p>AI risk is not only a vendor risk issue. It is also a data governance, identity, software supply chain, incident response, and operational resilience issue.</p>
+    </div>
+
+    <hr class="article-divider" />
+
+    <h2>3. What Regulators Already Expect</h2>
+
+    <h3>The big picture</h3>
+
+    <p>AI governance is not waiting for a single unified regulation. Obligations are already arriving through multiple overlapping frameworks:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Framework</th>
+          <th>What it requires — AI supply chain angle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>EU AI Act</strong></td>
+          <td>Risk classification of AI systems; provider and deployer obligations; transparency on training data; incident reporting for high-risk systems; GPAI obligations including systemic risk.</td>
+        </tr>
+        <tr>
+          <td><strong>NIST AI RMF 1.0 + Generative AI Profile</strong></td>
+          <td>Governance, mapping, measurement, and management of AI risk across the lifecycle, including third-party components and generative AI-specific risk scenarios.</td>
+        </tr>
+        <tr>
+          <td><strong>ISO/IEC 42001</strong></td>
+          <td>The first certifiable AI management system standard — a direct analogue to ISO 27001 for AI governance, roles, risk treatment, monitoring, and continual improvement.</td>
+        </tr>
+        <tr>
+          <td><strong>NIS2</strong></td>
+          <td>AI systems supporting essential or important services fall under supply chain security and cybersecurity risk-management obligations, especially where suppliers support critical operations.</td>
+        </tr>
+        <tr>
+          <td><strong>DORA</strong></td>
+          <td>AI-based ICT services used by financial entities are ICT third-party services. The Register of Information, due diligence, contract, concentration risk, and exit expectations apply.</td>
+        </tr>
+        <tr>
+          <td><strong>Sector-specific guidance</strong></td>
+          <td>Supervisory expectations from bodies such as EBA, EIOPA, FDA, and other sector regulators increasingly extend model risk management obligations to GenAI and AI-enabled services.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The practical implication is clear: <strong>AI suppliers are already regulated third parties under laws many organizations are already subject to</strong>. You do not need a new AI regulation to be accountable. You need to apply existing supply chain, model risk, cybersecurity, and operational resilience obligations to AI.</p>
+
+    <p><strong>Key references:</strong></p>
+    <ul>
+      <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener noreferrer">EU AI Act — Regulation (EU) 2024/1689</a></li>
+      <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf" target="_blank" rel="noopener noreferrer">NIST AI RMF 1.0</a></li>
+      <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank" rel="noopener noreferrer">NIST AI RMF Generative AI Profile</a></li>
+      <li><a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener noreferrer">ISO/IEC 42001:2023</a></li>
+      <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener noreferrer">OWASP Top 10 for LLM Applications</a></li>
+      <li><a href="https://www.digital-operational-resilience-act.com/Article_29.html" target="_blank" rel="noopener noreferrer">DORA Article 29</a></li>
+      <li><a href="https://www.nis-2-directive.com/NIS_2_Directive_Article_21.html" target="_blank" rel="noopener noreferrer">NIS2 Article 21</a></li>
+    </ul>
+
+    <hr class="article-divider" />
+
+    <h2>4. Five Moves for the Next 90 Days</h2>
+
+    <h3>The big picture</h3>
+
+    <p>The goal is not to solve AI governance in one quarter. It is to <strong>close the visibility gap</strong> and establish the minimum controls that prevent the largest, most common failure modes.</p>
+
+    <h3>4.1 Build an AI inventory — including shadow AI</h3>
+
+    <p>Map every AI system in use: approved, embedded, experimental, and unsanctioned. Include:</p>
+
+    <ul>
+      <li>model name, version, provider, and hosting location,</li>
+      <li>business owner, use case, and data types processed,</li>
+      <li>whether decisions are human-in-the-loop or automated,</li>
+      <li>contractual terms around training, logging, retention, and data residency.</li>
+    </ul>
+
+    <p>If you cannot produce this list, <strong>every other AI control is theoretical</strong>.</p>
+
+    <h3>4.2 Classify AI use cases by risk — not by hype</h3>
+
+    <p>Not every AI use case needs board-level scrutiny. But high-risk use cases — those affecting customers, employees, safety, financial decisions, regulated data, or critical operations — need explicit risk assessment, approval, and monitoring. The EU AI Act's risk tiers are a reasonable starting taxonomy even outside the EU.</p>
+
+    <h3>4.3 Extend third-party risk to AI specifically</h3>
+
+    <p>Update vendor due diligence to cover:</p>
+
+    <ul>
+      <li>model provenance and training data transparency,</li>
+      <li>security of the model provider's infrastructure,</li>
+      <li>prompt and output logging policies,</li>
+      <li>data use, retention, and training opt-outs,</li>
+      <li>sub-processors, including the underlying foundation model,</li>
+      <li>incident notification terms for AI-specific incidents,</li>
+      <li>exit and portability for fine-tuned models, embeddings, prompts, and evaluation data.</li>
+    </ul>
+
+    <h3>4.4 Apply zero trust to AI agents</h3>
+
+    <p>Treat every AI agent as a non-human privileged identity:</p>
+
+    <ul>
+      <li>scoped, least-privilege access,</li>
+      <li>per-action authorization for high-impact operations,</li>
+      <li>full logging of agent actions,</li>
+      <li>human approval for irreversible or material decisions,</li>
+      <li>kill switches and rate limits.</li>
+    </ul>
+
+    <h3>4.5 Run an AI incident tabletop</h3>
+
+    <p>Pick a realistic scenario and walk it through with security, legal, privacy, communications, and the business owner. Examples:</p>
+
+    <ul>
+      <li>an employee pasted confidential customer data into a consumer AI tool,</li>
+      <li>your AI agent sent a fraudulent email because it followed instructions in a phishing message,</li>
+      <li>your primary model provider announced a breach of logged prompts,</li>
+      <li>a fine-tuned model was found to leak training data under adversarial prompts,</li>
+      <li>a regulator asks for a list of every AI system making automated decisions about customers.</li>
+    </ul>
+
+    <p>If the response is improvised, the governance model is not ready.</p>
+
+    <hr class="article-divider" />
+
+    <h2>5. What an AI Supply Chain Program Should Produce</h2>
+
+    <p>Boards do not need a technical lecture on model architecture. They need evidence that management understands AI dependencies and can control them. A minimum viable AI supply chain program should therefore produce five outputs:</p>
+
+    <ol>
+      <li><strong>An AI inventory</strong> covering approved tools, embedded AI, agents, models, APIs, and shadow AI.</li>
+      <li><strong>A risk-tiering model</strong> that classifies AI use cases by business impact, data sensitivity, automation level, and regulatory exposure.</li>
+      <li><strong>AI-specific third-party due diligence</strong> covering model provenance, logging, retention, training use, sub-processors, incident notification, and exit provisions.</li>
+      <li><strong>Controls for AI agents</strong> based on least privilege, human approval, logging, rate limits, and kill switches.</li>
+      <li><strong>An AI incident response playbook</strong> covering prompt injection, model compromise, data leakage, provider breach, unsafe output, and agent misuse.</li>
+    </ol>
+
+    <p>These outputs are simple enough to explain to the board and concrete enough to test in an audit.</p>
+
+    <hr class="article-divider" />
+
+    <h2>Conclusion: AI Is Not a Tool Category — It Is a New Supply Chain</h2>
+
+    <p>The organizations that will handle AI risk well are not necessarily the ones with the most sophisticated models. They are the ones that recognized early that <strong>AI is a supply chain discipline</strong>, not just a technology program.</p>
+
+    <p>The board-level questions will not be about benchmarks or model performance. They will be:</p>
+
+    <ul>
+      <li>Do we know what we depend on?</li>
+      <li>Do we control what leaves the building?</li>
+      <li>Can we detect when something goes wrong?</li>
+      <li>Can we contain the damage when it does?</li>
+      <li>Can we defend our decisions to regulators, customers, and auditors?</li>
+    </ul>
+
+    <p>AI has moved from experiment to dependency faster than almost any technology in recent memory. The governance models need to catch up — and the supply chain lens is the fastest way to get there.</p>
+
+    <hr class="article-divider" />
+
+    <div id="annex-a">
+      <span class="annex-label">Annex A</span>
+      <h2>Board-Ready AI Supply Chain Evidence Pack</h2>
+
+      <p>For teams that need to turn the AI supply chain discussion into evidence, the following pack is a practical starting point:</p>
+
+      <ul>
+        <li>AI inventory with model, provider, owner, use case, and data classification,</li>
+        <li>shadow AI discovery results and remediation plan,</li>
+        <li>AI use-case risk classification methodology,</li>
+        <li>AI-specific vendor due diligence questionnaire,</li>
+        <li>contract clauses covering training use, logging, retention, incident notification, and exit,</li>
+        <li>list of AI agents and associated non-human identities, permissions, and business owners,</li>
+        <li>logging and monitoring standard for prompts, outputs, agent actions, and high-risk decisions,</li>
+        <li>AI incident response playbook and tabletop evidence,</li>
+        <li>concentration risk analysis for foundation model and cloud AI providers,</li>
+        <li>board dashboard covering AI adoption, risk exposure, incidents, exceptions, and overdue remediation.</li>
+      </ul>
+    </div>
+
+    <hr class="article-divider" />
+
+    <a class="back-link-bottom" href="index.html#blog">Back to Writing</a>
+  </div>
+
+  <footer>
+    <span>© 2026 Gabriel Hasik</span>
+    <span>Built with intention · <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber · Risk · Supply Chain</span>
+  </footer>
+</body>
+</html>
