@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NBES9XC498');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Third-Party Risk Intelligence Briefing for the week ending 2 June 2026: software supply chain compromise, AI Act deadlines, DORA enforcement, NIS2, cybersecurity M&A and vendor resilience signals."/>
+  <title>Third-Party Risk Intelligence Briefing — Week Ending 2 June 2026 | Gabriel Hasik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0e0e0e;
+      --bg2:       #141414;
+      --bg3:       #1a1a1a;
+      --border:    #242424;
+      --muted:     #3a3a3a;
+      --text-dim:  #666;
+      --text-mid:  #999;
+      --text:      #d8d0c4;
+      --text-hi:   #f0e8dc;
+      --accent:    #d4821a;
+      --accent2:   #e8a84c;
+      --accent-dim:#3a2208;
+
+      --critical:  #b54747;
+      --critical-bg:#2b1313;
+      --high:      #cf7f2a;
+      --high-bg:   #2f1d0c;
+      --watch:     #b8a13a;
+      --watch-bg:  #2d2810;
+      --info:      #4f8f88;
+      --info-bg:   #102423;
+
+      --serif:     'Playfair Display', Georgia, serif;
+      --mono:      'DM Mono', 'Courier New', monospace;
+      --sans:      'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(14,14,14,0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    .hero {
+      min-height: 76vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 3rem 5rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-grid::before {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+      opacity: 0.4;
+    }
+
+    .hero-grid::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(
+        180deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+      opacity: 0.4;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.75rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.95;
+      color: var(--text-hi);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      max-width: 1040px;
+    }
+
+    .hero-title em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-text {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-mid);
+      max-width: 840px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid var(--muted);
+      color: var(--text-dim);
+      border-radius: 2px;
+    }
+
+    .tag.accent {
+      border-color: var(--accent-dim);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    section {
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--accent-dim);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      max-width: 840px;
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .panel h3 {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .panel p {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .panel p:last-child { margin-bottom: 0; }
+
+    .signal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .signal-list li {
+      color: var(--text-mid);
+      font-size: 0.94rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.75;
+    }
+
+    .signal-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .signal-list strong { color: var(--text-hi); }
+
+    .briefing-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .briefing-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .briefing-card.critical { border-left: 3px solid var(--critical); }
+    .briefing-card.high { border-left: 3px solid var(--high); }
+    .briefing-card.watch { border-left: 3px solid var(--watch); }
+    .briefing-card.info { border-left: 3px solid var(--info); }
+
+    .briefing-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .pill.critical { color: #e58d8d; border-color: rgba(181,71,71,0.4); background: var(--critical-bg); }
+    .pill.high { color: #eab37a; border-color: rgba(207,127,42,0.4); background: var(--high-bg); }
+    .pill.watch { color: #dbc971; border-color: rgba(184,161,58,0.4); background: var(--watch-bg); }
+    .pill.info { color: #8fd3cc; border-color: rgba(79,143,136,0.4); background: var(--info-bg); }
+
+    .briefing-card h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      line-height: 1.28;
+      color: var(--text-hi);
+      margin-bottom: 1rem;
+    }
+
+    .briefing-card p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .briefing-card code {
+      font-family: var(--mono);
+      color: var(--accent2);
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 0.05rem 0.35rem;
+      border-radius: 2px;
+      font-size: 0.86rem;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 2rem;
+      margin-top: 1.25rem;
+    }
+
+    .detail-item {
+      border-top: 1px solid var(--border);
+      padding-top: 0.9rem;
+    }
+
+    .detail-item .label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.45rem;
+    }
+
+    .detail-item .value {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .detail-item .value strong {
+      color: var(--text-hi);
+      font-weight: 500;
+    }
+
+    .action-box {
+      margin-top: 1.4rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.25rem 1.1rem;
+    }
+
+    .action-box h4 {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .action-box ol,
+    .action-box ul {
+      padding-left: 1.1rem;
+      color: var(--text-mid);
+    }
+
+    .action-box li {
+      margin-bottom: 0.55rem;
+      line-height: 1.75;
+    }
+
+    .action-box li:last-child { margin-bottom: 0; }
+
+    .source-row {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    .source-row a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .source-row a:hover { border-bottom-color: var(--accent); }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .dashboard-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .dashboard-card h3 {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .dashboard-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .dashboard-card li {
+      color: var(--text-mid);
+      font-size: 0.94rem;
+      line-height: 1.75;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.8rem;
+    }
+
+    .dashboard-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .dashboard-card strong { color: var(--text-hi); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.95rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    td { color: var(--text-mid); }
+    td strong { color: var(--text-hi); font-weight: 500; }
+
+    .source-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .source-list li {
+      color: var(--text-mid);
+      line-height: 1.8;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .source-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .source-list a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .source-list a:hover { text-decoration: underline; }
+
+    .note-box {
+      margin-top: 2rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+
+    .note-box h4 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .note-box p {
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .note-box p:last-child { margin-bottom: 0; }
+
+    .back-link {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .back-link:hover { gap: 1.2rem; }
+
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .summary-grid,
+      .dashboard-grid,
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero { padding: 7rem 1.5rem 4rem; min-height: 66vh; }
+      section { padding: 4rem 1.5rem; }
+      footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      th, td { padding-left: 0; padding-right: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .nav-links a { font-size: 0.64rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="monitoring.html" class="active">Monitoring</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-eyebrow">Weekly briefing &middot; Third-party risk &middot; Vendor resilience</div>
+    <h1 class="hero-title">
+      Third-Party Risk<br/><em>Intelligence Briefing</em>
+    </h1>
+    <p class="hero-text">
+      Week ending 2 June 2026. This edition tracks software supply chain compromise, AI transparency deadlines,
+      DORA enforcement pressure, NIS2 supply chain obligations, cybersecurity vendor consolidation, and logistics
+      signals affecting outsourced technology, cloud, AI, and operational resilience programs.
+    </p>
+    <div class="hero-meta">
+      <span class="tag accent">Updated 3 June 2026</span>
+      <span class="tag">Third-Party Risk</span>
+      <span class="tag">Software Supply Chain</span>
+      <span class="tag">EU Regulation</span>
+      <span class="tag">Vendor Concentration</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">01 &mdash; Executive Snapshot</div>
+    <h2 class="section-title">This week is about cascading trust failures</h2>
+    <p class="section-intro">
+      The strongest signal this cycle is not a single vendor outage or isolated regulatory update. It is the convergence
+      of three pressures: trusted software packages being used as credential-theft infrastructure, EU digital regulation
+      entering enforcement windows, and strategic technology vendors consolidating into fewer platforms. For TPRM teams,
+      this raises the bar for dependency visibility, contract controls, incident notification, and exit planning.
+    </p>
+
+    <div class="summary-grid">
+      <div class="panel">
+        <h3>Analyst view</h3>
+        <p>
+          The Red Hat npm compromise shows why third-party risk must now extend into developer environments, package registries,
+          CI/CD tokens, and machine identities. Vendor assurance questionnaires are not enough when a trusted package can execute
+          credential-harvesting logic at install time.
+        </p>
+        <p>
+          In parallel, EU obligations are becoming operational: AI Act transparency controls have a fixed August 2026 deadline,
+          DORA reporting defects are already generating supervisory friction, and NIS2 will push supply chain security clauses
+          down into vendors that may not be directly regulated.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Top 3 emerging risks</h3>
+        <ul class="signal-list">
+          <li><strong>1.</strong> Software supply chain attacks at scale, especially npm packages that bypass normal trust signals.</li>
+          <li><strong>2.</strong> AI governance gaps, with deployers relying on vendors before Article 50 transparency controls are ready.</li>
+          <li><strong>3.</strong> Regulatory enforcement convergence across DORA, NIS2, AI Act and proposed ICT supply chain controls.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">02 &mdash; Critical Alerts</div>
+    <h2 class="section-title">Immediate action required</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Security</span>
+          <span class="pill">Software Supply Chain</span>
+        </div>
+        <h3>Red Hat npm supply chain attack: “Miasma” credential-stealing worm</h3>
+        <p>
+          On 1 June 2026, Red Hat disclosed a supply chain compromise affecting packages under the
+          <code>@redhat-cloud-services</code> npm namespace. Current reporting indicates that a compromised GitHub account
+          was used to inject malicious code into packages maintained in a Red Hat GitHub organization. The malware is described
+          by researchers as a credential-stealing worm derived from the Mini Shai-Hulud framework and designed to harvest cloud,
+          repository, npm, SSH, and Kubernetes secrets.
+        </p>
+        <p>
+          Red Hat states that the affected packages are frontend libraries and that the malicious code was not published
+          for customer consumption through the <code>console.redhat.com</code> system. That statement reduces product-delivery
+          exposure, but it does not eliminate risk for development environments or CI/CD pipelines that pulled compromised npm
+          artifacts directly.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Key facts</span>
+            <div class="value">32 packages and 96 compromised versions have been reported by researchers, with roughly <strong>80,000–117,000 weekly downloads</strong> across affected packages.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Attack pattern</span>
+            <div class="value">Install-time credential theft, repository compromise, token abuse, and package publication using apparently legitimate provenance signals.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Most exposed environments</span>
+            <div class="value">Developer workstations, CI/CD runners, internal package mirrors, cloud build systems, and repositories using Red Hat cloud frontend packages.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">TPRM implication</span>
+            <div class="value">Software supplier assurance must include package provenance, registry controls, token hygiene, SBOM validation, and post-install execution monitoring.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Search development environments and CI/CD pipelines for affected <code>@redhat-cloud-services</code> package versions.</li>
+            <li>If exposure is confirmed, rotate AWS, GCP, Azure, GitHub, npm, SSH, Docker, GPG and Kubernetes credentials.</li>
+            <li>Audit GitHub repositories for unauthorized branches, workflows, secrets, and token-generation activity.</li>
+            <li>Pin dependencies to known-good versions and avoid <code>latest</code> for build-critical packages.</li>
+            <li>Require high-risk software vendors to provide SBOMs, dependency monitoring evidence, and incident notification commitments.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-006">Red Hat RHSB-2026-006</a> &middot;
+          <a href="https://www.wiz.io/blog/miasma-supply-chain-attack-targeting-redhat-npm-packages">Wiz Research</a> &middot;
+          <a href="https://orca.security/resources/blog/red-hat-npm-supply-chain-attack/">Orca Security</a> &middot;
+          <a href="https://www.aikido.dev/blog/red-hat-npm-packages-compromised-credential-stealing-worm">Aikido Security</a>
+        </div>
+      </article>
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Regulatory</span>
+          <span class="pill">AI Governance</span>
+        </div>
+        <h3>EU AI Act Article 50 transparency obligations enter force on 2 August 2026</h3>
+        <p>
+          The EU AI Act’s Article 50 transparency obligations become applicable on <strong>2 August 2026</strong>. As of
+          3 June 2026, that leaves <strong>60 days</strong> to confirm that AI vendors and internal deployer controls are ready.
+          The European Commission’s draft guidelines clarify expectations for informing users when they interact with AI systems,
+          marking AI-generated or manipulated content, disclosing deepfakes, and notifying people when emotion recognition or
+          biometric categorisation systems are used.
+        </p>
+        <p>
+          The Digital Omnibus delays some high-risk AI timelines, but it does not remove the immediate need to implement Article 50
+          disclosures for chatbots, generative AI, emotion recognition, biometric categorisation, and deepfake-related use cases.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Key deadline</span>
+            <div class="value"><strong>2 August 2026</strong>: Article 50 transparency obligations apply; GPAI enforcement and AI literacy expectations also become more practically relevant.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Vendor types in scope</span>
+            <div class="value">Chatbots, generative AI platforms, AI content tools, emotion recognition systems, biometric categorisation services, and GPAI model providers.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Deployer exposure</span>
+            <div class="value">Organizations using vendor AI systems in the EU may have their own disclosure duties even when the underlying model or service is provided by a third party.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">TPRM implication</span>
+            <div class="value">AI vendor due diligence must move from policy review to evidence: UI disclosures, machine-readable marking, contract clauses and operational ownership.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Create an inventory of all AI systems supplied by third parties, including embedded AI features in SaaS platforms.</li>
+            <li>Verify Article 50 disclosure capabilities for chatbots, GenAI outputs, deepfakes, emotion recognition and biometric categorisation.</li>
+            <li>Add AI Act compliance warranties, audit rights, documentation obligations, and incident-notification commitments to vendor contracts.</li>
+            <li>Document AI literacy training for staff using or procuring AI-enabled vendor systems.</li>
+            <li>For GPAI providers, request technical documentation, copyright-policy evidence, and Code of Practice readiness.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://digital-strategy.ec.europa.eu/en/consultations/consultation-draft-guidelines-transparency-obligations-under-ai-act">European Commission draft guidelines</a> &middot;
+          <a href="https://artificialintelligenceact.eu/transparency-rules-article-50/">EU AI Act Article 50 guide</a>
+        </div>
+      </article>
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Regulatory</span>
+          <span class="pill">Operational Resilience</span>
+        </div>
+        <h3>DORA: Register of Information submissions under supervisory scrutiny</h3>
+        <p>
+          DORA enforcement is active across the EU financial sector, with the 2026 Register of Information cycle exposing
+          data quality and governance issues. Industry guidance notes that in the 2024 dry run, only <strong>6.5%</strong>
+          of nearly 1,000 participating entities passed all 116 data quality checks. National competent authorities have
+          been issuing feedback, correction requirements, and additional data-quality checks during the 2026 reporting cycle.
+        </p>
+        <p>
+          The practical effect is immediate for both financial entities and ICT vendors. Financial institutions must prove that
+          outsourced ICT services, critical or important functions, contract metadata, subcontractors and exit arrangements are
+          accurately recorded. ICT providers should expect more due diligence, contract remediation, and evidence requests.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Key finding</span>
+            <div class="value">The 2024 dry run showed weak readiness: only <strong>6.5%</strong> of registers passed all 116 checks.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Oversight shift</span>
+            <div class="value">The ESAs have designated 19 critical ICT third-party providers for direct EU-level oversight.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Most exposed vendors</span>
+            <div class="value">Cloud providers, SaaS platforms, managed service providers, data centres, telecoms, core banking providers and technology outsourcers.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">TPRM implication</span>
+            <div class="value">DORA RoI data quality is now a live supervisory issue, not a documentation exercise. Poor supplier data can become a compliance finding.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Confirm national RoI submission status and whether the register was accepted, rejected, or returned for correction.</li>
+            <li>Reconcile ICT contracts against DORA Article 30 minimum contractual requirements.</li>
+            <li>Identify dependencies on the 19 designated CTPPs and document concentration and exit analysis.</li>
+            <li>Prepare evidence packs for ICT vendors serving financial-sector clients.</li>
+            <li>Start threat-led penetration testing preparation for in-scope entities where applicable.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://doragrc.com/blog/dora-register-of-information-2026-reporting-update">DORA GRC reporting update</a> &middot;
+          <a href="https://www.dnb.nl/en/login/dlr/supervisory-reports/payment-institutions-and-electronic-money-institutions/news-and-messages/news/2026/2026-03-11-reporting-obligation-for-the-dora-information-register-and-automatic-feedback-on-data-quality-checks/">DNB RoI reporting guidance</a> &middot;
+          <a href="https://www.cssf.lu/en/2026/03/dora-register-of-information-collection/">CSSF RoI collection update</a> &middot;
+          <a href="https://www.eiopa.europa.eu/document/download/56b1ca78-5dd2-4d36-8377-47a538eb7558_en?filename=List+of+designated+CTPPs.pdf">ESA CTPP list</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">03 &mdash; High Importance</div>
+    <h2 class="section-title">Structural vendor landscape changes</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">Technology</span>
+          <span class="pill">Cybersecurity M&amp;A</span>
+        </div>
+        <h3>Cybersecurity consolidation reshapes exit risk and platform dependency</h3>
+        <p>
+          The cybersecurity vendor landscape continues to consolidate around large platforms. Google closed its acquisition
+          of Wiz in March 2026. Palo Alto Networks closed its CyberArk transaction in February 2026. Mitsubishi Electric completed
+          its acquisition of Nozomi Networks in January 2026. Zscaler announced the acquisition of Symmetry Systems in May 2026
+          to strengthen AI-agent communication governance. ServiceNow’s Armis transaction should be tracked closely as part of
+          the same platformization trend.
+        </p>
+        <p>
+          For customers, the risk is not simply M&amp;A as a corporate event. It is product roadmap uncertainty, changed commercial
+          leverage, altered support models, integration disruption, and reduced multi-cloud or vendor-neutral positioning.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Consolidation signal</span>
+            <div class="value">Identity, cloud security, OT/IoT visibility, AI-agent governance and exposure management are being absorbed into larger platforms.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">TPRM implication</span>
+            <div class="value">Change-of-control clauses, pricing protections, portability and service-continuity commitments become essential in cyber vendor contracts.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Concentration risk</span>
+            <div class="value">Security stacks may become more dependent on a small number of dominant vendors across cloud, identity, network, endpoint and AI control planes.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Watch items</span>
+            <div class="value">Roadmap changes, licensing model shifts, support transitions, data residency changes, and sunset notices for point products.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Map cybersecurity vendors against recent M&amp;A and identify changed ownership or product direction.</li>
+            <li>Review change-of-control, termination assistance, escrow, continuity, and data-portability clauses.</li>
+            <li>Assess whether platform consolidation creates new single points of failure.</li>
+            <li>Ask acquired vendors for roadmap, support and pricing commitments in writing.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/wiz-acquisition/">Google / Wiz</a> &middot;
+          <a href="https://www.reuters.com/business/palo-alto-plans-dual-listing-tel-aviv-after-closing-25-billion-cyberark-deal-2026-02-12/">Reuters / CyberArk</a> &middot;
+          <a href="https://www.mitsubishielectric.com/en/pr/2026/pdf/0129.pdf">Mitsubishi Electric / Nozomi</a> &middot;
+          <a href="https://www.zscaler.com/press/ai-announcement">Zscaler / Symmetry Systems</a>
+        </div>
+      </article>
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">Regulatory</span>
+          <span class="pill">NIS2</span>
+        </div>
+        <h3>NIS2 supply chain obligations cascade through vendor contracts</h3>
+        <p>
+          NIS2 is now a practical compliance and procurement issue across the EU, even where national transposition remains uneven.
+          The European Commission sent reasoned opinions to 19 Member States in May 2025 for failure to notify full transposition.
+          Meanwhile, organizations operating in or supplying essential and important entities are already preparing for 24-hour
+          early warnings, 72-hour incident notifications, management accountability and supply chain security evidence.
+        </p>
+        <p>
+          Article 21 requires an all-hazards approach to cybersecurity risk management, including supply chain security.
+          Article 20 places cybersecurity oversight and training expectations on management bodies. This means NIS2 will affect
+          suppliers that are not directly in scope but serve customers who are.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Core reporting</span>
+            <div class="value">24-hour early warning, 72-hour incident notification, and one-month final reporting logic for significant incidents.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Board accountability</span>
+            <div class="value">Management bodies must oversee cybersecurity risk management and receive appropriate training.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Supplier impact</span>
+            <div class="value">ICT vendors, cloud providers, MSPs and key operational suppliers will face more audit rights, security evidence requests and incident clauses.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">TPRM implication</span>
+            <div class="value">NIS2 supply chain controls should be translated into vendor tiering, contract clauses, incident workflows and assurance evidence.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Determine if the organization is directly in scope under national NIS2 implementation rules.</li>
+            <li>Verify registration and competent-authority requirements in each relevant Member State.</li>
+            <li>Build 24-hour incident escalation capability into vendor contracts and internal processes.</li>
+            <li>Prepare a supplier-security evidence pack for customers in NIS2 sectors.</li>
+            <li>Document management training and oversight of cyber supply chain risks.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://digital-strategy.ec.europa.eu/en/news/commission-calls-19-member-states-fully-transpose-nis2-directive">European Commission NIS2 transposition action</a> &middot;
+          <a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive">European Commission NIS2 overview</a> &middot;
+          <a href="https://www.nis-2-directive.com/NIS_2_Directive_Article_21.html">NIS2 Article 21 text reference</a>
+        </div>
+      </article>
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">Regulatory</span>
+          <span class="pill">ICT Supply Chain</span>
+        </div>
+        <h3>Cybersecurity Act revision points toward high-risk supplier restrictions</h3>
+        <p>
+          The European Commission’s January 2026 cybersecurity package proposes revisions to the Cybersecurity Act and related
+          simplification measures. The direction of travel is clear: critical sectors may face stronger EU-level mechanisms to
+          reduce dependency on high-risk third-country ICT suppliers and to strengthen certification and supply chain integrity.
+        </p>
+        <p>
+          This is not yet a final law, but it is a strong planning signal for NIS2 sectors and critical infrastructure operators.
+          Vendor selection will increasingly be shaped by geopolitical trust, ownership, certification posture and resilience impact,
+          not only technical functionality.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Regulatory status</span>
+            <div class="value">Proposal stage. Organizations should monitor legislative text, ENISA roles, certification requirements and high-risk supplier criteria.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Affected sectors</span>
+            <div class="value">Telecoms, cloud, digital infrastructure, energy, transport, health, water, public administration and other NIS2-covered sectors.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Vendor exposure</span>
+            <div class="value">Non-EEA ICT vendors could face additional security evidence demands or restrictions in critical infrastructure contexts.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">TPRM implication</span>
+            <div class="value">Supplier substitution planning should start before legal exclusion is final, because replacement cycles in ICT infrastructure are long.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Audit ICT suppliers used in critical infrastructure and classify EEA / non-EEA ownership and control exposure.</li>
+            <li>Identify components that would be difficult to replace within 12–36 months.</li>
+            <li>Integrate supplier geopolitical risk into technology architecture and procurement decisions.</li>
+            <li>Monitor ENISA certification and Commission high-risk supplier criteria as they develop.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_26_105">European Commission cybersecurity package</a> &middot;
+          <a href="https://www.twobirds.com/en/insights/2026/overview-of-the-csa2-ict-supply-chain-framework">Bird &amp; Bird CSA2 overview</a> &middot;
+          <a href="https://www.reuters.com/business/media-telecom/eu-phase-out-high-risk-tech-targets-huawei-chinese-companies-2026-01-20/">Reuters high-risk tech coverage</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">04 &mdash; Moderate / Watch List</div>
+    <h2 class="section-title">Signals to monitor over the next cycle</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card watch">
+        <div class="briefing-meta">
+          <span class="pill watch">Watch</span>
+          <span class="pill">Technology</span>
+          <span class="pill">Open Source</span>
+        </div>
+        <h3>npm attack tooling lowers the barrier for copycat campaigns</h3>
+        <p>
+          The Red Hat npm incident is part of a broader pattern of package registry compromise. Open-sourced attack tooling,
+          token abuse and package account takeovers make npm, PyPI and similar ecosystems persistent third-party risk surfaces.
+          Provenance alone is not sufficient if the trusted publisher or automation token has been compromised.
+        </p>
+        <div class="action-box">
+          <h4>Watch actions</h4>
+          <ul>
+            <li>Use dependency pinning, integrity verification, private registries or curated mirrors for critical builds.</li>
+            <li>Monitor anomalous package updates and installation scripts in real time.</li>
+            <li>Require SBOM and secure build evidence from software suppliers.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="briefing-card watch">
+        <div class="briefing-meta">
+          <span class="pill watch">Watch</span>
+          <span class="pill">Market</span>
+          <span class="pill">Semiconductors</span>
+        </div>
+        <h3>EU semiconductor dependency exposes sanctions-versus-continuity tension</h3>
+        <p>
+          Europe’s chip supply chain remains exposed to Chinese-origin components and single-supplier concentration. Sanctions,
+          export controls, and proposed diversification expectations may collide with industrial continuity where alternative
+          suppliers are not yet available. The practical risk is binary: a supplier can shift from acceptable to blocked, then
+          potentially receive exemptions, creating compliance uncertainty.
+        </p>
+        <div class="action-box">
+          <h4>Watch actions</h4>
+          <ul>
+            <li>Map semiconductor dependencies by origin, ownership, alternative availability and buffer stock.</li>
+            <li>Track sanctions exemption decisions and procurement diversification proposals.</li>
+            <li>Assess which critical components exceed acceptable single-source concentration thresholds.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="briefing-card watch">
+        <div class="briefing-meta">
+          <span class="pill watch">Watch</span>
+          <span class="pill">Logistics</span>
+          <span class="pill">Middle East</span>
+        </div>
+        <h3>Red Sea disruption remains a vendor resilience stressor</h3>
+        <p>
+          Asia-Europe shipping remains exposed to Red Sea and Middle East escalation dynamics. Even partial recovery does not remove
+          the risk of route changes, higher insurance costs, container-rate pressure and extended lead times. Vendors dependent on
+          just-in-time components, electronics, pharmaceuticals or automotive parts should be reassessed for routing and buffer-stock
+          resilience.
+        </p>
+        <div class="action-box">
+          <h4>Watch actions</h4>
+          <ul>
+            <li>Ask critical vendors to disclose routing strategies and lead-time assumptions.</li>
+            <li>Update SLAs and continuity plans to reflect 10–14 day rerouting scenarios where relevant.</li>
+            <li>Track carrier pullbacks, insurance premiums and conflict escalation as leading indicators.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="briefing-card info">
+        <div class="briefing-meta">
+          <span class="pill info">Trend</span>
+          <span class="pill">AI Agents</span>
+          <span class="pill">Identity</span>
+        </div>
+        <h3>AI agent security becomes a third-party risk category</h3>
+        <p>
+          AI-agent governance is now visible in cybersecurity M&amp;A and product strategy. Third-party AI agents with write access
+          to data, APIs, SaaS applications or infrastructure should be treated as machine identities with privileged capability.
+          Vendor reviews should assess permissions, logging, kill-switches, approval workflows and data boundary controls.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">05 &mdash; Dashboard</div>
+    <h2 class="section-title">Regulatory countdown and sector heatmap</h2>
+    <p class="section-intro">
+      Countdown values below are calculated as of 3 June 2026. Where dates are jurisdiction-specific or expressed only as a month,
+      the table uses the clearest public milestone and marks estimates accordingly.
+    </p>
+
+    <div class="panel">
+      <h3>Regulatory countdown</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Regulation / Event</th>
+            <th>Next milestone</th>
+            <th>Status</th>
+            <th>TPRM relevance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>EU AI Act Article 50 transparency</strong></td>
+            <td>2 Aug 2026 — 60 days</td>
+            <td>Upcoming</td>
+            <td>AI vendor disclosures, deepfake marking, chatbot transparency, deployer controls</td>
+          </tr>
+          <tr>
+            <td><strong>EU AI Act GPAI enforcement</strong></td>
+            <td>2 Aug 2026 — 60 days</td>
+            <td>Upcoming</td>
+            <td>GPAI provider documentation, copyright policies, model transparency</td>
+          </tr>
+          <tr>
+            <td><strong>DORA RoI correction cycle</strong></td>
+            <td>30 Apr 2026</td>
+            <td>Closed / NCA-dependent follow-up</td>
+            <td>Supplier metadata accuracy, ICT contract completeness, correction evidence</td>
+          </tr>
+          <tr>
+            <td><strong>DORA TLPT preparation</strong></td>
+            <td>H2 2026</td>
+            <td>Expected</td>
+            <td>Testing scope, critical functions, outsourced ICT dependencies</td>
+          </tr>
+          <tr>
+            <td><strong>NIS2 national registrations</strong></td>
+            <td>Jurisdiction-specific</td>
+            <td>Active / uneven</td>
+            <td>Supplier incident notification, management accountability, supply chain assurance</td>
+          </tr>
+          <tr>
+            <td><strong>Cybersecurity Act revision / CSA2</strong></td>
+            <td>October 2026 target window — approx. 120–150 days</td>
+            <td>Proposal / monitoring</td>
+            <td>High-risk supplier restrictions, ICT substitution planning</td>
+          </tr>
+          <tr>
+            <td><strong>EU AI Act watermarking for pre-existing models</strong></td>
+            <td>2 Dec 2026 — 182 days</td>
+            <td>Upcoming</td>
+            <td>Synthetic-content marking by AI vendors and model providers</td>
+          </tr>
+          <tr>
+            <td><strong>EU AI Act Annex III high-risk systems</strong></td>
+            <td>2 Dec 2027 — 547 days</td>
+            <td>Delayed / upcoming</td>
+            <td>High-risk AI vendor classification, conformity, documentation and monitoring</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3>Sector heatmap</h3>
+        <ul>
+          <li><strong>🔴 Financial services:</strong> DORA, NIS2, AI Act, CTPP concentration and operational resilience expectations.</li>
+          <li><strong>🔴 Software / technology:</strong> npm supply chain attacks, secure development environments, AI vendor governance.</li>
+          <li><strong>🟠 Automotive:</strong> semiconductor dependency, sanctions uncertainty, Red Sea logistics exposure.</li>
+          <li><strong>🟠 Healthcare:</strong> NIS2, AI Act high-risk use cases, medical-device and supplier continuity risk.</li>
+          <li><strong>🟡 Manufacturing:</strong> NIS2 Annex II exposure, critical components and supply chain diversification pressure.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Geographic hotspots</h3>
+        <ul>
+          <li><strong>EU / EEA:</strong> DORA, NIS2, AI Act and cybersecurity package enforcement convergence.</li>
+          <li><strong>Red Sea / Middle East:</strong> shipping disruption and escalation risk affecting Asia-Europe trade.</li>
+          <li><strong>China:</strong> semiconductor dependency, rare earth controls, ownership opacity and decoupling pressure.</li>
+          <li><strong>Central Asia:</strong> anti-circumvention concerns and re-export monitoring linked to Russia sanctions.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Highest-priority TPRM actions</h3>
+        <ul>
+          <li>Run urgent software dependency checks for compromised npm packages and rotate secrets if exposure is found.</li>
+          <li>Inventory third-party AI systems and confirm Article 50 transparency controls before August 2026.</li>
+          <li>Reconcile DORA ICT supplier data and contract evidence against RoI and Article 30 requirements.</li>
+          <li>Update vendor incident notification clauses to support NIS2 24-hour escalation expectations.</li>
+          <li>Review cybersecurity vendor concentration following major M&amp;A and prepare exit options.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Board-level message</h3>
+        <ul>
+          <li>The perimeter of third-party risk now includes open-source packages, machine identities, AI agents and build pipelines.</li>
+          <li>Regulatory expectations are moving from policy to evidence: inventories, contracts, logs, disclosures and testing plans.</li>
+          <li>Vendor consolidation may simplify procurement but can increase systemic dependency and reduce exit leverage.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">06 &mdash; Glossary</div>
+    <h2 class="section-title">Key terms for this edition</h2>
+
+    <div class="panel">
+      <h3>Glossary</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CTPP</strong></td>
+            <td>Critical ICT Third-Party Provider under DORA.</td>
+          </tr>
+          <tr>
+            <td><strong>RoI</strong></td>
+            <td>Register of Information required under DORA Article 28.</td>
+          </tr>
+          <tr>
+            <td><strong>TLPT</strong></td>
+            <td>Threat-Led Penetration Testing under DORA.</td>
+          </tr>
+          <tr>
+            <td><strong>GPAI</strong></td>
+            <td>General-Purpose AI under the EU AI Act.</td>
+          </tr>
+          <tr>
+            <td><strong>CSA2</strong></td>
+            <td>Common shorthand for the 2026 Cybersecurity Act revision / cybersecurity package discussion.</td>
+          </tr>
+          <tr>
+            <td><strong>CIF</strong></td>
+            <td>Critical or Important Function under DORA outsourcing and ICT risk management terminology.</td>
+          </tr>
+          <tr>
+            <td><strong>SLSA</strong></td>
+            <td>Supply-chain Levels for Software Artifacts, a framework for software supply chain integrity.</td>
+          </tr>
+          <tr>
+            <td><strong>SBOM</strong></td>
+            <td>Software Bill of Materials, an inventory of software components and dependencies.</td>
+          </tr>
+          <tr>
+            <td><strong>NCA</strong></td>
+            <td>National Competent Authority.</td>
+          </tr>
+          <tr>
+            <td><strong>ESA</strong></td>
+            <td>European Supervisory Authority: EBA, ESMA or EIOPA.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">07 &mdash; Sources &amp; Note</div>
+    <h2 class="section-title">Confidence and source basis</h2>
+
+    <div class="panel">
+      <h3>Selected source list</h3>
+      <ul class="source-list">
+        <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-006">Red Hat Customer Portal — RHSB-2026-006</a></li>
+        <li><a href="https://www.wiz.io/blog/miasma-supply-chain-attack-targeting-redhat-npm-packages">Wiz Research — Miasma supply chain attack targeting Red Hat npm packages</a></li>
+        <li><a href="https://orca.security/resources/blog/red-hat-npm-supply-chain-attack/">Orca Security — Red Hat npm supply chain attack analysis</a></li>
+        <li><a href="https://www.aikido.dev/blog/red-hat-npm-packages-compromised-credential-stealing-worm">Aikido Security — Compromised Red Hat npm packages</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/consultations/consultation-draft-guidelines-transparency-obligations-under-ai-act">European Commission — Draft guidelines on transparency obligations under the AI Act</a></li>
+        <li><a href="https://doragrc.com/blog/dora-register-of-information-2026-reporting-update">DORA GRC — Register of Information 2026 reporting update</a></li>
+        <li><a href="https://www.dnb.nl/en/login/dlr/supervisory-reports/payment-institutions-and-electronic-money-institutions/news-and-messages/news/2026/2026-03-11-reporting-obligation-for-the-dora-information-register-and-automatic-feedback-on-data-quality-checks/">De Nederlandsche Bank — DORA Information Register reporting obligation</a></li>
+        <li><a href="https://www.eiopa.europa.eu/document/download/56b1ca78-5dd2-4d36-8377-47a538eb7558_en?filename=List+of+designated+CTPPs.pdf">ESAs — List of designated critical ICT third-party providers</a></li>
+        <li><a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/wiz-acquisition/">Google — completion of Wiz acquisition</a></li>
+        <li><a href="https://www.zscaler.com/press/ai-announcement">Zscaler — intent to acquire Symmetry Systems</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/news/commission-calls-19-member-states-fully-transpose-nis2-directive">European Commission — NIS2 transposition action</a></li>
+        <li><a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_26_105">European Commission — Cybersecurity package and Cybersecurity Act revision</a></li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <h4>Confidence level</h4>
+      <p>
+        Confidence is <strong>high</strong> for the Red Hat npm compromise, AI Act Article 50 deadline, DORA RoI quality signal,
+        CTPP designations, major completed M&amp;A items, and NIS2 supply chain obligations because they are supported by official
+        or specialist sources. Confidence is <strong>moderate</strong> for market and logistics watch-list items, where conditions
+        can change quickly and several signals depend on evolving geopolitical or commercial reporting.
+      </p>
+
+      <h4>Analyst note</h4>
+      <p>
+        This edition should be used as a triage briefing, not as a substitute for legal advice or incident response. For immediate
+        Red Hat npm exposure, use the vendor advisories and your own package inventory as the source of truth. For EU regulatory
+        obligations, confirm local transposition, competent authority guidance and sector-specific applicability before assigning
+        final compliance ownership.
+      </p>
+    </div>
+
+    <a class="back-link" href="third-party-risk-intelligence-briefing.html">Back to briefing overview --</a>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Gabriel Hasik</span>
+    <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber &middot; Risk &middot; Supply Chain</span>
+  </footer>
+
+</body>
+</html>
