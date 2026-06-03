@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NBES9XC498');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Geopolitical Supply Chain Risks — Late May / Early June 2026 | Gabriel Hasik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0e0e0e;
+      --bg2:        #141414;
+      --bg3:        #1a1a1a;
+      --border:     #242424;
+      --muted:      #3a3a3a;
+      --text-dim:   #666;
+      --text-mid:   #999;
+      --text:       #d8d0c4;
+      --text-hi:    #f0e8dc;
+      --accent:     #d4821a;
+      --accent2:    #e8a84c;
+      --accent-dim: #3a2208;
+
+      --critical:   #b54747;
+      --critical-bg:#2b1313;
+      --high:       #cf7f2a;
+      --high-bg:    #2f1d0c;
+      --watch:      #b8a13a;
+      --watch-bg:   #2d2810;
+      --info:       #4f8f88;
+      --info-bg:    #102423;
+
+      --serif:      'Playfair Display', Georgia, serif;
+      --mono:       'DM Mono', 'Courier New', monospace;
+      --sans:       'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(14,14,14,0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 3rem 5rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-grid::before {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+      opacity: 0.4;
+    }
+
+    .hero-grid::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(
+        180deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+      opacity: 0.4;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.96;
+      color: var(--text-hi);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+    }
+
+    .hero-title em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-text {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-mid);
+      max-width: 820px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid var(--muted);
+      color: var(--text-dim);
+      border-radius: 2px;
+    }
+
+    .tag.accent {
+      border-color: var(--accent-dim);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    section {
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--accent-dim);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      max-width: 840px;
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .panel h3 {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .panel p {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .panel p:last-child { margin-bottom: 0; }
+
+    .signal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .signal-list li {
+      color: var(--text-mid);
+      font-size: 0.94rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .signal-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .signal-list strong { color: var(--text-hi); }
+
+    .briefing-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .briefing-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .briefing-card.critical { border-left: 3px solid var(--critical); }
+    .briefing-card.high { border-left: 3px solid var(--high); }
+    .briefing-card.watch { border-left: 3px solid var(--watch); }
+
+    .briefing-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .pill.critical { color: #e58d8d; border-color: rgba(181,71,71,0.4); background: var(--critical-bg); }
+    .pill.high { color: #eab37a; border-color: rgba(207,127,42,0.4); background: var(--high-bg); }
+    .pill.watch { color: #dbc971; border-color: rgba(184,161,58,0.4); background: var(--watch-bg); }
+
+    .briefing-card h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      line-height: 1.28;
+      color: var(--text-hi);
+      margin-bottom: 1rem;
+    }
+
+    .briefing-card p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 2rem;
+      margin-top: 1.25rem;
+    }
+
+    .detail-item {
+      border-top: 1px solid var(--border);
+      padding-top: 0.9rem;
+    }
+
+    .detail-item .label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.45rem;
+    }
+
+    .detail-item .value {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .detail-item .value strong {
+      color: var(--text-hi);
+      font-weight: 500;
+    }
+
+    .action-box {
+      margin-top: 1.4rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.25rem 1.1rem;
+    }
+
+    .action-box h4 {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .action-box ol {
+      padding-left: 1.1rem;
+      color: var(--text-mid);
+    }
+
+    .action-box li {
+      margin-bottom: 0.55rem;
+      line-height: 1.75;
+    }
+
+    .action-box li:last-child { margin-bottom: 0; }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .dashboard-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .dashboard-card h3 {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .dashboard-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .dashboard-card li {
+      color: var(--text-mid);
+      font-size: 0.94rem;
+      line-height: 1.75;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.8rem;
+    }
+
+    .dashboard-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .dashboard-card strong { color: var(--text-hi); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.95rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    td { color: var(--text-mid); }
+    td strong { color: var(--text-hi); font-weight: 500; }
+
+    .source-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .source-list li {
+      color: var(--text-mid);
+      line-height: 1.8;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .source-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .note-box {
+      margin-top: 2rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+
+    .note-box h4 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .note-box p {
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .note-box p:last-child { margin-bottom: 0; }
+
+    .back-link {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .back-link:hover { gap: 1.2rem; }
+
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .summary-grid,
+      .dashboard-grid,
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero { padding: 7rem 1.5rem 4rem; min-height: 68vh; }
+      section { padding: 4rem 1.5rem; }
+      footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      th, td { padding-left: 0; padding-right: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .nav-links a { font-size: 0.64rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="monitoring.html" class="active">Monitoring</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-eyebrow">Flash intelligence report &middot; Geopolitics &middot; Supply chains</div>
+    <h1 class="hero-title">
+      Geopolitical Supply<br/><em>Chain Risks</em>
+    </h1>
+    <p class="hero-text">
+      Late May to early June 2026 shows a structural shift in how geopolitical risk intersects with third-party management. Sanctions policy, semiconductor concentration, Red Sea disruption, proposed EU diversification rules, and geopolitical exposure in critical dependencies are no longer isolated topics — they are becoming core supply chain governance issues.
+    </p>
+    <div class="hero-meta">
+      <span class="tag accent">Late May – Early June 2026</span>
+      <span class="tag">Flash Briefing</span>
+      <span class="tag">Geopolitical Risk</span>
+      <span class="tag">Third-Party Risk</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">01 &mdash; Executive Summary</div>
+    <h2 class="section-title">Geopolitical risk is becoming a supply chain control requirement</h2>
+    <p class="section-intro">
+      The current briefing cycle is defined by a regime change: geopolitical risk is moving from strategic background noise into operational third-party risk management. The EU semiconductor sanctions exemption debate, the 20th Russia sanctions package, persistent Red Sea disruption, and proposed EU diversification quotas all point in the same direction — organizations need deeper visibility into supplier geography, ownership, routing, end-use exposure, and single-source dependencies.
+    </p>
+
+    <div class="summary-grid">
+      <div class="panel">
+        <h3>Analyst view</h3>
+        <p>
+          The main message is not that one supply chain corridor or one jurisdiction is risky. The broader issue is synchronized disruption across sanctions, shipping, technology inputs, and regulatory expectations. A supplier may be operationally reliable, but still create hidden risk through ownership, geography, restricted end-use exposure, or dependency on contested trade routes.
+        </p>
+        <p>
+          This creates a new baseline for third-party risk teams: screening must move beyond entity names and annual reviews. Supplier concentration, beneficial ownership, jurisdictional exposure, and crisis routing need to be treated as live risk indicators.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Top 3 pressure points</h3>
+        <ul class="signal-list">
+          <li><strong>1.</strong> Semiconductor concentration and sanctions exemptions exposing single-point-of-failure dependencies.</li>
+          <li><strong>2.</strong> EU 20th Russia sanctions package expanding screening, anti-circumvention, cyber, crypto, and banking controls.</li>
+          <li><strong>3.</strong> Red Sea and Middle East disruption increasing lead times, shipping costs, and route uncertainty.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">02 &mdash; Critical Alerts</div>
+    <h2 class="section-title">Immediate pressure points for third-party ecosystems</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Semiconductors / Automotive</span>
+        </div>
+        <h3>EU semiconductor crisis forces sanctions exemption debate</h3>
+        <p>
+          The European Commission is preparing a temporary exemption from its 20th Russia sanctions package for Chinese chipmaker Yangzhou Yangjie Electronic Technology Co. European automakers warned of possible production line collapse within weeks without the exemption.
+        </p>
+        <p>
+          Yangjie was sanctioned in April 2026 after its products were reportedly found in Russian drones and glide bombs used against Ukraine. The case illustrates a direct collision between sanctions policy and industrial continuity.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Affected third parties</span>
+            <div class="value">Semiconductor suppliers, automotive Tier 1 and Tier 2 suppliers, Chinese electronics manufacturers, and component distributors.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Geography</span>
+            <div class="value">EU-wide automotive sector exposure, with a direct China-linked supplier dependency.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Risk implication</span>
+            <div class="value">The case exposes a critical single-point-of-failure in European automotive supply chains. Sanctions without wind-down periods can create immediate operational disruption.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Compliance uncertainty</span>
+            <div class="value">Future sanctions may be temporarily reversed or exempted when industrial impact is severe enough, creating ambiguity for policy interpretation and vendor decisions.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Immediately map all semiconductor suppliers with Chinese origin, ownership, or critical sub-supplier dependencies.</li>
+            <li>Assess buffer stock levels for components that could be affected by sanctions or export controls.</li>
+            <li>Develop alternative sourcing plans for sanctioned, exempted, or high-risk suppliers.</li>
+            <li>Monitor EU exemption decisions and update sanctions compliance playbooks accordingly.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Sanctions / Anti-Circumvention</span>
+        </div>
+        <h3>EU 20th Russia sanctions package expands third-party screening requirements</h3>
+        <p>
+          Adopted on 23 April 2026, the EU's 20th Russia sanctions package introduces a broad expansion of compliance obligations. It includes the first activation of the anti-circumvention mechanism against Kyrgyzstan, 120 new designations, a categorical ban on Russian crypto-asset service providers, restrictions on cybersecurity services, and new export controls.
+        </p>
+        <p>
+          The anti-circumvention logic is especially important for third-party risk. Imports of controlled EU goods into Kyrgyzstan reportedly rose by approximately 800% compared with pre-war levels, while re-exports to Russia rose by approximately 1,200%.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">New sanctions mechanisms</span>
+            <div class="value">Country-level anti-circumvention designation, 120 new designations, expanded export controls, and additional transaction bans.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Jurisdictions to review</span>
+            <div class="value">Kyrgyz Republic, China, Hong Kong, Turkey, UAE, Thailand, and other possible re-export or diversion hubs.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Sector impact</span>
+            <div class="value">Crypto-asset services, managed cybersecurity services, banking, dual-use goods, Common High Priority items, and export-sensitive products.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Third-party risk implication</span>
+            <div class="value">Annual sanctions screening is no longer sufficient. Organizations with suppliers or intermediaries in flagged jurisdictions need enhanced due diligence and end-use monitoring.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Refresh sanctions screening lists immediately across all vendors, customers, intermediaries, and beneficial owners.</li>
+            <li>Review all vendor relationships in Central Asia, Turkey, UAE, China, Hong Kong, and Thailand.</li>
+            <li>Assess cybersecurity service providers for Russian nexus and service restrictions.</li>
+            <li>Update crypto-asset compliance frameworks and confirm the status of any Russian service-provider exposure.</li>
+            <li>Implement enhanced end-use monitoring for Common High Priority items.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Shipping / Middle East</span>
+        </div>
+        <h3>Red Sea and Middle East shipping disruption enters its third year</h3>
+        <p>
+          The Red Sea shipping crisis continues to affect Asia-Europe trade routes in 2026. Although partial recovery followed the Israel-Hamas ceasefire, the Iran war has reportedly caused carriers that had resumed or tested Red Sea sailings to pull back again.
+        </p>
+        <p>
+          Container ship transits through Suez reportedly fell 33% in a two-week period in March 2026. Iran is also reportedly pushing the Houthis to resume attacks on commercial shipping, raising escalation risk for the corridor.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Current state</span>
+            <div class="value">Suez Canal transits forecast around <strong>24,000</strong> for 2026, compared with <strong>26,434</strong> in 2023.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Cost pressure</span>
+            <div class="value">War-risk insurance premiums remain elevated at roughly <strong>0.15–0.25%</strong> of hull value, compared with <strong>0.02–0.05%</strong> pre-crisis.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Routing impact</span>
+            <div class="value">Cape of Good Hope routing can add <strong>10–14 days</strong> and more than <strong>$1 million</strong> in fuel per voyage.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Most exposed goods</span>
+            <div class="value">Electronics, pharmaceuticals, automotive parts, time-sensitive inputs, and goods dependent on predictable Asia-Europe maritime schedules.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Reassess all third parties with Asia-Europe maritime logistics dependencies.</li>
+            <li>Require key vendors to disclose routing strategies, buffer-stock policies, and contingency carriers.</li>
+            <li>Factor 10–14 day lead-time extensions into SLAs and business continuity assumptions.</li>
+            <li>Monitor the Iran-Houthi situation as a leading indicator of further route closure risk.</li>
+          </ol>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">03 &mdash; High Importance</div>
+    <h2 class="section-title">Structural risks reshaping supplier governance</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">EU Regulation / Diversification</span>
+        </div>
+        <h3>EU proposes mandatory supply chain diversification quotas</h3>
+        <p>
+          The EU is drafting legislation that would mandate structural supply chain diversification. Under the proposal, businesses could procure only 30–40% of critical components from any single supplier, while the remaining 60–70% would need to come from at least three different suppliers that cannot all be located in the same country.
+        </p>
+        <p>
+          The proposal responds partly to Beijing's rare earth export controls that affected European automotive production in 2025. The Commission planned to present the measures on 29 May 2026, with possible endorsement at a late-June EU summit.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Compliance threshold</span>
+            <div class="value">30–40% cap from a single supplier for critical components, with remaining sourcing spread across at least three suppliers.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Ownership risk</span>
+            <div class="value">Surface-level geography may be misleading. Some “European” suppliers may still be structurally controlled by foreign state-linked groups.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">TPRM impact</span>
+            <div class="value">Organizations would need multi-tier mapping, procurement analytics, and ultimate beneficial ownership screening beyond current KYC standards.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Implementation outlook</span>
+            <div class="value">Potential 1–2 year implementation timeline, but prudent organizations should start measuring supplier concentration now.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Begin mapping supplier geographic concentration and single-source dependency for critical components.</li>
+            <li>Identify components where one supplier exceeds 30–40% of sourcing volume or strategic reliance.</li>
+            <li>Investigate ultimate beneficial ownership of apparently domestic or European suppliers.</li>
+            <li>Prepare procurement and TPRM systems for diversification reporting requirements.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">EU Policy / Business Planning</span>
+        </div>
+        <h3>EU industry leadership warns companies are not integrating geopolitical risk</h3>
+        <p>
+          EU Industry Commissioner Stéphane Séjourné warned on 22 May 2026 that too few European businesses integrate geopolitical and supply chain risks into their planning. He called on companies to modernize their business plans.
+        </p>
+        <p>
+          Economic Security Commissioner Valdis Dombrovskis emphasized that resilience and security carry a price, but that the current geopolitical environment requires organizations to invest in that resilience.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Policy signal</span>
+            <div class="value">EU direction is moving toward treating geopolitical risk integration as an expected business planning discipline.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Context</span>
+            <div class="value">The warning follows the Nexperia crisis, where a corporate conflict at a Chinese-owned Dutch chipmaker triggered government intervention, Chinese export retaliation, and automotive chip shortages.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Risk implication</span>
+            <div class="value">Organizations unable to evidence proactive supply chain resilience may face stronger regulatory scrutiny or customer due diligence pressure.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Governance takeaway</span>
+            <div class="value">Geopolitical risk should be integrated into procurement strategy, vendor onboarding, board reporting, and business continuity management.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">Critical Dependencies</span>
+        </div>
+        <h3>EU research identifies 206 critical dependencies with geopolitical exposure</h3>
+        <p>
+          A May 2026 European Commission study identified 206 products out of 5,361 analyzed that show both high foreign dependence and significant geopolitical exposure. Nearly half of these dependencies are structurally persistent.
+        </p>
+        <p>
+          China is reportedly the primary supplier for 47% of dependent products, representing approximately €206 billion. The study also flags the United States as a frequent user of trade restrictions, showing that political alignment does not eliminate supply chain friction.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Dependency count</span>
+            <div class="value"><strong>206</strong> products show both high foreign dependence and significant geopolitical exposure.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">China exposure</span>
+            <div class="value">China is the primary supplier for approximately <strong>47%</strong> of dependent products.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Persistence</span>
+            <div class="value">Around <strong>45%</strong> of dependencies are structural and have persisted since 2017.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Strategic insight</span>
+            <div class="value">Even simple products can be difficult to diversify when global supply is concentrated and substitutes are limited.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Overlay vendor spend data with critical dependency categories and product-level exposure.</li>
+            <li>Review dependencies in renewable energy, electronics, automotive, and strategic manufacturing inputs.</li>
+            <li>Include politically aligned suppliers in restriction-risk assessments rather than assuming low risk by default.</li>
+          </ol>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">04 &mdash; Moderate / Watch List</div>
+    <h2 class="section-title">Signals to monitor over the next quarter</h2>
+
+    <div class="briefing-stack">
+
+      <article class="briefing-card watch">
+        <div class="briefing-meta">
+          <span class="pill watch">Moderate</span>
+          <span class="pill">Macro / Euro Area</span>
+        </div>
+        <h3>Euro area geopolitical risk index remains elevated</h3>
+        <p>
+          Deutsche Bundesbank researchers developed a euro area-specific Geopolitical Risk Index showing that European geopolitical risk remains significantly elevated since 2022 and has risen sharply amid Middle East conflicts in early 2026.
+        </p>
+        <p>
+          Their model suggests that an escalation scenario could leave industrial production 0.7% lower and prices 0.3% higher relative to baseline.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Vendor impact</span>
+            <div class="value">European vendor financial health may be affected by slower activity, input price increases, and sector-specific pressure.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Monitoring focus</span>
+            <div class="value">Energy-intensive industries, manufacturing suppliers, logistics providers, and vendors with weak margins.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="briefing-card watch">
+        <div class="briefing-meta">
+          <span class="pill watch">Moderate</span>
+          <span class="pill">UK Sanctions / Export Controls</span>
+        </div>
+        <h3>UK introduces new sanctions end-use controls</h3>
+        <p>
+          On 4 March 2026, the UK Government confirmed plans to introduce new sanctions end-use controls. Exporters would need licences for specific exports identified as high-risk for diversion to sanctioned destinations.
+        </p>
+        <p>
+          OFSI also launched a call for evidence on ownership and control definitions, which may further affect how organizations assess sanctioned ownership and control in complex structures.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Risk implication</span>
+            <div class="value">UK-based third parties may face new licensing requirements, delivery delays, and product availability constraints.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Divergence risk</span>
+            <div class="value">Organizations exposed to both EU and UK rules should expect growing divergence in sanctions compliance requirements.</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">05 &mdash; Risk Dashboard</div>
+    <h2 class="section-title">Geopolitical supply chain risk dashboard</h2>
+    <p class="section-intro">
+      The dashboard summarizes the main vectors that should be visible in third-party risk reporting, procurement governance, and executive risk discussions.
+    </p>
+
+    <div class="panel">
+      <h3>Current risk vectors</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Risk vector</th>
+            <th>Severity</th>
+            <th>Trend</th>
+            <th>Key trigger</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>China decoupling / rare earth controls</strong></td>
+            <td>🔴 Critical</td>
+            <td>↑ Escalating</td>
+            <td>EU diversification quotas and export controls</td>
+          </tr>
+          <tr>
+            <td><strong>Russia sanctions circumvention</strong></td>
+            <td>🔴 Critical</td>
+            <td>→ Sustained</td>
+            <td>20th package and Kyrgyzstan precedent</td>
+          </tr>
+          <tr>
+            <td><strong>Red Sea / Middle East shipping</strong></td>
+            <td>🟠 High</td>
+            <td>↑ Re-escalating</td>
+            <td>Iran war and Houthi resumption risk</td>
+          </tr>
+          <tr>
+            <td><strong>US trade restrictions on allies</strong></td>
+            <td>🟡 Moderate</td>
+            <td>↑ Rising</td>
+            <td>EU research flagging US trade-restriction behavior</td>
+          </tr>
+          <tr>
+            <td><strong>Semiconductor supply concentration</strong></td>
+            <td>🔴 Critical</td>
+            <td>→ Sustained</td>
+            <td>Yangjie exemption and Nexperia fallout</td>
+          </tr>
+          <tr>
+            <td><strong>EU regulatory burden on supply chains</strong></td>
+            <td>🟠 High</td>
+            <td>↑ Accelerating</td>
+            <td>Diversification quotas and CSDDD-style expectations</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">06 &mdash; Analytical Assessment</div>
+    <h2 class="section-title">Connecting the dots</h2>
+
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3>1. Sanctions-industry paradox</h3>
+        <ul>
+          <li>The Yangjie semiconductor exemption shows that sanctions policy can collide directly with industrial survival.</li>
+          <li>Ad-hoc exemptions create compliance uncertainty for organizations trying to interpret sanctions risk consistently.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>2. Mandatory diversification is coming</h3>
+        <ul>
+          <li>Proposed EU sourcing caps, the security premium doctrine, and Commissioner-level pressure suggest voluntary resilience may become regulatory compliance.</li>
+          <li>Organizations should prepare for evidence-based supplier concentration reporting.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>3. Multi-vector disruption is normal</h3>
+        <ul>
+          <li>Sanctions, export controls, shipping disruption, and regulatory diversification requirements are now moving in parallel.</li>
+          <li>Third-party visibility must cover legal, logistics, ownership, financial, and operational dimensions at once.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>4. Ownership opacity is the key vulnerability</h3>
+        <ul>
+          <li>Geographic diversification on paper may not create real resilience if suppliers share the same beneficial owner or state-linked control.</li>
+          <li>Deep ownership mapping should be treated as a resilience control, not just a compliance check.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <h4>Confidence level</h4>
+      <p>
+        Confidence is <strong>high</strong>, based on official EU communications, adopted sanctions measures, policy signals, and multiple corroborating sector sources included in the briefing.
+      </p>
+
+      <h4>Practical takeaway</h4>
+      <p>
+        The new baseline for third-party risk management is not simply “screen the vendor.” It is: understand the vendor’s owners, sourcing concentration, shipping routes, end-use exposure, jurisdictional footprint, and ability to keep operating when political controls change quickly.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">07 &mdash; Priority Actions</div>
+    <h2 class="section-title">What third-party risk teams should do now</h2>
+
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3>1. Refresh sanctions screening</h3>
+        <ul>
+          <li>Re-screen all third parties against EU, UK, and US lists, including ownership and control.</li>
+          <li>Prioritize Central Asia, Turkey, UAE, China, Hong Kong, Thailand, Russia, and Belarus exposure.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>2. Map critical component concentration</h3>
+        <ul>
+          <li>Identify single-source, 30–40% threshold, and critical semiconductor dependencies.</li>
+          <li>Separate legal supplier geography from ultimate beneficial ownership.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>3. Stress-test logistics routes</h3>
+        <ul>
+          <li>Review Asia-Europe maritime dependencies and Cape of Good Hope rerouting assumptions.</li>
+          <li>Update SLAs, inventory policies, and vendor continuity plans for longer lead times.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>4. Strengthen end-use monitoring</h3>
+        <ul>
+          <li>Apply enhanced controls for Common High Priority items, dual-use goods, and high-risk exports.</li>
+          <li>Request vendor attestations for diversion, resale, and sanctioned-country exposure.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>5. Build a geopolitical TPRM dashboard</h3>
+        <ul>
+          <li>Track sanctions, shipping routes, supplier concentration, ownership, critical dependencies, and geopolitical risk trends in one reporting view.</li>
+          <li>Escalate changes to procurement, legal, compliance, and business continuity stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Strategic takeaway</h3>
+        <ul>
+          <li>Third-party resilience is becoming a regulatory, operational, and strategic requirement.</li>
+          <li>The strongest organizations will be those that can prove where their dependencies are, who controls them, and how quickly they can switch when geopolitical conditions change.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">08 &mdash; Sources &amp; Note</div>
+    <h2 class="section-title">Source basis and framing</h2>
+
+    <div class="panel">
+      <h3>Key sources referenced in the briefing</h3>
+      <ul class="source-list">
+        <li>European Commission statements by Stéphane Séjourné and Valdis Dombrovskis — 22 May 2026</li>
+        <li>Kharon analysis of EU supply chain diversification quotas — 20 May 2026</li>
+        <li>Greenberg Traurig alert on the EU 20th Russia sanctions package — May 2026</li>
+        <li>CEPR / Deutsche Bundesbank research on euro area geopolitical risk — 29 May 2026</li>
+        <li>European Commission DG Trade study on critical dependencies — 24 May 2026</li>
+        <li>LandedCost analysis of Red Sea shipping disruption — March 2026</li>
+        <li>The Middle East Insider shipping data — April 2026</li>
+        <li>Bloomberg / WWD reporting on Iran-Houthi shipping escalation — March 2026</li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <h4>Editorial note</h4>
+      <p>
+        This article is intended as a practical monitoring brief for cybersecurity, compliance, procurement, and third-party risk teams. It translates geopolitical events into operational questions: which suppliers are exposed, where the hidden dependencies are, and what evidence a company should collect before disruption occurs.
+      </p>
+    </div>
+
+    <a class="back-link" href="monitoring.html">Back to monitoring overview --</a>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Gabriel Hasik</span>
+    <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber &middot; Risk &middot; Supply Chain</span>
+  </footer>
+
+</body>
+</html>
