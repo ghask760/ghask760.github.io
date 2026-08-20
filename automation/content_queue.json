@@ -1,0 +1,22 @@
+{
+  "queue": [
+    {
+      "id": "checkbox-to-culture-tprm",
+      "title": "From Checkbox to Culture: Building a Third-Party Risk Program That Actually Works",
+      "category": "Third-Party Risk",
+      "target_month": "September 2026",
+      "angle": "Practical guide to TPRM maturity: from vendor questionnaires to continuous monitoring, contractual clauses, audit rights, ownership, and escalation.",
+      "regulatory_anchor": "NIS2 supply chain security and ISO 27001 Annex A supplier relationships",
+      "link_slug": "from-checkbox-to-culture-third-party-risk-program.html"
+    },
+    {
+      "id": "nis2-extended-supply-chain",
+      "title": "NIS2 and the Extended Supply Chain: When Your Small Supplier Becomes Your Biggest Risk",
+      "category": "NIS2 & Supply Chain",
+      "target_month": "September 2026",
+      "angle": "How NIS2 obligations cascade through supplier ecosystems, what mid-market vendors should expect, and how buyers should govern smaller critical suppliers.",
+      "regulatory_anchor": "NIS2 supply chain security, essential and important entities, supplier due diligence, and contractual expectations",
+      "link_slug": "nis2-extended-supply-chain-small-supplier-risk.html"
+    }
+  ]
+}
