@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NBES9XC498');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity Is Now a Board Problem — Gabriel Hasik</title>
+  <meta name="description" content="NIS2 and DORA move cybersecurity governance into the boardroom. Management teams need evidence that they understand cyber risk, supplier dependencies, resilience, and incident response." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e;
+      --bg2: #141414;
+      --bg3: #1a1a1a;
+      --border: #242424;
+      --muted: #3a3a3a;
+      --text-dim: #666;
+      --text-mid: #999;
+      --text: #d8d0c4;
+      --text-hi: #f0e8dc;
+      --accent: #d4821a;
+      --accent2: #e8a84c;
+      --accent-dim: #3a2208;
+      --serif: 'Playfair Display', Georgia, serif;
+      --mono: 'DM Mono', 'Courier New', monospace;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .article-hero {
+      padding: 9rem 3rem 4rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 860px;
+    }
+    .back-link, .back-link-bottom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link { margin-bottom: 2.5rem; }
+    .back-link-bottom { margin-top: 2rem; }
+    .back-link:hover, .back-link-bottom:hover { color: var(--accent); }
+    .back-link::before, .back-link-bottom::before { content: '←'; }
+    .article-cat, .annex-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-dim);
+      padding: 3px 10px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .annex-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+    .article-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .article-meta .sep { color: var(--muted); }
+    .article-body {
+      max-width: 720px;
+      padding: 4rem 3rem 5rem;
+    }
+    .article-body p {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.85;
+    }
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.2;
+      margin: 3rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .article-body h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-body h4 {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-hi);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: var(--text);
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .article-body strong {
+      color: var(--text-hi);
+      font-weight: 500;
+    }
+    .article-body em {
+      color: var(--accent2);
+      font-style: italic;
+    }
+    .article-body code {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 2px;
+      color: var(--accent2);
+    }
+    .article-body pre {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 3px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-body pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--accent2);
+    }
+    .article-body blockquote {
+      border-left: 2px solid var(--accent);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+    .article-body blockquote p {
+      margin-bottom: 0;
+      color: var(--text-mid);
+    }
+    .article-body a {
+      color: var(--accent2);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+      word-break: break-word;
+    }
+    .article-body a:hover { color: var(--accent); }
+    .article-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .article-body table th {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 2px solid var(--accent-dim);
+      background: var(--bg2);
+      vertical-align: top;
+    }
+    .article-body table td {
+      padding: 0.7rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+    .article-body table tr:hover td { background: var(--bg2); }
+    .insight-box {
+      background: linear-gradient(180deg, rgba(212,130,26,0.08), rgba(212,130,26,0.02));
+      border: 1px solid var(--accent-dim);
+      padding: 1.25rem 1.25rem 0.25rem;
+      border-radius: 4px;
+      margin: 1.75rem 0 2rem;
+    }
+    .insight-box h4 {
+      margin-top: 0;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      .article-hero { padding: 7rem 1.5rem 3rem; }
+      .article-body { padding: 3rem 1.5rem 4rem; }
+      .article-body table { font-size: 0.8rem; }
+      .article-body table th, .article-body table td { padding: 0.4rem 0.5rem; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-hero">
+    <a class="back-link" href="index.html#blog">Back to Writing</a>
+    <div class="article-cat">Governance &amp; Regulatory Risk</div>
+    <h1 class="article-title">Cybersecurity Is Now a Board Problem &mdash; Personal Liability Under NIS2 and DORA</h1>
+    <div class="article-meta">
+      <span>August 2026</span>
+      <span class="sep">&middot;</span>
+      <span>14 min read</span>
+      <span class="sep">&middot;</span>
+      <span>Gabriel Hasik</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <h2>Management Summary</h2>
+
+    <p>Cybersecurity used to be something boards could delegate downward. Under <strong>NIS2</strong> and <strong>DORA</strong>, that comfort zone is disappearing. Management bodies are no longer expected only to approve budgets or receive annual risk updates. They are expected to understand cyber risk, approve the right measures, oversee implementation, and demonstrate that resilience is governed as a business risk.</p>
+
+    <p>This is not just a legal nuance. It changes the evidence that executives need in front of them. A board that cannot explain critical suppliers, incident response readiness, ICT concentration risk, and the quality of cyber governance is no longer simply uninformed. It may be exposed.</p>
+
+    <p>The practical question for executives is no longer <em>are we compliant?</em> It is: <strong>if a major supplier fails tomorrow, can we prove that we understood the dependency, challenged the risk, and made a defensible decision?</strong></p>
+
+    <div class="insight-box">
+      <h4>Executive lens</h4>
+      <p>NIS2 and DORA do not ask boards to become security engineers. They ask boards to govern cybersecurity with the same seriousness as financial, operational, and legal risk.</p>
+    </div>
+
+    <hr class="article-divider" />
+
+    <h2>1. What Changed</h2>
+
+    <p>The old model of cyber governance was comfortable. Security teams owned the detail. Risk teams owned the reporting. The board received a dashboard, asked a few questions, and moved on. That model is no longer enough.</p>
+
+    <p><strong>NIS2 Article 20</strong> requires Member States to ensure that management bodies approve cybersecurity risk-management measures, oversee their implementation, and can be held liable for infringements. It also requires management body members to follow training so they can identify risks and assess cybersecurity practices.</p>
+
+    <p><strong>DORA Article 5</strong> is even more explicit for financial entities. The management body defines, approves, oversees, and is responsible for implementation of the ICT risk management framework. It bears ultimate responsibility for ICT risk, sets risk tolerance, approves resilience strategy, and must keep up to date with sufficient knowledge and skills to understand ICT risk.</p>
+
+    <p>The message is consistent: cybersecurity is no longer a technical control domain that reports to leadership. It is a leadership accountability domain that uses technical controls as evidence.</p>
+
+    <h3>The boardroom shift</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Old question</th>
+          <th>New question</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Do we have a cybersecurity policy?</td>
+          <td>Can management prove the policy is implemented, tested, and effective?</td>
+        </tr>
+        <tr>
+          <td>Did the CISO brief the board?</td>
+          <td>Did the board challenge risk assumptions and make documented decisions?</td>
+        </tr>
+        <tr>
+          <td>Do our suppliers complete questionnaires?</td>
+          <td>Do we know which suppliers could disrupt critical services?</td>
+        </tr>
+        <tr>
+          <td>Do we have an incident response plan?</td>
+          <td>Can we meet notification, escalation, recovery, and communication expectations under pressure?</td>
+        </tr>
+        <tr>
+          <td>Are we ISO 27001 certified?</td>
+          <td>Can the ISMS produce evidence for NIS2, DORA, supplier risk, incident response, and resilience?</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="article-divider" />
+
+    <h2>2. Why This Is Really a Supply Chain Problem</h2>
+
+    <p>Boards often think about cyber risk as an internal security posture problem: patching, access control, awareness, vulnerability management, detection, and response. Those still matter. But modern cyber risk increasingly arrives through the organizations you depend on.</p>
+
+    <p>NIS2 makes this explicit. Article 21 includes <strong>supply chain security</strong>, including security-related aspects of relationships with direct suppliers and service providers. DORA requires financial entities to identify dependencies on ICT third-party service providers, manage ICT third-party risk, maintain registers of information, and consider concentration risk.</p>
+
+    <p>That means board oversight cannot stop at the perimeter. Management needs visibility into:</p>
+
+    <ul>
+      <li>which third parties support critical or important functions,</li>
+      <li>which suppliers have privileged access, sensitive data, or operational dependencies,</li>
+      <li>which providers are shared across multiple critical services,</li>
+      <li>which subcontractors create hidden nth-party exposure,</li>
+      <li>which contracts contain usable incident notification, audit, exit, and resilience clauses,</li>
+      <li>which suppliers have been tested in incident response or continuity scenarios.</li>
+    </ul>
+
+    <p>The board does not need to inspect every supplier questionnaire. It does need confidence that the organization can distinguish a low-risk vendor from a dependency that could stop the business.</p>
+
+    <div class="insight-box">
+      <h4>Practical test</h4>
+      <p>Ask management to list the ten external providers whose failure would create the fastest business disruption. If the answer is slow, inconsistent, or limited to obvious cloud vendors, supplier risk is probably under-governed.</p>
+    </div>
+
+    <hr class="article-divider" />
+
+    <h2>3. Personal Liability Is Not the Starting Point</h2>
+
+    <p>The phrase <em>personal liability</em> gets attention, but it can also distort the conversation. The useful question is not whether directors should be afraid. The useful question is what a reasonable, informed, diligent management body should be able to evidence.</p>
+
+    <p>In practice, liability risk grows when there is a visible gap between what leadership should have known and what leadership can prove it did. Regulators, auditors, customers, and courts rarely expect perfection. They do expect governance.</p>
+
+    <p>That governance usually comes down to five evidence areas:</p>
+
+    <ol>
+      <li><strong>Awareness:</strong> management understood the organization's cyber and ICT risk profile.</li>
+      <li><strong>Decision-making:</strong> key cyber risk decisions were reviewed, challenged, approved, and documented.</li>
+      <li><strong>Oversight:</strong> implementation of risk treatment, remediation, supplier management, and resilience controls was monitored.</li>
+      <li><strong>Escalation:</strong> material incidents, overdue risks, and supplier weaknesses reached the right level quickly.</li>
+      <li><strong>Improvement:</strong> lessons from incidents, tests, audits, and supervisory feedback were built back into the control environment.</li>
+    </ol>
+
+    <p>If those five areas are weak, the problem is bigger than regulatory compliance. It means the board is making decisions without a reliable operating picture.</p>
+
+    <hr class="article-divider" />
+
+    <h2>4. What Boards Should Ask Now</h2>
+
+    <p>A good board conversation should be specific enough to create accountability, but not so technical that it collapses into tool selection. The best questions expose whether the organization has evidence, ownership, and operating rhythm.</p>
+
+    <h3>4.1 Risk ownership</h3>
+
+    <ul>
+      <li>Who owns cybersecurity risk at management level?</li>
+      <li>Who owns ICT third-party risk, and is that role independent enough to challenge procurement and business owners?</li>
+      <li>Which risks exceed appetite today, and who accepted them?</li>
+    </ul>
+
+    <h3>4.2 Supplier dependency</h3>
+
+    <ul>
+      <li>Which suppliers support critical or important functions?</li>
+      <li>Which supplier failures would trigger customer, regulatory, or operational impact within 24 hours?</li>
+      <li>Which suppliers are difficult to replace, and what are the tested exit options?</li>
+    </ul>
+
+    <h3>4.3 Incident readiness</h3>
+
+    <ul>
+      <li>When was the last executive-level cyber incident exercise?</li>
+      <li>Did it include legal, communications, privacy, operations, and supplier management?</li>
+      <li>Can the organization classify, escalate, notify, and communicate a major incident within the required timelines?</li>
+    </ul>
+
+    <h3>4.4 Evidence quality</h3>
+
+    <ul>
+      <li>Which metrics are based on actual testing, and which are self-attestations?</li>
+      <li>Which overdue remediation items have stayed open for more than one reporting cycle?</li>
+      <li>What would we show a regulator tomorrow if asked to prove effective governance?</li>
+    </ul>
+
+    <p>These questions are uncomfortable by design. They are not meant to embarrass security teams. They are meant to make cyber risk governable.</p>
+
+    <hr class="article-divider" />
+
+    <h2>5. The Evidence Pack a Board Should Expect</h2>
+
+    <p>Boards should not be flooded with raw control detail. But they should receive a small, stable evidence pack that connects cyber risk to business operations and regulatory accountability.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Evidence</th>
+          <th>Why it matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Cyber risk appetite and current risk position</strong></td>
+          <td>Shows whether leadership understands where risk is accepted, reduced, transferred, or overdue.</td>
+        </tr>
+        <tr>
+          <td><strong>Critical supplier map</strong></td>
+          <td>Links third-party dependencies to critical services, data, systems, and recovery expectations.</td>
+        </tr>
+        <tr>
+          <td><strong>Material remediation tracker</strong></td>
+          <td>Shows whether known weaknesses are moving or simply being re-reported.</td>
+        </tr>
+        <tr>
+          <td><strong>Incident and crisis exercise results</strong></td>
+          <td>Tests whether the organization can make decisions, communicate, and recover under pressure.</td>
+        </tr>
+        <tr>
+          <td><strong>Regulatory obligation map</strong></td>
+          <td>Connects NIS2, DORA, ISO 27001, GDPR, and sector obligations into one control picture.</td>
+        </tr>
+        <tr>
+          <td><strong>Management training record</strong></td>
+          <td>Shows that board and senior management knowledge is treated as a control, not a formality.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The key is consistency. A board pack that changes format every quarter may look active, but it often hides the trend. Governance needs a repeatable view of exposure, decision points, exceptions, and progress.</p>
+
+    <hr class="article-divider" />
+
+    <h2>6. A 90-Day Practical Plan</h2>
+
+    <p>Most organizations do not need another theoretical governance framework. They need a short execution cycle that turns regulatory pressure into usable evidence.</p>
+
+    <h3>Days 1-30: Establish the board view</h3>
+
+    <ul>
+      <li>Confirm which NIS2, DORA, and sector obligations apply.</li>
+      <li>Define the executive owner for cyber and ICT third-party risk.</li>
+      <li>Create a first board-level view of critical services, critical suppliers, and major open risks.</li>
+      <li>Identify any overdue high-risk remediation items that have not been escalated.</li>
+    </ul>
+
+    <h3>Days 31-60: Test the operating model</h3>
+
+    <ul>
+      <li>Run a supplier-driven incident tabletop with security, legal, privacy, communications, procurement, and business owners.</li>
+      <li>Test notification decision-making, not just technical containment.</li>
+      <li>Review whether supplier contracts support the response process in practice.</li>
+      <li>Document gaps in evidence, authority, escalation, and recovery assumptions.</li>
+    </ul>
+
+    <h3>Days 61-90: Lock the governance rhythm</h3>
+
+    <ul>
+      <li>Approve a stable board cyber risk pack.</li>
+      <li>Set thresholds for board escalation and risk acceptance.</li>
+      <li>Update supplier risk governance for critical and high-impact providers.</li>
+      <li>Schedule recurring management training and annual scenario testing.</li>
+      <li>Connect the work to ISO 27001, NIS2, DORA, and internal audit evidence.</li>
+    </ul>
+
+    <div class="insight-box">
+      <h4>Control implication</h4>
+      <p>The goal is not to show that every cyber risk is solved. The goal is to show that material cyber risk is visible, owned, challenged, tracked, and improved.</p>
+    </div>
+
+    <hr class="article-divider" />
+
+    <h2>Conclusion: Governance Is the New Control</h2>
+
+    <p>NIS2 and DORA do not make boards responsible for configuring firewalls. They make boards responsible for ensuring that cybersecurity and ICT risk are governed with enough knowledge, evidence, and discipline to protect the organization and the services it provides.</p>
+
+    <p>The organizations that will handle this well are not necessarily the ones with the longest policies. They are the ones where management can answer basic questions clearly:</p>
+
+    <ul>
+      <li>What are our most important cyber and ICT risks?</li>
+      <li>Which suppliers could create material disruption?</li>
+      <li>Which risks are outside appetite?</li>
+      <li>What have we tested?</li>
+      <li>What are we still unable to prove?</li>
+    </ul>
+
+    <p>That is the board-level standard now. Cybersecurity is no longer only a technical capability. It is a test of governance.</p>
+
+    <hr class="article-divider" />
+
+    <div id="annex-a">
+      <span class="annex-label">References</span>
+      <h2>Primary Regulatory Sources</h2>
+
+      <ul>
+        <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02022L2555-20221227" target="_blank" rel="noopener noreferrer">NIS2 Directive, including Article 20 on governance and Article 21 on cybersecurity risk-management measures</a></li>
+        <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2554" target="_blank" rel="noopener noreferrer">Digital Operational Resilience Act (DORA), including Article 5 on governance and organisation</a></li>
+      </ul>
+    </div>
+
+    <hr class="article-divider" />
+
+    <a class="back-link-bottom" href="index.html#blog">Back to Writing</a>
+  </div>
+
+  <footer>
+    <span>© 2026 Gabriel Hasik</span>
+    <span>Built with intention · <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber · Risk · Supply Chain</span>
+  </footer>
+</body>
+</html>
