@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NBES9XC498');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Third-Party Risk Intelligence Briefing covering June to August 2026: software supply chain compromise, AI Act enforcement, DORA and UK critical third-party oversight, and vendor concentration risk."/>
+  <title>Third-Party Risk Intelligence Briefing - June to August 2026 | Gabriel Hasik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0e0e;
+      --bg2: #141414;
+      --border: #242424;
+      --muted: #3a3a3a;
+      --text-dim: #666;
+      --text-mid: #999;
+      --text: #d8d0c4;
+      --text-hi: #f0e8dc;
+      --accent: #d4821a;
+      --accent2: #e8a84c;
+      --accent-dim: #3a2208;
+      --critical: #b54747;
+      --critical-bg: #2b1313;
+      --high: #cf7f2a;
+      --high-bg: #2f1d0c;
+      --watch: #b8a13a;
+      --watch-bg: #2d2810;
+      --info: #4f8f88;
+      --info-bg: #102423;
+      --serif: 'Playfair Display', Georgia, serif;
+      --mono: 'DM Mono', 'Courier New', monospace;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(14,14,14,0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    .hero {
+      min-height: 76vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 3rem 5rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-grid::before {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(90deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 60px);
+      opacity: 0.4;
+    }
+
+    .hero-grid::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(180deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 60px);
+      opacity: 0.4;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.75rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.95;
+      color: var(--text-hi);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      max-width: 1040px;
+    }
+
+    .hero-title em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-text {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-mid);
+      max-width: 840px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid var(--muted);
+      color: var(--text-dim);
+      border-radius: 2px;
+    }
+
+    .tag.accent {
+      border-color: var(--accent-dim);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    section {
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--accent-dim);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      max-width: 840px;
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .summary-grid,
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .panel,
+    .dashboard-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .panel h3,
+    .dashboard-card h3 {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .panel p,
+    .dashboard-card li {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .signal-list,
+    .dashboard-card ul,
+    .source-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .signal-list li,
+    .source-list li {
+      color: var(--text-mid);
+      font-size: 0.94rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.75;
+    }
+
+    .signal-list li:last-child,
+    .source-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+    strong { color: var(--text-hi); font-weight: 500; }
+
+    .briefing-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .briefing-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .briefing-card.critical { border-left: 3px solid var(--critical); }
+    .briefing-card.high { border-left: 3px solid var(--high); }
+    .briefing-card.watch { border-left: 3px solid var(--watch); }
+    .briefing-card.info { border-left: 3px solid var(--info); }
+
+    .briefing-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .pill {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .pill.critical { color: #e58d8d; border-color: rgba(181,71,71,0.4); background: var(--critical-bg); }
+    .pill.high { color: #eab37a; border-color: rgba(207,127,42,0.4); background: var(--high-bg); }
+    .pill.watch { color: #dbc971; border-color: rgba(184,161,58,0.4); background: var(--watch-bg); }
+    .pill.info { color: #8fd3cc; border-color: rgba(79,143,136,0.4); background: var(--info-bg); }
+
+    .briefing-card h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      line-height: 1.28;
+      color: var(--text-hi);
+      margin-bottom: 1rem;
+    }
+
+    .briefing-card p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 2rem;
+      margin-top: 1.25rem;
+    }
+
+    .detail-item {
+      border-top: 1px solid var(--border);
+      padding-top: 0.9rem;
+    }
+
+    .detail-item .label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.45rem;
+    }
+
+    .detail-item .value {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .action-box,
+    .note-box {
+      margin-top: 1.4rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+    }
+
+    .action-box h4,
+    .note-box h4 {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .action-box ol,
+    .action-box ul {
+      padding-left: 1.1rem;
+      color: var(--text-mid);
+    }
+
+    .action-box li {
+      margin-bottom: 0.55rem;
+      line-height: 1.75;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.95rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    td { color: var(--text-mid); }
+
+    .source-list a,
+    .source-row a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .source-row {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    .back-link {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .back-link:hover { gap: 1.2rem; }
+
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .summary-grid,
+      .dashboard-grid,
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero { padding: 7rem 1.5rem 4rem; min-height: 66vh; }
+      section { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 2rem 1.5rem; }
+      th, td { padding-left: 0; padding-right: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
+      .nav-links a { font-size: 0.64rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="monitoring.html" class="active">Monitoring</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-eyebrow">Third-Party Risk &middot; Intelligence Briefing &middot; June to August 2026</div>
+    <h1 class="hero-title">
+      Third-Party Risk<br/><em>Intelligence Briefing</em>
+    </h1>
+    <p class="hero-text">
+      This edition covers the full gap since the May monitoring: open-source package compromise,
+      AI Act transparency enforcement, DORA and UK critical third-party oversight, CRM integration exposure,
+      and the shift from annual vendor assurance to continuous dependency monitoring.
+    </p>
+    <div class="hero-meta">
+      <span class="tag accent">August 21, 2026</span>
+      <span class="tag">Third-Party Risk</span>
+      <span class="tag">Software Supply Chain</span>
+      <span class="tag">AI Governance</span>
+      <span class="tag">Critical ICT Providers</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">01 &mdash; Executive Snapshot</div>
+    <h2 class="section-title">The trusted layer is now the risk layer</h2>
+    <p class="section-intro">
+      Between early June and late August 2026, the strongest third-party risk signal was not one breach or one new regulation.
+      It was the repeated compromise of trusted developer, AI, cloud, CRM, and financial-sector infrastructure. The risk is
+      moving into the services organizations assume are safe because they are mature, widely used, or already contracted.
+    </p>
+
+    <div class="summary-grid">
+      <div class="panel">
+        <h3>Analyst view</h3>
+        <p>
+          Open-source package attacks continued after the May cycle, moving across npm and PyPI through Red Hat, AsyncAPI,
+          Keyv-related packages, payment SDK impersonation, and AI development frameworks. The common target is not source code
+          alone. It is credentials, CI/CD authority, cloud access, and developer trust.
+        </p>
+        <p>
+          At the same time, regulatory supervision became more operational. AI Act transparency obligations started applying on
+          2 August 2026, DORA oversight of critical ICT third-party providers continued to mature, and the UK began direct
+          oversight of its first designated critical third parties in financial services.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Top 3 emerging risks</h3>
+        <ul class="signal-list">
+          <li><strong>1.</strong> Developer tooling and package registries becoming credential-theft infrastructure.</li>
+          <li><strong>2.</strong> AI vendor transparency moving from policy design into enforceable operational controls.</li>
+          <li><strong>3.</strong> Systemic dependence on a small group of cloud, data, CRM, and AI infrastructure providers.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">02 &mdash; Critical Alerts</div>
+    <h2 class="section-title">Immediate action required</h2>
+
+    <div class="briefing-stack">
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">Security</span>
+          <span class="pill">Software Supply Chain</span>
+        </div>
+        <h3>npm and PyPI campaigns turn build pipelines into third-party attack paths</h3>
+        <p>
+          The Miasma / Shai-Hulud family continued beyond the Red Hat incident. Unit 42 tracked the Red Hat compromise on
+          1 June, an AsyncAPI release-pipeline compromise on 14 July, and further campaign evolution across npm. Singapore's
+          Cyber Security Agency later warned that an active Keyv-related npm campaign had affected more than 1,300 package
+          versions with very large downstream download exposure.
+        </p>
+        <p>
+          The practical third-party risk issue is that malicious packages now inherit legitimate provenance, trusted publishing
+          paths, and automated deployment velocity. Vendor questionnaires will not detect this. Controls must reach dependency
+          ingestion, package allow-listing, build isolation, token rotation, and anomalous package-change monitoring.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Affected surface</span>
+            <div class="value">npm, PyPI, GitHub Actions, trusted publishing, CI/CD secrets, cloud credentials, developer workstations.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Risk pattern</span>
+            <div class="value">One compromised maintainer, token, workflow, or release pipeline can distribute malicious code through trusted dependencies.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">TPRM implication</span>
+            <div class="value">Software vendors should evidence secure build controls, dependency governance, SBOM coverage, and incident response for package compromise.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Priority response</span>
+            <div class="value">Treat affected build environments and developer machines as potentially credential-compromised until checked.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Audit dependencies against current npm and PyPI compromise lists, including transitive packages.</li>
+            <li>Rotate GitHub, npm, cloud, CI/CD, Kubernetes and Vault secrets where exposure is plausible.</li>
+            <li>Require package pinning, integrity verification, private registries or curated mirrors for critical builds.</li>
+            <li>Ask critical software suppliers how they detect malicious dependency updates and compromised release pipelines.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://origin-unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/">Unit 42 npm threat landscape</a> &middot;
+          <a href="https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-009/">Cyber Security Agency of Singapore advisory</a> &middot;
+          <a href="https://cloud.google.com/blog/topics/threat-intelligence/mitigation-guidance-for-supply-chain-compromise">Google Cloud / Mandiant guidance</a>
+        </div>
+      </article>
+
+      <article class="briefing-card critical">
+        <div class="briefing-meta">
+          <span class="pill critical">Critical</span>
+          <span class="pill">AI Act</span>
+          <span class="pill">Vendor Transparency</span>
+        </div>
+        <h3>AI Act transparency obligations entered application on 2 August 2026</h3>
+        <p>
+          The European Commission confirmed that Article 50 transparency obligations apply from 2 August 2026. Providers and
+          deployers of certain AI systems must make AI interaction clear, label deepfakes, and support machine-readable marking
+          of AI-generated or manipulated content where required.
+        </p>
+        <p>
+          For third-party risk teams, this turns AI vendor governance into an operational evidence exercise. A vendor's model,
+          chatbot, content generation feature, customer support bot, or embedded workflow may now require documented transparency
+          controls, not only a policy statement.
+        </p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">Effective date</span>
+            <div class="value">2 August 2026 for Article 50 transparency obligations, with limited grace periods for specific pre-existing systems.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Vendor exposure</span>
+            <div class="value">AI providers, deployers, SaaS vendors with embedded AI, customer-facing chatbots, HR tools, fraud tools, and content platforms.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Evidence required</span>
+            <div class="value">User disclosure, content labelling, machine-readable marking, deepfake handling, governance ownership, and exception logic.</div>
+          </div>
+          <div class="detail-item">
+            <span class="label">Business risk</span>
+            <div class="value">AI vendors that cannot evidence compliance may create regulatory, reputational and customer deception risk for deployers.</div>
+          </div>
+        </div>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Inventory all third-party AI systems, including AI features embedded inside existing SaaS platforms.</li>
+            <li>Ask vendors for Article 50 compliance evidence and whether they signed or mapped to the relevant Code of Practice.</li>
+            <li>Update customer-facing notices, chatbot labels, deepfake controls and AI-generated content workflows.</li>
+            <li>Assign legal and technical owners for AI transparency exceptions and downstream provider responsibilities.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august">European Commission enforcement announcement</a> &middot;
+          <a href="https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems">Commission Article 50 guidelines</a> &middot;
+          <a href="https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act">Article 50 FAQ</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">03 &mdash; High Importance</div>
+    <h2 class="section-title">Structural risks reshaping supplier governance</h2>
+
+    <div class="briefing-stack">
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">Financial Services</span>
+          <span class="pill">Critical ICT Providers</span>
+        </div>
+        <h3>Critical third-party oversight becomes a live supervisory regime</h3>
+        <p>
+          DORA oversight of critical ICT third-party providers is now a continuing supervisory track in the EU, while the UK
+          announced that its financial regulators would begin overseeing the first designated Critical Third Parties on
+          13 July 2026. The UK designations cover Amazon Web Services EMEA SARL, Google Cloud EMEA Limited, Microsoft Ireland
+          Operations Ltd, and Oracle Corporation UK Limited.
+        </p>
+        <p>
+          The message for TPRM teams is clear: cloud and infrastructure concentration is no longer only an internal risk appetite
+          question. Supervisors are treating it as a system-level resilience issue.
+        </p>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Map services delivered by designated CTPPs / CTPs to critical or important functions.</li>
+            <li>Refresh exit planning, substitution constraints and portability evidence for cloud and data infrastructure.</li>
+            <li>Align DORA Article 28-30 clauses with supplier-side evidence requests and subcontracting disclosure.</li>
+            <li>Prepare board reporting on concentration across EU and UK critical third-party regimes.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Sources:
+          <a href="https://www.eba.europa.eu/activities/direct-supervision-and-oversight/digital-operational-resilience-act/dora-oversight">EBA DORA oversight page</a> &middot;
+          <a href="https://www.fca.org.uk/news/statements/uk-financial-regulators-overseeing-critical-third-parties-announced-treasury">FCA / UK critical third-party statement</a>
+        </div>
+      </article>
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">CRM</span>
+          <span class="pill">Integration Risk</span>
+        </div>
+        <h3>Third-party CRM integration incident shows lateral data exposure</h3>
+        <p>
+          Digital Science disclosed a June supply-chain security incident involving a third-party provider integrated with its
+          CRM platform. The exposure window was short, but the accessed information included business contact data and sales
+          opportunity metadata.
+        </p>
+        <p>
+          This is a useful reminder that supplier risk is not limited to production systems or regulated data. CRM integrations
+          often carry relationship maps, contract dates, account metadata, procurement context and other information that can
+          support phishing, vendor impersonation or competitive intelligence.
+        </p>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Inventory third-party CRM integrations and their scopes, tokens and synchronization permissions.</li>
+            <li>Review whether sales metadata, contact lists and contract fields are covered in vendor incident scenarios.</li>
+            <li>Set least-privilege integration scopes and short-lived tokens where supported.</li>
+            <li>Include CRM and marketing technology providers in phishing and impersonation threat modelling.</li>
+          </ol>
+        </div>
+
+        <div class="source-row">
+          Source:
+          <a href="https://www.digital-science.com/security-update/">Digital Science security update</a>
+        </div>
+      </article>
+
+      <article class="briefing-card high">
+        <div class="briefing-meta">
+          <span class="pill high">High</span>
+          <span class="pill">Third-Party Software</span>
+          <span class="pill">Accountability</span>
+        </div>
+        <h3>Software supply chain accountability is moving into partner and MSP relationships</h3>
+        <p>
+          Public guidance from NCSC and threat research from Google / Mandiant both point to the same operational baseline:
+          organizations must understand how dependencies are introduced, updated, isolated and monitored. That requirement will
+          increasingly flow down to managed service providers, software vendors and channel partners.
+        </p>
+        <p>
+          A supplier that manages code, infrastructure, endpoints, cloud workloads or deployments on behalf of customers is now
+          also managing a software supply chain risk surface.
+        </p>
+
+        <div class="action-box">
+          <h4>Recommended actions</h4>
+          <ol>
+            <li>Add software dependency and SBOM evidence to onboarding for software and MSP suppliers.</li>
+            <li>Require suppliers to explain how they slow or review automatic dependency updates in critical environments.</li>
+            <li>Ask for credential storage, build runner isolation and package registry controls as assurance evidence.</li>
+            <li>Define notification triggers for compromised dependency, maintainer account or CI/CD pipeline events.</li>
+          </ol>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">04 &mdash; Moderate / Watch List</div>
+    <h2 class="section-title">Signals to monitor into the next cycle</h2>
+
+    <div class="briefing-stack">
+      <article class="briefing-card watch">
+        <div class="briefing-meta">
+          <span class="pill watch">Watch</span>
+          <span class="pill">AI Development</span>
+          <span class="pill">Open Source</span>
+        </div>
+        <h3>DPRK-linked open-source targeting overlaps with AI-assisted development</h3>
+        <p>
+          AWS attributed several recent NPM library compromises to a DPRK-linked threat actor and highlighted how generative AI
+          is changing malicious package behavior. This increases the risk that AI development stacks, model tooling and agent
+          frameworks become preferred paths into developer environments.
+        </p>
+      </article>
+
+      <article class="briefing-card watch">
+        <div class="briefing-meta">
+          <span class="pill watch">Watch</span>
+          <span class="pill">DORA</span>
+          <span class="pill">Data Quality</span>
+        </div>
+        <h3>DORA registers remain a living concentration-risk dataset</h3>
+        <p>
+          Supervisory messaging continues to emphasize Registers of Information as a data source for concentration analysis and
+          oversight. Data quality, subcontracting links, LEIs, service taxonomies and critical-function mapping should be treated
+          as operational controls, not a once-a-year filing task.
+        </p>
+      </article>
+
+      <article class="briefing-card info">
+        <div class="briefing-meta">
+          <span class="pill info">Trend</span>
+          <span class="pill">GitHub Actions</span>
+          <span class="pill">Secure Defaults</span>
+        </div>
+        <h3>Platform security defaults are improving, but supplier evidence still matters</h3>
+        <p>
+          GitHub's safer checkout defaults for privileged workflows and npm's planned install-time script changes show the
+          ecosystem moving toward stronger defaults. TPRM teams should still ask whether suppliers have adopted them, because
+          old workflows, pinned versions and exceptions can preserve the original exposure.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">05 &mdash; Dashboard</div>
+    <h2 class="section-title">Current TPRM heatmap</h2>
+    <p class="section-intro">
+      The dashboard below translates the June-August monitoring cycle into practical control areas for third-party risk,
+      procurement, security, resilience and executive reporting.
+    </p>
+
+    <div class="panel">
+      <h3>Risk vectors</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Risk vector</th>
+            <th>Severity</th>
+            <th>Trend</th>
+            <th>TPRM relevance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Open-source package compromise</strong></td>
+            <td>Critical</td>
+            <td>Escalating</td>
+            <td>Dependency review, SBOM, package allow-listing, token rotation</td>
+          </tr>
+          <tr>
+            <td><strong>AI transparency compliance</strong></td>
+            <td>Critical</td>
+            <td>Active enforcement</td>
+            <td>AI vendor inventory, Article 50 evidence, user disclosure and marking</td>
+          </tr>
+          <tr>
+            <td><strong>Critical ICT concentration</strong></td>
+            <td>High</td>
+            <td>Sustained</td>
+            <td>Cloud dependency, portability, exit plans, critical function mapping</td>
+          </tr>
+          <tr>
+            <td><strong>CRM and SaaS integration exposure</strong></td>
+            <td>High</td>
+            <td>Rising</td>
+            <td>Integration scopes, sales metadata, tokens, downstream incident response</td>
+          </tr>
+          <tr>
+            <td><strong>AI development stack compromise</strong></td>
+            <td>Watch</td>
+            <td>Rising</td>
+            <td>Agent tooling, model packages, IDE plugins, developer identity</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3>Highest-priority actions</h3>
+        <ul>
+          <li>Run dependency exposure checks for Red Hat, AsyncAPI, Keyv-related and other June-August npm/PyPI campaigns.</li>
+          <li>Refresh AI vendor inventory and confirm Article 50 transparency controls are live.</li>
+          <li>Map critical services delivered by EU CTPPs and UK CTPs to business functions and exit plans.</li>
+          <li>Review CRM, marketing, sales and support integrations for excessive scopes and long-lived tokens.</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Board-level message</h3>
+        <ul>
+          <li>The third-party perimeter now includes developer packages, AI systems, machine identities and SaaS integration metadata.</li>
+          <li>Regulators are no longer asking only whether policies exist; they expect inventories, controls, evidence and reporting lines.</li>
+          <li>Concentration risk is systemic where many critical functions depend on the same cloud, identity, CRM or AI infrastructure.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">06 &mdash; Sources &amp; Note</div>
+    <h2 class="section-title">Confidence and source basis</h2>
+
+    <div class="panel">
+      <h3>Selected source list</h3>
+      <ul class="source-list">
+        <li><a href="https://origin-unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/">Unit 42 - The npm Threat Landscape: Attack Surface and Mitigations</a></li>
+        <li><a href="https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-009/">Cyber Security Agency of Singapore - Ongoing npm Supply Chain Attack Affecting Keyv and Related Packages</a></li>
+        <li><a href="https://cloud.google.com/blog/topics/threat-intelligence/mitigation-guidance-for-supply-chain-compromise">Google Cloud / Mandiant - Mitigation Guidance for Supply Chain Compromise</a></li>
+        <li><a href="https://aws.amazon.com/blogs/security/amazon-identifies-north-korean-hacker-group-behind-open-source-supply-chain-attacks/">AWS Security Blog - DPRK-linked open-source supply chain attacks</a></li>
+        <li><a href="https://www.ncsc.gov.uk/blogs/software-supply-chain-attacks-check-your-dependencies">UK NCSC - Software supply chain attacks: check your dependencies</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august">European Commission - AI Act enforcement and transparency requirements</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems">European Commission - Article 50 transparency guidelines</a></li>
+        <li><a href="https://www.eba.europa.eu/activities/direct-supervision-and-oversight/digital-operational-resilience-act/dora-oversight">EBA - DORA oversight of critical ICT third-party providers</a></li>
+        <li><a href="https://www.fca.org.uk/news/statements/uk-financial-regulators-overseeing-critical-third-parties-announced-treasury">FCA - UK oversight of Critical Third Parties</a></li>
+        <li><a href="https://www.digital-science.com/security-update/">Digital Science - Third party supply chain incident security update</a></li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <h4>Confidence level</h4>
+      <p>
+        Confidence is <strong>high</strong> for regulatory dates, official AI Act guidance, DORA / UK critical third-party
+        oversight, and disclosed incidents supported by primary or specialist sources. Confidence is <strong>moderate</strong>
+        for trend projection into the next cycle, because software supply chain campaigns can change quickly and package counts
+        may be revised as registries and researchers complete their analysis.
+      </p>
+
+      <h4>Analyst note</h4>
+      <p>
+        This briefing is intended for triage and governance planning. For active package compromise, use vendor advisories,
+        registry data, your SBOM, and internal build logs as the source of truth before concluding exposure.
+      </p>
+    </div>
+
+    <a class="back-link" href="third-party-risk-intelligence-briefing.html">Back to briefing overview --</a>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Gabriel Hasik</span>
+    <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber &middot; Risk &middot; Supply Chain</span>
+  </footer>
+
+</body>
+</html>
