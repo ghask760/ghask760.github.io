@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NBES9XC498');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GRC Calendar for CIOs and CISOs - Gabriel Hasik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e;
+      --bg2: #141414;
+      --bg3: #1a1a1a;
+      --border: #242424;
+      --muted: #3a3a3a;
+      --text-dim: #666;
+      --text-mid: #999;
+      --text: #d8d0c4;
+      --text-hi: #f0e8dc;
+      --accent: #d4821a;
+      --accent2: #e8a84c;
+      --accent-dim: #3a2208;
+      --serif: 'Playfair Display', Georgia, serif;
+      --mono: 'DM Mono', 'Courier New', monospace;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-hi);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .article-hero {
+      padding: 9rem 3rem 4rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 920px;
+    }
+    .back-link, .back-link-bottom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link { margin-bottom: 2.5rem; }
+    .back-link-bottom { margin-top: 2rem; }
+    .back-link:hover, .back-link-bottom:hover { color: var(--accent); }
+    .back-link::before, .back-link-bottom::before { content: '<'; }
+    .article-cat {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-dim);
+      padding: 3px 10px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .article-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .article-meta .sep { color: var(--muted); }
+    .article-body {
+      max-width: 760px;
+      padding: 4rem 3rem 5rem;
+    }
+    .article-body p {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.85;
+    }
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--text-hi);
+      line-height: 1.2;
+      margin: 3rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: var(--text);
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .article-body strong {
+      color: var(--text-hi);
+      font-weight: 500;
+    }
+    .article-body a {
+      color: var(--accent2);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+      word-break: break-word;
+    }
+    .article-body a:hover { color: var(--accent); }
+    .download-panel {
+      background: linear-gradient(180deg, rgba(212,130,26,0.08), rgba(212,130,26,0.02));
+      border: 1px solid var(--accent-dim);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin: 2rem 0;
+    }
+    .download-panel h2 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--accent);
+      color: var(--bg);
+      background: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .download-button:hover {
+      color: var(--bg);
+      background: var(--accent2);
+    }
+    .note-box {
+      border-left: 2px solid var(--accent);
+      padding: 0.25rem 0 0.25rem 1.25rem;
+      margin: 2rem 0;
+      color: var(--text-mid);
+    }
+    footer {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.25rem; flex-wrap: wrap; justify-content: flex-end; }
+      .nav-links a { font-size: 0.64rem; }
+      .article-hero { padding: 7rem 1.5rem 3rem; }
+      .article-body { padding: 3rem 1.5rem 4rem; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#blog">Writing</a></li>
+      <li><a href="index.html#monitoring">Monitoring</a></li>
+      <li><a href="tools.html" class="active">Tools</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-hero">
+    <a class="back-link" href="tools.html">Back to Tools</a>
+    <div class="article-cat">GRC Calendar &middot; Excel Tool</div>
+    <h1 class="article-title">A Practical GRC Calendar for CIOs and CISOs</h1>
+    <div class="article-meta">
+      <span>August 2026</span>
+      <span class="sep">.</span>
+      <span>6 min read</span>
+      <span class="sep">.</span>
+      <span>Gabriel Hasik</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>
+      Good GRC rarely fails because people do not understand the frameworks. It fails because recurring work is scattered across meetings, inboxes, audit requests, supplier reviews, risk registers, and board reporting cycles.
+    </p>
+
+    <p>
+      This lightweight calendar is meant to solve that practical problem. It gives a CIO, CISO, or GRC lead a simple annual rhythm for the activities that tend to matter most: risk reviews, supplier tiering, access governance, incident readiness, resilience testing, audit evidence, and executive reporting.
+    </p>
+
+    <div class="download-panel">
+      <h2>Download the calendar</h2>
+      <p>
+        The workbook includes a 2026 GRC calendar, a tool backlog, and a cadence model you can adapt to your own governance cycle.
+      </p>
+      <a class="download-button" href="assets/tools/grc-calendar-2026.xlsx" download>Download Excel</a>
+    </div>
+
+    <h2>How to use it</h2>
+    <ol>
+      <li><strong>Start with ownership.</strong> Replace the suggested owners with your real roles or named owners. A GRC calendar without ownership becomes a nice spreadsheet that nobody uses.</li>
+      <li><strong>Align dates to your real governance cycle.</strong> Move board reports, audit evidence sprints, supplier reviews, and risk acceptance reviews around your actual meetings.</li>
+      <li><strong>Use it in a monthly leadership meeting.</strong> Filter the calendar by month and status. Ask what is due, what is late, and what needs escalation.</li>
+      <li><strong>Keep evidence close to the activity.</strong> For each recurring item, define the expected output: board pack, access review evidence, supplier register, incident exercise report, or policy approval.</li>
+      <li><strong>Do not over-engineer it.</strong> The point is not to build a full GRC platform in Excel. The point is to create a visible operating rhythm.</li>
+    </ol>
+
+    <h2>What it covers</h2>
+    <p>
+      The calendar includes recurring items across risk management, third-party risk, access governance, incident response, operational resilience, audit readiness, AI governance, and board reporting. It is deliberately framework-aware without becoming framework-heavy.
+    </p>
+
+    <p>
+      You will see references to ISO 27001, NIS2, DORA, supplier risk, and internal governance. Those references are there to help you explain why an activity exists, but the practical output matters more than the label.
+    </p>
+
+    <div class="note-box">
+      <p>
+        This is a planning aid, not legal advice. Treat it as a starting point and align it with your exact sector, jurisdictions, regulators, audit commitments, and internal policies.
+      </p>
+    </div>
+
+    <h2>Where it is useful</h2>
+    <p>
+      I would use this most in mid-sized organizations where the security and GRC function is mature enough to have recurring obligations, but not large enough to have a dedicated workflow tool for every process.
+    </p>
+
+    <p>
+      It is also useful as a discovery tool. If you cannot assign an owner, cadence, and expected evidence to a recurring GRC activity, that is usually a sign that the process is not yet operationally clear.
+    </p>
+
+    <h2>What I would customize first</h2>
+    <ul>
+      <li>Add sector-specific deadlines and regulator commitments.</li>
+      <li>Add internal audit dates and external certification dates.</li>
+      <li>Add your critical supplier review cycle.</li>
+      <li>Add board and executive committee dates.</li>
+      <li>Add links to evidence repositories once the structure is stable.</li>
+    </ul>
+
+    <p>
+      The calendar should be boring in the best possible way: visible, owned, reviewed, and updated before small governance gaps become urgent compliance work.
+    </p>
+
+    <a class="back-link-bottom" href="tools.html">Back to Tools</a>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 Gabriel Hasik</span>
+    <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber &middot; Risk &middot; Supply Chain</span>
+  </footer>
+</body>
+</html>
