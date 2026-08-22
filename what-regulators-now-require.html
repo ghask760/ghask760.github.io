@@ -291,6 +291,48 @@
       text-transform: uppercase;
       color: var(--accent);
     }
+    .reader-brief,
+    .article-newsletter {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--accent);
+      padding: 1.35rem 1.4rem;
+      border-radius: 4px;
+      margin: 1.75rem 0 2rem;
+    }
+    .reader-brief h2,
+    .article-newsletter h2 {
+      margin: 0 0 0.85rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .reader-brief p,
+    .article-newsletter p {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+      color: var(--text-mid);
+    }
+    .reader-brief ul {
+      margin-bottom: 0;
+    }
+    .brief-actions {
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .brief-actions a,
+    .article-newsletter a {
+      color: var(--accent2);
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
     footer {
       padding: 2.5rem 3rem;
       display: flex;
@@ -528,7 +570,21 @@
       <line x1="970" y1="512" x2="984" y2="512" stroke="#88b7ff" stroke-width="1.2" opacity="0.45"/>
     </g>
   </svg>
-</div>
+    </div>
+
+    <section class="reader-brief" aria-label="Executive brief">
+      <h2>Executive Brief</h2>
+      <p><strong>Read this if you need to translate NIS2, DORA, ISO 27001, and NIST CSF 2.0 into practical supplier-risk controls.</strong> The frameworks are converging around the same operating model: know your dependencies, govern critical suppliers, monitor continuously, and keep audit-ready evidence.</p>
+      <ul>
+        <li>NIS2 turns supply chain security into a management accountability issue.</li>
+        <li>DORA makes ICT third-party risk oversight, concentration risk, contractual controls, and exit planning explicit.</li>
+        <li>ISO 27001 and NIST CSF provide the control structure teams can use to operationalize those legal expectations.</li>
+      </ul>
+      <div class="brief-actions">
+        <a href="#regulatory-map">Jump to the framework map</a>
+        <a href="#evidence-pack">Jump to the evidence pack</a>
+      </div>
+    </section>
 
     <h2>Management Summary</h2>
 
@@ -823,7 +879,7 @@
 
     <hr class="article-divider" />
 
-    <h2>5. How the Frameworks Map to Real Supply Chain Incidents</h2>
+    <h2 id="regulatory-map">5. How the Frameworks Map to Real Supply Chain Incidents</h2>
 
     <p>The frameworks become easier to operationalize when they are tied to real incidents. The table below maps recurring failure patterns from the previous article to the most relevant control expectations.</p>
 
@@ -886,6 +942,12 @@
 
     <hr class="article-divider" />
 
+    <section class="article-newsletter" aria-label="Newsletter signup">
+      <h2>Monthly Risk Briefings</h2>
+      <p>For practical monitoring notes on third-party risk, supply chain security, AI governance, and regulatory expectations, subscribe to the newsletter.</p>
+      <a href="index.html#newsletter">Subscribe to the briefing</a>
+    </section>
+
     <h2>Executive Takeaway</h2>
 
     <p>The four frameworks are not competing standards — they are <strong>converging expectations</strong>. Whether an organization is subject to NIS2, DORA, ISO 27001, NIST CSF 2.0, or a combination, the required capabilities are the same: supplier visibility, risk-based controls, contractual governance, continuous monitoring, and incident readiness.</p>
@@ -907,7 +969,7 @@
 
     <div id="annex-a">
       <span class="annex-label">Annex A</span>
-      <h2>Suggested Evidence Pack for an Audit-Ready Program</h2>
+      <h2 id="evidence-pack">Suggested Evidence Pack for an Audit-Ready Program</h2>
 
       <p>For teams building a regulator-ready supply chain security capability, the following evidence pack is usually enough to satisfy most first-line, second-line, and audit-level questions:</p>
 

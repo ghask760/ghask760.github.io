@@ -292,6 +292,48 @@
       text-transform: uppercase;
       color: var(--accent);
     }
+    .reader-brief,
+    .article-newsletter {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--accent);
+      padding: 1.35rem 1.4rem;
+      border-radius: 4px;
+      margin: 1.75rem 0 2rem;
+    }
+    .reader-brief h2,
+    .article-newsletter h2 {
+      margin: 0 0 0.85rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .reader-brief p,
+    .article-newsletter p {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+      color: var(--text-mid);
+    }
+    .reader-brief ul {
+      margin-bottom: 0;
+    }
+    .brief-actions {
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .brief-actions a,
+    .article-newsletter a {
+      color: var(--accent2);
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
     footer {
       padding: 2.5rem 3rem;
       display: flex;
@@ -495,6 +537,20 @@
       </svg>
     </div>
 
+    <section class="reader-brief" aria-label="Executive brief">
+      <h2>Executive Brief</h2>
+      <p><strong>Read this if you need to brief a board, CISO, or risk committee on AI dependency risk.</strong> The core argument: AI should be governed as a supply chain, because models, agents, data flows, and embedded copilots now act like critical third parties.</p>
+      <ul>
+        <li>AI inventories need to include models, providers, agents, SaaS copilots, vector stores, and shadow AI.</li>
+        <li>Existing TPRM controls need AI-specific questions on training use, logging, provenance, agent permissions, and incident notification.</li>
+        <li>The first 90 days should produce an inventory, risk tiering, updated due diligence, agent controls, and one tabletop scenario.</li>
+      </ul>
+      <div class="brief-actions">
+        <a href="#five-moves">Jump to the 90-day moves</a>
+        <a href="#evidence-pack">Jump to the evidence pack</a>
+      </div>
+    </section>
+
     <h2>Management Summary</h2>
 
     <p>AI has quietly become one of the <strong>most concentrated, least-governed supply chains</strong> in the enterprise. In the last 18 months, organizations have onboarded dozens of AI models, APIs, agents, copilots, and embedded features — often without the due diligence that would be standard for a mid-sized SaaS vendor.</p>
@@ -676,7 +732,7 @@
 
     <hr class="article-divider" />
 
-    <h2>4. Five Moves for the Next 90 Days</h2>
+    <h2 id="five-moves">4. Five Moves for the Next 90 Days</h2>
 
     <h3>The big picture</h3>
 
@@ -757,6 +813,12 @@
 
     <hr class="article-divider" />
 
+    <section class="article-newsletter" aria-label="Newsletter signup">
+      <h2>Monthly Risk Briefings</h2>
+      <p>For practical monitoring notes on third-party risk, supply chain security, AI governance, and regulatory expectations, subscribe to the newsletter.</p>
+      <a href="index.html#newsletter">Subscribe to the briefing</a>
+    </section>
+
     <h2>Conclusion: AI Is Not a Tool Category — It Is a New Supply Chain</h2>
 
     <p>The organizations that will handle AI risk well are not necessarily the ones with the most sophisticated models. They are the ones that recognized early that <strong>AI is a supply chain discipline</strong>, not just a technology program.</p>
@@ -777,7 +839,7 @@
 
     <div id="annex-a">
       <span class="annex-label">Annex A</span>
-      <h2>Board-Ready AI Supply Chain Evidence Pack</h2>
+    <h2 id="evidence-pack">Board-Ready AI Supply Chain Evidence Pack</h2>
 
       <p>For teams that need to turn the AI supply chain discussion into evidence, the following pack is a practical starting point:</p>
 
