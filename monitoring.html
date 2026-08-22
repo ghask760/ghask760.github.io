@@ -12,6 +12,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Monitoring & Intelligence - Gabriel Hasik</title>
+  <meta name="description" content="Recurring monitoring briefings for third-party risk, geopolitical supply chain exposure, regulatory signals, vendor incidents, and resilience teams."/>
+  <link rel="canonical" href="https://gabrielhasik.com/monitoring.html"/>
+  <link rel="alternate" type="application/rss+xml" title="Gabriel Hasik Risk Briefings" href="https://gabrielhasik.com/feed.xml"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Monitoring & Intelligence - Gabriel Hasik"/>
+  <meta property="og:description" content="Recurring monitoring briefings for third-party risk, geopolitical supply chain exposure, regulatory signals, vendor incidents, and resilience teams."/>
+  <meta property="og:url" content="https://gabrielhasik.com/monitoring.html"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Monitoring & Intelligence - Gabriel Hasik"/>
+  <meta name="twitter:description" content="Recurring monitoring briefings for third-party risk, geopolitical supply chain exposure, regulatory signals, vendor incidents, and resilience teams."/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -204,6 +214,42 @@
       z-index: 1;
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-action {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--accent-dim);
+      color: var(--accent2);
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .hero-action.primary {
+      background: var(--accent-dim);
+      color: var(--text-hi);
+      border-color: var(--accent);
+    }
+
+    .hero-action:hover {
+      border-color: var(--accent);
+      color: var(--text-hi);
+      background: rgba(212, 130, 26, 0.12);
+    }
+
     section {
       padding: 6rem 3rem;
       border-bottom: 1px solid var(--border);
@@ -253,6 +299,128 @@
       gap: 1.5px;
       border: 1px solid var(--border);
       margin-top: 2rem;
+    }
+
+    .briefing-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    .briefing-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      min-height: 230px;
+      padding: 1.5rem;
+      border-right: 1px solid var(--border);
+      color: inherit;
+      text-decoration: none;
+      background: var(--bg);
+      transition: background 0.2s ease;
+    }
+
+    .briefing-card:last-child { border-right: none; }
+
+    .briefing-card:hover { background: var(--bg2); }
+
+    .briefing-card .briefing-meta {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .briefing-card h3 {
+      font-family: var(--serif);
+      color: var(--text-hi);
+      font-size: 1.18rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .briefing-card p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .briefing-card span {
+      margin-top: auto;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .operating-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .signal-list {
+      display: grid;
+      gap: 1px;
+      border: 1px solid var(--border);
+      background: var(--border);
+    }
+
+    .signal-row {
+      display: grid;
+      grid-template-columns: 12rem 1fr;
+      gap: 1.5rem;
+      padding: 1.15rem 1.25rem;
+      background: var(--bg);
+    }
+
+    .signal-row strong {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .signal-row span {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .newsletter-panel {
+      border: 1px solid var(--accent-dim);
+      background: linear-gradient(180deg, rgba(212,130,26,0.08), rgba(212,130,26,0.02));
+      padding: 2rem;
+      max-width: 760px;
+    }
+
+    .newsletter-panel h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--text-hi);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-panel p {
+      color: var(--text-mid);
+      max-width: 620px;
+      margin-bottom: 1.5rem;
+    }
+
+    .newsletter-panel a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      text-decoration: none;
     }
 
     .monitoring-card {
@@ -361,6 +529,10 @@
       .nav-links { gap: 1.2rem; }
       .hero { padding: 7rem 1.5rem 4rem; min-height: 65vh; }
       section { padding: 4rem 1.5rem; }
+      .briefing-strip { grid-template-columns: 1fr; }
+      .briefing-card { border-right: none; border-bottom: 1px solid var(--border); }
+      .operating-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .signal-row { grid-template-columns: 1fr; gap: 0.45rem; }
       footer {
         flex-direction: column;
         gap: 0.75rem;
@@ -403,17 +575,60 @@
       Monitoring &amp;<br/><em>Intelligence</em>
     </h1>
     <p class="hero-text">
-      A collection of recurring briefings focused on third-party risk, geopolitical exposure,
-      supply chain disruption, and other signals that shape resilience in modern organizations.
+      Recurring briefings that translate vendor incidents, regulatory movement, geopolitical exposure,
+      and supply chain disruption into practical questions for security, procurement, resilience, and risk teams.
     </p>
+    <div class="hero-actions">
+      <a class="hero-action primary" href="#latest-briefings">Latest briefings</a>
+      <a class="hero-action" href="#monitoring-method">Monitoring method</a>
+    </div>
+  </section>
+
+  <section id="latest-briefings">
+    <div class="section-label">01 &mdash; Latest Briefings</div>
+    <h2 class="section-title">Current Monitoring Outputs</h2>
+    <p class="section-intro">
+      The latest monitoring notes are written for teams that need to brief leadership, challenge suppliers,
+      update risk registers, or prepare evidence before an incident or supervisory review forces the issue.
+    </p>
+
+    <div class="briefing-strip">
+      <a class="briefing-card" href="tprm-briefing-june-august-2026.html">
+        <div class="briefing-meta">Third-party risk &middot; Jun-Aug 2026</div>
+        <h3>Software supply chain compromise, AI Act enforcement, DORA and concentration risk</h3>
+        <p>Signals for TPRM, cyber, compliance, procurement, and resilience teams.</p>
+        <span>Read briefing --</span>
+      </a>
+
+      <a class="briefing-card" href="geopolitical-supply-chain-risks-june-august-2026.html">
+        <div class="briefing-meta">Geopolitics &middot; Jun-Aug 2026</div>
+        <h3>Red Sea disruption, EU sanctions, rare earth concentration, Arctic routing</h3>
+        <p>Operational supply chain signals that can affect critical suppliers and delivery routes.</p>
+        <span>Read briefing --</span>
+      </a>
+
+      <a class="briefing-card" href="tprm-briefing-week-ending-2026-06-02.html">
+        <div class="briefing-meta">Third-party risk &middot; May 2026</div>
+        <h3>AI governance gaps, DORA reporting friction, NIS2 supplier clauses</h3>
+        <p>A practical briefing for supplier-risk teams tracking regulatory and vendor-readiness movement.</p>
+        <span>Read briefing --</span>
+      </a>
+
+      <a class="briefing-card" href="geopolitical-supply-chain-risks-may-june-2026.html">
+        <div class="briefing-meta">Geopolitics &middot; May-Jun 2026</div>
+        <h3>Sanctions, chokepoints, raw materials, and regional instability</h3>
+        <p>Risk signals for teams mapping supplier exposure beyond direct contractual relationships.</p>
+        <span>Read briefing --</span>
+      </a>
+    </div>
   </section>
 
   <section id="monitoring-overview">
-    <div class="section-label">01 &mdash; Monitoring Categories</div>
-    <h2 class="section-title">Recurring Monitoring Streams</h2>
+    <div class="section-label">02 &mdash; Monitoring Streams</div>
+    <h2 class="section-title">Recurring Intelligence Tracks</h2>
     <p class="section-intro">
       These briefings are designed as repeatable monitoring outputs rather than one-off articles.
-      Each category links to a standalone page with its own recurring updates, observations, and notable developments.
+      Each stream links to a standalone archive with recurring updates, observations, and notable developments.
     </p>
 
     <div class="monitoring-grid">
@@ -456,6 +671,50 @@
         <div class="card-footer">Open briefing --</div>
       </a>
       -->
+    </div>
+  </section>
+
+  <section id="monitoring-method">
+    <div class="section-label">03 &mdash; Method</div>
+    <div class="operating-grid">
+      <div>
+        <h2 class="section-title">What the monitoring is meant to do</h2>
+        <p class="section-intro">
+          The goal is not to collect headlines. It is to identify signals that should change a risk conversation:
+          supplier criticality, contract clauses, incident readiness, geographic exposure, concentration risk, and audit evidence.
+        </p>
+      </div>
+
+      <div class="signal-list">
+        <div class="signal-row">
+          <strong>Cadence</strong>
+          <span>Monthly or event-driven updates when regulatory, geopolitical, vendor, or incident signals materially change the risk picture.</span>
+        </div>
+        <div class="signal-row">
+          <strong>Audience</strong>
+          <span>CISOs, TPRM leads, procurement, resilience, compliance, legal, and board-facing risk teams.</span>
+        </div>
+        <div class="signal-row">
+          <strong>Outputs</strong>
+          <span>Executive summary, key signals, operational implications, questions for suppliers, and evidence teams should keep current.</span>
+        </div>
+        <div class="signal-row">
+          <strong>Use cases</strong>
+          <span>Board packs, supplier reviews, audit preparation, DORA/NIS2 evidence, tabletop scenarios, and critical supplier mapping.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="monitoring-subscribe">
+    <div class="section-label">04 &mdash; Stay Updated</div>
+    <div class="newsletter-panel">
+      <h2>Get the monitoring briefings when they are published</h2>
+      <p>
+        Subscribe for practical updates on third-party risk, supply chain security, regulatory expectations,
+        AI governance, and geopolitical supplier exposure.
+      </p>
+      <a href="index.html#newsletter">Subscribe to the briefing --</a>
     </div>
 
     <a class="back-link" href="index.html">Back to main page --</a>

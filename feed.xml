@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gabriel Hasik Risk Briefings</title>
+    <link>https://gabrielhasik.com/</link>
+    <description>Cybersecurity, third-party risk, supply chain security, AI governance, regulatory resilience, and monitoring briefings by Gabriel Hasik.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Aug 2026 00:00:00 +0200</lastBuildDate>
+    <atom:link href="https://gabrielhasik.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Cybersecurity Is Now a Board Problem - Personal Liability Under NIS2 and DORA</title>
+      <link>https://gabrielhasik.com/cybersecurity-board-problem-nis2-dora.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/cybersecurity-board-problem-nis2-dora.html</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0200</pubDate>
+      <description>NIS2 and DORA move cybersecurity governance into the boardroom. Management teams need evidence that they understand cyber risk, supplier dependencies, resilience, and incident response.</description>
+    </item>
+
+    <item>
+      <title>Third-Party Risk Intelligence Briefing - June to August 2026</title>
+      <link>https://gabrielhasik.com/tprm-briefing-june-august-2026.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/tprm-briefing-june-august-2026.html</guid>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 +0200</pubDate>
+      <description>Software supply chain compromise, AI Act enforcement, DORA and UK critical third-party oversight, and vendor concentration risk.</description>
+    </item>
+
+    <item>
+      <title>Geopolitical Supply Chain Risks - June to August 2026</title>
+      <link>https://gabrielhasik.com/geopolitical-supply-chain-risks-june-august-2026.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/geopolitical-supply-chain-risks-june-august-2026.html</guid>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 +0200</pubDate>
+      <description>Red Sea escalation, EU Russia sanctions, rare earth concentration, Arctic shipping, and supply chain bottlenecks.</description>
+    </item>
+
+    <item>
+      <title>AI Is Now a Supply Chain Risk</title>
+      <link>https://gabrielhasik.com/Ai-Supply-Chain-Risk.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/Ai-Supply-Chain-Risk.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0200</pubDate>
+      <description>AI has become one of the most concentrated and least-governed supply chains in the enterprise.</description>
+    </item>
+
+    <item>
+      <title>The Supply Chain Is Now the Biggest Cyber Threat</title>
+      <link>https://gabrielhasik.com/supply-chain-is-now-the-biggest-cyber-threat.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/supply-chain-is-now-the-biggest-cyber-threat.html</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0200</pubDate>
+      <description>Why supply chain compromise has become a primary cyber threat, with data, incident patterns, regulatory expectations, and practical controls.</description>
+    </item>
+  </channel>
+</rss>
