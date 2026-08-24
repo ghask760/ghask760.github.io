@@ -17,6 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE_PATH = ROOT / "automation" / "content_queue.json"
+PREPARED_DRAFTS_PATH = ROOT / "automation" / "prepared_drafts.json"
 DRAFT_ROOT = ROOT / "_drafts" / "weekly-content"
 OUTPUT_ENV = ROOT / ".weekly-content-output"
 
@@ -214,6 +215,36 @@ Return strict JSON only.
     return json.loads("".join(text_parts))
 
 
+def load_prepared_draft(topic: dict, draft_date: str, reason: Exception) -> dict:
+    if not PREPARED_DRAFTS_PATH.exists():
+        raise RuntimeError(f"OpenAI failed and no prepared fallback file exists: {reason}") from reason
+
+    drafts = json.loads(PREPARED_DRAFTS_PATH.read_text(encoding="utf-8"))
+    content = drafts.get(topic["id"])
+    if not content:
+        raise RuntimeError(f"OpenAI failed and no prepared fallback exists for {topic['id']}: {reason}") from reason
+
+    blog_url = f"{os.environ.get('BLOG_BASE_URL', 'https://gabrielhasik.com')}/{topic['link_slug']}"
+    content = dict(content)
+    content["linkedin_post"] = content["linkedin_post"].format(blog_url=blog_url)
+    content["approval_summary"] = (
+        content["approval_summary"].format(draft_date=draft_date, blog_url=blog_url)
+        + "\n\nFallback note: this draft was created from `automation/prepared_drafts.json` "
+        "because the OpenAI API call failed. Review it normally before publishing."
+    )
+    return content
+
+
+def generate_content(topic: dict, draft_date: str) -> dict:
+    try:
+        return call_openai(topic, draft_date)
+    except Exception as exc:
+        if os.environ.get("ALLOW_PREPARED_FALLBACK", "true").lower() not in {"1", "true", "yes"}:
+            raise
+        print(f"OpenAI generation failed, using prepared fallback draft: {exc}", file=sys.stderr)
+        return load_prepared_draft(topic, draft_date, exc)
+
+
 def write_draft(topic: dict, content: dict, draft_date: str) -> dict:
     slug = slugify(topic["title"])
     draft_dir = DRAFT_ROOT / f"{draft_date}-{slug}"
@@ -285,7 +316,7 @@ def write_output_env(topic: dict, paths: dict, draft_date: str) -> None:
 def main() -> int:
     draft_date = os.environ.get("DRAFT_DATE") or dt.date.today().isoformat()
     topic = load_next_topic()
-    content = call_openai(topic, draft_date)
+    content = generate_content(topic, draft_date)
     paths = write_draft(topic, content, draft_date)
     write_output_env(topic, paths, draft_date)
     print(f"Generated weekly content draft for: {topic['title']}")

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Checkbox to Culture: Building a Third-Party Risk Program That Actually Works - Gabriel Hasik</title>
+  <meta name="description" content="A practical guide to moving third-party risk management beyond questionnaires and into ownership, evidence, escalation, and continuous governance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0e0e; --bg2: #141414; --bg3: #1a1a1a; --border: #242424;
+      --muted: #3a3a3a; --text-dim: #666; --text-mid: #999; --text: #d8d0c4;
+      --text-hi: #f0e8dc; --accent: #d4821a; --accent2: #e8a84c; --accent-dim: #3a2208;
+      --serif: 'Playfair Display', Georgia, serif; --mono: 'DM Mono', 'Courier New', monospace;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; background: var(--bg); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--text-hi); text-decoration: none; letter-spacing: 0.02em; }
+    .nav-logo span, footer a { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a, .back-link, .back-link-bottom { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; }
+    .article-hero { padding: 9rem 3rem 4rem; border-bottom: 1px solid var(--border); max-width: 860px; }
+    .back-link { display: inline-flex; margin-bottom: 2.5rem; }
+    .back-link::before, .back-link-bottom::before { content: '<-'; margin-right: 0.5rem; }
+    .article-cat { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent-dim); padding: 3px 10px; border-radius: 2px; display: inline-block; margin-bottom: 1.5rem; }
+    .article-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--text-hi); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .article-meta { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); display: flex; gap: 1rem; flex-wrap: wrap; }
+    .article-body { max-width: 720px; padding: 4rem 3rem 5rem; }
+    .article-body p { font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.85; }
+    .article-body h2 { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--text-hi); line-height: 1.2; margin: 3rem 0 1rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--text-hi); margin: 2rem 0 0.75rem; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; font-size: 1rem; line-height: 1.75; }
+    .article-body strong { color: var(--text-hi); font-weight: 500; }
+    .article-body em, .article-body a { color: var(--accent2); }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    .article-body th { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); text-align: left; padding: 0.6rem 0.75rem; border-bottom: 2px solid var(--accent-dim); background: var(--bg2); }
+    .article-body td { padding: 0.7rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .insight-box { background: linear-gradient(180deg, rgba(212,130,26,0.08), rgba(212,130,26,0.02)); border: 1px solid var(--accent-dim); padding: 1.25rem; border-radius: 4px; margin: 1.75rem 0 2rem; }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+    footer { padding: 2.5rem 3rem; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; border-top: 1px solid var(--border); gap: 1rem; flex-wrap: wrap; }
+    footer a { text-decoration: none; }
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { gap: 1.25rem; } .article-hero { padding: 7rem 1.5rem 3rem; } .article-body { padding: 3rem 1.5rem 4rem; } footer { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="../../index.html">G.<span>Hasik</span></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#blog">Writing</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="article-hero">
+    <a class="back-link" href="../../index.html#blog">Back to Writing</a>
+    <div class="article-cat">Third-Party Risk</div>
+    <h1 class="article-title">From Checkbox to Culture: Building a Third-Party Risk Program That Actually Works</h1>
+    <div class="article-meta"><span>August 2026</span><span>&middot;</span><span>9 min read</span><span>&middot;</span><span>Gabriel Hasik</span></div>
+  </div>
+  <div class="article-body">
+<p>Third-party risk management often starts with a questionnaire. That is understandable. Questionnaires are visible, easy to distribute, and create an audit trail. But a questionnaire is not a risk program. It is only one input into a much larger operating model.</p>
+<p>The real question for security and risk leaders is not whether suppliers have answered a control set. It is whether the organization can identify critical dependencies, understand where supplier failure would hurt the business, verify important commitments, and escalate meaningful risk before it becomes an incident.</p>
+<p>This is where many TPRM programs get stuck. They become documentation factories. Procurement asks for answers, security reviews screenshots, legal adds clauses, and the business moves forward. Everyone has done something, but it is not always clear whether risk has actually been reduced.</p>
+<div class="insight-box"><p><strong>The useful shift is simple:</strong> treat TPRM as a business operating model, not as a compliance ritual. The goal is not more supplier paperwork. The goal is better decisions about who the organization depends on, what can go wrong, and what must be governed continuously.</p></div>
+<h2>Why the checkbox model fails</h2>
+<p>The checkbox model fails because it assumes that supplier risk is static. A supplier is assessed during onboarding, assigned a risk rating, and then reviewed again on an annual cycle. That pattern may satisfy a policy requirement, but it does not match how cyber and operational risk move in real life.</p>
+<p>Supplier services change. Access levels expand. Subprocessors are added. New vulnerabilities appear. A small vendor becomes embedded in a critical workflow. A cloud provider region, logistics partner, payroll platform, managed service provider, or software component can quietly become essential to business continuity.</p>
+<p>Annual reviews rarely catch this in time. They create a point-in-time snapshot, while the risk lives in the relationship over time.</p>
+<h2>What a working TPRM program needs</h2>
+<p>A practical program starts with a small set of capabilities that make risk visible and actionable. It does not need to be bureaucratic. In fact, the best programs are often deliberately lightweight: clear enough for business owners to use, structured enough for governance, and focused enough to avoid drowning teams in low-value evidence.</p>
+<table><thead><tr><th>Capability</th><th>Why it matters</th><th>Practical question</th></tr></thead><tbody><tr><td>Supplier inventory</td><td>You cannot govern dependencies you cannot see.</td><td>Who provides which critical service?</td></tr><tr><td>Criticality classification</td><td>Not every supplier deserves the same review depth.</td><td>What breaks if this supplier fails?</td></tr><tr><td>Ownership</td><td>Risk cannot sit only with security or procurement.</td><td>Who owns the relationship and the decision?</td></tr><tr><td>Evidence and commitments</td><td>Contracts and answers must be verifiable.</td><td>What proof supports the supplier claim?</td></tr><tr><td>Issue tracking</td><td>Findings without follow-up do not reduce risk.</td><td>What is open, overdue, accepted, or remediated?</td></tr><tr><td>Escalation</td><td>Material supplier risk needs management attention.</td><td>When does this become a business decision?</td></tr></tbody></table>
+<h2>Move from assessment to lifecycle</h2>
+<p>Supplier risk should be governed across the lifecycle. Onboarding matters, but it is only the beginning. The more important question is what happens after the supplier is approved.</p>
+<p>A lifecycle view connects initial due diligence, contract commitments, access provisioning, service changes, periodic reassessment, incident reporting, remediation, renewal, and offboarding. That connection is where TPRM becomes useful. It allows the organization to see not only whether a supplier passed a review, but whether the relationship remains within risk appetite.</p>
+<p>This is also where NIS2 and modern security frameworks push organizations. Supply chain security is not just a procurement checkbox. It requires appropriate measures, governance, accountability, and the ability to manage risk across external dependencies.</p>
+<h2>Separate supplier criticality from supplier maturity</h2>
+<p>One common mistake is to treat supplier risk as a single score. A small vendor with weak security may appear high risk. A large provider with strong certifications may appear low risk. Reality is more nuanced.</p>
+<p>Criticality and maturity are different dimensions. Criticality asks how important the supplier is to your business. Maturity asks how well the supplier appears to manage risk. A highly mature supplier can still be critical. A low-maturity supplier may be tolerable if it has no sensitive access and no operational impact.</p>
+<p>Keeping those dimensions separate improves decision-making. It helps teams decide where deeper review is justified, where contractual safeguards are enough, where monitoring is needed, and where risk acceptance should be explicit.</p>
+<h2>Make risk ownership visible</h2>
+<p>TPRM often becomes ineffective when ownership is vague. Security may identify the risk, procurement may manage the commercial process, legal may negotiate terms, and the business may depend on the service. But who actually owns the decision to proceed?</p>
+<p>A working program makes ownership visible. Every critical supplier should have a business owner. Every material finding should have an accountable remediation owner. Every accepted risk should have an approver who understands the impact.</p>
+<p>This does not mean security gives up its role. It means security becomes the advisor and control expert, while business leadership owns the risk decision.</p>
+<h2>Verify what matters</h2>
+<p>Supplier questionnaires often produce large volumes of low-confidence data. The aim should not be to verify everything. The aim should be to verify what matters for the service being provided.</p>
+<p>If a supplier processes sensitive data, evidence around access control, encryption, incident response, vulnerability management, and subcontractor governance may matter. If the supplier supports a critical business process, continuity and recovery evidence may matter more. If the supplier is a software provider, secure development, vulnerability disclosure, and dependency management may be central.</p>
+<p>Risk-based verification is more defensible than asking every supplier the same long list of questions.</p>
+<h2>Use escalation as a design feature</h2>
+<p>A mature TPRM program does not try to solve every risk inside the security team. It defines when risk must move upward. Examples include critical suppliers with unresolved high findings, missing contractual commitments, poor incident transparency, excessive concentration, or dependency on unsupported technology.</p>
+<p>Escalation should not be treated as failure. It is how the organization makes explicit decisions when risk, cost, time, and business need conflict.</p>
+<h2>What to ask at executive level</h2>
+<ul><li>Which suppliers support our most critical business services?</li><li>Which suppliers have access to sensitive data, privileged systems, or operational processes?</li><li>Where are we relying on annual reviews that no longer match the pace of change?</li><li>Which supplier risks have been accepted, by whom, and until when?</li><li>Which supplier commitments are contractual only, and which are supported by evidence?</li><li>Where would a supplier incident create a material business disruption?</li></ul>
+<h2>The practical end state</h2>
+<p>The goal of TPRM is not to create perfect knowledge. That is impossible. The goal is to create enough reliable visibility to make better decisions, earlier.</p>
+<p>A program that actually works gives the organization a live view of its supplier dependencies, a consistent way to classify criticality, a focused evidence model, clear owners, and a mechanism for escalation. It reduces friction for low-risk suppliers and increases attention where the impact is real.</p>
+<p>That is the difference between checkbox compliance and risk governance. One proves that a process exists. The other helps the business decide where trust is justified, where controls are needed, and where exposure must be accepted consciously.</p>
+    <hr class="article-divider" />
+    <a class="back-link-bottom" href="../../index.html#blog">Back to Writing</a>
+  </div>
+  <footer>
+    <span>&copy; 2026 Gabriel Hasik</span>
+    <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
+    <span>Cyber &middot; Risk &middot; Supply Chain</span>
+  </footer>
+</body>
+</html>
