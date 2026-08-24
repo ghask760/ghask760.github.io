@@ -12,6 +12,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- SCHEDULED_SITEMAP_START -->
+  <url>
+    <loc>https://gabrielhasik.com/from-checkbox-to-culture-third-party-risk-program.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+      <!-- SCHEDULED_SITEMAP_END -->
   <url>
     <loc>https://gabrielhasik.com/monitoring.html</loc>
     <lastmod>2026-08-22</lastmod>

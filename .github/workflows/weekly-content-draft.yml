@@ -1,4 +1,4 @@
-name: Weekly content draft
+name: Weekly scheduled publish
 
 on:
   schedule:
@@ -8,15 +8,10 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
-  draft:
+  publish:
     runs-on: ubuntu-latest
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5' }}
-      BLOG_BASE_URL: "https://gabrielhasik.com"
     steps:
       - uses: actions/checkout@v4
 
@@ -24,33 +19,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate weekly draft
-        run: python scripts/weekly_content_draft.py
+      - name: Publish due scheduled posts
+        run: python scripts/publish_scheduled_posts.py
 
-      - name: Validate generated draft
+      - name: Commit published posts
         run: |
-          test -f .weekly-content-output
-          cat .weekly-content-output
-          ARTICLE_PATH="$(sed -n 's/^article_path=//p' .weekly-content-output)"
-          LINKEDIN_PATH="$(sed -n 's/^linkedin_path=//p' .weekly-content-output)"
-          test -f "$ARTICLE_PATH"
-          test -f "$LINKEDIN_PATH"
-          grep -q "</html>" "$ARTICLE_PATH"
-
-      - name: Create pull request
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          source .weekly-content-output
-          BRANCH="weekly-content-draft/${draft_date}-${topic_id}-${GITHUB_RUN_ID}"
+          if git diff --quiet; then
+            echo "No scheduled posts due."
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$BRANCH"
-          git add -- "$draft_dir"
-          git commit -m "Prepare weekly content draft: ${topic_title}"
-          git push --set-upstream origin "$BRANCH"
-          gh pr create \
-            --base main \
-            --head "$BRANCH" \
-            --title "Weekly draft: ${topic_title}" \
-            --body-file "$approval_path"
+          git add .
+          git commit -m "Publish scheduled weekly blog post"
+          git push
