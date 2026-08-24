@@ -5,8 +5,17 @@
     <link>https://gabrielhasik.com/</link>
     <description>Cybersecurity, third-party risk, supply chain security, AI governance, regulatory resilience, and monitoring briefings by Gabriel Hasik.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 22 Aug 2026 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0200</lastBuildDate>
     <atom:link href="https://gabrielhasik.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <!-- SCHEDULED_RSS_START -->
+    <item>
+      <title>From Checkbox to Culture: Building a Third-Party Risk Program That Actually Works</title>
+      <link>https://gabrielhasik.com/from-checkbox-to-culture-third-party-risk-program.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/from-checkbox-to-culture-third-party-risk-program.html</guid>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 +0200</pubDate>
+      <description>A practical guide to building a third-party risk program that moves beyond questionnaires and creates real supplier risk governance.</description>
+    </item>
+      <!-- SCHEDULED_RSS_END -->
 
     <item>
       <title>Cybersecurity Is Now a Board Problem - Personal Liability Under NIS2 and DORA</title>
