@@ -17,18 +17,18 @@
       "source": "2026-08-31-nis2-extended-supply-chain-small-supplier-risk.html",
       "category": "NIS2 & Supply Chain",
       "month": "August 2026",
-      "read_time": "10 min read",
-      "description": "How NIS2 changes supplier governance, especially for smaller vendors embedded in critical services, data flows, and operational dependencies."
+      "read_time": "12 min read",
+      "description": "How NIS2 expectations cascade through supplier ecosystems and why small suppliers can create large cyber risk."
     },
     {
       "publish_date": "2026-09-07",
       "title": "The Hidden Cost of Vendor Questionnaires",
       "slug": "hidden-cost-of-vendor-questionnaires.html",
       "source": "2026-09-07-hidden-cost-of-vendor-questionnaires.html",
-      "category": "TPRM Operations",
+      "category": "Third-Party Risk",
       "month": "September 2026",
-      "read_time": "9 min read",
-      "description": "Why long questionnaires often create more friction than insight, and how to redesign evidence collection around better risk decisions."
+      "read_time": "10 min read",
+      "description": "Why vendor questionnaires consume so much effort and how to redesign them around risk decisions rather than document collection."
     },
     {
       "publish_date": "2026-09-14",
@@ -38,7 +38,7 @@
       "category": "Risk Data",
       "month": "September 2026",
       "read_time": "10 min read",
-      "description": "Supplier risk breaks down when the underlying data model is missing: services, owners, access, evidence, findings, and dependencies."
+      "description": "Supplier risk programs fail when supplier, service, evidence, ownership, and dependency data are fragmented across tools and spreadsheets."
     },
     {
       "publish_date": "2026-09-21",
@@ -47,18 +47,18 @@
       "source": "2026-09-21-what-boards-need-to-know-third-party-cyber-risk.html",
       "category": "Board Governance",
       "month": "September 2026",
-      "read_time": "9 min read",
-      "description": "A board-level view of third-party cyber risk: critical suppliers, concentration, resilience, accepted risk, and management accountability."
+      "read_time": "10 min read",
+      "description": "A board-level view of third-party cyber risk: critical dependencies, evidence, decisions, escalation, and resilience."
     },
     {
       "publish_date": "2026-09-28",
       "title": "The Minimum Viable TPRM Program for Mid-Sized Companies",
       "slug": "minimum-viable-tprm-program-mid-sized-companies.html",
       "source": "2026-09-28-minimum-viable-tprm-program-mid-sized-companies.html",
-      "category": "TPRM Design",
+      "category": "TPRM Operating Model",
       "month": "September 2026",
       "read_time": "11 min read",
-      "description": "A pragmatic TPRM operating model for mid-sized organizations that need real governance without enterprise-level bureaucracy."
+      "description": "A practical minimum viable third-party risk management program for mid-sized companies that need discipline without enterprise bureaucracy."
     },
     {
       "publish_date": "2026-10-05",
@@ -67,8 +67,8 @@
       "source": "2026-10-05-continuous-monitoring-vs-annual-reviews.html",
       "category": "Continuous Monitoring",
       "month": "October 2026",
-      "read_time": "9 min read",
-      "description": "How to balance annual supplier reviews with signal-based monitoring that catches meaningful changes between formal assessments."
+      "read_time": "10 min read",
+      "description": "Why annual supplier reviews are not enough for critical third parties and how continuous monitoring should be designed around meaningful risk signals."
     },
     {
       "publish_date": "2026-10-12",
@@ -77,28 +77,28 @@
       "source": "2026-10-12-classify-critical-suppliers-without-overengineering.html",
       "category": "Supplier Criticality",
       "month": "October 2026",
-      "read_time": "8 min read",
-      "description": "A simple, defensible approach to supplier criticality that avoids complex scoring while improving review depth and escalation."
+      "read_time": "10 min read",
+      "description": "A simple supplier criticality model for third-party risk management that supports better prioritization without heavy bureaucracy."
     },
     {
       "publish_date": "2026-10-19",
       "title": "The Supplier Risk Signals That Matter Most",
       "slug": "supplier-risk-signals-that-matter-most.html",
       "source": "2026-10-19-supplier-risk-signals-that-matter-most.html",
-      "category": "Risk Signals",
+      "category": "Risk Intelligence",
       "month": "October 2026",
       "read_time": "10 min read",
-      "description": "Which supplier risk signals deserve attention, and how to separate actionable indicators from noisy external monitoring feeds."
+      "description": "How to choose supplier risk signals that drive decisions instead of creating monitoring noise."
     },
     {
       "publish_date": "2026-10-26",
       "title": "Contract Clauses Are Not a Control: How to Make Supplier Commitments Verifiable",
       "slug": "supplier-contract-clauses-are-not-a-control.html",
       "source": "2026-10-26-supplier-contract-clauses-are-not-a-control.html",
-      "category": "Contracts & Evidence",
+      "category": "Contracts & Assurance",
       "month": "October 2026",
-      "read_time": "9 min read",
-      "description": "Why supplier contract clauses only reduce risk when they are connected to evidence, monitoring, issue ownership, and escalation."
+      "read_time": "10 min read",
+      "description": "Supplier contracts matter, but clauses only reduce risk when they are mapped to evidence, monitoring, and escalation."
     },
     {
       "publish_date": "2026-11-02",
@@ -108,7 +108,7 @@
       "category": "Risk Register",
       "month": "November 2026",
       "read_time": "10 min read",
-      "description": "How to design a third-party risk register that supports decisions instead of becoming another unused spreadsheet."
+      "description": "How to build a third-party risk register that supports decisions instead of becoming another forgotten spreadsheet."
     },
     {
       "publish_date": "2026-11-09",
@@ -117,8 +117,8 @@
       "source": "2026-11-09-from-spreadsheets-to-workflow-tprm-breaks-at-scale.html",
       "category": "TPRM Workflow",
       "month": "November 2026",
-      "read_time": "9 min read",
-      "description": "Why spreadsheet-based supplier risk management eventually fails, and what workflow capabilities are needed before buying tooling."
+      "read_time": "10 min read",
+      "description": "Why spreadsheet-based TPRM breaks as supplier risk grows and how workflow changes the operating model."
     },
     {
       "publish_date": "2026-11-16",
@@ -127,18 +127,18 @@
       "source": "2026-11-16-five-workflows-every-supply-chain-risk-tool-should-support.html",
       "category": "Product Thinking",
       "month": "November 2026",
-      "read_time": "11 min read",
-      "description": "A product-oriented view of the core workflows a simple supply chain risk platform should support from day one."
+      "read_time": "10 min read",
+      "description": "The five core workflows a practical TPRM and supply chain risk tool should support from day one."
     },
     {
       "publish_date": "2026-11-23",
       "title": "How to Turn Supplier Evidence Into Decision-Ready Risk Insights",
       "slug": "supplier-evidence-to-risk-insights.html",
       "source": "2026-11-23-supplier-evidence-to-risk-insights.html",
-      "category": "Evidence & Insight",
+      "category": "Risk Intelligence",
       "month": "November 2026",
-      "read_time": "9 min read",
-      "description": "How to move from collecting supplier documents to producing clear risk insight that supports approval, remediation, and escalation."
+      "read_time": "10 min read",
+      "description": "Supplier evidence is useful only when it helps decision-makers understand risk, gaps, ownership, and next actions."
     },
     {
       "publish_date": "2026-11-30",
@@ -148,7 +148,7 @@
       "category": "DORA & ICT Risk",
       "month": "November 2026",
       "read_time": "10 min read",
-      "description": "Lessons from DORA that are useful beyond financial services: ICT dependency mapping, registers, contracts, resilience, and oversight."
+      "description": "DORA is financial-sector regulation, but its approach to ICT third-party risk offers useful lessons for many organizations."
     },
     {
       "publish_date": "2026-12-07",
@@ -157,8 +157,8 @@
       "source": "2026-12-07-designing-lightweight-tprm-operating-model.html",
       "category": "Operating Model",
       "month": "December 2026",
-      "read_time": "9 min read",
-      "description": "A lightweight operating model for TPRM that defines roles, cadence, evidence, escalation, and reporting without unnecessary bureaucracy."
+      "read_time": "10 min read",
+      "description": "How to design a lightweight third-party risk operating model with clear roles, cadence, evidence, escalation, and reporting."
     },
     {
       "publish_date": "2026-12-14",
@@ -168,17 +168,17 @@
       "category": "Product Thesis",
       "month": "December 2026",
       "read_time": "10 min read",
-      "description": "Why the market needs simpler supply chain risk tooling focused on clarity, workflow, evidence, and decision support."
+      "description": "Why supply chain risk teams need simpler tools that turn supplier data into action rather than more administrative burden."
     },
     {
       "publish_date": "2026-12-21",
       "title": "What I Learned From a Year of Writing About Cyber Supply Chain Risk",
       "slug": "year-writing-about-cyber-supply-chain-risk.html",
       "source": "2026-12-21-year-writing-about-cyber-supply-chain-risk.html",
-      "category": "Reflection",
+      "category": "Year in Review",
       "month": "December 2026",
-      "read_time": "8 min read",
-      "description": "A year-end synthesis of the recurring patterns in cyber supply chain risk, TPRM operations, board governance, and product opportunity."
+      "read_time": "9 min read",
+      "description": "A year-end reflection on cyber supply chain risk, third-party governance, and the practical gap between compliance and resilience."
     },
     {
       "publish_date": "2026-12-28",
@@ -188,7 +188,7 @@
       "category": "2027 Outlook",
       "month": "December 2026",
       "read_time": "10 min read",
-      "description": "A forward-looking view of TPRM in 2027: less paperwork, more risk intelligence, clearer ownership, and simpler decision support."
+      "description": "How third-party risk management can evolve in 2027 from compliance burden into supplier risk intelligence and decision support."
     }
   ]
 }
