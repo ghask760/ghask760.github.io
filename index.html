@@ -126,6 +126,42 @@
 
     .nav-links a:hover { color: var(--accent); }
 
+    .top-monitor-strip {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 44px;
+      padding: 0.6rem 3rem;
+      background: linear-gradient(90deg, rgba(58,34,8,0.98), rgba(20,20,20,0.98));
+      border-bottom: 1px solid var(--accent-dim);
+      color: var(--text-hi);
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .top-monitor-strip strong {
+      color: var(--accent2);
+      font-weight: 500;
+    }
+
+    .top-monitor-strip span {
+      color: var(--text-mid);
+    }
+
+    .top-monitor-strip:hover strong,
+    .top-monitor-strip:hover span {
+      color: var(--text-hi);
+    }
+
     /* --- HERO --- */
     #hero {
       min-height: 100vh;
@@ -180,6 +216,52 @@
       margin: 1.5rem 0 1.75rem;
       max-width: 680px;
       line-height: 1.6;
+    }
+
+    .hero-monitor-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1.5rem;
+      width: min(760px, 100%);
+      margin: 0 0 1.3rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--accent-dim);
+      background: rgba(212, 130, 26, 0.08);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .hero-monitor-card:hover {
+      border-color: var(--accent);
+      background: rgba(212, 130, 26, 0.14);
+    }
+
+    .hero-monitor-kicker {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-monitor-title {
+      display: block;
+      color: var(--text-hi);
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .hero-monitor-arrow {
+      font-family: var(--mono);
+      color: var(--accent2);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .hero-actions {
@@ -772,7 +854,18 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.5rem; }
+      .top-monitor-strip {
+        top: 60px;
+        justify-content: flex-start;
+        padding: 0.65rem 1.5rem;
+        font-size: 0.62rem;
+        line-height: 1.4;
+      }
       #hero { padding: 7rem 1.5rem 4rem; }
+      .hero-monitor-card {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
       section { padding: 4rem 1.5rem; }
       #about .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .project-row { grid-template-columns: 2rem 1fr; }
@@ -802,6 +895,11 @@
     </ul>
   </nav>
 
+  <a class="top-monitor-strip" href="daily-incident-monitor.html">
+    <strong>New daily monitor</strong>
+    <span>TPRM and supply chain incidents with practical hot fixes</span>
+  </a>
+
   <!-- -- HERO -- -->
   <section id="hero">
     <div class="hero-grid"></div>
@@ -813,8 +911,16 @@
       Helping CISOs, risk teams, and boards understand third-party, supply chain, regulatory, and AI risk.
       I write practical briefings on the dependencies, controls, and evidence security leaders need when risk moves outside the perimeter.
     </p>
+    <a class="hero-monitor-card fade-up" href="daily-incident-monitor.html">
+      <span>
+        <span class="hero-monitor-kicker">Updated Daily</span>
+        <span class="hero-monitor-title">Daily TPRM &amp; Supply Chain Incident Monitor: new vendor, cyber supply chain, logistics, and supplier-continuity signals.</span>
+      </span>
+      <span class="hero-monitor-arrow">Open monitor --</span>
+    </a>
     <div class="hero-actions fade-up">
-      <a class="hero-action primary" href="#monitoring">Read latest briefing</a>
+      <a class="hero-action primary" href="daily-incident-monitor.html">Open daily monitor</a>
+      <a class="hero-action" href="#monitoring">Read latest briefing</a>
       <a class="hero-action" href="#contact">Work with me</a>
     </div>
     <div class="hero-tags fade-up">
