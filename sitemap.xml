@@ -39,6 +39,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gabrielhasik.com/daily-incident-monitor.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gabrielhasik.com/tools.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
