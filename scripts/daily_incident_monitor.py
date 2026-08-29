@@ -36,6 +36,7 @@ MODEL = os.environ.get("OPENAI_MODEL", "gpt-5-mini")
 MAX_CANDIDATES = int(os.environ.get("DAILY_MONITOR_MAX_CANDIDATES", "35"))
 MAX_ITEMS_PER_FEED = int(os.environ.get("DAILY_MONITOR_MAX_ITEMS_PER_FEED", "12"))
 MAX_PUBLISHED = int(os.environ.get("DAILY_MONITOR_MAX_PUBLISHED", "8"))
+MAX_OUTPUT_TOKENS = int(os.environ.get("DAILY_MONITOR_MAX_OUTPUT_TOKENS", "8000"))
 DAYS_BACK = int(os.environ.get("DAILY_MONITOR_DAYS_BACK", "3"))
 PUBLISH_EMPTY_DAYS = os.environ.get("DAILY_MONITOR_PUBLISH_EMPTY_DAYS", "true").lower() == "true"
 
@@ -334,7 +335,8 @@ Candidates:
     payload = {
         "model": MODEL,
         "input": textwrap.dedent(prompt).strip(),
-        "max_output_tokens": 3500,
+        "text": {"format": {"type": "json_object"}},
+        "max_output_tokens": MAX_OUTPUT_TOKENS,
     }
     request = urllib.request.Request(
         "https://api.openai.com/v1/responses",
