@@ -1,3 +1,129 @@
 {
-  "days": []
+  "days": [
+    {
+      "date": "2026-08-29",
+      "generated_at": "2026-08-29T11:12:38+02:00",
+      "incidents": [
+        {
+          "title": "PaperCut NG/MF zero-day actively exploited; vendor issues second emergency patch",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "PaperCut confirmed a zero-day in PaperCut NG and MF is being actively exploited; the vendor released emergency patches and followed with a second emergency update after researchers found bypasses to the initial fixes. PaperCut said it is aware of confirmed customer incidents.",
+          "why_it_matters": "PaperCut is a widely deployed print-management product; active exploitation and multiple patch iterations increase risk of lateral access or code execution via a trusted vendor component, affecting many customers and downstream supply chains.",
+          "hot_fix": [
+            "Apply PaperCut emergency patch immediately to all NG/MF instances",
+            "Isolate and audit PaperCut servers for indicators of compromise",
+            "Block internet access to PaperCut admin interfaces and enforce MFA"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/08/attackers-chain-two-papercut-flaws-to.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/papercut-releases-emergency-patch-for-exploited-zero-day/"
+            }
+          ]
+        },
+        {
+          "title": "ServiceNow issues patches for three max-severity AI Platform flaws enabling code/SQL injection",
+          "category": "Vendor outage",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "ServiceNow released security updates addressing multiple maximum-severity vulnerabilities in its AI Platform that could allow code injection, SQL injection, and privilege escalation; the company said it deployed updates to hosted instances and provided patches to partners and self-hosted customers.",
+          "why_it_matters": "ServiceNow is a critical ITSM/automation vendor; unauthenticated exploitation could lead to service disruption, data access, or privilege escalation across customer deployments, requiring immediate patching and verification by TPRM teams.",
+          "hot_fix": [
+            "Confirm ServiceNow hosted instances received vendor-deployed updates",
+            "Apply vendor-supplied patches to self-hosted instances immediately",
+            "Review ServiceNow audit logs for suspicious activity and unauthorized changes"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/servicenow-warns-of-three-max-severity-security-vulnerabilities/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/08/three-cvss-100-servicenow-flaws-could.html"
+            }
+          ]
+        },
+        {
+          "title": "Manchester Airports Group confirms data theft of customer records",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Manchester Airports Group disclosed a cyberattack in which attackers stole customer data, including Wi‑Fi sign-up records from Manchester, Stansted, and East Midlands airports; press reporting cites MAG and estimates up to 8.7 million customers may be affected.",
+          "why_it_matters": "MAG is a major travel infrastructure provider; stolen customer data and potential downstream misuse can lead to regulatory, reputational, and operational impacts for partners and vendors that rely on passenger data.",
+          "hot_fix": [
+            "Coordinate notification and credit-monitoring steps with MAG and affected partners",
+            "Search for MAG-related credentials in corporate SSO/credential stores and revoke if found",
+            "Review third-party integrations with MAG for exposed tokens or data feeds"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/manchester-airports-group-says-hackers-stole-travelers-data/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/08/27/cybercrooks-jet-off-with-manchester-airports-group-customer_data/"
+            }
+          ]
+        },
+        {
+          "title": "ATF confirms 'major' cyber incident; DOJ investigating after ransomware group claim",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF) acknowledged a significant cyber incident and said it is investigating with the Department of Justice after a ransomware group claimed responsibility.",
+          "why_it_matters": "A major US law-enforcement agency incident can have national security and continuity implications for vendors and contractors working with the ATF; it may trigger sensitive-data exposure and contract-specific breach obligations.",
+          "hot_fix": [
+            "Review contractual notification and data-handling obligations for ATF-linked contracts",
+            "Enumerate and isolate any systems that exchange data with ATF networks",
+            "Monitor threat intel for claimed ransomware artifacts and Indicators of Compromise"
+          ],
+          "sources": [
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/atf-confirms-cyber-incident-after-ransomware-group-claims-attack/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/08/27/atf-responds-to-major-cybersecurity-incident-after-ransomware-gangs-claims/5292990"
+            }
+          ]
+        },
+        {
+          "title": "Two alleged TeamPCP members arrested in Australia over supply-chain malware campaign",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Australian authorities arrested two men alleged to be members of TeamPCP, a group blamed for creating malicious open-source software used in widespread software supply chain attacks; reporting includes AFP involvement and investigative ties to long-running campaigns.",
+          "why_it_matters": "TeamPCP is tied to prolific supply-chain compromises; arrests may disrupt threat actor operations but do not eliminate residual risk from backdoors or malicious packages already distributed to downstream consumers.",
+          "hot_fix": [
+            "Audit internal use of open-source packages for unusual or unvetted modules",
+            "Hunt for indicators tied to known TeamPCP malware in software supply pipelines",
+            "Re-evaluate software procurement and OSS dependency controls"
+          ],
+          "sources": [
+            {
+              "name": "KrebsOnSecurity",
+              "url": "https://krebsonsecurity.com/2026/08/two-alleged-teampcp-hackers-arrested-in-australia/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/08/28/australian_cops_cuff_alleged_teampcp_masterminds/5293157"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
