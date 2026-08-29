@@ -532,6 +532,10 @@ def main() -> int:
 
     run_date = today()
     state = load_state()
+    if day_exists(state, run_date) and not args.dry_run:
+        print(f"Daily incident monitor already has an entry for {run_date}; skipping scan.")
+        return 0
+
     candidates, successful_feeds = collect_candidates(run_date)
     print(f"Collected {len(candidates)} candidate items from {successful_feeds} reachable feeds.")
 
