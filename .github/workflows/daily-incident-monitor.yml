@@ -1,6 +1,12 @@
 name: Daily incident monitor
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/daily-incident-monitor.yml"
+      - "scripts/daily_incident_monitor.py"
   schedule:
     # Daily, 08:15 Prague during summer time and 07:15 during winter time.
     - cron: "15 6 * * *"
