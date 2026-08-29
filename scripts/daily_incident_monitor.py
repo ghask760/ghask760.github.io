@@ -306,6 +306,7 @@ Hard publishing rules:
 - Do not publish ordinary vulnerability news unless there is active exploitation, a vendor/supplier impact, or a credible hot-fix action for TPRM/security teams.
 - Do not publish opinion pieces, generic trend reports, product launches, or weakly related cybersecurity news.
 - Each published incident must have either at least one primary source or at least two independent reliable secondary sources.
+- Use "Vendor outage" only for actual availability or service-continuity incidents, not for vulnerability patch advisories.
 - If confidence is low, exclude the item.
 - Use only the facts present in the candidates. Do not invent victims, affected data, timelines, or impact.
 - Keep wording concise and operational.

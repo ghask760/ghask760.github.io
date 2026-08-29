@@ -33,7 +33,7 @@
         },
         {
           "title": "ServiceNow issues patches for three max-severity AI Platform flaws enabling code/SQL injection",
-          "category": "Vendor outage",
+          "category": "Software supply chain",
           "severity": "High",
           "confidence": "Two-source corroborated",
           "what_happened": "ServiceNow released security updates addressing multiple maximum-severity vulnerabilities in its AI Platform that could allow code injection, SQL injection, and privilege escalation; the company said it deployed updates to hosted instances and provided patches to partners and self-hosted customers.",
