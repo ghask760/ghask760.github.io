@@ -1,6 +1,36 @@
 {
   "days": [
     {
+      "date": "2026-08-30",
+      "generated_at": "2026-08-30T12:20:06+02:00",
+      "incidents": [
+        {
+          "title": "Hasbro discloses employee data breach",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Hasbro disclosed a cyberattack that allowed attackers to access personal and financial information for an undisclosed number of employees.",
+          "why_it_matters": "Employee PII and financial data exposure creates regulatory, payroll-fraud, and insider-risk concerns for the company and its vendors; TPRM teams should assume supplier and partner touchpoints may require review.",
+          "hot_fix": [
+            "Obtain Hasbro's incident statement and scope of systems/data impacted",
+            "Validate notifications to impacted employees and regulators",
+            "Assess whether vendor or third-party access was involved and review contracts",
+            "Increase monitoring for phishing/fraud targeting current/former employees"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/toy-making-giant-hasbro-disclose-data-breach-affecting-employees/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/hasbro-data-breach-exposed-employee-personal-information/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-08-29",
       "generated_at": "2026-08-29T11:12:38+02:00",
       "incidents": [
