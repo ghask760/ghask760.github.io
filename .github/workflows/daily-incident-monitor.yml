@@ -8,8 +8,12 @@ on:
       - ".github/workflows/daily-incident-monitor.yml"
       - "scripts/daily_incident_monitor.py"
   schedule:
-    # Daily, 08:15 Prague during summer time and 07:15 during winter time.
+    # Primary run: 08:15 Prague during summer time and 07:15 during winter time.
     - cron: "15 6 * * *"
+    # Fallback runs in case GitHub drops or delays the primary scheduled event.
+    # The script exits before scanning or calling OpenAI once the day already exists.
+    - cron: "15 9 * * *"
+    - cron: "15 12 * * *"
   workflow_dispatch:
 
 permissions:

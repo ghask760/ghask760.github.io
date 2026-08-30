@@ -25,10 +25,12 @@ File:
 Default cadence:
 
 ```text
-Daily at 06:15 UTC
+Daily at 06:15 UTC, with 09:15 UTC and 12:15 UTC fallback runs
 ```
 
-This is 08:15 in Prague during summer time and 07:15 during winter time.
+The first run is 08:15 in Prague during summer time and 07:15 during winter time.
+Fallback runs are intentionally safe because the script exits before scanning or calling OpenAI
+when an entry for the current Prague date already exists.
 
 ## Publishing Rules
 
