@@ -25,12 +25,12 @@ File:
 Default cadence:
 
 ```text
-Daily at 06:15 UTC, with 09:15 UTC and 12:15 UTC fallback runs
+Every 30 minutes between 04:07 UTC and 13:37 UTC
 ```
 
-The first run is 08:15 in Prague during summer time and 07:15 during winter time.
-Fallback runs are intentionally safe because the script exits before scanning or calling OpenAI
-when an entry for the current Prague date already exists.
+The repeated schedule is intentional because GitHub scheduled workflows can be delayed or dropped.
+Repeated runs are safe because the script exits before scanning or calling OpenAI when an entry
+for the current Prague date already exists.
 
 ## Publishing Rules
 
