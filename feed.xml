@@ -5,9 +5,17 @@
     <link>https://gabrielhasik.com/</link>
     <description>Cybersecurity, third-party risk, supply chain security, AI governance, regulatory resilience, and monitoring briefings by Gabriel Hasik.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 00:00:00 +0200</lastBuildDate>
     <atom:link href="https://gabrielhasik.com/feed.xml" rel="self" type="application/rss+xml"/>
     <!-- SCHEDULED_RSS_START -->
+    <item>
+      <title>NIS2 and the Extended Supply Chain: When Your Small Supplier Becomes Your Biggest Risk</title>
+      <link>https://gabrielhasik.com/nis2-extended-supply-chain-small-supplier-risk.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/nis2-extended-supply-chain-small-supplier-risk.html</guid>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0200</pubDate>
+      <description>How NIS2 expectations cascade through supplier ecosystems and why small suppliers can create large cyber risk.</description>
+    </item>
+
     <item>
       <title>From Checkbox to Culture: Building a Third-Party Risk Program That Actually Works</title>
       <link>https://gabrielhasik.com/from-checkbox-to-culture-third-party-risk-program.html</link>
