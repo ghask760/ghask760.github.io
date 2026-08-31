@@ -1,6 +1,60 @@
 {
   "days": [
     {
+      "date": "2026-08-31",
+      "generated_at": "2026-08-31T12:14:06+02:00",
+      "incidents": [
+        {
+          "title": "FulcrumSec claims theft of 86 GB from Manchester Airports Group",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A threat actor (FulcrumSec) claims to have stolen 86 GB of passenger and booking data from Manchester Airports Group; independent validation of at least one traveller record and sample data was reported beyond MAG's initial disclosure.",
+          "why_it_matters": "Exfiltration of customer travel and booking data raises regulatory, notification, and fraud risks for MAG and its downstream partners; procurement and TPRM teams should assume broader compromise until scope is confirmed.",
+          "hot_fix": [
+            "Confirm breach scope with MAG/PSIRT and preserve evidence",
+            "Disconnect affected systems and collect forensic logs",
+            "Notify regulators and impacted customers per legal requirements",
+            "Search for lateral activity and indicators of compromise across partner integrations"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/fulcrumsec-claims-manchester-airports-hack-theft-of-86-gb-of-data/"
+            },
+            {
+              "name": "SecurityWeek (In Other News roundup)",
+              "url": "https://www.securityweek.com/in-other-news-log4j-rce-scare-minimus-shutdown-iranian-hacker-sanctions/"
+            }
+          ]
+        },
+        {
+          "title": "Rhysida claims 5+ TB exfiltration from Berlin state network; city refuses to pay",
+          "category": "Data breach",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "An extortion group (Rhysida) claims to have exfiltrated over 5 TB of data including personal information and credentials from Berlin's state administrative network; officials say they will not pay and forensic work found additional data outflows in a transport/environment department.",
+          "why_it_matters": "Large-scale public-sector data exfiltration and extortion can trigger multi-agency response, regulatory obligations, and third-party risk for vendors and contractors handling municipal data.",
+          "hot_fix": [
+            "Engage incident response and forensic services to validate claims and scope",
+            "Rotate credentials and secrets for affected systems and service accounts",
+            "Contain impacted systems, preserve evidence, and notify relevant agencies",
+            "Review vendor/third-party access logs and contracts for exposure"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/08/berlin-refuses-to-pay-hackers-who-stole.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/berlin-wont-pay-extortion-group-claiming-data-theft/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-08-30",
       "generated_at": "2026-08-30T12:20:06+02:00",
       "incidents": [

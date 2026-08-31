@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">30 Aug 2026</span>
+      <span id="last-updated">31 Aug 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,58 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>31 Aug 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>FulcrumSec claims theft of 86 GB from Manchester Airports Group</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A threat actor (FulcrumSec) claims to have stolen 86 GB of passenger and booking data from Manchester Airports Group; independent validation of at least one traveller record and sample data was reported beyond MAG&#x27;s initial disclosure.</p>
+            <p><strong>Why it matters:</strong> Exfiltration of customer travel and booking data raises regulatory, notification, and fraud risks for MAG and its downstream partners; procurement and TPRM teams should assume broader compromise until scope is confirmed.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm breach scope with MAG/PSIRT and preserve evidence</li>
+            <li>Disconnect affected systems and collect forensic logs</li>
+            <li>Notify regulators and impacted customers per legal requirements</li>
+            <li>Search for lateral activity and indicators of compromise across partner integrations</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/fulcrumsec-claims-manchester-airports-hack-theft-of-86-gb-of-data/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/in-other-news-log4j-rce-scare-minimus-shutdown-iranian-hacker-sanctions/" rel="noopener" target="_blank">SecurityWeek (In Other News roundup)</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Rhysida claims 5+ TB exfiltration from Berlin state network; city refuses to pay</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An extortion group (Rhysida) claims to have exfiltrated over 5 TB of data including personal information and credentials from Berlin&#x27;s state administrative network; officials say they will not pay and forensic work found additional data outflows in a transport/environment department.</p>
+            <p><strong>Why it matters:</strong> Large-scale public-sector data exfiltration and extortion can trigger multi-agency response, regulatory obligations, and third-party risk for vendors and contractors handling municipal data.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Engage incident response and forensic services to validate claims and scope</li>
+            <li>Rotate credentials and secrets for affected systems and service accounts</li>
+            <li>Contain impacted systems, preserve evidence, and notify relevant agencies</li>
+            <li>Review vendor/third-party access logs and contracts for exposure</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/08/berlin-refuses-to-pay-hackers-who-stole.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/berlin-wont-pay-extortion-group-claiming-data-theft/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>30 Aug 2026</span>
