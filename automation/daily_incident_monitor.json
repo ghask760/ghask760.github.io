@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-09-01",
+      "generated_at": "2026-09-01T11:22:57+02:00",
+      "incidents": [
+        {
+          "title": "PaperCut zero-days exploited in active data-theft intrusions",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Two zero-day vulnerabilities in PaperCut NG/MF were patched after being observed exploited in data-theft intrusions; CISA added the issues to its KEV catalog.",
+          "why_it_matters": "PaperCut is widely deployed for enterprise print management; active exploitation plus a CISA KEV listing creates immediate patching and supplier-continuity priorities for downstream customers.",
+          "hot_fix": [
+            "Apply PaperCut emergency patches immediately",
+            "Isolate and harden print-management servers (network segmentation, restrict admin access)",
+            "Search logs/EDR for indicators of compromise and suspected data exfiltration"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/recently-patched-papercut-zero-days-used-in-data-theft-attacks/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/papercut-exploitation-escalates-to-active-intrusions/"
+            }
+          ]
+        },
+        {
+          "title": "TerminalFix (ClickFix variant) uses fake Cloudflare CAPTCHAs to deploy reverse-tunnel backdoors",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A ClickFix variant dubbed TerminalFix is being used to present fake Cloudflare CAPTCHA prompts that trick victims into running malicious Windows Terminal/PowerShell commands, resulting in reverse-tunnel backdoors and remote access.",
+          "why_it_matters": "Social-engineered commands executed in trusted shells increase the likelihood of persistent remote tunnels and lateral access; third-party web components and customer-facing sites can be leveraged to deliver these campaigns.",
+          "hot_fix": [
+            "Block or sanitize suspicious CAPTCHA/script injections at web proxy/WAF",
+            "Restrict Windows Terminal/PowerShell execution via policy and application control",
+            "Monitor for unusual outbound reverse-tunnel connections and related IOCs"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/microsoft-warns-of-terminalfix-attacks-deploying-reverse-tunnels/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/08/terminalfix-uses-fake-cloudflare.html"
+            }
+          ]
+        },
+        {
+          "title": "McKesson confirms data breach after ShinyHunters extortion claim",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "McKesson confirmed a data breach following public extortion claims by the ShinyHunters group, which asserted theft of approximately 284 million records and issued a monetary demand.",
+          "why_it_matters": "McKesson is a major healthcare supplier; a confirmed breach at this vendor creates broad downstream patient-data exposure, regulatory risk, and supply-chain continuity concerns for healthcare customers and partners.",
+          "hot_fix": [
+            "Engage legal and incident-response; demand breach-impact and containment details from McKesson",
+            "Inventory downstream dependencies and exposed data types; notify affected stakeholders as required",
+            "Monitor criminal leak sites and credential marketplaces for stolen data tied to the vendor"
+          ],
+          "sources": [
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/mckesson-confirms-data-breach-as-attacker-deadline-looms/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/cyber-crime/2026/08/31/healthcare_cyberattacks_hit_pacemakers_and_millions_of_patient_records/5293537"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-08-31",
       "generated_at": "2026-08-31T12:14:06+02:00",
       "incidents": [

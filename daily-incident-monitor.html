@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">31 Aug 2026</span>
+      <span id="last-updated">01 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>01 Sep 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>PaperCut zero-days exploited in active data-theft intrusions</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Two zero-day vulnerabilities in PaperCut NG/MF were patched after being observed exploited in data-theft intrusions; CISA added the issues to its KEV catalog.</p>
+            <p><strong>Why it matters:</strong> PaperCut is widely deployed for enterprise print management; active exploitation plus a CISA KEV listing creates immediate patching and supplier-continuity priorities for downstream customers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply PaperCut emergency patches immediately</li>
+            <li>Isolate and harden print-management servers (network segmentation, restrict admin access)</li>
+            <li>Search logs/EDR for indicators of compromise and suspected data exfiltration</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/recently-patched-papercut-zero-days-used-in-data-theft-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/papercut-exploitation-escalates-to-active-intrusions/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>TerminalFix (ClickFix variant) uses fake Cloudflare CAPTCHAs to deploy reverse-tunnel backdoors</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A ClickFix variant dubbed TerminalFix is being used to present fake Cloudflare CAPTCHA prompts that trick victims into running malicious Windows Terminal/PowerShell commands, resulting in reverse-tunnel backdoors and remote access.</p>
+            <p><strong>Why it matters:</strong> Social-engineered commands executed in trusted shells increase the likelihood of persistent remote tunnels and lateral access; third-party web components and customer-facing sites can be leveraged to deliver these campaigns.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Block or sanitize suspicious CAPTCHA/script injections at web proxy/WAF</li>
+            <li>Restrict Windows Terminal/PowerShell execution via policy and application control</li>
+            <li>Monitor for unusual outbound reverse-tunnel connections and related IOCs</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/microsoft-warns-of-terminalfix-attacks-deploying-reverse-tunnels/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/08/terminalfix-uses-fake-cloudflare.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>McKesson confirms data breach after ShinyHunters extortion claim</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> McKesson confirmed a data breach following public extortion claims by the ShinyHunters group, which asserted theft of approximately 284 million records and issued a monetary demand.</p>
+            <p><strong>Why it matters:</strong> McKesson is a major healthcare supplier; a confirmed breach at this vendor creates broad downstream patient-data exposure, regulatory risk, and supply-chain continuity concerns for healthcare customers and partners.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Engage legal and incident-response; demand breach-impact and containment details from McKesson</li>
+            <li>Inventory downstream dependencies and exposed data types; notify affected stakeholders as required</li>
+            <li>Monitor criminal leak sites and credential marketplaces for stolen data tied to the vendor</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.securityweek.com/mckesson-confirms-data-breach-as-attacker-deadline-looms/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://www.theregister.com/cyber-crime/2026/08/31/healthcare_cyberattacks_hit_pacemakers_and_millions_of_patient_records/5293537" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>31 Aug 2026</span>
