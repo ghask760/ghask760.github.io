@@ -1,6 +1,82 @@
 {
   "days": [
     {
+      "date": "2026-09-02",
+      "generated_at": "2026-09-02T08:21:38+02:00",
+      "incidents": [
+        {
+          "title": "Critical JFrog Artifactory auth-bypass (CVE-2026-82329) exploited in the wild",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "An authentication-bypass vulnerability in JFrog Artifactory (CVE-2026-82329) is being exploited days after disclosure, enabling attackers to mint administrative tokens and gain administrative access to exposed Artifactory instances.",
+          "why_it_matters": "Compromised Artifactory servers can allow attackers to modify or publish malicious artifacts, issue admin tokens, and undermine CI/CD pipelines and downstream software supply chain integrity.",
+          "hot_fix": [
+            "Isolate internet-exposed Artifactory instances",
+            "Apply JFrog vendor patch immediately",
+            "Rotate all Artifactory admin tokens/credentials and revoke suspicious tokens",
+            "Audit artifact repositories and CI/CD pipelines for unauthorized changes"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/critical-jfrog-artifactory-vulnerability-reportedly-exploited-in-the-wild/"
+            }
+          ]
+        },
+        {
+          "title": "Langflow RCE (CVE-2026-0768) exploited to steal OpenAI and AWS keys",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "An unauthenticated remote code execution flaw in Langflow (CVE-2026-0768) is being actively exploited; attackers have used it to steal credentials, including OpenAI and AWS keys, from vulnerable deployments.",
+          "why_it_matters": "Langflow is used to build AI applications; stolen API keys and cloud credentials enable attackers to access cloud resources, pivot to other systems, and contaminate AI workflows or data pipelines.",
+          "hot_fix": [
+            "Upgrade Langflow to the patched release immediately",
+            "Rotate exposed API keys and cloud credentials",
+            "Hunt for indicators of compromise and unauthorized outbound activity"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/hackers-start-exploiting-critical-langflow-vulnerability/"
+            }
+          ]
+        },
+        {
+          "title": "Aesto Health notifies breach impacting over 9.5 million individuals",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Aesto LLC (Aesto Health) disclosed a data breach that affected more than 9.5 million individuals after attackers accessed the company's AWS-hosted systems and exfiltrated personal and health information.",
+          "why_it_matters": "A large third-party healthcare technology vendor breach poses regulatory, contractual, and operational risk to customers and partners that rely on the vendor for patient data handling and could require broad notification and remediation.",
+          "hot_fix": [
+            "Engage legal and incident response; notify regulators as required",
+            "Confirm and secure all AWS access paths and rotate credentials",
+            "Assess scope of exposed data and notify affected parties per contracts"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/aesto-health-says-data-breach-affects-over-95-million-patients/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/9-5-million-impacted-by-aesto-health-data-breach/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-01",
       "generated_at": "2026-09-01T11:22:57+02:00",
       "incidents": [

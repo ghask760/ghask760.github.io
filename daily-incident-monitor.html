@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">01 Sep 2026</span>
+      <span id="last-updated">02 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,79 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>02 Sep 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical JFrog Artifactory auth-bypass (CVE-2026-82329) exploited in the wild</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An authentication-bypass vulnerability in JFrog Artifactory (CVE-2026-82329) is being exploited days after disclosure, enabling attackers to mint administrative tokens and gain administrative access to exposed Artifactory instances.</p>
+            <p><strong>Why it matters:</strong> Compromised Artifactory servers can allow attackers to modify or publish malicious artifacts, issue admin tokens, and undermine CI/CD pipelines and downstream software supply chain integrity.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Isolate internet-exposed Artifactory instances</li>
+            <li>Apply JFrog vendor patch immediately</li>
+            <li>Rotate all Artifactory admin tokens/credentials and revoke suspicious tokens</li>
+            <li>Audit artifact repositories and CI/CD pipelines for unauthorized changes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/critical-jfrog-artifactory-vulnerability-reportedly-exploited-in-the-wild/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Langflow RCE (CVE-2026-0768) exploited to steal OpenAI and AWS keys</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An unauthenticated remote code execution flaw in Langflow (CVE-2026-0768) is being actively exploited; attackers have used it to steal credentials, including OpenAI and AWS keys, from vulnerable deployments.</p>
+            <p><strong>Why it matters:</strong> Langflow is used to build AI applications; stolen API keys and cloud credentials enable attackers to access cloud resources, pivot to other systems, and contaminate AI workflows or data pipelines.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Upgrade Langflow to the patched release immediately</li>
+            <li>Rotate exposed API keys and cloud credentials</li>
+            <li>Hunt for indicators of compromise and unauthorized outbound activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/hackers-start-exploiting-critical-langflow-vulnerability/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Aesto Health notifies breach impacting over 9.5 million individuals</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Aesto LLC (Aesto Health) disclosed a data breach that affected more than 9.5 million individuals after attackers accessed the company&#x27;s AWS-hosted systems and exfiltrated personal and health information.</p>
+            <p><strong>Why it matters:</strong> A large third-party healthcare technology vendor breach poses regulatory, contractual, and operational risk to customers and partners that rely on the vendor for patient data handling and could require broad notification and remediation.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Engage legal and incident response; notify regulators as required</li>
+            <li>Confirm and secure all AWS access paths and rotate credentials</li>
+            <li>Assess scope of exposed data and notify affected parties per contracts</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/aesto-health-says-data-breach-affects-over-95-million-patients/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/9-5-million-impacted-by-aesto-health-data-breach/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>01 Sep 2026</span>
