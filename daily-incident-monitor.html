@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">02 Sep 2026</span>
+      <span id="last-updated">03 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,144 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>03 Sep 2026</span>
+          <span>6 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical JFrog Artifactory flaw actively exploited to mint admin tokens</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An authentication-bypass vulnerability (CVE-2026-82329) in JFrog Artifactory is being exploited in the wild to create forged admin tokens that grant administrative access to exposed Artifactory servers.</p>
+            <p><strong>Why it matters:</strong> Compromised Artifactory instances can be used to modify, sign, or distribute malicious artifacts and affect downstream CI/CD pipelines and consumers of hosted packages.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply vendor security update/patch immediately</li>
+            <li>Revoke/rotate all Artifactory tokens and admin credentials</li>
+            <li>Conduct forensic review of artifact repositories and audit logs</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.theregister.com/security/2026/09/01/another_artifactory_cve_under_attack_by_ai_agents_or_humans/5293769" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>SonicWall SMA1000 zero-days chained and exploited for unauthenticated RCE</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Two zero-day vulnerabilities impacting SonicWall SMA1000 appliances (including CVE identifiers reported by the vendor) are being chained and actively exploited to achieve unauthenticated remote code execution against internet-facing devices.</p>
+            <p><strong>Why it matters:</strong> Remote-access appliances are high-value targets; exploited SMA1000 devices can provide persistent network access and lateral-movement opportunities for threat actors across customer networks.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply SonicWall security updates and vendor mitigations immediately</li>
+            <li>Isolate or remove internet-exposed SMA1000 appliances until patched</li>
+            <li>Monitor for indicators of compromise and unusual admin/system activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-actively-exploited-sma1000-zero-day-flaws/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/sonicwall-warns-of-two-sma1000-zero-days-exploited-in-attacks/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Sangoma Switchvox SQLi (CVE-2026-9586) exploited to deploy reverse shells</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An unauthenticated SQL injection in Sangoma Switchvox (CVE-2026-9586) is being actively exploited by attackers to achieve remote code execution and deploy reverse shells on affected VoIP appliances.</p>
+            <p><strong>Why it matters:</strong> VoIP platforms sit inside enterprise networks and can be used for persistent access, interception of communications, and lateral movement; affected appliances require immediate attention.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Sangoma patches or vendor-provided mitigations immediately</li>
+            <li>Isolate affected Switchvox appliances from critical networks</li>
+            <li>Hunt for unauthorized shells, backdoors and suspicious outbound connections</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-sangoma-switchvox-flaw-to-deploy-reverse-shells/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Dropbox account takeovers tied to Lenovo email verification flaw</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Some Dropbox accounts were accessed after attackers exploited a flaw in Lenovo&#x27;s email verification process to register fraudulent Lenovo IDs and use the legacy integration to access user accounts; reports indicate roughly 5,000 affected accounts in one report.</p>
+            <p><strong>Why it matters:</strong> Third-party identity-provider or legacy integration weaknesses can enable account takeover across customer bases; organizations relying on legacy SSO/integrations should assume risk to cloud storage and collaboration accounts.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Disable legacy Lenovo ID integration and force affected users to reset credentials</li>
+            <li>Require and enforce MFA for cloud storage accounts</li>
+            <li>Audit account access logs and look for unauthorized file access or sharing</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/dropbox-accounts-breached-through-lenovo-email-verification-flaw/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.theregister.com/security/2026/09/02/legacy-lenovo-login-opens-5000-dropbox-accounts-to-attackers/5293924" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>BGP hijack diverted Softaculous/Virtualizor traffic, serving malicious updates</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Threat actors used a BGP hijack and a valid TLS certificate for Softaculous’ domains to divert traffic and serve a malicious Virtualizor update; hosting vendor advised customers to reset credentials and hunt for malicious packages after a prolonged diversion.</p>
+            <p><strong>Why it matters:</strong> Compromise of a software-distribution channel can deliver malicious code via trusted update mechanisms, impacting many downstream customers and hosted environments.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Rotate credentials and TLS certificates used by affected services</li>
+            <li>Validate package integrity and rebuild or isolate systems that received updates</li>
+            <li>Scan for and remove malicious packages; review supply-chain verification processes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.securityweek.com/malicious-virtualizor-update-served-via-bgp-hijacking/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://www.theregister.com/security/2026/09/01/33-hour-bgp-hijack-of-softaculous-traffic-prompts-security-scramble/5293608" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Regulatory</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>UK bill amendments enable ministers to block high-risk tech suppliers from critical infrastructure</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Late amendments to the UK&#x27;s Cyber Security and Resilience Bill would grant ministers new powers to restrict or block high-risk technology providers from supplying critical infrastructure.</p>
+            <p><strong>Why it matters:</strong> Procurement and third‑party-risk teams should reassess supplier exposure and contingency plans for suppliers that may be designated high-risk under the new powers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Inventory suppliers providing technology to critical systems and map exposure</li>
+            <li>Engage legal/compliance on potential designation implications and timelines</li>
+            <li>Develop substitute/vendor-continuity plans for high-risk supplier scenarios</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.securityweek.com/uk-moves-to-block-high-risk-tech-suppliers-from-critical-infrastructure/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://www.theregister.com/security/2026/09/02/uk_cyber_bill_targets_ai_users_not_the_vendors_building_it/5293738" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>02 Sep 2026</span>
