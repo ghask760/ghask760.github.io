@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-09-04",
+      "generated_at": "2026-09-04T08:21:40+02:00",
+      "incidents": [
+        {
+          "title": "SonicWall SMA1000 appliances actively attacked; CVE-2026-83548 added to CISA KEV",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "CISA added multiple actively exploited flaws to its Known Exploited Vulnerabilities catalog, including CVE-2026-83548 (an SSRF affecting SonicWall SMA1000 appliances); independent reporting indicates SMA1000 devices are under active attack.",
+          "why_it_matters": "SMA1000 is a third-party VPN/remote-access appliance used by organizations; an unauthenticated, remotely exploitable flaw in these devices presents immediate compromise and lateral-movement risk for customers and downstream partners.",
+          "hot_fix": [
+            "Identify and isolate internet-exposed SMA1000 appliances",
+            "Apply vendor patches or vendor-recommended mitigations immediately",
+            "Implement network-level protections and monitor for exploitation indicators listed by CISA"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News - CISA KEV additions",
+              "url": "https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html"
+            },
+            {
+              "name": "The Register - SonicWall's SMA1000 boxes under active attack again",
+              "url": "https://www.theregister.com/security/2026/09/02/sonicwalls-sma1000-boxes-under-active-attack-again/5293969"
+            }
+          ]
+        },
+        {
+          "title": "Public PoC released for 'FalconFlank' privilege-escalation in CrowdStrike Falcon sensor",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A security researcher published a public proof‑of‑concept called 'FalconFlank' that demonstrates a privilege escalation technique abusing CrowdStrike Falcon's remediation for malicious Office macros in the sensor.",
+          "why_it_matters": "CrowdStrike Falcon is a widely deployed endpoint security agent; a working PoC enabling local privilege escalation against the sensor increases risk of endpoint compromise and potential disablement or evasion of detection across customer fleets.",
+          "hot_fix": [
+            "Review CrowdStrike advisory and apply any available sensor updates or mitigations",
+            "Restrict local administrative privileges and harden sensor management controls",
+            "Monitor EDR telemetry for indicators of FalconFlank exploitation and suspicious privilege escalations"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News - FalconFlank PoC",
+              "url": "https://thehackernews.com/2026/09/researcher-releases-falconflank-poc.html"
+            },
+            {
+              "name": "The Register - PoC dropped for CrowdStrike Falcon exploit",
+              "url": "https://www.theregister.com/security/2026/09/03/prolific-microsoft-0-day-hunter-drops-crowdstrike-falcon-exploit-poc/5294318"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-03",
       "generated_at": "2026-09-03T08:21:19+02:00",
       "incidents": [

@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">03 Sep 2026</span>
+      <span id="last-updated">04 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>04 Sep 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>SonicWall SMA1000 appliances actively attacked; CVE-2026-83548 added to CISA KEV</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA added multiple actively exploited flaws to its Known Exploited Vulnerabilities catalog, including CVE-2026-83548 (an SSRF affecting SonicWall SMA1000 appliances); independent reporting indicates SMA1000 devices are under active attack.</p>
+            <p><strong>Why it matters:</strong> SMA1000 is a third-party VPN/remote-access appliance used by organizations; an unauthenticated, remotely exploitable flaw in these devices presents immediate compromise and lateral-movement risk for customers and downstream partners.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Identify and isolate internet-exposed SMA1000 appliances</li>
+            <li>Apply vendor patches or vendor-recommended mitigations immediately</li>
+            <li>Implement network-level protections and monitor for exploitation indicators listed by CISA</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html" rel="noopener" target="_blank">The Hacker News - CISA KEV additions</a> <a href="https://www.theregister.com/security/2026/09/02/sonicwalls-sma1000-boxes-under-active-attack-again/5293969" rel="noopener" target="_blank">The Register - SonicWall&#x27;s SMA1000 boxes under active attack again</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Public PoC released for &#x27;FalconFlank&#x27; privilege-escalation in CrowdStrike Falcon sensor</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A security researcher published a public proof‑of‑concept called &#x27;FalconFlank&#x27; that demonstrates a privilege escalation technique abusing CrowdStrike Falcon&#x27;s remediation for malicious Office macros in the sensor.</p>
+            <p><strong>Why it matters:</strong> CrowdStrike Falcon is a widely deployed endpoint security agent; a working PoC enabling local privilege escalation against the sensor increases risk of endpoint compromise and potential disablement or evasion of detection across customer fleets.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Review CrowdStrike advisory and apply any available sensor updates or mitigations</li>
+            <li>Restrict local administrative privileges and harden sensor management controls</li>
+            <li>Monitor EDR telemetry for indicators of FalconFlank exploitation and suspicious privilege escalations</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/researcher-releases-falconflank-poc.html" rel="noopener" target="_blank">The Hacker News - FalconFlank PoC</a> <a href="https://www.theregister.com/security/2026/09/03/prolific-microsoft-0-day-hunter-drops-crowdstrike-falcon-exploit-poc/5294318" rel="noopener" target="_blank">The Register - PoC dropped for CrowdStrike Falcon exploit</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>03 Sep 2026</span>
