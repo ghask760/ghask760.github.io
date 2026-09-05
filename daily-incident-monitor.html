@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">04 Sep 2026</span>
+      <span id="last-updated">05 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,100 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>05 Sep 2026</span>
+          <span>4 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>IDScan allegedly breached; 153M driver&#x27;s licenses offered for sale</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Multiple lawsuits allege identity-verification provider IDScan was breached and attackers have offered over 153 million driver&#x27;s license records for sale; the FBI is reportedly investigating a dark-web service claiming the dataset.</p>
+            <p><strong>Why it matters:</strong> Large-scale exposure of license images and identifying data increases identity-fraud, vendor-supplier verification risk, and potential targeting of processes that rely on driver-license validation (TPRM exposure).</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm whether your organization used IDScan services and enumerate impacted systems/accounts</li>
+            <li>Assume exposed credentials/IDs are compromised; implement MFA, reverify identities, and tighten onboarding checks</li>
+            <li>Monitor for fraud, credential stuffing, and unauthorized use of license data; notify legal/compliance teams</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/idscan-sued-over-alleged-data-breach-affecting-153-million-drivers/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.freightwaves.com/news/fbi-investigating-dark-web-service-claiming-153m-license-records-raising-cdl-security-concerns" rel="noopener" target="_blank">FreightWaves</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Actively exploited Chrome V8 zero-day; Google issues emergency update</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Google released Chrome updates to patch an actively exploited high-severity type-confusion vulnerability in the V8 JavaScript engine (CVE-2026-85046) along with other flaws.</p>
+            <p><strong>Why it matters:</strong> Active exploitation of a browser engine zero-day presents immediate user-end compromise risk and potential lateral entry into enterprise systems; delayed patching increases exposure across vendor-supplied endpoints.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Deploy Chrome 152.x emergency updates across managed devices immediately</li>
+            <li>Block or inspect high-risk browser plug-ins and remote code execution vectors via endpoint controls</li>
+            <li>Monitor for post-exploit indicators (suspicious child processes, unexpected network connections from browsers)</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/google-warns-of-new-chrome-zero-day-flaw-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>HPE patches critical ArubaOS-CX RCE vulnerabilities</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Hewlett Packard Enterprise released patches addressing critical remote code execution vulnerabilities in ArubaOS-CX (multiple CVEs, collective tracking CVE-2026-73749) that could allow remote compromise of network gear.</p>
+            <p><strong>Why it matters:</strong> Critical RCEs in core network OSes risk persistent network compromise and supply-chain impact from vendor hardware; unpatched infrastructure can enable broad lateral movement and interception of business-critical traffic.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Inventory ArubaOS-CX devices and apply vendor patches per CVE advisories immediately</li>
+            <li>Isolate unpatched devices, deploy network segmentation and compensating firewall rules</li>
+            <li>Review logs for indicators of compromise and validate device integrity post-patch</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hpe-patches-critical-arubaos-cx-remote-code-execution-flaw/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/hpe-patches-critical-rce-vulnerabilities-in-aos-cx/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>PostgreSQL fixes 12-year-old logical decoding flaw enabling server takeover</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> PostgreSQL released updates addressing a long-standing logical decoding vulnerability (CVE-2026-6471) that could let accounts with REPLICATION privileges execute OS-level code and gain persistent superuser access.</p>
+            <p><strong>Why it matters:</strong> Database engines are high-value supply-chain components; a flaw enabling replication-role code execution risks full DB and host compromise and persistent backdoors across vendor-provided deployments.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply the PostgreSQL security updates for all supported versions immediately</li>
+            <li>Audit replication-role accounts, remove unnecessary privileges, and rotate related credentials</li>
+            <li>Scan for unexpected replication slots/processes and review DB/host logs for suspicious activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/postgresql-fixes-12-year-old-logical.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>04 Sep 2026</span>
