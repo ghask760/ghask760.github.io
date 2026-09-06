@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-09-06",
+      "generated_at": "2026-09-06T08:21:22+02:00",
+      "incidents": [
+        {
+          "title": "VMware Workstation/Fusion critical flaw patched (host code execution)",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Updates were released for VMware Workstation and Fusion to fix a critical vulnerability that could allow code running in a VM (with elevated guest privileges) to execute code on the host.",
+          "why_it_matters": "Organizations using these desktop virtualization products (including development and build environments) may face host compromise if guests are malicious or compromised; impact spans supplier/dev environments.",
+          "hot_fix": [
+            "Apply VMware Workstation and Fusion updates on host systems",
+            "Limit administrative access from VMs and harden VM-to-host boundaries",
+            "Audit build/dev hosts and VMs for anomalous activity"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/critical-vmware-workstation-and-fusion.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/vmware-workstation-and-fusion-updates-patch-critical-vulnerability/"
+            }
+          ]
+        },
+        {
+          "title": "Active exploitation against Elementor Pro and Super Forms WordPress plugins",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors are actively exploiting critical arbitrary file upload and RCE flaws in Elementor Pro and Super Forms WordPress plugins; scans and hundreds of thousands of exploit attempts were observed against vulnerable sites.",
+          "why_it_matters": "Compromised plugins on customer or supplier websites can lead to webstore backdoors, credential harvesting, and supply-chain integrity issues for organizations relying on third-party web platforms.",
+          "hot_fix": [
+            "Patch or remove affected WordPress plugins (Elementor Pro, Super Forms) immediately",
+            "Scan web assets for backdoors and unauthorized file uploads",
+            "Harden web application controls and restrict plugin install permissions"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-05",
       "generated_at": "2026-09-05T08:21:13+02:00",
       "incidents": [
