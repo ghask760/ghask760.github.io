@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-09-09",
+      "generated_at": "2026-09-09T08:20:50+02:00",
+      "incidents": [
+        {
+          "title": "Microsoft patches 974 vulnerabilities including two zero-days actively exploited",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Microsoft released its September Patch Tuesday addressing a record ~974 CVEs, including two zero-day vulnerabilities that Microsoft says are being actively exploited in the wild.",
+          "why_it_matters": "Widespread Microsoft fixes and active exploitation increase immediate risk for third parties and downstream customers; unpatched systems could enable privilege escalation or wormable propagation across enterprise environments.",
+          "hot_fix": [
+            "Prioritize and deploy Microsoft zero-day and critical patches immediately",
+            "Inventory Microsoft products tied to business-critical services and map to patch applicability",
+            "Apply compensating controls (network segmentation, restrict RDP/SMB, EDR rules) until patches are validated"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/microsoft-patches-record-974-vulnerabilities-including-two-exploited-zero-days/"
+            }
+          ]
+        },
+        {
+          "title": "Adobe patches Magento/Commerce zero-day 'StyleSmuggler' exploited to deploy Rust backdoor and PHP web shell",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Adobe released emergency patches for CVE-2026-75650 (StyleSmuggler), a maximum-severity Magento/Commerce zero-day that has been actively exploited to install a Rust backdoor and PHP web shells on compromised e-commerce sites.",
+          "why_it_matters": "Compromise of Magento/Commerce instances can lead to customer data theft, fraudulent transactions, and downstream supply-chain trust loss for merchants and hosting providers.",
+          "hot_fix": [
+            "Apply Adobe Commerce/Magento emergency updates immediately",
+            "Scan webservers for PHP web shells and unexpected binaries/artifacts",
+            "Rotate admin credentials, verify integrity of uploaded files, and review recent admin activity/logins"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/"
+            }
+          ]
+        },
+        {
+          "title": "N-able N-central pre-auth RCE (CVE-2026-86218) added to CISA KEV; exploitation observed",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "CISA added a maximum-severity pre-auth RCE in N-able N-central (CVE-2026-86218, CVSS 10.0) to its Known Exploited Vulnerabilities catalog; vendors report exploitation and administrators are warned to check for unauthorized accounts.",
+          "why_it_matters": "N-able N-central is used by MSPs and IT service providers; compromise of these management platforms can enable large-scale customer impact and privileged lateral movement across client environments.",
+          "hot_fix": [
+            "Apply N-able vendor fixes immediately",
+            "Search N-central deployments for newly created/unknown user accounts and suspicious activity",
+            "Isolate affected N-central servers and rotate service credentials and API keys"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/n-able-patches-critical-zero-day-in-n-central/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-08",
       "generated_at": "2026-09-08T08:21:03+02:00",
       "incidents": [

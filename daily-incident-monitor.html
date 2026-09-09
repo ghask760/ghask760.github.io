@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">08 Sep 2026</span>
+      <span id="last-updated">09 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>09 Sep 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft patches 974 vulnerabilities including two zero-days actively exploited</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Microsoft released its September Patch Tuesday addressing a record ~974 CVEs, including two zero-day vulnerabilities that Microsoft says are being actively exploited in the wild.</p>
+            <p><strong>Why it matters:</strong> Widespread Microsoft fixes and active exploitation increase immediate risk for third parties and downstream customers; unpatched systems could enable privilege escalation or wormable propagation across enterprise environments.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Prioritize and deploy Microsoft zero-day and critical patches immediately</li>
+            <li>Inventory Microsoft products tied to business-critical services and map to patch applicability</li>
+            <li>Apply compensating controls (network segmentation, restrict RDP/SMB, EDR rules) until patches are validated</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/microsoft-patches-record-974-vulnerabilities-including-two-exploited-zero-days/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Adobe patches Magento/Commerce zero-day &#x27;StyleSmuggler&#x27; exploited to deploy Rust backdoor and PHP web shell</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Adobe released emergency patches for CVE-2026-75650 (StyleSmuggler), a maximum-severity Magento/Commerce zero-day that has been actively exploited to install a Rust backdoor and PHP web shells on compromised e-commerce sites.</p>
+            <p><strong>Why it matters:</strong> Compromise of Magento/Commerce instances can lead to customer data theft, fraudulent transactions, and downstream supply-chain trust loss for merchants and hosting providers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Adobe Commerce/Magento emergency updates immediately</li>
+            <li>Scan webservers for PHP web shells and unexpected binaries/artifacts</li>
+            <li>Rotate admin credentials, verify integrity of uploaded files, and review recent admin activity/logins</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>N-able N-central pre-auth RCE (CVE-2026-86218) added to CISA KEV; exploitation observed</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA added a maximum-severity pre-auth RCE in N-able N-central (CVE-2026-86218, CVSS 10.0) to its Known Exploited Vulnerabilities catalog; vendors report exploitation and administrators are warned to check for unauthorized accounts.</p>
+            <p><strong>Why it matters:</strong> N-able N-central is used by MSPs and IT service providers; compromise of these management platforms can enable large-scale customer impact and privileged lateral movement across client environments.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply N-able vendor fixes immediately</li>
+            <li>Search N-central deployments for newly created/unknown user accounts and suspicious activity</li>
+            <li>Isolate affected N-central servers and rotate service credentials and API keys</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/n-able-patches-critical-zero-day-in-n-central/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>08 Sep 2026</span>
