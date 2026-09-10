@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">09 Sep 2026</span>
+      <span id="last-updated">10 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>10 Sep 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Chrome V8 zero-day (CVE-2026-87491) actively exploited</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Google released a patch for a Chrome V8 out-of-bounds write (CVE-2026-87491) after the vulnerability was observed being actively exploited in the wild.</p>
+            <p><strong>Why it matters:</strong> Chrome is a widely deployed third-party component; active exploitation of V8 can enable remote code execution in browsers, increasing risk to enterprise endpoints and web-facing workflows.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply the latest Chrome updates immediately across managed fleets</li>
+            <li>Block or monitor exploited payloads and related URL/IOC indicators</li>
+            <li>Raise endpoint detection priority for browser exploits and sandbox escapes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/google-patches-seventh-chrome-zero-day-exploited-in-attacks-this-year/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>BlueMoon exploit kit chained Chrome and Windows bugs used by multiple state-aligned groups</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Researchers observed a previously undocumented exploit kit dubbed &#x27;BlueMoon&#x27; that chains Chrome and Windows vulnerabilities; four espionage-motivated groups deployed the kit within a week.</p>
+            <p><strong>Why it matters:</strong> Multiple threat clusters reusing the same exploit chain raises the likelihood of widespread targeting of organizations using affected third-party software; procurement and security teams should assume rapid reuse of discovered exploits.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Inventory and prioritize patching for impacted Chrome and Windows builds</li>
+            <li>Increase monitoring for exploit chaining behavior and related indicators</li>
+            <li>Review third-party exposure to browser and OS attack surfaces</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.theregister.com/research/2026/09/09/novel-blue-moon-kit-targeting-chrome-and-windows-reflects-new-reality-of-ai-driven-exploits/5295399" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft Defender &#x27;ShieldCrash&#x27; zero-day PoC released; patch-bypass claims</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A researcher released a public exploit (ShieldCrash) for Microsoft Defender that the author and other researchers say can bypass a recent Defender patch (ShieldBreak/CVE-2026-69414), enabling SYSTEM-level access on affected endpoints.</p>
+            <p><strong>Why it matters:</strong> Microsoft Defender is a widely deployed security product; a PoC enabling SYSTEM access or patch bypass increases risk of successful local/remote escalations and undermines endpoint protection if not mitigated quickly.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply any vendor updates or mitigations from Microsoft immediately</li>
+            <li>Harden EDR configurations and enable additional telemetry/containment</li>
+            <li>Isolate or monitor hosts showing Defender bypass indicators and prioritize incident response</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldcrash-zero-day-grants-system-access/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>09 Sep 2026</span>

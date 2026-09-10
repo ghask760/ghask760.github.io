@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-09-10",
+      "generated_at": "2026-09-10T08:21:42+02:00",
+      "incidents": [
+        {
+          "title": "Chrome V8 zero-day (CVE-2026-87491) actively exploited",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Google released a patch for a Chrome V8 out-of-bounds write (CVE-2026-87491) after the vulnerability was observed being actively exploited in the wild.",
+          "why_it_matters": "Chrome is a widely deployed third-party component; active exploitation of V8 can enable remote code execution in browsers, increasing risk to enterprise endpoints and web-facing workflows.",
+          "hot_fix": [
+            "Apply the latest Chrome updates immediately across managed fleets",
+            "Block or monitor exploited payloads and related URL/IOC indicators",
+            "Raise endpoint detection priority for browser exploits and sandbox escapes"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/google-patches-seventh-chrome-zero-day-exploited-in-attacks-this-year/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html"
+            }
+          ]
+        },
+        {
+          "title": "BlueMoon exploit kit chained Chrome and Windows bugs used by multiple state-aligned groups",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers observed a previously undocumented exploit kit dubbed 'BlueMoon' that chains Chrome and Windows vulnerabilities; four espionage-motivated groups deployed the kit within a week.",
+          "why_it_matters": "Multiple threat clusters reusing the same exploit chain raises the likelihood of widespread targeting of organizations using affected third-party software; procurement and security teams should assume rapid reuse of discovered exploits.",
+          "hot_fix": [
+            "Inventory and prioritize patching for impacted Chrome and Windows builds",
+            "Increase monitoring for exploit chaining behavior and related indicators",
+            "Review third-party exposure to browser and OS attack surfaces"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/research/2026/09/09/novel-blue-moon-kit-targeting-chrome-and-windows-reflects-new-reality-of-ai-driven-exploits/5295399"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft Defender 'ShieldCrash' zero-day PoC released; patch-bypass claims",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A researcher released a public exploit (ShieldCrash) for Microsoft Defender that the author and other researchers say can bypass a recent Defender patch (ShieldBreak/CVE-2026-69414), enabling SYSTEM-level access on affected endpoints.",
+          "why_it_matters": "Microsoft Defender is a widely deployed security product; a PoC enabling SYSTEM access or patch bypass increases risk of successful local/remote escalations and undermines endpoint protection if not mitigated quickly.",
+          "hot_fix": [
+            "Apply any vendor updates or mitigations from Microsoft immediately",
+            "Harden EDR configurations and enable additional telemetry/containment",
+            "Isolate or monitor hosts showing Defender bypass indicators and prioritize incident response"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldcrash-zero-day-grants-system-access/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-09",
       "generated_at": "2026-09-09T08:20:50+02:00",
       "incidents": [
