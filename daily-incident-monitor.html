@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">10 Sep 2026</span>
+      <span id="last-updated">11 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>11 Sep 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>AI-driven campaign exploits PaperCut NG/MF; hundreds of instances compromised</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A threat actor automated attacks with hundreds of AI agents to exploit recently disclosed PaperCut NG/MF vulnerabilities, compromising hundreds of customer instances (reports cite roughly 395–440 affected servers).</p>
+            <p><strong>Why it matters:</strong> PaperCut is widely deployed for print management; mass compromise of vendor software creates broad third‑party exposure across affected organizations and increases risk of data theft and lateral access.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply PaperCut emergency patches immediately</li>
+            <li>Isolate or block internet‑facing PaperCut servers until patched</li>
+            <li>Audit/reset PaperCut admin accounts and hunt for lateral activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/ai-powered-attack-exploited-papercut-flaws-to-hack-395-organizations/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/papercut-attacker-uses-hundreds-of-ai.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Cisco Secure FMC vulnerabilities (CVE-2026-20079) exploited by ransomware and state‑linked actors</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Two recently patched vulnerabilities in Cisco Secure Firewall Management Center (FMC), including CVE-2026-20079, are being actively exploited by multiple clusters tied to ransomware and state‑sponsored activity.</p>
+            <p><strong>Why it matters:</strong> Exploitation of a network management product can provide attackers broad visibility/control across customer environments; affected organizations should treat FMC instances as high‑risk third‑party assets.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Install Cisco FMC patches immediately</li>
+            <li>Restrict FMC management access to trusted networks and VPNs</li>
+            <li>Monitor FMC logs and network telemetry for signs of compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/organizations-warned-of-cisco-secure-fmc-exploitation/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>10 Sep 2026</span>

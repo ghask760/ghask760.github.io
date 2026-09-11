@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-09-11",
+      "generated_at": "2026-09-11T08:22:13+02:00",
+      "incidents": [
+        {
+          "title": "AI-driven campaign exploits PaperCut NG/MF; hundreds of instances compromised",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A threat actor automated attacks with hundreds of AI agents to exploit recently disclosed PaperCut NG/MF vulnerabilities, compromising hundreds of customer instances (reports cite roughly 395–440 affected servers).",
+          "why_it_matters": "PaperCut is widely deployed for print management; mass compromise of vendor software creates broad third‑party exposure across affected organizations and increases risk of data theft and lateral access.",
+          "hot_fix": [
+            "Apply PaperCut emergency patches immediately",
+            "Isolate or block internet‑facing PaperCut servers until patched",
+            "Audit/reset PaperCut admin accounts and hunt for lateral activity"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/ai-powered-attack-exploited-papercut-flaws-to-hack-395-organizations/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/papercut-attacker-uses-hundreds-of-ai.html"
+            }
+          ]
+        },
+        {
+          "title": "Cisco Secure FMC vulnerabilities (CVE-2026-20079) exploited by ransomware and state‑linked actors",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Two recently patched vulnerabilities in Cisco Secure Firewall Management Center (FMC), including CVE-2026-20079, are being actively exploited by multiple clusters tied to ransomware and state‑sponsored activity.",
+          "why_it_matters": "Exploitation of a network management product can provide attackers broad visibility/control across customer environments; affected organizations should treat FMC instances as high‑risk third‑party assets.",
+          "hot_fix": [
+            "Install Cisco FMC patches immediately",
+            "Restrict FMC management access to trusted networks and VPNs",
+            "Monitor FMC logs and network telemetry for signs of compromise"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/organizations-warned-of-cisco-secure-fmc-exploitation/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-10",
       "generated_at": "2026-09-10T08:21:42+02:00",
       "incidents": [
