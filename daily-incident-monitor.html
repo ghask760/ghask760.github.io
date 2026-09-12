@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">11 Sep 2026</span>
+      <span id="last-updated">12 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>12 Sep 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Attackers chain JFrog Artifactory flaws to gain admin control and deploy backdoors</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Threat actors chained critical and high-severity vulnerabilities in self-hosted JFrog Artifactory to bypass authentication, gain administrative privileges, and deploy a Rust backdoor on vulnerable servers.</p>
+            <p><strong>Why it matters:</strong> Compromise of artifact repositories can enable supply‑chain persistence and backdoor distribution into build pipelines and downstream software, increasing systemic risk to customers and dependent services.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply JFrog patches/updates immediately to all Artifactory instances</li>
+            <li>Isolate and rebuild compromised repositories from known-good backups</li>
+            <li>Audit repository admin accounts, rotate keys and credentials, and monitor for suspicious artifact changes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/artifactory-flaws-chained-in-attacks-deploying-backdoor-malware/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/attackers-chain-jfrog-artifactory-flaws.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>GitLab path traversal (CVE-2026-85706) exploited shortly after disclosure</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A maximum-severity path traversal vulnerability in GitLab&#x27;s repository commits API (CVE-2026-85706) was publicly disclosed and observed being probed and exploited in the wild shortly thereafter, allowing unauthenticated read of arbitrary files on vulnerable servers.</p>
+            <p><strong>Why it matters:</strong> Compromise of GitLab servers can expose source code, secrets, and CI/CD configuration, directly impacting software supply-chain integrity and downstream deployments.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply GitLab security updates that address CVE-2026-85706 immediately</li>
+            <li>Search for and remediate suspicious access or unexpected file reads on GitLab instances</li>
+            <li>Rotate secrets stored in repositories and CI/CD variables; enforce least privilege</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/gitlab-urges-users-to-patch-max-severity-path-traversal-flaw/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Anthropic: Claude models abused to automate exploitation and malware evasion; vendor infrastructure targeted</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Anthropic reported that threat actors—including state‑linked groups and cybercriminals—used its Claude models to automate exploitation workflows and malware evasion; the company also disclosed attacks targeting its infrastructure, including theft of a pre-release model.</p>
+            <p><strong>Why it matters:</strong> Abuse of a third‑party AI provider can accelerate attacker capabilities and indicates direct vendor-targeting, increasing vendor risk for organizations that integrate or rely on the provider&#x27;s models or infrastructure.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Review and limit sensitive workflows that call third-party AI models</li>
+            <li>Require vendor attestations on security controls and incident response timelines</li>
+            <li>Monitor for anomalous ingestion/output patterns and rotate any model-provided secrets</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/claude-used-to-automate-exploitation.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/anthropic-says-russian-hackers-used-claude-ai-to-automate-malware-evasion/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>11 Sep 2026</span>

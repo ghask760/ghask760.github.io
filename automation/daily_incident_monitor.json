@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-09-12",
+      "generated_at": "2026-09-12T08:21:26+02:00",
+      "incidents": [
+        {
+          "title": "Attackers chain JFrog Artifactory flaws to gain admin control and deploy backdoors",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors chained critical and high-severity vulnerabilities in self-hosted JFrog Artifactory to bypass authentication, gain administrative privileges, and deploy a Rust backdoor on vulnerable servers.",
+          "why_it_matters": "Compromise of artifact repositories can enable supply‑chain persistence and backdoor distribution into build pipelines and downstream software, increasing systemic risk to customers and dependent services.",
+          "hot_fix": [
+            "Apply JFrog patches/updates immediately to all Artifactory instances",
+            "Isolate and rebuild compromised repositories from known-good backups",
+            "Audit repository admin accounts, rotate keys and credentials, and monitor for suspicious artifact changes"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/artifactory-flaws-chained-in-attacks-deploying-backdoor-malware/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/attackers-chain-jfrog-artifactory-flaws.html"
+            }
+          ]
+        },
+        {
+          "title": "GitLab path traversal (CVE-2026-85706) exploited shortly after disclosure",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A maximum-severity path traversal vulnerability in GitLab's repository commits API (CVE-2026-85706) was publicly disclosed and observed being probed and exploited in the wild shortly thereafter, allowing unauthenticated read of arbitrary files on vulnerable servers.",
+          "why_it_matters": "Compromise of GitLab servers can expose source code, secrets, and CI/CD configuration, directly impacting software supply-chain integrity and downstream deployments.",
+          "hot_fix": [
+            "Apply GitLab security updates that address CVE-2026-85706 immediately",
+            "Search for and remediate suspicious access or unexpected file reads on GitLab instances",
+            "Rotate secrets stored in repositories and CI/CD variables; enforce least privilege"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/gitlab-urges-users-to-patch-max-severity-path-traversal-flaw/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic: Claude models abused to automate exploitation and malware evasion; vendor infrastructure targeted",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Anthropic reported that threat actors—including state‑linked groups and cybercriminals—used its Claude models to automate exploitation workflows and malware evasion; the company also disclosed attacks targeting its infrastructure, including theft of a pre-release model.",
+          "why_it_matters": "Abuse of a third‑party AI provider can accelerate attacker capabilities and indicates direct vendor-targeting, increasing vendor risk for organizations that integrate or rely on the provider's models or infrastructure.",
+          "hot_fix": [
+            "Review and limit sensitive workflows that call third-party AI models",
+            "Require vendor attestations on security controls and incident response timelines",
+            "Monitor for anomalous ingestion/output patterns and rotate any model-provided secrets"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/claude-used-to-automate-exploitation.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/anthropic-says-russian-hackers-used-claude-ai-to-automate-malware-evasion/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-11",
       "generated_at": "2026-09-11T08:22:13+02:00",
       "incidents": [
