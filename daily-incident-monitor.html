@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">12 Sep 2026</span>
+      <span id="last-updated">14 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>14 Sep 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Sogou Input Method flaw (CVE-2026-51990) exploited to deliver GrayRabbit backdoor</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Actors linked to a China-aligned group exploited a critical vulnerability in Tencent&#x27;s Sogou Input Method for Windows (CVE-2026-51990) via a crafted link to install the GrayRabbit backdoor on victim machines.</p>
+            <p><strong>Why it matters:</strong> Sogou is widely deployed for Chinese-language input; exploitation of a popular vendor component can yield broad endpoint compromise and persistent backdoors across customer environments.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Tencent/Sogou vendor updates or mitigations immediately</li>
+            <li>Run endpoint detection for GrayRabbit indicators and isolate infected hosts</li>
+            <li>Block associated malicious URLs/domains and enforce least-privilege on affected endpoints</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/china-linked-unc3569-exploited-sogou.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Dutch NCSC warns imminent exploitation of two critical Check Point VPN flaws (CVE-2026-85102, CVE-2026-85103)</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The Dutch NCSC warned that exploitation of two critical remote code execution vulnerabilities in Check Point VPN products (CVE-2026-85102 and CVE-2026-85103) is imminent; Check Point has published patches.</p>
+            <p><strong>Why it matters:</strong> VPN appliance compromise can provide persistent, high-privileged access to enterprise networks; unpatched vendor gateway devices are high-value targets affecting many third-party customers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Check Point vendor patches immediately to impacted VPN appliances</li>
+            <li>Isolate management interfaces, enforce multi-factor admin access, and monitor VPN logs for anomalous activity</li>
+            <li>If patching is delayed, apply vendor-recommended workarounds and block exploit indicators at network perimeter</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>12 Sep 2026</span>

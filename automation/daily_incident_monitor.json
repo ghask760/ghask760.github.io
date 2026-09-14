@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-09-14",
+      "generated_at": "2026-09-14T08:21:20+02:00",
+      "incidents": [
+        {
+          "title": "Sogou Input Method flaw (CVE-2026-51990) exploited to deliver GrayRabbit backdoor",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Actors linked to a China-aligned group exploited a critical vulnerability in Tencent's Sogou Input Method for Windows (CVE-2026-51990) via a crafted link to install the GrayRabbit backdoor on victim machines.",
+          "why_it_matters": "Sogou is widely deployed for Chinese-language input; exploitation of a popular vendor component can yield broad endpoint compromise and persistent backdoors across customer environments.",
+          "hot_fix": [
+            "Apply Tencent/Sogou vendor updates or mitigations immediately",
+            "Run endpoint detection for GrayRabbit indicators and isolate infected hosts",
+            "Block associated malicious URLs/domains and enforce least-privilege on affected endpoints"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/china-linked-unc3569-exploited-sogou.html"
+            }
+          ]
+        },
+        {
+          "title": "Dutch NCSC warns imminent exploitation of two critical Check Point VPN flaws (CVE-2026-85102, CVE-2026-85103)",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The Dutch NCSC warned that exploitation of two critical remote code execution vulnerabilities in Check Point VPN products (CVE-2026-85102 and CVE-2026-85103) is imminent; Check Point has published patches.",
+          "why_it_matters": "VPN appliance compromise can provide persistent, high-privileged access to enterprise networks; unpatched vendor gateway devices are high-value targets affecting many third-party customers.",
+          "hot_fix": [
+            "Apply Check Point vendor patches immediately to impacted VPN appliances",
+            "Isolate management interfaces, enforce multi-factor admin access, and monitor VPN logs for anomalous activity",
+            "If patching is delayed, apply vendor-recommended workarounds and block exploit indicators at network perimeter"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-12",
       "generated_at": "2026-09-12T08:21:26+02:00",
       "incidents": [
