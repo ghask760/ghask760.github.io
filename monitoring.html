@@ -12,16 +12,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Monitoring & Intelligence - Gabriel Hasik</title>
-  <meta name="description" content="Recurring monitoring briefings for third-party risk, geopolitical supply chain exposure, regulatory signals, vendor incidents, and resilience teams."/>
+  <meta name="description" content="Interactive risk signal trends and recurring briefings for third-party risk, geopolitical supply chain exposure, vendor incidents, regulation, and resilience."/>
   <link rel="canonical" href="https://gabrielhasik.com/monitoring.html"/>
   <link rel="alternate" type="application/rss+xml" title="Gabriel Hasik Risk Briefings" href="https://gabrielhasik.com/feed.xml"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Monitoring & Intelligence - Gabriel Hasik"/>
-  <meta property="og:description" content="Recurring monitoring briefings for third-party risk, geopolitical supply chain exposure, regulatory signals, vendor incidents, and resilience teams."/>
+  <meta property="og:description" content="Interactive risk signal trends and recurring briefings for third-party risk and geopolitical supply chain exposure."/>
   <meta property="og:url" content="https://gabrielhasik.com/monitoring.html"/>
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:title" content="Monitoring & Intelligence - Gabriel Hasik"/>
-  <meta name="twitter:description" content="Recurring monitoring briefings for third-party risk, geopolitical supply chain exposure, regulatory signals, vendor incidents, and resilience teams."/>
+  <meta name="twitter:description" content="Interactive risk signal trends and recurring briefings for third-party risk and geopolitical supply chain exposure."/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -423,6 +423,132 @@
       text-decoration: none;
     }
 
+    .trend-dashboard { max-width: 1180px; }
+    .trend-grid { display: grid; gap: 3.5rem; }
+    .trend-figure { margin: 0; }
+
+    .trend-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .trend-heading h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+      line-height: 1.25;
+      color: var(--text-hi);
+    }
+
+    .trend-heading p {
+      max-width: 530px;
+      color: var(--text-dim);
+      font-size: 0.86rem;
+      line-height: 1.65;
+      text-align: right;
+    }
+
+    .trend-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.15rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .trend-legend button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0;
+      border: 0;
+      background: transparent;
+      color: var(--text-mid);
+      font: 0.66rem var(--mono);
+      letter-spacing: 0.04em;
+      cursor: pointer;
+    }
+
+    .trend-legend button[aria-pressed="false"] {
+      color: var(--text-dim);
+      text-decoration: line-through;
+      opacity: 0.62;
+    }
+
+    .trend-legend button:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+    .legend-mark { width: 14px; height: 3px; background: var(--series-color); }
+
+    .trend-chart-shell {
+      position: relative;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(212,130,26,0.025), transparent 40%);
+    }
+
+    .trend-chart-shell svg { display: block; width: 100%; height: auto; min-height: 360px; overflow: visible; }
+    .trend-axis, .trend-gridline, .trend-frame { shape-rendering: crispEdges; }
+    .trend-gridline { stroke: var(--border); stroke-width: 1; }
+    .trend-frame { fill: transparent; stroke: var(--muted); stroke-width: 1; }
+    .trend-axis { fill: var(--text-dim); font: 11px var(--mono); }
+    .trend-axis-title { fill: var(--text-dim); font: 11px var(--mono); letter-spacing: 0.05em; }
+    .trend-series { fill: none; stroke: var(--series-color); stroke-width: 2.25; vector-effect: non-scaling-stroke; }
+    .trend-series[data-shape="square"] { stroke-dasharray: 8 4; }
+    .trend-series[data-shape="diamond"] { stroke-dasharray: 3 4; }
+    .trend-series[data-shape="triangle"] { stroke-dasharray: 11 4 2 4; }
+    .trend-point { fill: var(--bg); stroke: var(--series-color); stroke-width: 2.25; vector-effect: non-scaling-stroke; }
+    .trend-latest-label { fill: var(--text); font: 11px var(--mono); }
+    .trend-leader { stroke: var(--series-color); stroke-width: 1; opacity: 0.7; }
+    .trend-guide { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0; pointer-events: none; }
+    .trend-edition-hit { fill: transparent; cursor: pointer; }
+
+    .trend-tooltip {
+      position: absolute;
+      z-index: 5;
+      width: min(260px, calc(100% - 1rem));
+      padding: 0.85rem 1rem;
+      background: #191919;
+      border: 1px solid var(--muted);
+      color: var(--text-mid);
+      font-size: 0.78rem;
+      line-height: 1.55;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .trend-tooltip.visible { opacity: 1; transform: translateY(0); }
+    .trend-tooltip strong { display: block; margin-bottom: 0.35rem; color: var(--text-hi); font: 500 0.72rem var(--mono); }
+    .trend-tooltip span { display: block; }
+
+    .trend-detail {
+      display: grid;
+      grid-template-columns: 8rem 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      min-height: 72px;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--border);
+      border-top: 0;
+      background: var(--bg2);
+    }
+
+    .trend-detail-date { color: var(--accent); font: 0.68rem var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+    .trend-detail-copy { color: var(--text-mid); font-size: 0.88rem; line-height: 1.6; }
+    .trend-detail a { color: var(--accent2); font: 0.66rem var(--mono); letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
+
+    .trend-method {
+      margin-top: 1.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--accent-dim);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .trend-method strong { color: var(--text-mid); font-weight: 500; }
+    .trend-noscript { padding: 1rem; color: var(--text-mid); border: 1px solid var(--border); }
+
     .monitoring-card {
       display: block;
       background: var(--bg);
@@ -533,6 +659,10 @@
       .briefing-card { border-right: none; border-bottom: 1px solid var(--border); }
       .operating-grid { grid-template-columns: 1fr; gap: 2rem; }
       .signal-row { grid-template-columns: 1fr; gap: 0.45rem; }
+      .trend-heading { align-items: start; flex-direction: column; gap: 0.5rem; }
+      .trend-heading p { text-align: left; }
+      .trend-detail { grid-template-columns: 1fr; gap: 0.4rem; }
+      .trend-chart-shell svg { min-height: 330px; }
       footer {
         flex-direction: column;
         gap: 0.75rem;
@@ -551,6 +681,10 @@
       .nav-links a {
         font-size: 0.64rem;
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .trend-tooltip { transition: none; }
     }
   </style>
 </head>
@@ -579,13 +713,61 @@
       and supply chain disruption into practical questions for security, procurement, resilience, and risk teams.
     </p>
     <div class="hero-actions">
-      <a class="hero-action primary" href="#latest-briefings">Latest briefings</a>
-      <a class="hero-action" href="#monitoring-method">Monitoring method</a>
+      <a class="hero-action primary" href="#risk-trends">View risk trends</a>
+      <a class="hero-action" href="#latest-briefings">Latest briefings</a>
+    </div>
+  </section>
+
+  <section id="risk-trends">
+    <div class="trend-dashboard">
+      <div class="section-label">01 &mdash; Risk Signal Trends</div>
+      <h2 class="section-title">How the risk picture is moving</h2>
+      <p class="section-intro">
+        A comparable view across published editions. Each line tracks evidence-based editorial signal intensity
+        for a persistent risk vector, making sustained pressure, acceleration, and newly visible risks easier to distinguish.
+      </p>
+
+      <div class="trend-grid">
+        <figure class="trend-figure" id="tprm-trend">
+          <div class="trend-heading">
+            <h3>Third-Party Risk Signal Intensity</h3>
+            <p>Identity and supplier access is the clearest rising vector; regulatory and software supply chain pressure remain critical.</p>
+          </div>
+          <div class="trend-legend" aria-label="Toggle third-party risk series"></div>
+          <div class="trend-chart-shell">
+            <svg role="img" aria-labelledby="tprm-trend-title tprm-trend-desc"></svg>
+            <div class="trend-tooltip" role="tooltip"></div>
+          </div>
+          <div class="trend-detail" aria-live="polite"></div>
+          <noscript><p class="trend-noscript">Enable JavaScript to view the interactive trend. The underlying monthly briefings remain available below.</p></noscript>
+        </figure>
+
+        <figure class="trend-figure" id="geo-trend">
+          <div class="trend-heading">
+            <h3>Geopolitical Supply Chain Signal Intensity</h3>
+            <p>Maritime disruption remains critical; September shows renewed energy pressure while sanctions and concentration stay high.</p>
+          </div>
+          <div class="trend-legend" aria-label="Toggle geopolitical risk series"></div>
+          <div class="trend-chart-shell">
+            <svg role="img" aria-labelledby="geo-trend-title geo-trend-desc"></svg>
+            <div class="trend-tooltip" role="tooltip"></div>
+          </div>
+          <div class="trend-detail" aria-live="polite"></div>
+          <noscript><p class="trend-noscript">Enable JavaScript to view the interactive trend. The underlying monthly briefings remain available below.</p></noscript>
+        </figure>
+      </div>
+
+      <p class="trend-method">
+        <strong>Scale:</strong> 0 no material signal, 1 background, 2 watch, 3 elevated, 4 high, 5 critical.
+        A point is an editorial classification of the severity and prominence of substantiated signals in that edition,
+        not probability, financial exposure, or a forecast.
+        June&ndash;August is one combined edition; unpublished months are not interpolated. Select an edition in either chart to see its evidence anchor.
+      </p>
     </div>
   </section>
 
   <section id="latest-briefings">
-    <div class="section-label">01 &mdash; Latest Briefings</div>
+    <div class="section-label">02 &mdash; Latest Briefings</div>
     <h2 class="section-title">Current Monitoring Outputs</h2>
     <p class="section-intro">
       The latest monitoring notes are written for teams that need to brief leadership, challenge suppliers,
@@ -624,7 +806,7 @@
   </section>
 
   <section id="monitoring-overview">
-    <div class="section-label">02 &mdash; Monitoring Streams</div>
+    <div class="section-label">03 &mdash; Monitoring Streams</div>
     <h2 class="section-title">Recurring Intelligence Tracks</h2>
     <p class="section-intro">
       These briefings are designed as repeatable monitoring outputs rather than one-off articles.
@@ -688,7 +870,7 @@
   </section>
 
   <section id="monitoring-method">
-    <div class="section-label">03 &mdash; Method</div>
+    <div class="section-label">04 &mdash; Method</div>
     <div class="operating-grid">
       <div>
         <h2 class="section-title">What the monitoring is meant to do</h2>
@@ -720,7 +902,7 @@
   </section>
 
   <section id="monitoring-subscribe">
-    <div class="section-label">04 &mdash; Stay Updated</div>
+    <div class="section-label">05 &mdash; Stay Updated</div>
     <div class="newsletter-panel">
       <h2>Get the monitoring briefings when they are published</h2>
       <p>
@@ -738,6 +920,239 @@
     <span>Built with intention &middot; <a href="https://gabrielhasik.com">gabrielhasik.com</a></span>
     <span>Cyber &middot; Risk &middot; Supply Chain</span>
   </footer>
+
+  <script>
+    // To update the graphs, append the new edition and its evidence-based scores.
+    const trendCharts = [
+      {
+        rootId: 'tprm-trend',
+        titleId: 'tprm-trend-title',
+        descId: 'tprm-trend-desc',
+        title: 'Third-Party Risk Signal Intensity',
+        description: 'Four risk vectors across the April, May, June to August, and September 2026 third-party risk briefings.',
+        series: [
+          { key: 'software', label: 'Software & updates', color: '#e8a84c', shape: 'circle' },
+          { key: 'regulatory', label: 'Regulatory readiness', color: '#c96d5c', shape: 'square' },
+          { key: 'identity', label: 'Identity & supplier access', color: '#6ca8a2', shape: 'diamond' },
+          { key: 'resilience', label: 'Concentration & resilience', color: '#b8a13a', shape: 'triangle' }
+        ],
+        editions: [
+          { label: 'Apr 2026', short: 'Apr', url: 'tprm-briefing-april-2026.html', scores: { software: 1, regulatory: 5, identity: 0, resilience: 2 }, note: 'DORA and CER moved into active enforcement; CRA reporting and critical-provider concentration entered the control agenda.' },
+          { label: 'May 2026', short: 'May', url: 'tprm-briefing-week-ending-2026-06-02.html', scores: { software: 5, regulatory: 5, identity: 3, resilience: 4 }, note: 'The Red Hat npm campaign made software and credential exposure immediate while DORA and AI Act readiness stayed critical.' },
+          { label: 'Jun-Aug 2026', short: 'Jun-Aug', url: 'tprm-briefing-june-august-2026.html', scores: { software: 5, regulatory: 5, identity: 4, resilience: 4 }, note: 'Package compromise persisted; AI Act obligations applied and CRM integration exposure raised supplier-access risk.' },
+          { label: 'Sep 2026', short: 'Sep', url: 'tprm-briefing-september-2026.html', scores: { software: 5, regulatory: 5, identity: 4, resilience: 2 }, note: 'CRA reporting went live; BGP-enabled update compromise and supplier-held API and identity paths dominated the new signal set.' }
+        ]
+      },
+      {
+        rootId: 'geo-trend',
+        titleId: 'geo-trend-title',
+        descId: 'geo-trend-desc',
+        title: 'Geopolitical Supply Chain Signal Intensity',
+        description: 'Four risk vectors across the April, May, June to August, and September 2026 geopolitical supply chain briefings.',
+        series: [
+          { key: 'maritime', label: 'Maritime & chokepoints', color: '#e8a84c', shape: 'circle' },
+          { key: 'sanctions', label: 'Sanctions & trade controls', color: '#c96d5c', shape: 'square' },
+          { key: 'energy', label: 'Energy & critical inputs', color: '#6ca8a2', shape: 'diamond' },
+          { key: 'materials', label: 'Materials & concentration', color: '#b8a13a', shape: 'triangle' }
+        ],
+        editions: [
+          { label: 'Apr 2026', short: 'Apr', url: 'geopolitical-risks-april-2026.html', scores: { maritime: 5, sanctions: 5, energy: 5, materials: 3 }, note: 'Hormuz and energy shock scenarios were critical while sanctions and export controls reshaped sourcing decisions.' },
+          { label: 'May 2026', short: 'May', url: 'geopolitical-supply-chain-risks-may-june-2026.html', scores: { maritime: 5, sanctions: 5, energy: 4, materials: 4 }, note: 'Red Sea disruption and Russia sanctions remained critical; EU dependency analysis elevated diversification pressure.' },
+          { label: 'Jun-Aug 2026', short: 'Jun-Aug', url: 'geopolitical-supply-chain-risks-june-august-2026.html', scores: { maritime: 5, sanctions: 5, energy: 4, materials: 4 }, note: 'Bab al-Mandeb attacks and EU sanctions stayed critical while scarce inputs and mineral concentration remained high.' },
+          { label: 'Sep 2026', short: 'Sep', url: 'geopolitical-supply-chain-risks-september-2026.html', scores: { maritime: 5, sanctions: 4, energy: 5, materials: 4 }, note: 'Confirmed Hormuz incidents and Gulf production losses pushed energy back to critical; UK Iran sanctions and rare-earth concentration remain high.' }
+        ]
+      }
+    ];
+
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const riskLabels = ['None', 'Background', 'Watch', 'Elevated', 'High', 'Critical'];
+
+    function svgElement(name, attributes) {
+      const node = document.createElementNS(svgNS, name);
+      Object.entries(attributes || {}).forEach(function (entry) {
+        node.setAttribute(entry[0], entry[1]);
+      });
+      return node;
+    }
+
+    function markerFor(shape, x, y, color, size) {
+      size = size || 4.5;
+      let marker;
+      if (shape === 'square') {
+        marker = svgElement('rect', { x: x - size, y: y - size, width: size * 2, height: size * 2, rx: 1 });
+      } else if (shape === 'diamond') {
+        marker = svgElement('path', { d: 'M ' + x + ' ' + (y-size-1) + ' L ' + (x+size+1) + ' ' + y + ' L ' + x + ' ' + (y+size+1) + ' L ' + (x-size-1) + ' ' + y + ' Z' });
+      } else if (shape === 'triangle') {
+        marker = svgElement('path', { d: 'M ' + x + ' ' + (y-size-1) + ' L ' + (x+size+1) + ' ' + (y+size) + ' L ' + (x-size-1) + ' ' + (y+size) + ' Z' });
+      } else {
+        marker = svgElement('circle', { cx: x, cy: y, r: size });
+      }
+      marker.setAttribute('class', 'trend-point');
+      marker.style.setProperty('--series-color', color);
+      return marker;
+    }
+
+    function renderTrendChart(config) {
+      const root = document.getElementById(config.rootId);
+      const shell = root.querySelector('.trend-chart-shell');
+      const svg = root.querySelector('svg');
+      const legend = root.querySelector('.trend-legend');
+      const detail = root.querySelector('.trend-detail');
+      const tooltip = root.querySelector('.trend-tooltip');
+      const active = new Set(config.series.map(function (item) { return item.key; }));
+      let selectedEdition = config.editions.length - 1;
+
+      config.series.forEach(function (item) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.series = item.key;
+        button.setAttribute('aria-pressed', 'true');
+        button.style.setProperty('--series-color', item.color);
+        button.innerHTML = '<span class="legend-mark" aria-hidden="true"></span><span>' + item.label + '</span>';
+        button.addEventListener('click', function () {
+          if (active.has(item.key) && active.size === 1) return;
+          active.has(item.key) ? active.delete(item.key) : active.add(item.key);
+          button.setAttribute('aria-pressed', String(active.has(item.key)));
+          draw();
+        });
+        legend.appendChild(button);
+      });
+
+      function updateDetail(index) {
+        selectedEdition = index;
+        const edition = config.editions[index];
+        detail.innerHTML = '<span class="trend-detail-date">' + edition.label + '</span><span class="trend-detail-copy">' + edition.note + '</span><a href="' + edition.url + '">Open edition --</a>';
+      }
+
+      function showTooltip(index, clientX, clientY) {
+        const edition = config.editions[index];
+        const rows = config.series.filter(function (item) {
+          return active.has(item.key);
+        }).map(function (item) {
+          return '<span>' + item.label + ': ' + edition.scores[item.key] + ' / 5 &middot; ' + riskLabels[edition.scores[item.key]] + '</span>';
+        }).join('');
+        tooltip.innerHTML = '<strong>' + edition.label + '</strong>' + rows;
+        const bounds = shell.getBoundingClientRect();
+        const tooltipWidth = Math.min(260, bounds.width - 16);
+        const left = Math.max(8, Math.min(clientX - bounds.left + 12, bounds.width - tooltipWidth - 8));
+        const top = Math.max(8, Math.min(clientY - bounds.top - 20, bounds.height - 150));
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
+        tooltip.classList.add('visible');
+      }
+
+      function draw() {
+        const width = Math.max(320, Math.round(shell.clientWidth));
+        const compact = width < 620;
+        const height = compact ? 330 : 380;
+        const margin = { top: 24, right: compact ? 20 : 185, bottom: 58, left: compact ? 82 : 104 };
+        const plotWidth = width - margin.left - margin.right;
+        const plotHeight = height - margin.top - margin.bottom;
+        const x = function (index) { return margin.left + 7 + (config.editions.length === 1 ? (plotWidth - 14) / 2 : index * (plotWidth - 14) / (config.editions.length - 1)); };
+        const y = function (score) { return margin.top + 7 + (5 - score) * (plotHeight - 14) / 5; };
+
+        svg.replaceChildren();
+        svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+        const title = svgElement('title', { id: config.titleId });
+        title.textContent = config.title;
+        const desc = svgElement('desc', { id: config.descId });
+        desc.textContent = config.description;
+        svg.append(title, desc);
+
+        svg.appendChild(svgElement('rect', { class: 'trend-frame', x: margin.left, y: margin.top, width: plotWidth, height: plotHeight, 'data-chart-frame': '' }));
+
+        for (let score = 0; score <= 5; score += 1) {
+          const yy = y(score);
+          svg.appendChild(svgElement('line', { class: 'trend-gridline', x1: margin.left, x2: margin.left + plotWidth, y1: yy, y2: yy }));
+          const label = svgElement('text', { x: margin.left - 10, y: yy + 4, 'text-anchor': 'end', class: 'trend-axis' });
+          label.textContent = compact ? score + ' ' + riskLabels[score] : riskLabels[score] + '  ' + score;
+          svg.appendChild(label);
+        }
+
+        config.editions.forEach(function (edition, index) {
+          const anchor = index === 0 ? 'start' : index === config.editions.length - 1 ? 'end' : 'middle';
+          const label = svgElement('text', { class: 'trend-axis', x: x(index), y: margin.top + plotHeight + 25, 'text-anchor': anchor });
+          label.textContent = compact ? edition.short : edition.label;
+          svg.appendChild(label);
+        });
+
+        const xTitle = svgElement('text', { class: 'trend-axis-title', x: margin.left + plotWidth / 2, y: height - 10, 'text-anchor': 'middle', 'data-axis': 'x' });
+        xTitle.textContent = 'Published monitoring edition';
+        svg.appendChild(xTitle);
+        const yTitle = svgElement('text', { class: 'trend-axis-title', x: 0, y: 0, transform: 'translate(15 ' + (margin.top + plotHeight / 2) + ') rotate(-90)', 'text-anchor': 'middle', 'data-axis': 'y' });
+        yTitle.textContent = 'Signal intensity (0-5)';
+        svg.appendChild(yTitle);
+
+        config.series.forEach(function (item) {
+          if (!active.has(item.key)) return;
+          const points = config.editions.map(function (edition, index) { return [x(index), y(edition.scores[item.key])]; });
+          const pathData = points.map(function (point, index) { return (index ? 'L ' : 'M ') + point[0] + ' ' + point[1]; }).join(' ');
+          const line = svgElement('path', { class: 'trend-series', d: pathData, 'data-shape': item.shape });
+          line.style.setProperty('--series-color', item.color);
+          svg.appendChild(line);
+          points.forEach(function (point) { svg.appendChild(markerFor(item.shape, point[0], point[1], item.color)); });
+        });
+
+        if (!compact) {
+          const finalEdition = config.editions[config.editions.length - 1];
+          const labels = config.series.filter(function (item) {
+            return active.has(item.key);
+          }).map(function (item) {
+            return { item: item, actualY: y(finalEdition.scores[item.key]) };
+          }).sort(function (a, b) { return a.actualY - b.actualY; });
+
+          labels.forEach(function (entry, index) {
+            entry.labelY = Math.max(entry.actualY, margin.top + 8 + index * 20);
+          });
+          for (let index = labels.length - 2; index >= 0; index -= 1) {
+            labels[index].labelY = Math.min(labels[index].labelY, labels[index + 1].labelY - 20);
+          }
+          labels.forEach(function (entry) {
+            const startX = margin.left + plotWidth + 6;
+            const endX = startX + 12;
+            const leader = svgElement('line', { class: 'trend-leader', x1: x(config.editions.length - 1), y1: entry.actualY, x2: endX, y2: entry.labelY });
+            leader.style.setProperty('--series-color', entry.item.color);
+            svg.appendChild(leader);
+            const text = svgElement('text', { class: 'trend-latest-label', x: endX + 5, y: entry.labelY + 4 });
+            text.textContent = entry.item.label + '  ' + finalEdition.scores[entry.item.key];
+            svg.appendChild(text);
+          });
+        }
+
+        const guide = svgElement('line', { class: 'trend-guide', x1: x(selectedEdition), x2: x(selectedEdition), y1: margin.top, y2: margin.top + plotHeight, 'data-chart-hover-guide': '' });
+        svg.appendChild(guide);
+
+        config.editions.forEach(function (edition, index) {
+          const left = index === 0 ? margin.left : (x(index - 1) + x(index)) / 2;
+          const right = index === config.editions.length - 1 ? margin.left + plotWidth : (x(index) + x(index + 1)) / 2;
+          const hit = svgElement('rect', { class: 'trend-edition-hit', x: left, y: margin.top, width: right - left, height: plotHeight, 'aria-label': 'Show ' + edition.label + ' evidence', 'data-chart-hit': '' });
+          hit.addEventListener('pointerenter', function (event) {
+            guide.setAttribute('x1', x(index));
+            guide.setAttribute('x2', x(index));
+            guide.style.opacity = '1';
+            showTooltip(index, event.clientX, event.clientY);
+          });
+          hit.addEventListener('pointermove', function (event) { showTooltip(index, event.clientX, event.clientY); });
+          hit.addEventListener('pointerleave', function () {
+            guide.style.opacity = '0';
+            tooltip.classList.remove('visible');
+          });
+          hit.addEventListener('click', function () { updateDetail(index); });
+          svg.appendChild(hit);
+        });
+      }
+
+      updateDetail(selectedEdition);
+      draw();
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(draw).observe(shell);
+      } else {
+        window.addEventListener('resize', draw);
+      }
+    }
+
+    trendCharts.forEach(renderTrendChart);
+  </script>
 
 </body>
 </html>
