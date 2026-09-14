@@ -7,6 +7,22 @@
     <language>en</language>
     <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0200</lastBuildDate>
     <atom:link href="https://gabrielhasik.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Third-Party Risk Intelligence Briefing - September 2026</title>
+      <link>https://gabrielhasik.com/tprm-briefing-september-2026.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/tprm-briefing-september-2026.html</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0200</pubDate>
+      <description>CRA reporting, BGP-enabled update compromise, supplier API credentials, federated identity and cloud resilience, with practical control actions.</description>
+    </item>
+
+    <item>
+      <title>Geopolitical Supply Chain Risks - September 2026</title>
+      <link>https://gabrielhasik.com/geopolitical-supply-chain-risks-september-2026.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/geopolitical-supply-chain-risks-september-2026.html</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0200</pubDate>
+      <description>Strait of Hormuz disruption, oil supply, UK Iran sanctions, trade momentum and rare-earth concentration translated into supply chain decisions.</description>
+    </item>
+
     <!-- SCHEDULED_RSS_START -->
     <item>
       <title>Why Supplier Risk Is a Data Problem Before It Is a Compliance Problem</title>
