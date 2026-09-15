@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">14 Sep 2026</span>
+      <span id="last-updated">15 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,100 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>15 Sep 2026</span>
+          <span>4 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Revolut discloses customer data breach after impersonation of government agency</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Fintech firm Revolut disclosed a breach in which customer personal and financial information (including passports) was unintentionally shared with a threat actor impersonating a government agency.</p>
+            <p><strong>Why it matters:</strong> Third‑party identity/verification failures led to unauthorized data disclosure; organizations using Revolut for payroll, payments or KYC should assume customer PII exposure and review contractual/notification obligations.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm scope with Revolut and request attacker access timeline</li>
+            <li>Identify and notify affected customers per legal/contractual requirements</li>
+            <li>Rotate any exposed credentials and review downstream KYC/payment integrations</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/revolut-discloses-data-breach-exposing-financial-info-passports/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/personal-financial-info-exposed-in-revolut-data-breach/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Max-severity GitLab vulnerability under active attack days after patch</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA and independent observers report attackers are exploiting a maximum-severity GitLab flaw in the wild soon after a vendor patch was released and probes of internet-facing instances were observed.</p>
+            <p><strong>Why it matters:</strong> Compromise of GitLab instances can enable supply‑chain sabotage, CI/CD compromise, and credential/token theft; organizations relying on GitLab-hosted pipelines must assume elevated risk to build and deployment integrity.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply GitLab vendor patch immediately or implement vendor mitigation guidance</li>
+            <li>Restrict internet exposure of GitLab management interfaces and CI runners</li>
+            <li>Audit recent CI/CD changes, tokens, and runner activity for unauthorized changes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploit-max-severity-gitlab-flaw-in-attacks/" rel="noopener" target="_blank">BleepingComputer (CISA warning)</a> <a href="https://www.theregister.com/security/2026/09/14/perfect-10-gitlab-bug-under-attack-days-after-patch-lands/5296176" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>JFrog Artifactory vulnerabilities exploited to deploy backdoors</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Multiple JFrog Artifactory flaws that allow authentication bypass and privilege elevation have been exploited in the wild to deploy backdoors on compromised instances.</p>
+            <p><strong>Why it matters:</strong> Compromised artifact repositories can infect downstream builds and distributable packages; organizations must treat Artifactory compromises as direct supply‑chain contamination risks.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply JFrog security updates and follow vendor emergency hardening guidance</li>
+            <li>Isolate and rebuild affected repositories and verify artifact integrity</li>
+            <li>Rotate repository credentials and scan CI/CD pipelines for malicious artifacts</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.securityweek.com/three-jfrog-artifactory-flaws-exploited-for-backdoor-deployment/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html" rel="noopener" target="_blank">The Hacker News (CISA KEV coverage including Artifactory)</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>ScreenConnect (ConnectWise) vulnerability exploited in worm-like attacks; vendor issues patch</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A ScreenConnect (ConnectWise) vulnerability that allows unauthorized file transfer and execution in active remote sessions has been exploited in worm-like attacks; ConnectWise released a patch.</p>
+            <p><strong>Why it matters:</strong> Remote‑access product compromise threatens trust in managed support channels and can enable rapid lateral spread; MSPs and customers using ScreenConnect should assume potential compromise of remote support sessions.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply ConnectWise ScreenConnect patch immediately</li>
+            <li>Harden remote access: restrict access, enforce MFA, and monitor session activity</li>
+            <li>Audit endpoints accessed via ScreenConnect for persistence and lateral movement</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.securityweek.com/connectwise-patches-screenconnect-vulnerability-exploited-in-worm-like-attacks/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html" rel="noopener" target="_blank">The Hacker News (CISA KEV coverage including ScreenConnect)</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>14 Sep 2026</span>

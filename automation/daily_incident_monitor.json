@@ -1,6 +1,104 @@
 {
   "days": [
     {
+      "date": "2026-09-15",
+      "generated_at": "2026-09-15T08:21:52+02:00",
+      "incidents": [
+        {
+          "title": "Revolut discloses customer data breach after impersonation of government agency",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Fintech firm Revolut disclosed a breach in which customer personal and financial information (including passports) was unintentionally shared with a threat actor impersonating a government agency.",
+          "why_it_matters": "Third‑party identity/verification failures led to unauthorized data disclosure; organizations using Revolut for payroll, payments or KYC should assume customer PII exposure and review contractual/notification obligations.",
+          "hot_fix": [
+            "Confirm scope with Revolut and request attacker access timeline",
+            "Identify and notify affected customers per legal/contractual requirements",
+            "Rotate any exposed credentials and review downstream KYC/payment integrations"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/revolut-discloses-data-breach-exposing-financial-info-passports/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/personal-financial-info-exposed-in-revolut-data-breach/"
+            }
+          ]
+        },
+        {
+          "title": "Max-severity GitLab vulnerability under active attack days after patch",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "CISA and independent observers report attackers are exploiting a maximum-severity GitLab flaw in the wild soon after a vendor patch was released and probes of internet-facing instances were observed.",
+          "why_it_matters": "Compromise of GitLab instances can enable supply‑chain sabotage, CI/CD compromise, and credential/token theft; organizations relying on GitLab-hosted pipelines must assume elevated risk to build and deployment integrity.",
+          "hot_fix": [
+            "Apply GitLab vendor patch immediately or implement vendor mitigation guidance",
+            "Restrict internet exposure of GitLab management interfaces and CI runners",
+            "Audit recent CI/CD changes, tokens, and runner activity for unauthorized changes"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer (CISA warning)",
+              "url": "https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploit-max-severity-gitlab-flaw-in-attacks/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/09/14/perfect-10-gitlab-bug-under-attack-days-after-patch-lands/5296176"
+            }
+          ]
+        },
+        {
+          "title": "JFrog Artifactory vulnerabilities exploited to deploy backdoors",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Multiple JFrog Artifactory flaws that allow authentication bypass and privilege elevation have been exploited in the wild to deploy backdoors on compromised instances.",
+          "why_it_matters": "Compromised artifact repositories can infect downstream builds and distributable packages; organizations must treat Artifactory compromises as direct supply‑chain contamination risks.",
+          "hot_fix": [
+            "Apply JFrog security updates and follow vendor emergency hardening guidance",
+            "Isolate and rebuild affected repositories and verify artifact integrity",
+            "Rotate repository credentials and scan CI/CD pipelines for malicious artifacts"
+          ],
+          "sources": [
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/three-jfrog-artifactory-flaws-exploited-for-backdoor-deployment/"
+            },
+            {
+              "name": "The Hacker News (CISA KEV coverage including Artifactory)",
+              "url": "https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html"
+            }
+          ]
+        },
+        {
+          "title": "ScreenConnect (ConnectWise) vulnerability exploited in worm-like attacks; vendor issues patch",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A ScreenConnect (ConnectWise) vulnerability that allows unauthorized file transfer and execution in active remote sessions has been exploited in worm-like attacks; ConnectWise released a patch.",
+          "why_it_matters": "Remote‑access product compromise threatens trust in managed support channels and can enable rapid lateral spread; MSPs and customers using ScreenConnect should assume potential compromise of remote support sessions.",
+          "hot_fix": [
+            "Apply ConnectWise ScreenConnect patch immediately",
+            "Harden remote access: restrict access, enforce MFA, and monitor session activity",
+            "Audit endpoints accessed via ScreenConnect for persistence and lateral movement"
+          ],
+          "sources": [
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/connectwise-patches-screenconnect-vulnerability-exploited-in-worm-like-attacks/"
+            },
+            {
+              "name": "The Hacker News (CISA KEV coverage including ScreenConnect)",
+              "url": "https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-14",
       "generated_at": "2026-09-14T08:21:20+02:00",
       "incidents": [
