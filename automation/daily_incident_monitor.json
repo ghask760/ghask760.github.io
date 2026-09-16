@@ -1,6 +1,112 @@
 {
   "days": [
     {
+      "date": "2026-09-16",
+      "generated_at": "2026-09-16T08:21:24+02:00",
+      "incidents": [
+        {
+          "title": "CenterPoint Energy confirms customer data stolen after attacker leaks data",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "CenterPoint Energy disclosed a breach after an attacker leaked data allegedly stolen from the utility; the attacker claims 7.5 million customer records were taken per reporting.",
+          "why_it_matters": "Large-scale customer data exposure affects vendor risk, regulatory notification obligations, and could enable targeted fraud against customers and partners; procurement and security teams must treat downstream customer-impact and contractual notification requirements as active risk items.",
+          "hot_fix": [
+            "Engage incident response and legal to validate leak and scope",
+            "Inventory affected systems and isolate breached segments",
+            "Notify regulators/customers per legal counsel and contract terms",
+            "Initiate credential resets and monitor for fraud related to exposed records"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/centerpoint-energy-confirms-customer-data-stolen-in-cyberattack/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/texas-utility-centerpoint-energy-confirms-breach-after-hacker-leaks-data/"
+            }
+          ]
+        },
+        {
+          "title": "Critical Cisco Secure Email Gateway zero-day (CVE-2026-76461) exploited in the wild",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Cisco warned of a critical vulnerability in AsyncOS for Cisco Secure Email Gateway that is being actively exploited to execute commands as root on affected appliances.",
+          "why_it_matters": "Compromise of email security appliances provides high-value persistence and data access for attackers and can undermine enterprise email defenses; TPRM teams should treat affected appliance fleets and managed-provider instances as high priority for remediation and verification.",
+          "hot_fix": [
+            "Apply Cisco vendor patch or mitigation immediately per advisory",
+            "Isolate or inspect exposed SEG appliances and review logs for indicators of compromise",
+            "Block suspicious inbound messages and harden email parsing controls",
+            "Verify backups and recovery processes for SEG appliances before restoration"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/new-cisco-secure-email-zero-day-exploited-to-execute-commands-as-root/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/cisco-secure-email-gateway-flaw.html"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/09/15/cisco-email-security-boxes-can-be-rooted-by-an-email/5296604"
+            }
+          ]
+        },
+        {
+          "title": "Japan’s Digital Agency says VPN flaw exposed ~240–246K personnel records",
+          "category": "Data breach",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Japan's Digital Agency reported a breach tied to a VPN product vulnerability that may have exposed roughly 240,000–246,000 rows of personnel personal information belonging to government employees.",
+          "why_it_matters": "Compromise of government personnel data raises privacy, insider-threat and credential risk for suppliers and contracted vendors; TPRM teams should treat supplier VPN/vpn-remote-access configurations and credential exposure as prioritized remediation items.",
+          "hot_fix": [
+            "Patch or remove vulnerable VPN instances and apply vendor mitigations",
+            "Audit access logs and rotate credentials for impacted accounts",
+            "Notify affected personnel and coordinate with regulatory authorities",
+            "Assess contracted vendors for shared access and potential lateral exposure"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/japans-digital-agency-says-vpn-flaw-exposed-246-000-personnel-records/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/240000-hit-by-data-breach-at-japans-digital-agency/"
+            }
+          ]
+        },
+        {
+          "title": "BambooToken multi-platform malware uses MQTT for command-and-control",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers disclosed BambooToken, a malware family active since at least 2023 that controls Windows and Linux systems using the MQTT protocol as a communication channel; campaigns have targeted organizations across Asia and South America.",
+          "why_it_matters": "Use of MQTT for C2 increases risk to vendors and partners that operate IoT, message-broker or managed-MQTT services; procurement and security teams should flag third-party systems that expose MQTT or broker access and verify vendor hardening and monitoring.",
+          "hot_fix": [
+            "Hunt for unauthorized MQTT traffic and broker connections from endpoints",
+            "Block or segment external MQTT broker access where not required",
+            "Deploy detections for BambooToken behavior and review endpoint telemetry",
+            "Validate third-party/managed MQTT services' hardening and incident response readiness"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/bambootoken-malware-controls-windows-and-linux-systems-via-mqtt/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/bambootoken-malware-uses-mqtt-to.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-15",
       "generated_at": "2026-09-15T08:21:52+02:00",
       "incidents": [

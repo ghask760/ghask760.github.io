@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">15 Sep 2026</span>
+      <span id="last-updated">16 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,104 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>16 Sep 2026</span>
+          <span>4 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>CenterPoint Energy confirms customer data stolen after attacker leaks data</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CenterPoint Energy disclosed a breach after an attacker leaked data allegedly stolen from the utility; the attacker claims 7.5 million customer records were taken per reporting.</p>
+            <p><strong>Why it matters:</strong> Large-scale customer data exposure affects vendor risk, regulatory notification obligations, and could enable targeted fraud against customers and partners; procurement and security teams must treat downstream customer-impact and contractual notification requirements as active risk items.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Engage incident response and legal to validate leak and scope</li>
+            <li>Inventory affected systems and isolate breached segments</li>
+            <li>Notify regulators/customers per legal counsel and contract terms</li>
+            <li>Initiate credential resets and monitor for fraud related to exposed records</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/centerpoint-energy-confirms-customer-data-stolen-in-cyberattack/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/texas-utility-centerpoint-energy-confirms-breach-after-hacker-leaks-data/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical Cisco Secure Email Gateway zero-day (CVE-2026-76461) exploited in the wild</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Cisco warned of a critical vulnerability in AsyncOS for Cisco Secure Email Gateway that is being actively exploited to execute commands as root on affected appliances.</p>
+            <p><strong>Why it matters:</strong> Compromise of email security appliances provides high-value persistence and data access for attackers and can undermine enterprise email defenses; TPRM teams should treat affected appliance fleets and managed-provider instances as high priority for remediation and verification.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Cisco vendor patch or mitigation immediately per advisory</li>
+            <li>Isolate or inspect exposed SEG appliances and review logs for indicators of compromise</li>
+            <li>Block suspicious inbound messages and harden email parsing controls</li>
+            <li>Verify backups and recovery processes for SEG appliances before restoration</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/new-cisco-secure-email-zero-day-exploited-to-execute-commands-as-root/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/cisco-secure-email-gateway-flaw.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.theregister.com/security/2026/09/15/cisco-email-security-boxes-can-be-rooted-by-an-email/5296604" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Japan’s Digital Agency says VPN flaw exposed ~240–246K personnel records</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Japan&#x27;s Digital Agency reported a breach tied to a VPN product vulnerability that may have exposed roughly 240,000–246,000 rows of personnel personal information belonging to government employees.</p>
+            <p><strong>Why it matters:</strong> Compromise of government personnel data raises privacy, insider-threat and credential risk for suppliers and contracted vendors; TPRM teams should treat supplier VPN/vpn-remote-access configurations and credential exposure as prioritized remediation items.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Patch or remove vulnerable VPN instances and apply vendor mitigations</li>
+            <li>Audit access logs and rotate credentials for impacted accounts</li>
+            <li>Notify affected personnel and coordinate with regulatory authorities</li>
+            <li>Assess contracted vendors for shared access and potential lateral exposure</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/japans-digital-agency-says-vpn-flaw-exposed-246-000-personnel-records/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/240000-hit-by-data-breach-at-japans-digital-agency/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>BambooToken multi-platform malware uses MQTT for command-and-control</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Researchers disclosed BambooToken, a malware family active since at least 2023 that controls Windows and Linux systems using the MQTT protocol as a communication channel; campaigns have targeted organizations across Asia and South America.</p>
+            <p><strong>Why it matters:</strong> Use of MQTT for C2 increases risk to vendors and partners that operate IoT, message-broker or managed-MQTT services; procurement and security teams should flag third-party systems that expose MQTT or broker access and verify vendor hardening and monitoring.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Hunt for unauthorized MQTT traffic and broker connections from endpoints</li>
+            <li>Block or segment external MQTT broker access where not required</li>
+            <li>Deploy detections for BambooToken behavior and review endpoint telemetry</li>
+            <li>Validate third-party/managed MQTT services&#x27; hardening and incident response readiness</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/bambootoken-malware-controls-windows-and-linux-systems-via-mqtt/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/bambootoken-malware-uses-mqtt-to.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>15 Sep 2026</span>
