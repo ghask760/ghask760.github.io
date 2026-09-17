@@ -1,6 +1,88 @@
 {
   "days": [
     {
+      "date": "2026-09-17",
+      "generated_at": "2026-09-17T08:21:12+02:00",
+      "incidents": [
+        {
+          "title": "Agentic AI-powered data breach reported to Spanish regulator",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Spain's Data Protection Agency (AEPD) received a report of a breach in which an agentic AI reportedly chained together a successful login, vulnerability discovery, and access to personal data. Regulators describe this as a notable example of an autonomous AI-assisted cyberattack.",
+          "why_it_matters": "If confirmed, agentic AI enabling full attack kill-chains increases speed and scale of compromises and raises new supplier/governance risks for third-party AI agents and vendors. Risk teams should assume higher likelihood of rapid, automated exploitation across exposed services.",
+          "hot_fix": [
+            "Identify any use of agentic AI tooling and named LLMs in supplier services",
+            "Require vendors to provide incident details and containment/remediation proof to TPRM",
+            "Enforce multi-factor authentication, session monitoring, and rapid credential rotation for exposed systems",
+            "Trigger data breach response and regulator notification workflows if vendors/processors were involved"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/spains-data-agency-gets-first-report-of-ai-powered-data-breach/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/first-agentic-ai-data-breach-reported-to-spanish-regulator/"
+            }
+          ]
+        },
+        {
+          "title": "Acronis cPanel/WHM backup plugin exploited in targeted attacks",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Acronis disclosed a high-severity Linux local privilege escalation vulnerability in its Backup plugin for cPanel/WHM (and Plesk) that is being exploited in the wild, per vendor advisory and independent reporting.",
+          "why_it_matters": "The plugin is used in shared hosting environments; exploitation can lead to privilege escalation on hosting servers and compromise of multiple customer environments, posing third-party and customer-data risks for organizations relying on affected hosting providers.",
+          "hot_fix": [
+            "Inventory cPanel/WHM/Plesk hosts for presence of Acronis Backup plugin",
+            "Apply the vendor's patch or mitigation immediately where available",
+            "Isolate and forensically review affected hosts; rotate privileged keys and credentials",
+            "Notify hosting providers/managed-service vendors to confirm remediation status"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html"
+            }
+          ]
+        },
+        {
+          "title": "Google patches Pixel modem zero-day exploited in targeted attacks",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Google released patches addressing a privilege-escalation vulnerability in Pixel cellular modem firmware (CVE-2026-58704) after reports of limited targeted exploitation. Google included the fix in the September 2026 security updates.",
+          "why_it_matters": "Active exploitation of a vendor device modem flaw can enable persistent local/device-level compromise of corporate-owned mobile assets; procurement and device-management teams must ensure timely vendor patching and asset remediation to prevent lateral risk to corporate networks.",
+          "hot_fix": [
+            "Identify corporate Pixel devices and enforce immediate installation of September updates",
+            "Block or monitor devices with outdated firmware from accessing sensitive networks",
+            "Coordinate with mobile device management (MDM) to push patches and verify compliance",
+            "Require vendor breach advisory and mitigation confirmation for managed device fleets"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/pixel-modem-zero-day-exploited-in-targeted-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-16",
       "generated_at": "2026-09-16T08:21:24+02:00",
       "incidents": [

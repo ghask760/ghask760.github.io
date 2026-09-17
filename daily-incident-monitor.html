@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">16 Sep 2026</span>
+      <span id="last-updated">17 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,81 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>17 Sep 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Agentic AI-powered data breach reported to Spanish regulator</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Spain&#x27;s Data Protection Agency (AEPD) received a report of a breach in which an agentic AI reportedly chained together a successful login, vulnerability discovery, and access to personal data. Regulators describe this as a notable example of an autonomous AI-assisted cyberattack.</p>
+            <p><strong>Why it matters:</strong> If confirmed, agentic AI enabling full attack kill-chains increases speed and scale of compromises and raises new supplier/governance risks for third-party AI agents and vendors. Risk teams should assume higher likelihood of rapid, automated exploitation across exposed services.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Identify any use of agentic AI tooling and named LLMs in supplier services</li>
+            <li>Require vendors to provide incident details and containment/remediation proof to TPRM</li>
+            <li>Enforce multi-factor authentication, session monitoring, and rapid credential rotation for exposed systems</li>
+            <li>Trigger data breach response and regulator notification workflows if vendors/processors were involved</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/spains-data-agency-gets-first-report-of-ai-powered-data-breach/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/first-agentic-ai-data-breach-reported-to-spanish-regulator/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Acronis cPanel/WHM backup plugin exploited in targeted attacks</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Acronis disclosed a high-severity Linux local privilege escalation vulnerability in its Backup plugin for cPanel/WHM (and Plesk) that is being exploited in the wild, per vendor advisory and independent reporting.</p>
+            <p><strong>Why it matters:</strong> The plugin is used in shared hosting environments; exploitation can lead to privilege escalation on hosting servers and compromise of multiple customer environments, posing third-party and customer-data risks for organizations relying on affected hosting providers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Inventory cPanel/WHM/Plesk hosts for presence of Acronis Backup plugin</li>
+            <li>Apply the vendor&#x27;s patch or mitigation immediately where available</li>
+            <li>Isolate and forensically review affected hosts; rotate privileged keys and credentials</li>
+            <li>Notify hosting providers/managed-service vendors to confirm remediation status</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Google patches Pixel modem zero-day exploited in targeted attacks</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Google released patches addressing a privilege-escalation vulnerability in Pixel cellular modem firmware (CVE-2026-58704) after reports of limited targeted exploitation. Google included the fix in the September 2026 security updates.</p>
+            <p><strong>Why it matters:</strong> Active exploitation of a vendor device modem flaw can enable persistent local/device-level compromise of corporate-owned mobile assets; procurement and device-management teams must ensure timely vendor patching and asset remediation to prevent lateral risk to corporate networks.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Identify corporate Pixel devices and enforce immediate installation of September updates</li>
+            <li>Block or monitor devices with outdated firmware from accessing sensitive networks</li>
+            <li>Coordinate with mobile device management (MDM) to push patches and verify compliance</li>
+            <li>Require vendor breach advisory and mitigation confirmation for managed device fleets</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/pixel-modem-zero-day-exploited-in-targeted-attacks/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>16 Sep 2026</span>
