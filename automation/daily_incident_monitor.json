@@ -1,6 +1,108 @@
 {
   "days": [
     {
+      "date": "2026-09-19",
+      "generated_at": "2026-09-19T08:21:02+02:00",
+      "incidents": [
+        {
+          "title": "Gyazo data breach — 23.6 million user records stolen",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Gyazo maker Helpfeel confirmed attackers exploited a server vulnerability to steal 23.6 million user records.",
+          "why_it_matters": "Large-scale user-data exposure creates downstream third‑party risk (credential reuse, identity fraud, regulatory notification) for customers and partners that use Gyazo services.",
+          "hot_fix": [
+            "Confirm breach scope and IOCs with vendor",
+            "Require vendor notifications to affected customers and regulators",
+            "Rotate/monitor credentials and hunt for reuse or abuse tied to affected accounts"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/gyazo-server-flaw-exploited-to-steal-236-million-user-records/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/23-million-user-records-compromised-in-gyazo-data-breach/"
+            }
+          ]
+        },
+        {
+          "title": "Brevo supply-chain compromise injected malicious ClickFix scripts into customer sites",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Brevo confirmed attackers stole a Cloudflare API key and used it to inject malicious ClickFix scripts into its websites and JavaScript files embedded on customer sites, reportedly impacting large numbers of customer sites.",
+          "why_it_matters": "A vendor-side compromise distributing malware via customer‑facing scripts is an active software‑supply‑chain incident that can spread to downstream sites and customers; procurement and security teams must treat affected vendor components as compromised.",
+          "hot_fix": [
+            "Require vendor to revoke compromised API keys and provide remediation timeline",
+            "Scan and remove injected scripts from customer sites and CDNs",
+            "Obtain IOCs and a vendor incident report; notify impacted customers and partners"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/brevo-supply-chain-attack-injected-clickfix-scripts-on-customer-sites/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/brevo-supply-chain-attack-injects-malware-into-100000-websites/"
+            }
+          ]
+        },
+        {
+          "title": "Critical Check Point Management server flaw allows unauthenticated code execution; vendor released LivePatch",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A critical vulnerability in Check Point Security Management and Log Servers could allow unauthenticated attackers to execute code as root; Check Point released fixes via LivePatch and product updates and reported no indication of exploitation.",
+          "why_it_matters": "Management servers control firewall policies and admin access—unpatched or compromised instances present high operational and third‑party risk enabling broad policy or access compromise.",
+          "hot_fix": [
+            "Apply Check Point LivePatch and available updates immediately",
+            "Audit management server integrity and administrator activity logs",
+            "Restrict network access to management interfaces and enforce MFA for admin accounts"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/check-point-warns-critical-flaw-lets-hackers-execute-code-as-root/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/critical-check-point-management-server.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/check-point-kaspersky-tanium-patch-product-vulnerabilities/"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft patches CVSS 10.0 Azure AI Foundry flaw enabling unauthorized privilege escalation",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Microsoft released fixes for a maximum‑severity authentication/privilege‑escalation vulnerability in Azure AI Foundry (CVE-2026-85889); Microsoft stated no customer action is required.",
+          "why_it_matters": "A critical flaw in a cloud AI platform poses high risk to tenants and integrated vendors; TPRM teams should track patch deployment and verify whether inherited services or vendor integrations are affected.",
+          "hot_fix": [
+            "Confirm Microsoft’s patch deployment and verify affected service status",
+            "Review Azure activity logs for signs of unauthorized privilege escalation",
+            "Update vendor risk registers and notify teams using Azure AI Foundry"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/microsoft-patches-18-vulnerabilities-in-ai-cloud-products/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-18",
       "generated_at": "2026-09-18T08:21:01+02:00",
       "incidents": [

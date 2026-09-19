@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">18 Sep 2026</span>
+      <span id="last-updated">19 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,100 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>19 Sep 2026</span>
+          <span>4 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Gyazo data breach — 23.6 million user records stolen</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Gyazo maker Helpfeel confirmed attackers exploited a server vulnerability to steal 23.6 million user records.</p>
+            <p><strong>Why it matters:</strong> Large-scale user-data exposure creates downstream third‑party risk (credential reuse, identity fraud, regulatory notification) for customers and partners that use Gyazo services.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm breach scope and IOCs with vendor</li>
+            <li>Require vendor notifications to affected customers and regulators</li>
+            <li>Rotate/monitor credentials and hunt for reuse or abuse tied to affected accounts</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/gyazo-server-flaw-exploited-to-steal-236-million-user-records/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/23-million-user-records-compromised-in-gyazo-data-breach/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Brevo supply-chain compromise injected malicious ClickFix scripts into customer sites</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Brevo confirmed attackers stole a Cloudflare API key and used it to inject malicious ClickFix scripts into its websites and JavaScript files embedded on customer sites, reportedly impacting large numbers of customer sites.</p>
+            <p><strong>Why it matters:</strong> A vendor-side compromise distributing malware via customer‑facing scripts is an active software‑supply‑chain incident that can spread to downstream sites and customers; procurement and security teams must treat affected vendor components as compromised.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Require vendor to revoke compromised API keys and provide remediation timeline</li>
+            <li>Scan and remove injected scripts from customer sites and CDNs</li>
+            <li>Obtain IOCs and a vendor incident report; notify impacted customers and partners</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/brevo-supply-chain-attack-injected-clickfix-scripts-on-customer-sites/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/brevo-supply-chain-attack-injects-malware-into-100000-websites/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical Check Point Management server flaw allows unauthenticated code execution; vendor released LivePatch</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical vulnerability in Check Point Security Management and Log Servers could allow unauthenticated attackers to execute code as root; Check Point released fixes via LivePatch and product updates and reported no indication of exploitation.</p>
+            <p><strong>Why it matters:</strong> Management servers control firewall policies and admin access—unpatched or compromised instances present high operational and third‑party risk enabling broad policy or access compromise.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Check Point LivePatch and available updates immediately</li>
+            <li>Audit management server integrity and administrator activity logs</li>
+            <li>Restrict network access to management interfaces and enforce MFA for admin accounts</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/check-point-warns-critical-flaw-lets-hackers-execute-code-as-root/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/critical-check-point-management-server.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/check-point-kaspersky-tanium-patch-product-vulnerabilities/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft patches CVSS 10.0 Azure AI Foundry flaw enabling unauthorized privilege escalation</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Microsoft released fixes for a maximum‑severity authentication/privilege‑escalation vulnerability in Azure AI Foundry (CVE-2026-85889); Microsoft stated no customer action is required.</p>
+            <p><strong>Why it matters:</strong> A critical flaw in a cloud AI platform poses high risk to tenants and integrated vendors; TPRM teams should track patch deployment and verify whether inherited services or vendor integrations are affected.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm Microsoft’s patch deployment and verify affected service status</li>
+            <li>Review Azure activity logs for signs of unauthorized privilege escalation</li>
+            <li>Update vendor risk registers and notify teams using Azure AI Foundry</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/microsoft-patches-18-vulnerabilities-in-ai-cloud-products/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>18 Sep 2026</span>
