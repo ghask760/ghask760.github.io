@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-09-21",
+      "generated_at": "2026-09-21T08:21:35+02:00",
+      "incidents": [
+        {
+          "title": "npm supply-chain campaigns: runtime-malware and TanStack compromise impact developer assets",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers report a malicious npm campaign (e.g., 'indexed-btree') that hides payloads in runtime behavior to evade install-script defenses, while a separate TanStack npm supply-chain compromise in May led to credential theft and the copying of ~170 private GitHub repositories from CrowdSec. Both indicate attackers are targeting developer dependencies and developer machines.",
+          "why_it_matters": "Compromised packages or developer workstations can lead to theft of credentials, exfiltration of private source code, and poisoning of build artifacts—direct threats to software integrity and vendor trust in the supply chain.",
+          "hot_fix": [
+            "Audit and whitelist critical npm dependencies",
+            "Enforce token hygiene: rotate tokens, revoke stale GitHub credentials and tokens",
+            "Harden developer workstations (EPP, least privilege, disable auto-run scripts)"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/malicious-npm-packages-evade-install-script-defenses-at-runtime/"
+            },
+            {
+              "name": "The Hacker News (CrowdSec/TanStack report)",
+              "url": "https://thehackernews.com/2026/09/crowdsec-says-tanstack-npm-attack-led.html"
+            }
+          ]
+        },
+        {
+          "title": "Researchers accessed OpenAI employee accounts via AI-built exploit and sign-in flaw",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Security researchers demonstrated access to OpenAI employee accounts using an AI-built exploit and a sign-in vulnerability; the activity resulted in a bug-bounty finding and reported access to internal code or employee ChatGPT accounts.",
+          "why_it_matters": "Vendor-internal account compromise can expose proprietary code, API keys, and other secrets that increase downstream risk for customers and integrations relying on the vendor.",
+          "hot_fix": [
+            "Require phishing-resistant MFA and enforce for all privileged/internal accounts",
+            "Rotate internal credentials and immediately revoke exposed session tokens",
+            "Audit recent access to internal repos and sensitive systems for anomalous behavior"
+          ],
+          "sources": [
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/ai-built-exploit-and-sign-in-flaw-opened-path-to-internal-openai-code/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/09/18/researchers-used-claude-to-hack-openai-employees-chatgpt-accounts/5297517"
+            }
+          ]
+        },
+        {
+          "title": "AI browser agents and extensions abused to hijack assistants and access external systems",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Proof-of-concept BragJack attacks show a single malicious browser extension can hijack AI assistants in Chrome, Edge and other clients; separately, a security-test domain mix-up involving Google's Gemini caused the model to access real company systems during evaluation.",
+          "why_it_matters": "Malicious extensions or misconfigured AI integrations can be used to manipulate agent behavior or cause unintended access to enterprise systems, raising risks for vendor integrations, browser-based agents, and any third parties embedding AI assistants.",
+          "hot_fix": [
+            "Restrict and monitor browser extension installs on privileged workstations",
+            "Treat AI agents as networked systems: apply least-privilege access and network segmentation",
+            "Require testing in isolated domains and validate test environment boundaries before vendor evaluations"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer (BragJack)",
+              "url": "https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/"
+            },
+            {
+              "name": "The Hacker News (Google Gemini domain mix-up)",
+              "url": "https://thehackernews.com/2026/09/google-gemini-broke-into-real-company.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-20",
       "generated_at": "2026-09-20T08:21:23+02:00",
       "incidents": []

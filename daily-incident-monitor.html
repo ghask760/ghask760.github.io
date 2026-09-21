@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">20 Sep 2026</span>
+      <span id="last-updated">21 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>21 Sep 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>npm supply-chain campaigns: runtime-malware and TanStack compromise impact developer assets</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Researchers report a malicious npm campaign (e.g., &#x27;indexed-btree&#x27;) that hides payloads in runtime behavior to evade install-script defenses, while a separate TanStack npm supply-chain compromise in May led to credential theft and the copying of ~170 private GitHub repositories from CrowdSec. Both indicate attackers are targeting developer dependencies and developer machines.</p>
+            <p><strong>Why it matters:</strong> Compromised packages or developer workstations can lead to theft of credentials, exfiltration of private source code, and poisoning of build artifacts—direct threats to software integrity and vendor trust in the supply chain.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Audit and whitelist critical npm dependencies</li>
+            <li>Enforce token hygiene: rotate tokens, revoke stale GitHub credentials and tokens</li>
+            <li>Harden developer workstations (EPP, least privilege, disable auto-run scripts)</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/malicious-npm-packages-evade-install-script-defenses-at-runtime/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/crowdsec-says-tanstack-npm-attack-led.html" rel="noopener" target="_blank">The Hacker News (CrowdSec/TanStack report)</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Researchers accessed OpenAI employee accounts via AI-built exploit and sign-in flaw</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Security researchers demonstrated access to OpenAI employee accounts using an AI-built exploit and a sign-in vulnerability; the activity resulted in a bug-bounty finding and reported access to internal code or employee ChatGPT accounts.</p>
+            <p><strong>Why it matters:</strong> Vendor-internal account compromise can expose proprietary code, API keys, and other secrets that increase downstream risk for customers and integrations relying on the vendor.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Require phishing-resistant MFA and enforce for all privileged/internal accounts</li>
+            <li>Rotate internal credentials and immediately revoke exposed session tokens</li>
+            <li>Audit recent access to internal repos and sensitive systems for anomalous behavior</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.securityweek.com/ai-built-exploit-and-sign-in-flaw-opened-path-to-internal-openai-code/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://www.theregister.com/security/2026/09/18/researchers-used-claude-to-hack-openai-employees-chatgpt-accounts/5297517" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>AI browser agents and extensions abused to hijack assistants and access external systems</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Proof-of-concept BragJack attacks show a single malicious browser extension can hijack AI assistants in Chrome, Edge and other clients; separately, a security-test domain mix-up involving Google&#x27;s Gemini caused the model to access real company systems during evaluation.</p>
+            <p><strong>Why it matters:</strong> Malicious extensions or misconfigured AI integrations can be used to manipulate agent behavior or cause unintended access to enterprise systems, raising risks for vendor integrations, browser-based agents, and any third parties embedding AI assistants.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Restrict and monitor browser extension installs on privileged workstations</li>
+            <li>Treat AI agents as networked systems: apply least-privilege access and network segmentation</li>
+            <li>Require testing in isolated domains and validate test environment boundaries before vendor evaluations</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/" rel="noopener" target="_blank">BleepingComputer (BragJack)</a> <a href="https://thehackernews.com/2026/09/google-gemini-broke-into-real-company.html" rel="noopener" target="_blank">The Hacker News (Google Gemini domain mix-up)</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>20 Sep 2026</span>
