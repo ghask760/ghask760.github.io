@@ -1,6 +1,35 @@
 {
   "days": [
     {
+      "date": "2026-09-22",
+      "generated_at": "2026-09-22T08:21:00+02:00",
+      "incidents": [
+        {
+          "title": "CISA warns of active exploitation of three Linux kernel vulnerabilities",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "CISA alerted that threat actors are actively exploiting three Linux kernel flaws (one rated critical) that can be used for denial-of-service, memory disclosure, or memory modification on affected systems.",
+          "why_it_matters": "Kernel-level exploitation can lead to full system compromise or widespread service disruption; organisations should treat this as a high-priority patching and detection task for Linux hosts in their environment and third-party stacks.",
+          "hot_fix": [
+            "Apply vendor/kernel patches immediately where available",
+            "Isolate or restrict network exposure of vulnerable Linux hosts until patched",
+            "Deploy/enable IDS/EDR rules and monitor logs for exploitation indicators"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/cisa-alerts-of-active-exploitation-of-three-linux-kernel-flaws/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/organizations-warned-of-3-exploited-linux-kernel-vulnerabilities/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-21",
       "generated_at": "2026-09-21T08:21:35+02:00",
       "incidents": [

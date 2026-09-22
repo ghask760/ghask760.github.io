@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">21 Sep 2026</span>
+      <span id="last-updated">22 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,34 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>22 Sep 2026</span>
+          <span>1 incident</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>CISA warns of active exploitation of three Linux kernel vulnerabilities</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA alerted that threat actors are actively exploiting three Linux kernel flaws (one rated critical) that can be used for denial-of-service, memory disclosure, or memory modification on affected systems.</p>
+            <p><strong>Why it matters:</strong> Kernel-level exploitation can lead to full system compromise or widespread service disruption; organisations should treat this as a high-priority patching and detection task for Linux hosts in their environment and third-party stacks.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply vendor/kernel patches immediately where available</li>
+            <li>Isolate or restrict network exposure of vulnerable Linux hosts until patched</li>
+            <li>Deploy/enable IDS/EDR rules and monitor logs for exploitation indicators</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/cisa-alerts-of-active-exploitation-of-three-linux-kernel-flaws/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/organizations-warned-of-3-exploited-linux-kernel-vulnerabilities/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>21 Sep 2026</span>
