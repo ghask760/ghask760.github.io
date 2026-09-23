@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">22 Sep 2026</span>
+      <span id="last-updated">23 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,122 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>23 Sep 2026</span>
+          <span>5 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Zyxel GS1900 switches exploited to exfiltrate data from ~1,000 devices</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A high-severity vulnerability in Zyxel GS1900 switches has been actively exploited by a Chinese-speaking actor to steal data from roughly 996 devices and more than 18,500 backend records; CISA ordered federal agencies to patch the flaw urgently.</p>
+            <p><strong>Why it matters:</strong> Affected network switches are common in small/medium environments and managed deployments; exploited infrastructure components can provide persistent access and data exfiltration paths that impact vendors and downstream customers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Zyxel vendor fixes or mitigations immediately</li>
+            <li>Isolate affected switches from sensitive networks and audit logs for exfiltration</li>
+            <li>Follow CISA emergency patch directive and verify patch status across suppliers</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/chinese-hackers-exploit-multiple-technologies-to-steal-govt-data/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/recent-zyxel-switch-vulnerability-exploited-by-chinese-hackers/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Check Point Security Management Server zero-day exploited; vendor issues emergency hotfix</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A previously unknown vulnerability (CVE-2026-93616) in Check Point Security Management Server was exploited in targeted attacks; Check Point released emergency hotfixes on Sept 22 to stop attackers from uploading and executing arbitrary scripts on management servers.</p>
+            <p><strong>Why it matters:</strong> Compromise of firewall management servers can allow attackers to change policies or deploy broad network-level persistence across multiple downstream customers and partners, creating severe third-party and operational risk.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Check Point emergency hotfix to all management servers immediately</li>
+            <li>Block external web access to management interfaces and restrict to trusted IPs</li>
+            <li>Audit management server logs, verify policy integrity, and rotate privileged credentials</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/check-point-warns-of-management-server.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/check-point-patches-exploited-management-server-zero-day/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>BigDiskBuster PoC published that blocks Microsoft Defender updates by filling disk</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A proof-of-concept tool (BigDiskBuster) published to GitHub by researcher Abdelhamid Naceri fills available disk space to prevent Microsoft Defender from installing platform and signature updates; the tool has no vendor patch or Microsoft advisory at publication.</p>
+            <p><strong>Why it matters:</strong> A publicly released PoC that disables signature/engine updates for a widely deployed endpoint protection product increases risk of undetected compromise across supplier ecosystems and downstream customers that rely on Defender for baseline security.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Implement disk quotas and monitor available disk space on endpoints and servers</li>
+            <li>Detect and remove the PoC/tool if present; block related GitHub repo URLs at corporate controls</li>
+            <li>Monitor Defender update failures and escalate to vendor support for guidance</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/researcher-drops-bigdiskbuster-zero-day.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/nightmare-eclipse-drops-new-microsoft-defender-exploit-after-revealing-identity/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>WordPress releases emergency patch for critical RCE; patch shipped across supported branches</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> WordPress issued fixes (including 7.1.2 and backports to supported branches) for a critical flaw that can allow unauthenticated sites to load PHP files from outside theme folders and, on some servers, execute arbitrary code; separate reporting indicates WordPress vulnerabilities have been used in data-theft campaigns.</p>
+            <p><strong>Why it matters:</strong> Compromised WordPress instances are widely used to host customer-facing sites and vendor portals; successful exploitation can lead to webshells, credential theft, and supply-chain propagation across hosted integrations.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Update WordPress installations to 7.1.2 or the latest patched branch immediately</li>
+            <li>Scan sites for web shells and unauthorized PHP files outside expected theme/plugin folders</li>
+            <li>Review plugins/themes and isolate or restore from known-good backups where compromise is suspected</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/wordpress-issues-patch-for-critical.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.bleepingcomputer.com/news/security/chinese-hackers-exploit-multiple-technologies-to-steal-govt-data/" rel="noopener" target="_blank">BleepingComputer</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Malicious npm &#x27;indexed-btree&#x27; package mimics legit library and accumulates millions of downloads</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A malicious npm package named &#x27;indexed-btree&#x27; impersonating the legitimate sorted-btree library hid a loader inside runtime prototype code; it accumulated millions of downloads before removal and can trigger malicious behavior at runtime.</p>
+            <p><strong>Why it matters:</strong> Malicious or typosquatting packages in public registries risk covert code execution and credential exfiltration in developer supply chains, potentially impacting downstream applications and vendor integrations.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Remove &#x27;indexed-btree&#x27; from projects and replace with audited, verified packages</li>
+            <li>Perform dependency-tree scans, lockfile audits, and revoke any exposed credentials</li>
+            <li>Harden CI/CD and runtime controls to block unknown package installs and runtime network exfiltration</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/malicious-npm-package-indexed-btree-hid.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/malicious-b-tree-npm-package-accumulates-millions-of-downloads/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>22 Sep 2026</span>

@@ -1,6 +1,135 @@
 {
   "days": [
     {
+      "date": "2026-09-23",
+      "generated_at": "2026-09-23T08:21:45+02:00",
+      "incidents": [
+        {
+          "title": "Zyxel GS1900 switches exploited to exfiltrate data from ~1,000 devices",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A high-severity vulnerability in Zyxel GS1900 switches has been actively exploited by a Chinese-speaking actor to steal data from roughly 996 devices and more than 18,500 backend records; CISA ordered federal agencies to patch the flaw urgently.",
+          "why_it_matters": "Affected network switches are common in small/medium environments and managed deployments; exploited infrastructure components can provide persistent access and data exfiltration paths that impact vendors and downstream customers.",
+          "hot_fix": [
+            "Apply Zyxel vendor fixes or mitigations immediately",
+            "Isolate affected switches from sensitive networks and audit logs for exfiltration",
+            "Follow CISA emergency patch directive and verify patch status across suppliers"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-exploit-multiple-technologies-to-steal-govt-data/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/recent-zyxel-switch-vulnerability-exploited-by-chinese-hackers/"
+            }
+          ]
+        },
+        {
+          "title": "Check Point Security Management Server zero-day exploited; vendor issues emergency hotfix",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A previously unknown vulnerability (CVE-2026-93616) in Check Point Security Management Server was exploited in targeted attacks; Check Point released emergency hotfixes on Sept 22 to stop attackers from uploading and executing arbitrary scripts on management servers.",
+          "why_it_matters": "Compromise of firewall management servers can allow attackers to change policies or deploy broad network-level persistence across multiple downstream customers and partners, creating severe third-party and operational risk.",
+          "hot_fix": [
+            "Apply Check Point emergency hotfix to all management servers immediately",
+            "Block external web access to management interfaces and restrict to trusted IPs",
+            "Audit management server logs, verify policy integrity, and rotate privileged credentials"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/check-point-warns-of-management-server.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/check-point-patches-exploited-management-server-zero-day/"
+            }
+          ]
+        },
+        {
+          "title": "BigDiskBuster PoC published that blocks Microsoft Defender updates by filling disk",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A proof-of-concept tool (BigDiskBuster) published to GitHub by researcher Abdelhamid Naceri fills available disk space to prevent Microsoft Defender from installing platform and signature updates; the tool has no vendor patch or Microsoft advisory at publication.",
+          "why_it_matters": "A publicly released PoC that disables signature/engine updates for a widely deployed endpoint protection product increases risk of undetected compromise across supplier ecosystems and downstream customers that rely on Defender for baseline security.",
+          "hot_fix": [
+            "Implement disk quotas and monitor available disk space on endpoints and servers",
+            "Detect and remove the PoC/tool if present; block related GitHub repo URLs at corporate controls",
+            "Monitor Defender update failures and escalate to vendor support for guidance"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/researcher-drops-bigdiskbuster-zero-day.html"
+            },
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/nightmare-eclipse-drops-new-microsoft-defender-exploit-after-revealing-identity/"
+            }
+          ]
+        },
+        {
+          "title": "WordPress releases emergency patch for critical RCE; patch shipped across supported branches",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "WordPress issued fixes (including 7.1.2 and backports to supported branches) for a critical flaw that can allow unauthenticated sites to load PHP files from outside theme folders and, on some servers, execute arbitrary code; separate reporting indicates WordPress vulnerabilities have been used in data-theft campaigns.",
+          "why_it_matters": "Compromised WordPress instances are widely used to host customer-facing sites and vendor portals; successful exploitation can lead to webshells, credential theft, and supply-chain propagation across hosted integrations.",
+          "hot_fix": [
+            "Update WordPress installations to 7.1.2 or the latest patched branch immediately",
+            "Scan sites for web shells and unauthorized PHP files outside expected theme/plugin folders",
+            "Review plugins/themes and isolate or restore from known-good backups where compromise is suspected"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/wordpress-issues-patch-for-critical.html"
+            },
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-exploit-multiple-technologies-to-steal-govt-data/"
+            }
+          ]
+        },
+        {
+          "title": "Malicious npm 'indexed-btree' package mimics legit library and accumulates millions of downloads",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A malicious npm package named 'indexed-btree' impersonating the legitimate sorted-btree library hid a loader inside runtime prototype code; it accumulated millions of downloads before removal and can trigger malicious behavior at runtime.",
+          "why_it_matters": "Malicious or typosquatting packages in public registries risk covert code execution and credential exfiltration in developer supply chains, potentially impacting downstream applications and vendor integrations.",
+          "hot_fix": [
+            "Remove 'indexed-btree' from projects and replace with audited, verified packages",
+            "Perform dependency-tree scans, lockfile audits, and revoke any exposed credentials",
+            "Harden CI/CD and runtime controls to block unknown package installs and runtime network exfiltration"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/malicious-npm-package-indexed-btree-hid.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/malicious-b-tree-npm-package-accumulates-millions-of-downloads/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-22",
       "generated_at": "2026-09-22T08:21:00+02:00",
       "incidents": [
