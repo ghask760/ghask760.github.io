@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">23 Sep 2026</span>
+      <span id="last-updated">24 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,58 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>24 Sep 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>F5 BIG-IP APM zero-day (CVE-2026-94127) exploited for unauthenticated RCE</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical BIG-IP Access Policy Manager (APM) vulnerability allowing unauthenticated remote code execution has been observed exploited in the wild; vendor released engineering hotfixes. Attackers can trigger RCE on systems where APM acts as an OAuth authorization server.</p>
+            <p><strong>Why it matters:</strong> BIG-IP appliances are internet-facing and often sit at the edge of enterprise networks; successful exploitation can give attackers persistent footholds and enable lateral movement into critical systems. Procurement and risk teams should treat impacted appliances as high-priority vendors for emergency patching and validation.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply F5 vendor hotfixes/patches immediately</li>
+            <li>Isolate exposed BIG-IP APM instances from untrusted networks until patched</li>
+            <li>Review and block suspicious OAuth token issuance/logs and related traffic</li>
+            <li>Validate backups and rebuild consoles if compromise indicators appear</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/critical-f5-big-ip-vulnerability-exploited-as-zero-day/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Arista VeloCloud Orchestrator (VCO) zero-day actively exploited in on‑prem deployments</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A zero-day affecting Arista VeloCloud Orchestrator (on‑prem VCO) is being actively exploited to access privileged internal functionality; Arista has released patches and urged immediate mitigation.</p>
+            <p><strong>Why it matters:</strong> VeloCloud Orchestrator is used to manage SD-WAN infrastructures; exploitation of on‑prem VCO can expose multiple customer edge devices and WAN management planes, impacting availability and integrity of network connectivity. TPRM and network teams should prioritize vendor patches and verify the integrity of orchestration platforms.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Deploy Arista VCO security patches immediately on on‑prem controllers</li>
+            <li>Restrict management-plane access to VCO systems via ACLs and VPNs</li>
+            <li>Audit VCO logs and configurations for unauthorized changes</li>
+            <li>Coordinate with Arista for indicators of compromise and remediation guidance</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/arista-urges-immediate-patching-of-exploited-vco-zero-day/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>23 Sep 2026</span>

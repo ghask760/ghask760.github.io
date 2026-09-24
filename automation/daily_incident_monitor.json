@@ -1,6 +1,64 @@
 {
   "days": [
     {
+      "date": "2026-09-24",
+      "generated_at": "2026-09-24T08:21:18+02:00",
+      "incidents": [
+        {
+          "title": "F5 BIG-IP APM zero-day (CVE-2026-94127) exploited for unauthenticated RCE",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A critical BIG-IP Access Policy Manager (APM) vulnerability allowing unauthenticated remote code execution has been observed exploited in the wild; vendor released engineering hotfixes. Attackers can trigger RCE on systems where APM acts as an OAuth authorization server.",
+          "why_it_matters": "BIG-IP appliances are internet-facing and often sit at the edge of enterprise networks; successful exploitation can give attackers persistent footholds and enable lateral movement into critical systems. Procurement and risk teams should treat impacted appliances as high-priority vendors for emergency patching and validation.",
+          "hot_fix": [
+            "Apply F5 vendor hotfixes/patches immediately",
+            "Isolate exposed BIG-IP APM instances from untrusted networks until patched",
+            "Review and block suspicious OAuth token issuance/logs and related traffic",
+            "Validate backups and rebuild consoles if compromise indicators appear"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/critical-f5-big-ip-vulnerability-exploited-as-zero-day/"
+            }
+          ]
+        },
+        {
+          "title": "Arista VeloCloud Orchestrator (VCO) zero-day actively exploited in on‑prem deployments",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A zero-day affecting Arista VeloCloud Orchestrator (on‑prem VCO) is being actively exploited to access privileged internal functionality; Arista has released patches and urged immediate mitigation.",
+          "why_it_matters": "VeloCloud Orchestrator is used to manage SD-WAN infrastructures; exploitation of on‑prem VCO can expose multiple customer edge devices and WAN management planes, impacting availability and integrity of network connectivity. TPRM and network teams should prioritize vendor patches and verify the integrity of orchestration platforms.",
+          "hot_fix": [
+            "Deploy Arista VCO security patches immediately on on‑prem controllers",
+            "Restrict management-plane access to VCO systems via ACLs and VPNs",
+            "Audit VCO logs and configurations for unauthorized changes",
+            "Coordinate with Arista for indicators of compromise and remediation guidance"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/arista-urges-immediate-patching-of-exploited-vco-zero-day/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-23",
       "generated_at": "2026-09-23T08:21:45+02:00",
       "incidents": [
