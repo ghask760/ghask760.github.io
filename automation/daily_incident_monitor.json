@@ -1,6 +1,62 @@
 {
   "days": [
     {
+      "date": "2026-09-26",
+      "generated_at": "2026-09-26T08:21:24+02:00",
+      "incidents": [
+        {
+          "title": "CISA adds WSO2 and Adobe Commerce flaws to KEV after active exploitation",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "CISA added critical authentication-bypass/path-traversal flaws impacting WSO2 (including CVE-2026-5430) and Adobe Commerce/Magento to its Known Exploited Vulnerabilities catalog based on evidence of active exploitation.",
+          "why_it_matters": "These are high-severity, actively exploited flaws in widely deployed enterprise/web-commerce components; unpatched instances present immediate compromise and supply-chain risk to customers and downstream integrators.",
+          "hot_fix": [
+            "Inventory and prioritize all WSO2 and Adobe Commerce instances for immediate patching",
+            "Apply vendor patches or mitigations recommended in the CISA advisory/patch notes",
+            "Monitor logs and IOCs for signs of exploitation and isolate affected systems"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer - CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited",
+              "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/"
+            },
+            {
+              "name": "The Hacker News - WSO2 and Adobe Commerce flaws exploited, added to CISA KEV",
+              "url": "https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html"
+            },
+            {
+              "name": "SecurityWeek - WSO2 and Adobe Commerce added to KEV (coverage)",
+              "url": "https://www.securityweek.com/cisa-adds-5-actively-exploited"
+            }
+          ]
+        },
+        {
+          "title": "Pre-auth Roundcube SQL injection (CVE-2026-48842) actively exploited",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A pre-authentication SQL injection in Roundcube Webmail's virtuser_query plugin (CVE-2026-48842) is being actively exploited in the wild against affected 1.6.x and 1.7.x versions.",
+          "why_it_matters": "Roundcube is commonly used in webmail deployments; successful exploitation can allow account/database compromise without authentication, posing direct risk to hosted email services and tenant data.",
+          "hot_fix": [
+            "Upgrade Roundcube to fixed versions (1.6.16 / 1.7.1 or later) immediately",
+            "If unable to patch, block access to vulnerable endpoints and restrict webmail access via WAF rules",
+            "Review webmail logs for anomalous SQL errors/requests and indicators of compromise"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News - Roundcube pre-auth SQL injection actively exploited",
+              "url": "https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html"
+            },
+            {
+              "name": "SecurityWeek - Roundcube Webmail vulnerability in attackers’ crosshairs",
+              "url": "https://www.securityweek.com/roundcube-webmail-vulnerability-in-attackers-crosshairs/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-25",
       "generated_at": "2026-09-25T08:21:11+02:00",
       "incidents": [

@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">25 Sep 2026</span>
+      <span id="last-updated">26 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>26 Sep 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>CISA adds WSO2 and Adobe Commerce flaws to KEV after active exploitation</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA added critical authentication-bypass/path-traversal flaws impacting WSO2 (including CVE-2026-5430) and Adobe Commerce/Magento to its Known Exploited Vulnerabilities catalog based on evidence of active exploitation.</p>
+            <p><strong>Why it matters:</strong> These are high-severity, actively exploited flaws in widely deployed enterprise/web-commerce components; unpatched instances present immediate compromise and supply-chain risk to customers and downstream integrators.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Inventory and prioritize all WSO2 and Adobe Commerce instances for immediate patching</li>
+            <li>Apply vendor patches or mitigations recommended in the CISA advisory/patch notes</li>
+            <li>Monitor logs and IOCs for signs of exploitation and isolate affected systems</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer - CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited</a> <a href="https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html" rel="noopener" target="_blank">The Hacker News - WSO2 and Adobe Commerce flaws exploited, added to CISA KEV</a> <a href="https://www.securityweek.com/cisa-adds-5-actively-exploited" rel="noopener" target="_blank">SecurityWeek - WSO2 and Adobe Commerce added to KEV (coverage)</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Pre-auth Roundcube SQL injection (CVE-2026-48842) actively exploited</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A pre-authentication SQL injection in Roundcube Webmail&#x27;s virtuser_query plugin (CVE-2026-48842) is being actively exploited in the wild against affected 1.6.x and 1.7.x versions.</p>
+            <p><strong>Why it matters:</strong> Roundcube is commonly used in webmail deployments; successful exploitation can allow account/database compromise without authentication, posing direct risk to hosted email services and tenant data.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Upgrade Roundcube to fixed versions (1.6.16 / 1.7.1 or later) immediately</li>
+            <li>If unable to patch, block access to vulnerable endpoints and restrict webmail access via WAF rules</li>
+            <li>Review webmail logs for anomalous SQL errors/requests and indicators of compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html" rel="noopener" target="_blank">The Hacker News - Roundcube pre-auth SQL injection actively exploited</a> <a href="https://www.securityweek.com/roundcube-webmail-vulnerability-in-attackers-crosshairs/" rel="noopener" target="_blank">SecurityWeek - Roundcube Webmail vulnerability in attackers’ crosshairs</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>25 Sep 2026</span>
