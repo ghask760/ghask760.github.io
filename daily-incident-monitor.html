@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">26 Sep 2026</span>
+      <span id="last-updated">27 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,58 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>27 Sep 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>ShinyHunters bypasses WAF to exploit Oracle PeopleSoft CVE-2026-35273 and deploy web shells</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Threat actor(s) linked to ShinyHunters are using a URL-encoding WAF-bypass technique to resume mass exploitation of Oracle PeopleSoft CVE-2026-35273, delivering web shells on vulnerable servers.</p>
+            <p><strong>Why it matters:</strong> PeopleSoft is widely used in enterprise back-office systems; active exploitation of a critical unauthenticated RCE increases risk of data theft, lateral movement and extortion across supplier ecosystems.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Identify externally accessible PeopleSoft instances and block access where not required</li>
+            <li>Apply Oracle vendor patches/mitigations for CVE-2026-35273 immediately</li>
+            <li>Hunt for and remove web shells and related IOCs in affected environments</li>
+            <li>Update WAF rules to detect URL-encoded bypass patterns and test encoding edge cases</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/shinyhunters-uses-waf-bypass-trick-in-oracle-peoplesoft-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/attackers-bypass-wafs-to-exploit-oracle.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Compromised third-party GitHub Actions re-enabled and still pointing to Mini Shai-Hulud payload</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Two GitHub Actions previously compromised during the Mini Shai-Hulud campaign were re-enabled by maintainers and remained accessible for over a week while still referencing malicious payloads.</p>
+            <p><strong>Why it matters:</strong> Re-enabled, compromised actions can reintroduce malicious code into CI/CD pipelines and downstream artifacts; organizations using community actions can inherit supply-chain compromise without code changes.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Audit and disable untrusted/third-party actions in CI/CD workflows</li>
+            <li>Pin actions to specific commit SHAs and verify action code before use</li>
+            <li>Rotate pipeline credentials/secrets and review recent pipeline runs for suspicious activity</li>
+            <li>Notify developer teams and scan build artifacts for indicators</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/github-actions-re-enabled-with-mini-shai-hulud-payload-still-active/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/compromised-github-actions-came-back.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>26 Sep 2026</span>

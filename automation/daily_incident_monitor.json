@@ -1,6 +1,60 @@
 {
   "days": [
     {
+      "date": "2026-09-27",
+      "generated_at": "2026-09-27T08:21:48+02:00",
+      "incidents": [
+        {
+          "title": "ShinyHunters bypasses WAF to exploit Oracle PeopleSoft CVE-2026-35273 and deploy web shells",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actor(s) linked to ShinyHunters are using a URL-encoding WAF-bypass technique to resume mass exploitation of Oracle PeopleSoft CVE-2026-35273, delivering web shells on vulnerable servers.",
+          "why_it_matters": "PeopleSoft is widely used in enterprise back-office systems; active exploitation of a critical unauthenticated RCE increases risk of data theft, lateral movement and extortion across supplier ecosystems.",
+          "hot_fix": [
+            "Identify externally accessible PeopleSoft instances and block access where not required",
+            "Apply Oracle vendor patches/mitigations for CVE-2026-35273 immediately",
+            "Hunt for and remove web shells and related IOCs in affected environments",
+            "Update WAF rules to detect URL-encoded bypass patterns and test encoding edge cases"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/shinyhunters-uses-waf-bypass-trick-in-oracle-peoplesoft-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/attackers-bypass-wafs-to-exploit-oracle.html"
+            }
+          ]
+        },
+        {
+          "title": "Compromised third-party GitHub Actions re-enabled and still pointing to Mini Shai-Hulud payload",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Two GitHub Actions previously compromised during the Mini Shai-Hulud campaign were re-enabled by maintainers and remained accessible for over a week while still referencing malicious payloads.",
+          "why_it_matters": "Re-enabled, compromised actions can reintroduce malicious code into CI/CD pipelines and downstream artifacts; organizations using community actions can inherit supply-chain compromise without code changes.",
+          "hot_fix": [
+            "Audit and disable untrusted/third-party actions in CI/CD workflows",
+            "Pin actions to specific commit SHAs and verify action code before use",
+            "Rotate pipeline credentials/secrets and review recent pipeline runs for suspicious activity",
+            "Notify developer teams and scan build artifacts for indicators"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/github-actions-re-enabled-with-mini-shai-hulud-payload-still-active/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/compromised-github-actions-came-back.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-26",
       "generated_at": "2026-09-26T08:21:24+02:00",
       "incidents": [
