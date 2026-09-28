@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">27 Sep 2026</span>
+      <span id="last-updated">28 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>28 Sep 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Two Citrix NetScaler RCE zero-days confirmed exploited</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Citrix confirmed two critical remote code execution vulnerabilities in NetScaler (CVE-2026-88771, CVE-2026-88772) are being exploited in the wild and released patches. Vendors urged administrators to apply updates or take affected appliances offline.</p>
+            <p><strong>Why it matters:</strong> NetScaler/ADC/Gateway appliances are perimeter network controls used by many enterprises; exploited RCEs can yield full network access and persistent compromise of dependent systems and customers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Citrix security updates immediately</li>
+            <li>Isolate or power off exposed NetScaler instances if unable to patch</li>
+            <li>Audit logs and network flows for indicators of compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft SharePoint RCE (CVE-2026-65660) added to CISA KEV; active exploitation reported</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA added CVE-2026-65660 (SharePoint code injection/RCE) to its Known Exploited Vulnerabilities catalog, and vendors/reporting indicate active exploitation; federal patching deadline set for September 28.</p>
+            <p><strong>Why it matters:</strong> SharePoint is widely deployed in enterprise collaboration environments; active exploitation can lead to code execution, data access or lateral movement affecting many third-party integrations and hosted content.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Microsoft mitigations/patches immediately per CISA guidance</li>
+            <li>Prioritize SharePoint hosts in vulnerability and asset inventories</li>
+            <li>Monitor SharePoint logs for suspicious uploads, code execution, and indicators cited by vendor advisories</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/microsoft-sharepoint-flaw-cve-2026-65660-now-exploited-in-attacks/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>27 Sep 2026</span>
