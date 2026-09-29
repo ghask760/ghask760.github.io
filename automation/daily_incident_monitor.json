@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-09-29",
+      "generated_at": "2026-09-29T08:21:37+02:00",
+      "incidents": [
+        {
+          "title": "Bitget $388M theft traced to flaw in third-party security product",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Cryptocurrency exchange Bitget said attackers exploited a vulnerability in a third-party security product to obtain high-level internal credentials and execute fraudulent withdrawal commands, stealing roughly $387.5–$388M; withdrawals were temporarily suspended and later resumed.",
+          "why_it_matters": "Organizations that rely on third-party security tooling can inherit critical operational risk when those vendors are compromised; credential theft enabled direct financial theft and bypassed internal controls.",
+          "hot_fix": [
+            "Isolate and revoke compromised credentials and rotate all high-privilege keys",
+            "Audit and remove/patch the implicated third-party integration; validate vendor advisories",
+            "Review and strengthen transaction/withdrawal approval controls and monitoring"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/bitget-resumes-bitcoin-withdrawals-after-3875-million-crypto-heist/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/bitget-says-attacker-exploited-third.html"
+            }
+          ]
+        },
+        {
+          "title": "JadePuffer agentic attacks target Azure tenants, destroy cloud resources",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The JadePuffer ransomware operator used agent-driven attacks against Azure tenants to conduct reconnaissance, steal credentials and delete/destroy core cloud components and resources.",
+          "why_it_matters": "Compromise of cloud tenant identities and automation can directly impact availability and continuity of cloud-hosted services; third-party/cloud provider dependency elevates recovery and supplier-risk priorities.",
+          "hot_fix": [
+            "Audit Azure identities and active sessions; rotate breached credentials and service principals",
+            "Harden least-privilege controls, enable MFA and restrict automation/service account privileges",
+            "Isolate affected tenants, restore from immutable backups, and validate integrity of remaining resources"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/jadepuffer-agentic-ai-attacks-target-azure-destroy-cloud-resources/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/09/28/jadepuffer-crims-hijacked-azure-identities-and-used-them-to-blow-up-cloud-resources/5299591"
+            }
+          ]
+        },
+        {
+          "title": "Apple releases patch for CoreGraphics zero-day reportedly used in targeted attacks",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Apple issued iOS/iPadOS/macOS updates to fix an out-of-bounds write in CoreGraphics (CVE-2026-86950) that the vendor said may have been exploited in targeted attacks.",
+          "why_it_matters": "Targeted exploitation of a client-side code-execution flaw can lead to device compromise and lateral access to corporate resources; unmanaged Apple endpoints pose supplier and operational risk.",
+          "hot_fix": [
+            "Deploy Apple security updates to all managed iOS/iPadOS/macOS devices immediately",
+            "Search endpoint telemetry for indicators of exploitation and suspicious file processing",
+            "Block or quarantine untrusted file previews/attachments and enforce secure file handling policies"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/apple-patches-coregraphics-flaw.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/apple-patches-meta-reported-zero-day-linked-to-extremely-sophisticated-attack/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-28",
       "generated_at": "2026-09-28T08:21:51+02:00",
       "incidents": [
