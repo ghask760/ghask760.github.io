@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">29 Sep 2026</span>
+      <span id="last-updated">30 Sep 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>30 Sep 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Citrix NetScaler zero-day exploited to deploy web shells and escalate to root</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers exploited a Citrix NetScaler CVE-2026-88772 zero-day to deploy custom web shells and tunneling malware, obtain root access, steal credentials, and move laterally into internal networks. Reports cite observed use against government, banking, and professional services targets.</p>
+            <p><strong>Why it matters:</strong> Organizations using Citrix NetScaler appliances are at high risk of compromise and post-exploitation persistence; impact includes credential theft, lateral movement, and potential data exfiltration. TPRM teams should treat NetScaler as a high-risk supplier until mitigations are applied and validated.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply vendor mitigations and patches immediately or follow vendor guidance if patch unavailable</li>
+            <li>Isolate exposed NetScaler appliances from trusted networks and disable management interfaces where possible</li>
+            <li>Hunt for web shells, anomalous tunnels, and credential theft indicators; rotate any exposed credentials</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.theregister.com/security/2026/09/29/custom-malware-used-in-citrix-0-day-attacks-targeting-govt-banks-professional_services/5299867" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Vendor outage</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Kiteworks precautionary shutdown after discovery and patching of critical vulnerability</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Kiteworks performed a precautionary customer-system shutdown (~nine hours) to investigate and patch a discovered critical vulnerability confined to a capability enabled for under 1% of customers; the company later lifted the shutdown after applying fixes.</p>
+            <p><strong>Why it matters:</strong> Customers relying on Kiteworks experienced forced downtime and had to follow vendor-driven operational steps; supplier continuity and incident communication processes should be reviewed for business-critical data-transfer vendors.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm Kiteworks patch is applied and systems are back online</li>
+            <li>Validate integrity of transferred files and access logs for the shutdown window</li>
+            <li>Engage vendor support for CVE/IOC details and update SLAs and continuity plans</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/kiteworks-lifts-shutdown-warning-after-patching-critical-flaw/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/09/kiteworks-fixes-critical-flaw-found.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>29 Sep 2026</span>

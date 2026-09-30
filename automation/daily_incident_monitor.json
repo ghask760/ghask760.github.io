@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-09-30",
+      "generated_at": "2026-09-30T08:21:43+02:00",
+      "incidents": [
+        {
+          "title": "Citrix NetScaler zero-day exploited to deploy web shells and escalate to root",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Attackers exploited a Citrix NetScaler CVE-2026-88772 zero-day to deploy custom web shells and tunneling malware, obtain root access, steal credentials, and move laterally into internal networks. Reports cite observed use against government, banking, and professional services targets.",
+          "why_it_matters": "Organizations using Citrix NetScaler appliances are at high risk of compromise and post-exploitation persistence; impact includes credential theft, lateral movement, and potential data exfiltration. TPRM teams should treat NetScaler as a high-risk supplier until mitigations are applied and validated.",
+          "hot_fix": [
+            "Apply vendor mitigations and patches immediately or follow vendor guidance if patch unavailable",
+            "Isolate exposed NetScaler appliances from trusted networks and disable management interfaces where possible",
+            "Hunt for web shells, anomalous tunnels, and credential theft indicators; rotate any exposed credentials"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/09/29/custom-malware-used-in-citrix-0-day-attacks-targeting-govt-banks-professional_services/5299867"
+            }
+          ]
+        },
+        {
+          "title": "Kiteworks precautionary shutdown after discovery and patching of critical vulnerability",
+          "category": "Vendor outage",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Kiteworks performed a precautionary customer-system shutdown (~nine hours) to investigate and patch a discovered critical vulnerability confined to a capability enabled for under 1% of customers; the company later lifted the shutdown after applying fixes.",
+          "why_it_matters": "Customers relying on Kiteworks experienced forced downtime and had to follow vendor-driven operational steps; supplier continuity and incident communication processes should be reviewed for business-critical data-transfer vendors.",
+          "hot_fix": [
+            "Confirm Kiteworks patch is applied and systems are back online",
+            "Validate integrity of transferred files and access logs for the shutdown window",
+            "Engage vendor support for CVE/IOC details and update SLAs and continuity plans"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/kiteworks-lifts-shutdown-warning-after-patching-critical-flaw/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/09/kiteworks-fixes-critical-flaw-found.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-29",
       "generated_at": "2026-09-29T08:21:37+02:00",
       "incidents": [
