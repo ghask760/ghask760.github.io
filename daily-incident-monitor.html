@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">30 Sep 2026</span>
+      <span id="last-updated">01 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>01 Oct 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Cisco Catalyst SD‑WAN Manager (CVE-2026-76504) authentication-bypass exploited in the wild</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Cisco published an advisory and fixes after attackers were observed exploiting a critical zero-day (CVE-2026-76504) in Catalyst SD‑WAN Manager that allows unauthenticated API access as the admin user.</p>
+            <p><strong>Why it matters:</strong> Compromise of SD‑WAN management infrastructure can provide attackers administrative control over wide-area networking, traffic flows and connected branch devices, posing high operational and third-party risk for organizations using Cisco SD‑WAN.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Install Cisco&#x27;s fixed releases immediately</li>
+            <li>Restrict SD‑WAN Manager API access to trusted management networks</li>
+            <li>Monitor management logs for unexpected admin/API activity and rotate management credentials</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/cisco-warns-of-new-sd-wan-authentication-bypass-zero-day-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer - Cisco warns of new SD-WAN zero-day exploited in attacks</a> <a href="https://thehackernews.com/2026/09/cisco-warns-of-attackers-exploiting.html" rel="noopener" target="_blank">The Hacker News - Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Bitget $387.5M theft traced to zero-day in third-party security products</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Cryptocurrency exchange Bitget confirmed that attackers who stole $387.5 million exploited a zero-day flaw in third‑party security products, with investigative firm SlowMist identifying malicious activity and a customized attacker tool.</p>
+            <p><strong>Why it matters:</strong> A vulnerability in a third‑party security product directly enabled large-scale financial theft, demonstrating critical vendor/TPRM risk and the potential for supply‑chain components to cause severe operational and financial impact.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Quarantine affected third‑party security components and apply vendor fixes</li>
+            <li>Conduct immediate supply‑chain review of impacted third‑party products and dependencies</li>
+            <li>Rotate keys/secrets and audit transaction controls and wallet security</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/" rel="noopener" target="_blank">BleepingComputer - Bitget hacked via zero-day in third-party security products</a> <a href="https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html" rel="noopener" target="_blank">The Hacker News - Bitget Confirms Third-Party Zero-Day Behind $387.5 Million Cryptocurrency Theft</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>30 Sep 2026</span>

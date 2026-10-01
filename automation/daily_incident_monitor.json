@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-10-01",
+      "generated_at": "2026-10-01T08:22:07+02:00",
+      "incidents": [
+        {
+          "title": "Cisco Catalyst SD‑WAN Manager (CVE-2026-76504) authentication-bypass exploited in the wild",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Cisco published an advisory and fixes after attackers were observed exploiting a critical zero-day (CVE-2026-76504) in Catalyst SD‑WAN Manager that allows unauthenticated API access as the admin user.",
+          "why_it_matters": "Compromise of SD‑WAN management infrastructure can provide attackers administrative control over wide-area networking, traffic flows and connected branch devices, posing high operational and third-party risk for organizations using Cisco SD‑WAN.",
+          "hot_fix": [
+            "Install Cisco's fixed releases immediately",
+            "Restrict SD‑WAN Manager API access to trusted management networks",
+            "Monitor management logs for unexpected admin/API activity and rotate management credentials"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer - Cisco warns of new SD-WAN zero-day exploited in attacks",
+              "url": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-new-sd-wan-authentication-bypass-zero-day-exploited-in-attacks/"
+            },
+            {
+              "name": "The Hacker News - Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager",
+              "url": "https://thehackernews.com/2026/09/cisco-warns-of-attackers-exploiting.html"
+            }
+          ]
+        },
+        {
+          "title": "Bitget $387.5M theft traced to zero-day in third-party security products",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Cryptocurrency exchange Bitget confirmed that attackers who stole $387.5 million exploited a zero-day flaw in third‑party security products, with investigative firm SlowMist identifying malicious activity and a customized attacker tool.",
+          "why_it_matters": "A vulnerability in a third‑party security product directly enabled large-scale financial theft, demonstrating critical vendor/TPRM risk and the potential for supply‑chain components to cause severe operational and financial impact.",
+          "hot_fix": [
+            "Quarantine affected third‑party security components and apply vendor fixes",
+            "Conduct immediate supply‑chain review of impacted third‑party products and dependencies",
+            "Rotate keys/secrets and audit transaction controls and wallet security"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer - Bitget hacked via zero-day in third-party security products",
+              "url": "https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/"
+            },
+            {
+              "name": "The Hacker News - Bitget Confirms Third-Party Zero-Day Behind $387.5 Million Cryptocurrency Theft",
+              "url": "https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-30",
       "generated_at": "2026-09-30T08:21:43+02:00",
       "incidents": [
