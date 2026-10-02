@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">01 Oct 2026</span>
+      <span id="last-updated">02 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,100 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>02 Oct 2026</span>
+          <span>4 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical FortiMail zero-day (CVE-2026-104286) actively exploited</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical Fortinet FortiMail vulnerability (CVE-2026-104286, CVSS 9.8) that allows unauthenticated arbitrary file writes is being actively exploited; CISA added it to its Known Exploited Vulnerabilities catalog. Fortinet has warned customers of attacks.</p>
+            <p><strong>Why it matters:</strong> FortiMail is a mail gateway used by enterprises; active exploitation of a pre-auth arbitrary file write can lead to remote code execution, data theft, or full appliance compromise affecting email continuity and supplier trust.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Fortinet&#x27;s vendor mitigations/patch immediately</li>
+            <li>Isolate/unexpose FortiMail appliances from untrusted networks until patched</li>
+            <li>Hunt for IOCs and signs of file-write or webshell activity on FortiMail systems</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortimail-flaw-exploited-in-zero-day-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/critical-fortimail-zero-day.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Police dismantle KillSec ransomware gang; leak site and servers seized</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An international law enforcement operation seized KillSec&#x27;s leak site and servers, made three arrests (including an alleged 16-year-old administrator), and secured at least 110 TB of data stolen from victims.</p>
+            <p><strong>Why it matters:</strong> Organizations should verify whether their data appears in the seized repository or leak site, as exposure may require breach response, notification, and supplier-risk reassessment of incident history.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Search the seized leak-site data for your organization and notify incident response if present</li>
+            <li>Confirm backups and restore capabilities for impacted systems</li>
+            <li>Re-examine vendor/third-party access controls and credentials tied to systems breached by KillSec</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/police-dismantle-killsec-ransomware-gang-allegedly-led-by-16-year-old/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/police-shut-down-killsec-ransomware-identify-alleged-teen-leader/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Zammad ticketing zero-days chained in AI-driven DIVD network breach</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The Dutch Institute for Vulnerability Disclosure (DIVD) says its network was breached after attackers chained two zero-day vulnerabilities in the open-source Zammad ticketing system, enabling session hijack, remote code execution, and escalation to root.</p>
+            <p><strong>Why it matters:</strong> Ticketing systems are high-value targets for lateral access and data exfiltration; exploit chains in a supplier&#x27;s issue-tracking or ticketing software can expose incident response workflows, credentials, and sensitive disclosures across customer ecosystems.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Isolate Zammad instances and apply official patches or mitigations immediately</li>
+            <li>Audit ticketing logs for unauthorized access, privilege escalation, and changed tickets</li>
+            <li>Rotate credentials and API keys referenced/stored in ticketing systems</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Vendor outage</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Zimbra mail-server vulnerability (CVE-2026-73570) exploited in the wild before disclosure</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A Zimbra mail-server vulnerability (CVE-2026-73570) that can be exploited via specially crafted emails without user interaction was observed in the wild prior to public disclosure; Microsoft detected exploitation activity during pre-disclosure windows.</p>
+            <p><strong>Why it matters:</strong> Email servers are critical infrastructure; pre-disclosure exploitation of a mail-server bug can enable stealthy compromise, phishing bypass, or data theft across affected organisations and their suppliers, requiring urgent remediation and monitoring.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Zimbra vendor patches or mitigations immediately</li>
+            <li>Block or inspect suspicious inbound emails and attachments that could carry exploit triggers</li>
+            <li>Review mail-server logs and hunt for exploitation indicators and post-exploit activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.securityweek.com/zimbra-vulnerability-exploited-in-the-wild-prior-to-public-disclosure/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://www.theregister.com/security/2026/10/01/microsoft_catches_hackers_exploiting_zimbra_bug_before_disclosure/5300543" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>01 Oct 2026</span>
