@@ -1,6 +1,35 @@
 {
   "days": [
     {
+      "date": "2026-10-03",
+      "generated_at": "2026-10-03T08:21:39+02:00",
+      "incidents": [
+        {
+          "title": "Warlock ransomware group exploiting SharePoint vulnerabilities against critical infrastructure",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "China-linked Warlock actors have been exploiting SharePoint vulnerabilities to gain initial access and conduct ransomware/data theft operations against a water utility, a telecom provider, a regional government body, and a university.",
+          "why_it_matters": "Attackers targeting vendor-hosted or third-party SharePoint instances create amplified risk for organizations that rely on these platforms; compromise can disrupt critical services and supplier continuity.",
+          "hot_fix": [
+            "Patch and harden SharePoint instances and apply vendor security updates",
+            "Conduct aggressive threat hunting for SharePoint webshells and lateral movement",
+            "Review supplier/third-party SharePoint configurations and access controls"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/warlock-ransomware-breach-sharepoint-in-water-telecom-operator-attacks/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/warlock-expands-sharepoint-exploitation-in-critical-infrastructure-attacks/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-02",
       "generated_at": "2026-10-02T08:21:50+02:00",
       "incidents": [
