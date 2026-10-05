@@ -5,7 +5,7 @@
     <link>https://gabrielhasik.com/</link>
     <description>Cybersecurity, third-party risk, supply chain security, AI governance, regulatory resilience, and monitoring briefings by Gabriel Hasik.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 00:00:00 +0200</lastBuildDate>
     <atom:link href="https://gabrielhasik.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Third-Party Risk Intelligence Briefing - September 2026</title>
@@ -24,6 +24,14 @@
     </item>
 
     <!-- SCHEDULED_RSS_START -->
+    <item>
+      <title>Continuous Monitoring vs. Annual Reviews: What Actually Reduces Risk?</title>
+      <link>https://gabrielhasik.com/continuous-monitoring-vs-annual-reviews.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/continuous-monitoring-vs-annual-reviews.html</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 +0200</pubDate>
+      <description>Why annual supplier reviews are not enough for critical third parties and how continuous monitoring should be designed around meaningful risk signals.</description>
+    </item>
+
     <item>
       <title>The Minimum Viable TPRM Program for Mid-Sized Companies</title>
       <link>https://gabrielhasik.com/minimum-viable-tprm-program-mid-sized-companies.html</link>
