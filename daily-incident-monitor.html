@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">04 Oct 2026</span>
+      <span id="last-updated">05 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>05 Oct 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Citrix NetScaler zero-day (CVE-2026-88779) exploited in the wild; emergency patches released</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Citrix released emergency updates for a NetScaler denial-of-service zero-day (CVE-2026-88779) after reports of active exploitation; researchers are investigating potential for remote code execution.</p>
+            <p><strong>Why it matters:</strong> NetScaler/ADC appliances are widely deployed in enterprise networks; active exploitation of a vendor product increases immediate third‑party risk and may enable broader network compromise if not remediated.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Citrix emergency updates to all NetScaler/ADC appliances immediately</li>
+            <li>Inventory and segment affected appliances; restrict management access to trusted IPs</li>
+            <li>Monitor appliance logs and network telemetry for exploitation indicators and unauthorized changes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/exploitation-of-citrix-netscaler-zero-day-hits-appliances-patched-days-earlier/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-low">
+          <div class="incident-meta">
+            <span>Low</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Suspected ShinyHunters member &#x27;Rey&#x27; detained in Jordan and cooperating with FBI</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Authorities reportedly detained a suspected ShinyHunters member known as &#x27;Rey&#x27; in Jordan; the individual is said to be cooperating with the FBI to help identify other group members.</p>
+            <p><strong>Why it matters:</strong> Disruption or cooperation by a known extortion/data‑theft actor can affect ongoing investigations, extortion attempts, and vendor breach exposure lists; TPRM teams should track intelligence and validate whether their suppliers or data sets were targeted by the group.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Check supplier/vendor exposure lists and recent extortion/credential leak notifications for ShinyHunters indicators</li>
+            <li>Confirm with legal/incident response whether to engage law enforcement or share IOC lists</li>
+            <li>Validate and remediate any confirmed exposures; monitor for follow-on extortion or data‑dump activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/shinyhunters-hacker-reportedly-detained-in-jordan-aiding-fbi/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>04 Oct 2026</span>

@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-10-05",
+      "generated_at": "2026-10-05T08:23:04+02:00",
+      "incidents": [
+        {
+          "title": "Citrix NetScaler zero-day (CVE-2026-88779) exploited in the wild; emergency patches released",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Citrix released emergency updates for a NetScaler denial-of-service zero-day (CVE-2026-88779) after reports of active exploitation; researchers are investigating potential for remote code execution.",
+          "why_it_matters": "NetScaler/ADC appliances are widely deployed in enterprise networks; active exploitation of a vendor product increases immediate third‑party risk and may enable broader network compromise if not remediated.",
+          "hot_fix": [
+            "Apply Citrix emergency updates to all NetScaler/ADC appliances immediately",
+            "Inventory and segment affected appliances; restrict management access to trusted IPs",
+            "Monitor appliance logs and network telemetry for exploitation indicators and unauthorized changes"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/exploitation-of-citrix-netscaler-zero-day-hits-appliances-patched-days-earlier/"
+            }
+          ]
+        },
+        {
+          "title": "Suspected ShinyHunters member 'Rey' detained in Jordan and cooperating with FBI",
+          "category": "TPRM",
+          "severity": "Low",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Authorities reportedly detained a suspected ShinyHunters member known as 'Rey' in Jordan; the individual is said to be cooperating with the FBI to help identify other group members.",
+          "why_it_matters": "Disruption or cooperation by a known extortion/data‑theft actor can affect ongoing investigations, extortion attempts, and vendor breach exposure lists; TPRM teams should track intelligence and validate whether their suppliers or data sets were targeted by the group.",
+          "hot_fix": [
+            "Check supplier/vendor exposure lists and recent extortion/credential leak notifications for ShinyHunters indicators",
+            "Confirm with legal/incident response whether to engage law enforcement or share IOC lists",
+            "Validate and remediate any confirmed exposures; monitor for follow-on extortion or data‑dump activity"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/shinyhunters-hacker-reportedly-detained-in-jordan-aiding-fbi/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-04",
       "generated_at": "2026-10-04T08:21:50+02:00",
       "incidents": []
