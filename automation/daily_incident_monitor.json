@@ -1,6 +1,85 @@
 {
   "days": [
     {
+      "date": "2026-10-06",
+      "generated_at": "2026-10-06T08:22:06+02:00",
+      "incidents": [
+        {
+          "title": "Active exploitation and scanning of Rejetto HFS critical RCE (CVE-2026-61500)",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers report active scanning and exploitation attempts targeting a critical Rejetto HTTP File Server flaw (CVE-2026-61500) that can enable session forgery, account takeover and remote code execution.",
+          "why_it_matters": "Public-facing HFS instances can be fully compromised, exposing hosted files and enabling attacker footholds; organisations should treat HFS instances as high-risk third-party components.",
+          "hot_fix": [
+            "Apply vendor/maintainer updates or patches for HFS immediately",
+            "Restrict or remove internet exposure for HFS instances (network access controls)",
+            "Monitor logs for exploitation indicators and vulnerable endpoints"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/exploitation-hits-rejetto-hfs-vulnerability-discovered-by-ai/"
+            }
+          ]
+        },
+        {
+          "title": "Realtek Jungle SDK exploit attempts deliver 'Cling' botnet using STUN-based C2",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors have attempted to exploit a now-patched Realtek Jungle SDK vulnerability to deploy a Linux backdoor/botnet (Cling) that repurposes STUN behavior for command-and-control.",
+          "why_it_matters": "Devices and firmware using the Realtek SDK are at supply-chain risk for backdoor deployment; unpatched embedded devices can become persistent C2-enabled nodes.",
+          "hot_fix": [
+            "Apply Realtek/firmware updates from affected device vendors",
+            "Segment and monitor edge/embedded devices for anomalous STUN traffic",
+            "Hunt for indicators of Cling infections in device telemetry"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/realtek-jungle-sdk-exploit-attempts.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/linux-backdoor-abuses-stun-protocol-exploits-dozens-of-flaws/"
+            }
+          ]
+        },
+        {
+          "title": "Google pauses/narrows Open Source Vulnerability Reward Program amid AI-driven report spam",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Google temporarily suspended or narrowed submissions to its Open Source Software Vulnerability Reward Program after a surge of AI-generated and invalid vulnerability reports overwhelmed the program.",
+          "why_it_matters": "Reduced external reporting capacity can delay discovery and remediation of vulnerabilities in open-source components that organisations rely on in their supply chain.",
+          "hot_fix": [
+            "Increase internal scanning and monitoring of open-source dependencies",
+            "Engage upstream OSS maintainers directly for critical dependencies",
+            "Track vendor advisories and CVE publications for delayed reports"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/google/google-halts-open-source-bug-bounty-program-amid-ai-spam-surge/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/google-narrows-open-source-bug-bounty-amid-wave-of-invalid-automated-reports/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-05",
       "generated_at": "2026-10-05T08:23:04+02:00",
       "incidents": [

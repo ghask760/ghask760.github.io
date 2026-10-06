@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">05 Oct 2026</span>
+      <span id="last-updated">06 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>06 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Active exploitation and scanning of Rejetto HFS critical RCE (CVE-2026-61500)</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Researchers report active scanning and exploitation attempts targeting a critical Rejetto HTTP File Server flaw (CVE-2026-61500) that can enable session forgery, account takeover and remote code execution.</p>
+            <p><strong>Why it matters:</strong> Public-facing HFS instances can be fully compromised, exposing hosted files and enabling attacker footholds; organisations should treat HFS instances as high-risk third-party components.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply vendor/maintainer updates or patches for HFS immediately</li>
+            <li>Restrict or remove internet exposure for HFS instances (network access controls)</li>
+            <li>Monitor logs for exploitation indicators and vulnerable endpoints</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/exploitation-hits-rejetto-hfs-vulnerability-discovered-by-ai/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Realtek Jungle SDK exploit attempts deliver &#x27;Cling&#x27; botnet using STUN-based C2</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Threat actors have attempted to exploit a now-patched Realtek Jungle SDK vulnerability to deploy a Linux backdoor/botnet (Cling) that repurposes STUN behavior for command-and-control.</p>
+            <p><strong>Why it matters:</strong> Devices and firmware using the Realtek SDK are at supply-chain risk for backdoor deployment; unpatched embedded devices can become persistent C2-enabled nodes.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Realtek/firmware updates from affected device vendors</li>
+            <li>Segment and monitor edge/embedded devices for anomalous STUN traffic</li>
+            <li>Hunt for indicators of Cling infections in device telemetry</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/realtek-jungle-sdk-exploit-attempts.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/linux-backdoor-abuses-stun-protocol-exploits-dozens-of-flaws/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Google pauses/narrows Open Source Vulnerability Reward Program amid AI-driven report spam</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Google temporarily suspended or narrowed submissions to its Open Source Software Vulnerability Reward Program after a surge of AI-generated and invalid vulnerability reports overwhelmed the program.</p>
+            <p><strong>Why it matters:</strong> Reduced external reporting capacity can delay discovery and remediation of vulnerabilities in open-source components that organisations rely on in their supply chain.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Increase internal scanning and monitoring of open-source dependencies</li>
+            <li>Engage upstream OSS maintainers directly for critical dependencies</li>
+            <li>Track vendor advisories and CVE publications for delayed reports</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/google/google-halts-open-source-bug-bounty-program-amid-ai-spam-surge/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/google-narrows-open-source-bug-bounty-amid-wave-of-invalid-automated-reports/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>05 Oct 2026</span>
