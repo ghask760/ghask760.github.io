@@ -1,6 +1,131 @@
 {
   "days": [
     {
+      "date": "2026-10-08",
+      "generated_at": "2026-10-08T08:21:59+02:00",
+      "incidents": [
+        {
+          "title": "Critical Atlassian Data Center flaw (CVE-2026-21589) being exploited in the wild",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A critical unauthenticated arbitrary file access vulnerability affecting multiple Atlassian Data Center products (CVE-2026-21589) is being exploited in attacks shortly after public PoC details and patch guidance were released.",
+          "why_it_matters": "Atlassian Data Center products are widely used in engineering and business workflows; active exploitation of an unauthenticated flaw can expose sensitive files, enable further intrusion, and affect many downstream customers and integrations.",
+          "hot_fix": [
+            "Apply Atlassian's vendor patches immediately to affected Data Center products",
+            "Isolate exposed Data Center instances and review recent file access and web logs for indicators of compromise",
+            "Prioritize inventory of Atlassian deployments and accelerate emergency patch deployments for critical business services"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/atlassian-patches-critical-vulnerability-affecting-8-products/"
+            }
+          ]
+        },
+        {
+          "title": "Attackers compromise three ccTLD registries to obtain HTTPS certificates for Google domains",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors breached country-code TLD registries for .gh, .sl and .as and obtained unauthorized HTTPS certificates for multiple Google domains by modifying authoritative DNS records.",
+          "why_it_matters": "Compromise of registry operators and issuance of unauthorized certs enables convincing domain impersonation and man-in-the-middle risks for any organization relying on those ccTLD operators or using related subdomains.",
+          "hot_fix": [
+            "Validate DNS delegations and registrar controls for any corporate domains in affected ccTLDs",
+            "Monitor certificate transparency logs and revoke/report any unauthorized certificates",
+            "Enforce CAA records, tighten registrar access controls, and escalate with registries for recovery and remediation"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-hijack-google-domains-after-breaching-cctld-registries/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/attackers-hijack-gh-sl-and-as.html"
+            }
+          ]
+        },
+        {
+          "title": "FortiBleed credential-harvesting campaign remains active against Fortinet devices",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "FBI and US Secret Service warnings indicate the FortiBleed campaign is ongoing and has amassed tens of thousands of Fortinet device credentials by exploiting reused/leaked credentials and legacy password storage.",
+          "why_it_matters": "Internet-facing FortiGate firewalls and SSL VPN gateways are common vendor-managed network controls; credential theft can lead to lateral access, persistent compromise, or disruption of critical connectivity.",
+          "hot_fix": [
+            "Audit and patch Fortinet appliances where vendor updates are available",
+            "Rotate credentials for Fortinet admin accounts and enforce MFA where supported",
+            "Monitor remote-access logs for anomalous logins and block/I P blacklist known attacker infrastructure"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/fbi-warns-fortibleed-remains-active.html"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/10/07/fortibleed-still-a-bleeding-nuisance-as-fbi-confirms-ongoing-attacks/5301585"
+            }
+          ]
+        },
+        {
+          "title": "Advantest confirms personal information stolen in earlier ransomware attack",
+          "category": "Data breach",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Advantest Corporation said personal information was stolen from its servers during a ransomware incident that occurred in February 2026; the company is notifying affected individuals.",
+          "why_it_matters": "A supplier in the semiconductor testing sector disclosing stolen PII raises downstream privacy, contractual notification, and potential regulatory obligations for customers and partners that process or rely on Advantest services.",
+          "hot_fix": [
+            "Confirm scope of exposed data with the vendor and require forensic/notification documentation",
+            "Assess contractual breach obligations and escalate to legal/compliance for notification and remediation",
+            "Review reliance on affected vendor systems and consider temporary mitigations or alternative providers"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/advantest-confirms-personal-information-stolen-in-ransomware-attack/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/advantest-discloses-data-breach-months-after-ransomware-attack/"
+            }
+          ]
+        },
+        {
+          "title": "Ransomware remediation firm owner charged for secretly paying ransoms and defrauding clients",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Authorities charged the owner of a ransomware remediation company (MonsterCloud) who allegedly paid attackers for decryptors while claiming proprietary recovery methods and charging clients additional fees.",
+          "why_it_matters": "Vendor trust and attestation for incident response/remediation providers are critical; fraudulent remediation practices can leave victims with unresolved compromise, legal exposure, and misallocated incident funds.",
+          "hot_fix": [
+            "Suspend or audit engagements with the remediation firm and demand detailed recovery evidence for past incidents",
+            "Require stronger contractual SLAs, attestation, and escrowed verification for future remediation vendors",
+            "Communicate with affected stakeholders and review insurance/third-party reliance clauses"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/ransomware-recovery-ceo-charged-over-secret-ransom-payments/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/cyber-crime/2026/10/08/ransomware-fixer-claimed-he-could-decrypt-files-allegedly-defrauded-clients-instead/5301831"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-07",
       "generated_at": "2026-10-07T08:21:49+02:00",
       "incidents": [

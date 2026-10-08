@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">07 Oct 2026</span>
+      <span id="last-updated">08 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,122 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>08 Oct 2026</span>
+          <span>5 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical Atlassian Data Center flaw (CVE-2026-21589) being exploited in the wild</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical unauthenticated arbitrary file access vulnerability affecting multiple Atlassian Data Center products (CVE-2026-21589) is being exploited in attacks shortly after public PoC details and patch guidance were released.</p>
+            <p><strong>Why it matters:</strong> Atlassian Data Center products are widely used in engineering and business workflows; active exploitation of an unauthenticated flaw can expose sensitive files, enable further intrusion, and affect many downstream customers and integrations.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Atlassian&#x27;s vendor patches immediately to affected Data Center products</li>
+            <li>Isolate exposed Data Center instances and review recent file access and web logs for indicators of compromise</li>
+            <li>Prioritize inventory of Atlassian deployments and accelerate emergency patch deployments for critical business services</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/atlassian-patches-critical-vulnerability-affecting-8-products/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Attackers compromise three ccTLD registries to obtain HTTPS certificates for Google domains</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Threat actors breached country-code TLD registries for .gh, .sl and .as and obtained unauthorized HTTPS certificates for multiple Google domains by modifying authoritative DNS records.</p>
+            <p><strong>Why it matters:</strong> Compromise of registry operators and issuance of unauthorized certs enables convincing domain impersonation and man-in-the-middle risks for any organization relying on those ccTLD operators or using related subdomains.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Validate DNS delegations and registrar controls for any corporate domains in affected ccTLDs</li>
+            <li>Monitor certificate transparency logs and revoke/report any unauthorized certificates</li>
+            <li>Enforce CAA records, tighten registrar access controls, and escalate with registries for recovery and remediation</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-hijack-google-domains-after-breaching-cctld-registries/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/attackers-hijack-gh-sl-and-as.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>FortiBleed credential-harvesting campaign remains active against Fortinet devices</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> FBI and US Secret Service warnings indicate the FortiBleed campaign is ongoing and has amassed tens of thousands of Fortinet device credentials by exploiting reused/leaked credentials and legacy password storage.</p>
+            <p><strong>Why it matters:</strong> Internet-facing FortiGate firewalls and SSL VPN gateways are common vendor-managed network controls; credential theft can lead to lateral access, persistent compromise, or disruption of critical connectivity.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Audit and patch Fortinet appliances where vendor updates are available</li>
+            <li>Rotate credentials for Fortinet admin accounts and enforce MFA where supported</li>
+            <li>Monitor remote-access logs for anomalous logins and block/I P blacklist known attacker infrastructure</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/fbi-warns-fortibleed-remains-active.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.theregister.com/security/2026/10/07/fortibleed-still-a-bleeding-nuisance-as-fbi-confirms-ongoing-attacks/5301585" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Advantest confirms personal information stolen in earlier ransomware attack</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Advantest Corporation said personal information was stolen from its servers during a ransomware incident that occurred in February 2026; the company is notifying affected individuals.</p>
+            <p><strong>Why it matters:</strong> A supplier in the semiconductor testing sector disclosing stolen PII raises downstream privacy, contractual notification, and potential regulatory obligations for customers and partners that process or rely on Advantest services.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm scope of exposed data with the vendor and require forensic/notification documentation</li>
+            <li>Assess contractual breach obligations and escalate to legal/compliance for notification and remediation</li>
+            <li>Review reliance on affected vendor systems and consider temporary mitigations or alternative providers</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/advantest-confirms-personal-information-stolen-in-ransomware-attack/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/advantest-discloses-data-breach-months-after-ransomware-attack/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Ransomware remediation firm owner charged for secretly paying ransoms and defrauding clients</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Authorities charged the owner of a ransomware remediation company (MonsterCloud) who allegedly paid attackers for decryptors while claiming proprietary recovery methods and charging clients additional fees.</p>
+            <p><strong>Why it matters:</strong> Vendor trust and attestation for incident response/remediation providers are critical; fraudulent remediation practices can leave victims with unresolved compromise, legal exposure, and misallocated incident funds.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Suspend or audit engagements with the remediation firm and demand detailed recovery evidence for past incidents</li>
+            <li>Require stronger contractual SLAs, attestation, and escrowed verification for future remediation vendors</li>
+            <li>Communicate with affected stakeholders and review insurance/third-party reliance clauses</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/ransomware-recovery-ceo-charged-over-secret-ransom-payments/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.theregister.com/cyber-crime/2026/10/08/ransomware-fixer-claimed-he-could-decrypt-files-allegedly-defrauded-clients-instead/5301831" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>07 Oct 2026</span>
