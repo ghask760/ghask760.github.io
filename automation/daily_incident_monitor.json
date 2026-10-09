@@ -1,6 +1,104 @@
 {
   "days": [
     {
+      "date": "2026-10-09",
+      "generated_at": "2026-10-09T08:21:52+02:00",
+      "incidents": [
+        {
+          "title": "Tensorlake npm package compromised to deliver Shai‑Hulud credential‑stealing worm",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The Tensorlake npm package was published with a malicious version that Socket says contains obfuscated malware (Shai‑Hulud) that harvests credentials, exfiltrates secrets, establishes persistence and executes remote code; security teams detected the malware within minutes but overall impact remains unknown. Researchers reported the compromise and rapid detection in separate writeups.",
+          "why_it_matters": "Compromise of an SDK used for AI infrastructure can yield credentials and persistent backdoors across customer environments, increasing risk to AI supply chains and cloud assets that trust the package.",
+          "hot_fix": [
+            "Block or remove the affected tensorlake package version from registries",
+            "Scan build systems, CI runners, and developer machines for indicators and IOCs",
+            "Rotate any credentials/secrets exposed to environments that used the package"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News — Tensorlake npm package compromised",
+              "url": "https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html"
+            },
+            {
+              "name": "The Register — Shai‑Hulud worm jumps to AI infrastructure (Tensorlake)",
+              "url": "https://www.theregister.com/security/2026/10/08/shai-hulud-worm-makes-jump-to-ai-infrastructure-with-tensorlake-compromise/5302054"
+            }
+          ]
+        },
+        {
+          "title": "Large‑scale npm supply‑chain malware campaigns (FakeGit, MALFEX) distributing stealers and RATs",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers report two active supply‑chain campaigns: FakeGit reactivated with >17,600 malicious GitHub repositories distributing SmartLoader to push the StealC infostealer, while the MALFEX campaign published multiple malicious npm packages delivering Overlord RATs and stealers (tens of thousands of downloads).",
+          "why_it_matters": "Malicious packages and repo farms threaten developer toolchains and CI/CD pipelines; infections can exfiltrate secrets, compromise builds, and propagate into production via trusted dependencies.",
+          "hot_fix": [
+            "Block/pin or remove suspicious packages and versions from CI and artifact repositories",
+            "Harden developer workstations and CI with dependency allowlists and SBOMs",
+            "Audit recent dependency changes, rotate credentials found in repos or pipelines"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer — FakeGit campaign returns with 17,610 malicious GitHub repos",
+              "url": "https://www.bleepingcomputer.com/news/security/fakegit-malware-campaign-returns-with-17-610-malicious-github-repos/"
+            },
+            {
+              "name": "The Hacker News — MALFEX npm campaign delivers Overlord RAT and stealer",
+              "url": "https://thehackernews.com/2026/10/eight-malicious-npm-packages-downloaded.html"
+            }
+          ]
+        },
+        {
+          "title": "US and partner agencies disrupt Chinese‑linked hacking infrastructure; FBI warns of portal exposing stolen emails",
+          "category": "Geopolitical supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "US authorities seized seven domains used by a suspected Chinese state‑linked group (Flax Typhoon) to operate tools named MicroScan and FishHub that were used in breaches of critical infrastructure; separately, the FBI and partner agencies said hackers tied to Integrity Technology Group ran a portal giving third parties access to stolen emails from multiple organizations across several countries.",
+          "why_it_matters": "Nation‑state and state‑linked tools and portals that facilitate data access increase third‑party risk exposure for organizations that exchange data with affected sectors or rely on services from implicated vendors or partners; sanctions and takedowns can also affect vendor availability and integrations.",
+          "hot_fix": [
+            "Review and block identified domains and indicators of compromise supplied by agencies",
+            "Assess communications and data exchange with vendors or partners in affected regions",
+            "Monitor for unusual inbound email access, and enforce multi‑factor authentication and logging"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer — FBI disrupts Chinese hacking tools used to breach critical infrastructure",
+              "url": "https://www.bleepingcomputer.com/news/security/fbi-disrupts-chinese-hacking-tools-used-to-breach-critical-infrastructure/"
+            },
+            {
+              "name": "The Hacker News — FBI says China‑linked hackers ran portal giving third parties access to stolen emails",
+              "url": "https://thehackernews.com/2026/10/fbi-says-china-linked-hackers-ran.html"
+            }
+          ]
+        },
+        {
+          "title": "DOJ charges MonsterCloud operator for alleged ransomware‑recovery fraud and inflated remediation fees",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "US prosecutors charged the owner/operator of MonsterCloud alleging he defrauded ransomware victims by secretly paying ransoms to obtain decryptors while charging clients large markups and claiming proprietary recovery tools; reporting indicates roughly $11M in alleged markup.",
+          "why_it_matters": "Organizations using third‑party ransomware remediation or pay‑and‑recover services face supply‑chain and vendor‑trust risks; reliance on opaque vendors can increase financial and operational exposure during incidents.",
+          "hot_fix": [
+            "Require contractual transparency on ransom payments and third‑party engagements",
+            "Validate credentials, references, and legal standing of incident‑response vendors",
+            "Ensure contractual SLAs, audit rights, and escrow/insurance provisions before engagement"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News — MonsterCloud owner accused of billing over $19M while secretly paying ransoms",
+              "url": "https://thehackernews.com/2026/10/monstercloud-owner-accused-of-billing.html"
+            },
+            {
+              "name": "SecurityWeek — Fake decryption tools masked $11M markup in ransomware recovery scheme",
+              "url": "https://www.securityweek.com/fake-decryption-tools-masked-11m-markup-in-ransomware-recovery-scheme/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-08",
       "generated_at": "2026-10-08T08:21:59+02:00",
       "incidents": [

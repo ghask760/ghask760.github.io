@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">08 Oct 2026</span>
+      <span id="last-updated">09 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,100 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>09 Oct 2026</span>
+          <span>4 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Tensorlake npm package compromised to deliver Shai‑Hulud credential‑stealing worm</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The Tensorlake npm package was published with a malicious version that Socket says contains obfuscated malware (Shai‑Hulud) that harvests credentials, exfiltrates secrets, establishes persistence and executes remote code; security teams detected the malware within minutes but overall impact remains unknown. Researchers reported the compromise and rapid detection in separate writeups.</p>
+            <p><strong>Why it matters:</strong> Compromise of an SDK used for AI infrastructure can yield credentials and persistent backdoors across customer environments, increasing risk to AI supply chains and cloud assets that trust the package.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Block or remove the affected tensorlake package version from registries</li>
+            <li>Scan build systems, CI runners, and developer machines for indicators and IOCs</li>
+            <li>Rotate any credentials/secrets exposed to environments that used the package</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html" rel="noopener" target="_blank">The Hacker News — Tensorlake npm package compromised</a> <a href="https://www.theregister.com/security/2026/10/08/shai-hulud-worm-makes-jump-to-ai-infrastructure-with-tensorlake-compromise/5302054" rel="noopener" target="_blank">The Register — Shai‑Hulud worm jumps to AI infrastructure (Tensorlake)</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Large‑scale npm supply‑chain malware campaigns (FakeGit, MALFEX) distributing stealers and RATs</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Researchers report two active supply‑chain campaigns: FakeGit reactivated with &gt;17,600 malicious GitHub repositories distributing SmartLoader to push the StealC infostealer, while the MALFEX campaign published multiple malicious npm packages delivering Overlord RATs and stealers (tens of thousands of downloads).</p>
+            <p><strong>Why it matters:</strong> Malicious packages and repo farms threaten developer toolchains and CI/CD pipelines; infections can exfiltrate secrets, compromise builds, and propagate into production via trusted dependencies.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Block/pin or remove suspicious packages and versions from CI and artifact repositories</li>
+            <li>Harden developer workstations and CI with dependency allowlists and SBOMs</li>
+            <li>Audit recent dependency changes, rotate credentials found in repos or pipelines</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/fakegit-malware-campaign-returns-with-17-610-malicious-github-repos/" rel="noopener" target="_blank">BleepingComputer — FakeGit campaign returns with 17,610 malicious GitHub repos</a> <a href="https://thehackernews.com/2026/10/eight-malicious-npm-packages-downloaded.html" rel="noopener" target="_blank">The Hacker News — MALFEX npm campaign delivers Overlord RAT and stealer</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Geopolitical supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>US and partner agencies disrupt Chinese‑linked hacking infrastructure; FBI warns of portal exposing stolen emails</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> US authorities seized seven domains used by a suspected Chinese state‑linked group (Flax Typhoon) to operate tools named MicroScan and FishHub that were used in breaches of critical infrastructure; separately, the FBI and partner agencies said hackers tied to Integrity Technology Group ran a portal giving third parties access to stolen emails from multiple organizations across several countries.</p>
+            <p><strong>Why it matters:</strong> Nation‑state and state‑linked tools and portals that facilitate data access increase third‑party risk exposure for organizations that exchange data with affected sectors or rely on services from implicated vendors or partners; sanctions and takedowns can also affect vendor availability and integrations.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Review and block identified domains and indicators of compromise supplied by agencies</li>
+            <li>Assess communications and data exchange with vendors or partners in affected regions</li>
+            <li>Monitor for unusual inbound email access, and enforce multi‑factor authentication and logging</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/fbi-disrupts-chinese-hacking-tools-used-to-breach-critical-infrastructure/" rel="noopener" target="_blank">BleepingComputer — FBI disrupts Chinese hacking tools used to breach critical infrastructure</a> <a href="https://thehackernews.com/2026/10/fbi-says-china-linked-hackers-ran.html" rel="noopener" target="_blank">The Hacker News — FBI says China‑linked hackers ran portal giving third parties access to stolen emails</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>DOJ charges MonsterCloud operator for alleged ransomware‑recovery fraud and inflated remediation fees</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> US prosecutors charged the owner/operator of MonsterCloud alleging he defrauded ransomware victims by secretly paying ransoms to obtain decryptors while charging clients large markups and claiming proprietary recovery tools; reporting indicates roughly $11M in alleged markup.</p>
+            <p><strong>Why it matters:</strong> Organizations using third‑party ransomware remediation or pay‑and‑recover services face supply‑chain and vendor‑trust risks; reliance on opaque vendors can increase financial and operational exposure during incidents.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Require contractual transparency on ransom payments and third‑party engagements</li>
+            <li>Validate credentials, references, and legal standing of incident‑response vendors</li>
+            <li>Ensure contractual SLAs, audit rights, and escrow/insurance provisions before engagement</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/monstercloud-owner-accused-of-billing.html" rel="noopener" target="_blank">The Hacker News — MonsterCloud owner accused of billing over $19M while secretly paying ransoms</a> <a href="https://www.securityweek.com/fake-decryption-tools-masked-11m-markup-in-ransomware-recovery-scheme/" rel="noopener" target="_blank">SecurityWeek — Fake decryption tools masked $11M markup in ransomware recovery scheme</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>08 Oct 2026</span>
