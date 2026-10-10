@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">09 Oct 2026</span>
+      <span id="last-updated">10 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>10 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Unpatched AhsayCBS flaws actively exploited to deploy webshells and crypto-miners</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Threat actors are exploiting two recently disclosed AhsayCBS vulnerabilities (CVE-2026-105133 / CVE-2026-105134) to bypass authentication, inject commands, deploy webshells and run XMRig miners on affected backup management servers.</p>
+            <p><strong>Why it matters:</strong> AhsayCBS is a backup/management platform; compromise can enable persistent access to backups and credentials, increasing supplier risk and potential downstream data exposure for customers using the product.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Identify and isolate exposed AhsayCBS instances</li>
+            <li>Apply vendor patches or mitigations immediately; if unavailable, block access to management ports</li>
+            <li>Rotate credentials and review backups for unauthorized modifications</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/unpatched-ahsaycbs-vulnerabilities-exploited-in-the-wild/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Citrix NetScaler (ADC/Gateway) critical flaw patched — immediate patching urged</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Citrix released patches for a critical NetScaler vulnerability (CVE-2026-107406) that can lead to remote code execution or denial-of-service in certain SAML/NetScaler configurations; vendor and multiple outlets are urging immediate patching.</p>
+            <p><strong>Why it matters:</strong> NetScaler appliances provide remote access and are often Internet-facing; successful exploitation can give attackers access to internal networks and downstream vendor/customer systems — prioritize patching for business-critical appliances.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Inventory exposed NetScaler ADC/Gateway appliances and prioritize Internet-facing units</li>
+            <li>Apply Citrix patches or recommended mitigations immediately</li>
+            <li>Review remote-access logs and monitor for signs of exploitation (unexpected configs, webshells)</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/citrix-warns-admins-to-patch-new-netscaler-rce-flaw-immediately/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/citrix-patches-critical-netscaler-flaw.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/citrix-urges-immediate-patching-of-critical-netscaler-vulnerability/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>FBI says another suspected ShinyHunters member arrested after alleged jobs-portal breach</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> U.S. authorities arrested another suspected ShinyHunters member following an incident in which the group claimed to have breached the FBI jobs portal and exfiltrated sensitive records on applicants and personnel.</p>
+            <p><strong>Why it matters:</strong> ShinyHunters has a history of large-scale data theft and extortion; arrests and continuing disclosures indicate ongoing operational and extortion risk to vendors and sub-processors that handle sensitive personnel data.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Review any external-facing career/job portal integrations and recent access logs</li>
+            <li>Notify HR/legal and confirm scope of any shared data with third parties</li>
+            <li>Validate multi-factor and account recovery controls for staff and vendor portals</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/fbi-arrests-another-suspected-shinyhunters-hacker-after-agency-breach/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/fbi-arrests-another-shinyhunters.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/" rel="noopener" target="_blank">KrebsOnSecurity</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>09 Oct 2026</span>

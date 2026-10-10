@@ -1,6 +1,93 @@
 {
   "days": [
     {
+      "date": "2026-10-10",
+      "generated_at": "2026-10-10T08:21:54+02:00",
+      "incidents": [
+        {
+          "title": "Unpatched AhsayCBS flaws actively exploited to deploy webshells and crypto-miners",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors are exploiting two recently disclosed AhsayCBS vulnerabilities (CVE-2026-105133 / CVE-2026-105134) to bypass authentication, inject commands, deploy webshells and run XMRig miners on affected backup management servers.",
+          "why_it_matters": "AhsayCBS is a backup/management platform; compromise can enable persistent access to backups and credentials, increasing supplier risk and potential downstream data exposure for customers using the product.",
+          "hot_fix": [
+            "Identify and isolate exposed AhsayCBS instances",
+            "Apply vendor patches or mitigations immediately; if unavailable, block access to management ports",
+            "Rotate credentials and review backups for unauthorized modifications"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/unpatched-ahsaycbs-vulnerabilities-exploited-in-the-wild/"
+            }
+          ]
+        },
+        {
+          "title": "Citrix NetScaler (ADC/Gateway) critical flaw patched — immediate patching urged",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Citrix released patches for a critical NetScaler vulnerability (CVE-2026-107406) that can lead to remote code execution or denial-of-service in certain SAML/NetScaler configurations; vendor and multiple outlets are urging immediate patching.",
+          "why_it_matters": "NetScaler appliances provide remote access and are often Internet-facing; successful exploitation can give attackers access to internal networks and downstream vendor/customer systems — prioritize patching for business-critical appliances.",
+          "hot_fix": [
+            "Inventory exposed NetScaler ADC/Gateway appliances and prioritize Internet-facing units",
+            "Apply Citrix patches or recommended mitigations immediately",
+            "Review remote-access logs and monitor for signs of exploitation (unexpected configs, webshells)"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/citrix-warns-admins-to-patch-new-netscaler-rce-flaw-immediately/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/citrix-patches-critical-netscaler-flaw.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/citrix-urges-immediate-patching-of-critical-netscaler-vulnerability/"
+            }
+          ]
+        },
+        {
+          "title": "FBI says another suspected ShinyHunters member arrested after alleged jobs-portal breach",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "U.S. authorities arrested another suspected ShinyHunters member following an incident in which the group claimed to have breached the FBI jobs portal and exfiltrated sensitive records on applicants and personnel.",
+          "why_it_matters": "ShinyHunters has a history of large-scale data theft and extortion; arrests and continuing disclosures indicate ongoing operational and extortion risk to vendors and sub-processors that handle sensitive personnel data.",
+          "hot_fix": [
+            "Review any external-facing career/job portal integrations and recent access logs",
+            "Notify HR/legal and confirm scope of any shared data with third parties",
+            "Validate multi-factor and account recovery controls for staff and vendor portals"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/fbi-arrests-another-suspected-shinyhunters-hacker-after-agency-breach/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/fbi-arrests-another-shinyhunters.html"
+            },
+            {
+              "name": "KrebsOnSecurity",
+              "url": "https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-09",
       "generated_at": "2026-10-09T08:21:52+02:00",
       "incidents": [
