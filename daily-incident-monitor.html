@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">12 Oct 2026</span>
+      <span id="last-updated">13 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>13 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Vendor outage</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Yandex cloud services knocked offline after drone strikes damage datacenters</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Yandex confirmed drone attacks damaged three of its datacenters, forcing full shutdown of two facilities and partial disablement of a third, causing users to lose access to cloud files and disrupting services including payments.</p>
+            <p><strong>Why it matters:</strong> Physical attacks on a major cloud provider cause immediate availability and business continuity risk for customers relying on Yandex-hosted data and payments; third‑party continuity plans and failovers may be required.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Activate provider failover/DR plans for Yandex-hosted workloads</li>
+            <li>Inventory exposed dependencies on Yandex services and escalate to procurement/ops</li>
+            <li>Contact Yandex account teams for incident timelines and customer impact details</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/yandex-confirms-service-outage-as-users-lose-access-to-cloud-files/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.theregister.com/security/2026/10/12/ukrainian-drone-strikes-on-yandex-datacenters-knock-cloud-and-payments-offline/5302577" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical SonicWall SMA 1000 flaw (CVE-2026-102255) observed exploited days after disclosure</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical pre‑auth SSRF in SonicWall SMA 1000 appliances (CVE-2026-102255) has been observed exploited in the wild within days of disclosure, with multiple exploitation attempts reported after patch release.</p>
+            <p><strong>Why it matters:</strong> Exploitation of a critical remote flaw in a remote access appliance can grant attackers access to internal networks and administrative functions; organizations using affected appliances face immediate intrusion and lateral‑movement risk.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply SonicWall vendor patches or mitigations immediately</li>
+            <li>Isolate or remove exposed SMA 1000 appliances from internet facing access until patched</li>
+            <li>Monitor logs for suspicious internal requests originating from SMA devices</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/critical-sonicwall-sma-1000-flaw.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/critical-sonicwall-vulnerability-exploited-days-after-disclosure/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Bricksforge WordPress plugin (CVE-2026-85097) exploited in the wild for unauthenticated RCE</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A maximum‑severity vulnerability in the Bricksforge WordPress plugin (CVE-2026-85097, CVSS 10.0) allowing unauthenticated file upload and remote code execution is being actively exploited against vulnerable sites.</p>
+            <p><strong>Why it matters:</strong> Compromise of WordPress sites via a widely used plugin can lead to site takeover, supply chain impact for hosted customer sites, and downstream risks for any connected services or integrations.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Patch or remove vulnerable Bricksforge plugin instances immediately</li>
+            <li>Scan WordPress estate for indicators of compromise and unauthorized uploads</li>
+            <li>Apply WAF rules to block exploitation patterns until updates deployed</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/attackers-exploit-cvss-100-bricksforge.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/bricksforge-wordpress-plugin-vulnerability-exploited-in-the-wild/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>12 Oct 2026</span>
