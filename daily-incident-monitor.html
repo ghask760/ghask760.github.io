@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">13 Oct 2026</span>
+      <span id="last-updated">14 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>14 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Ivanti Connect Secure zero-day chain gives attackers root; one patch pending</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Researchers reported an attacker chained three zero-day flaws in Ivanti Connect Secure to execute commands as root on the VPN appliance; Ivanti has released fixes for two of the flaws and customers were urged to act immediately while a third patch remains pending.</p>
+            <p><strong>Why it matters:</strong> Ivanti ICS is a widely used remote-access gateway; successful exploitation provides unauthenticated, high‑privilege access to environments, increasing risk of lateral movement and long‑term compromise of vendor-supplied infrastructure.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Ivanti&#x27;s released patches immediately for affected versions</li>
+            <li>Isolate or restrict Internet access to affected Connect Secure appliances until fully patched</li>
+            <li>Review VPN logs, rotate privileged credentials, and monitor for post‑exploit indicators</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/ivanti-zero-day-chain-gave-attackers-root-access-to-fully-patched-vpn/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Docker Hub flaw allowed one user to push/pull/delete images as another</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Docker disclosed a critical vulnerability (CVE-2026-105445) in Docker Hub that could let attackers access another user&#x27;s container repositories using a personal access token; Docker fixed the issue (Sep 30) and reported no evidence of exploitation.</p>
+            <p><strong>Why it matters:</strong> Unauthorized modification or impersonation of container images at a public registry poses direct software supply chain risk — compromised images can propagate to downstream deployments and CI/CD pipelines.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Audit recent image pushes, tags, and download activity for critical repositories</li>
+            <li>Invalidate and rotate affected personal access tokens and keys</li>
+            <li>Rebuild and verify integrity of production images from source-controlled builds</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/docker-hub-flaw-let-attackers-impersonate-users-tamper-with-images/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/docker-fixes-critical-two-year-old-hub.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft October 2026 Patch Tuesday: record 1,400+ fixes including actively exploited zero-day</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Microsoft released fixes for over 1,400 vulnerabilities in its October 2026 Patch Tuesday, including at least one vulnerability under active exploitation and two publicly disclosed zero-days.</p>
+            <p><strong>Why it matters:</strong> Large-scale vendor patching with active exploitation requires immediate prioritization by security and TPRM teams to protect business-critical Microsoft platforms and third‑party integrations against known active threats.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Identify and prioritize deployment of patches for actively exploited CVEs first</li>
+            <li>Apply vendor updates to exposed Microsoft systems after standard testing</li>
+            <li>Implement compensating controls (network segmentation, monitoring) where patching must be delayed</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>13 Oct 2026</span>

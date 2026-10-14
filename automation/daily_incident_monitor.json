@@ -1,6 +1,85 @@
 {
   "days": [
     {
+      "date": "2026-10-14",
+      "generated_at": "2026-10-14T08:21:33+02:00",
+      "incidents": [
+        {
+          "title": "Ivanti Connect Secure zero-day chain gives attackers root; one patch pending",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers reported an attacker chained three zero-day flaws in Ivanti Connect Secure to execute commands as root on the VPN appliance; Ivanti has released fixes for two of the flaws and customers were urged to act immediately while a third patch remains pending.",
+          "why_it_matters": "Ivanti ICS is a widely used remote-access gateway; successful exploitation provides unauthenticated, high‑privilege access to environments, increasing risk of lateral movement and long‑term compromise of vendor-supplied infrastructure.",
+          "hot_fix": [
+            "Apply Ivanti's released patches immediately for affected versions",
+            "Isolate or restrict Internet access to affected Connect Secure appliances until fully patched",
+            "Review VPN logs, rotate privileged credentials, and monitor for post‑exploit indicators"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/ivanti-zero-day-chain-gave-attackers-root-access-to-fully-patched-vpn/"
+            }
+          ]
+        },
+        {
+          "title": "Docker Hub flaw allowed one user to push/pull/delete images as another",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Docker disclosed a critical vulnerability (CVE-2026-105445) in Docker Hub that could let attackers access another user's container repositories using a personal access token; Docker fixed the issue (Sep 30) and reported no evidence of exploitation.",
+          "why_it_matters": "Unauthorized modification or impersonation of container images at a public registry poses direct software supply chain risk — compromised images can propagate to downstream deployments and CI/CD pipelines.",
+          "hot_fix": [
+            "Audit recent image pushes, tags, and download activity for critical repositories",
+            "Invalidate and rotate affected personal access tokens and keys",
+            "Rebuild and verify integrity of production images from source-controlled builds"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/docker-hub-flaw-let-attackers-impersonate-users-tamper-with-images/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/docker-fixes-critical-two-year-old-hub.html"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft October 2026 Patch Tuesday: record 1,400+ fixes including actively exploited zero-day",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Microsoft released fixes for over 1,400 vulnerabilities in its October 2026 Patch Tuesday, including at least one vulnerability under active exploitation and two publicly disclosed zero-days.",
+          "why_it_matters": "Large-scale vendor patching with active exploitation requires immediate prioritization by security and TPRM teams to protect business-critical Microsoft platforms and third‑party integrations against known active threats.",
+          "hot_fix": [
+            "Identify and prioritize deployment of patches for actively exploited CVEs first",
+            "Apply vendor updates to exposed Microsoft systems after standard testing",
+            "Implement compensating controls (network segmentation, monitoring) where patching must be delayed"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-13",
       "generated_at": "2026-10-13T08:21:47+02:00",
       "incidents": [
