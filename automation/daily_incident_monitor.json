@@ -1,6 +1,66 @@
 {
   "days": [
     {
+      "date": "2026-10-15",
+      "generated_at": "2026-10-15T08:21:19+02:00",
+      "incidents": [
+        {
+          "title": "Cisco Secure Email Gateway zero-day actively exploited and patched",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Cisco released a patch for an actively exploited zero-day in Secure Email Gateway (SEG) that allows a remote, unauthenticated attacker to write files and execute commands as root via crafted email attachments.",
+          "why_it_matters": "Organizations using Cisco SEG face remote compromise of an email-filtering appliance that processes inbound mail; successful exploitation can give attackers root on the appliance and a foothold into email flows and downstream systems.",
+          "hot_fix": [
+            "Apply Cisco SEG vendor patch immediately",
+            "Block and inspect incoming messages with unusual attachments at perimeter gateways",
+            "Monitor SEG logs for suspicious file writes, command execution, and anomalies"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/cisco-warns-of-active-attacks.html"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/10/14/cisco-make-me-root-email-bug-exploited-as-a-0-day-by-unknown-crims/5303168"
+            }
+          ]
+        },
+        {
+          "title": "Ivanti Connect Secure authentication-bypass zero-day exploited; CISA urges immediate updates",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "An authentication-bypass vulnerability in Ivanti Connect Secure (CVE-2026-104935) has been exploited in the wild; Ivanti published patches and security agencies urged immediate remediation after exploit attempts were observed.",
+          "why_it_matters": "Ivanti ICS appliances provide remote access for many organizations; active exploitation of an auth-bypass can allow unauthorized access to corporate networks and remote services, increasing risk of lateral movement and data exposure.",
+          "hot_fix": [
+            "Apply Ivanti Connect Secure updates from vendor immediately",
+            "If unable to patch, isolate ICS appliances from untrusted networks and restrict admin access",
+            "Hunt for exploit indicators in VPN/auth logs and honeypot telemetry"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/cisa-urges-immediate-ivanti-connect.html"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/10/14/ivanti-patches-connect-secure-zero-day-after-researchers-confirm-in-the-wild-attacks/5303095"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-14",
       "generated_at": "2026-10-14T08:21:33+02:00",
       "incidents": [
