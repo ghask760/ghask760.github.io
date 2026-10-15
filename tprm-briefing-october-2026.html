@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBES9XC498">
+</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-NBES9XC498');</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Third-Party Risk Intelligence Briefing - October 2026 | Gabriel Hasik</title>
+  <meta name="description" content="Refrigeration-controller attacks, NetScaler exploitation, partner continuity and CRA reporting follow-through."/>
+  <link rel="canonical" href="https://gabrielhasik.com/tprm-briefing-october-2026.html"/>
+  <link rel="alternate" type="application/rss+xml" title="Gabriel Hasik Risk Briefings" href="https://gabrielhasik.com/feed.xml"/>
+  <meta property="og:type" content="article"/>
+<meta property="og:title" content="Third-Party Risk Intelligence Briefing - October 2026"/>
+<meta property="og:description" content="Refrigeration-controller attacks, NetScaler exploitation, partner continuity and CRA reporting follow-through."/>
+<meta property="og:url" content="https://gabrielhasik.com/tprm-briefing-october-2026.html"/>
+  <meta name="twitter:card" content="summary"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="monitoring-briefing.css"/>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">G.<span>Hasik</span>
+</a>
+    <ul class="nav-links">
+<li>
+<a href="index.html#about">About</a>
+</li>
+<li>
+<a href="index.html#blog">Writing</a>
+</li>
+<li>
+<a class="active" href="monitoring.html">Monitoring</a>
+</li>
+<li>
+<a href="index.html#projects">Projects</a>
+</li>
+<li>
+<a href="index.html#contact">Contact</a>
+</li>
+</ul>
+  </nav>
+
+  <header class="hero">
+<div class="hero-grid">
+</div>
+<div class="hero-eyebrow">Third-Party Risk Intelligence Briefing · October 2026</div>
+<h1 class="hero-title">When supplier access<br/>
+<em>stops operations</em>
+</h1>
+<p class="hero-text">October brings the operational consequences of connected suppliers into focus: physical controls, perimeter appliances and precautionary shutdowns. Assurance needs to show who owns the access path and how the business continues when that path is closed.</p>
+<div class="hero-meta">
+<span class="tag accent">Cut-off: 15 October 2026 · 09:00 CEST</span>
+<span class="tag">Monthly intelligence</span>
+<span class="tag">7 / 30 / 90 day actions</span>
+</div>
+</header>
+<main>
+<section>
+<div class="section-label">01 — Executive Snapshot</div>
+<h2 class="section-title">What changed since September</h2>
+<p class="section-intro">Monthly edition covering developments since the 14 September briefing; evidence cut-off: 15 October 2026, 09:00 CEST. This is an October-to-date assessment, not a full-month retrospective.</p>
+<div class="summary-grid">
+<div class="panel">
+<h3>Analyst view</h3>
+<p>The boundary between cyber and physical operations matters this month. Start with internet-facing maintenance and managed access, then test the business fallback. Two technical alerts and one corporate incident are distinct signals; no common attacker or cause is asserted.</p>
+</div>
+<div class="panel">
+<h3>Changes and continuity</h3>
+<ul class="signal-list">
+<li>New: refrigeration-controller compromises and updated NetScaler exploitation alerts.</li>
+<li>New: Ahold Delhaize’s disclosed disruption and controlled restart.</li>
+<li>Carry-forward: verify CRA reporting handoffs after September’s start.</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<div class="section-label">02 — Priority Signals</div>
+<h2 class="section-title">Evidence, implications and decisions</h2>
+<div class="briefing-stack">
+<article class="briefing-card critical">
+<div class="briefing-meta">
+<span class="pill critical">Critical</span>
+<span class="pill">OT</span>
+<span class="pill">Remote maintenance</span>
+</div>
+<h3>A maintenance interface can become a business interruption</h3>
+<p>
+<strong>Confirmed fact.</strong> CERT-FR reported compromises of Danfoss AK-SM and AK-SC, Copeland xweb and Dixell xweb refrigeration controllers on 12–13 October. Its alert warns that attacks may still be ongoing and that resetting an exposed, unsupported device alone leaves it vulnerable to reinfection.</p>
+<p>
+<strong>Analytical implication.</strong> A supplier-managed physical system belongs in the critical-service inventory. Responsibility must cover the controller, remote-access provider and local operator.</p>
+<div class="detail-grid">
+<div class="detail-item">
+<span class="label">Control test</span>
+<div class="value">Who can disconnect maintenance access while preserving safe local operation?</div>
+</div>
+<div class="detail-item">
+<span class="label">Evidence</span>
+<div class="value">Device and support inventory; access diagram; recovery record and temperature checks.</div>
+</div>
+</div>
+<div class="action-box">
+<h4>Recommended actions</h4>
+<ol>
+<li>Identify exposed controllers and owners; remove public access in coordination with operations and the refrigeration provider, checking insurance conditions tied to telemetry.</li>
+<li>Use protected remote access and follow vendor recovery guidance; verify safe temperatures before releasing stock.</li>
+</ol>
+</div>
+<div class="source-row">Primary source: <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-012/">CERT-FR, 12–13 October 2026</a>
+</div>
+</article>
+<article class="briefing-card critical">
+<div class="briefing-meta">
+<span class="pill critical">Critical</span>
+<span class="pill">Edge devices</span>
+<span class="pill">Active exploitation</span>
+</div>
+<h3>An appliance patch is only one part of incident closure</h3>
+<p>
+<strong>Confirmed fact.</strong> CERT-FR reports active exploitation of NetScaler ADC and Gateway vulnerabilities, including remote-code-execution flaws CVE-2026-88771 and CVE-2026-88772. Its 5 October update adds the actively exploited denial-of-service vulnerability CVE-2026-88779. Exploitation of the earlier flaws began before patches were available.</p>
+<p>
+<strong>Analytical implication.</strong> An outsourced gateway can expose several customer services at once. A provider’s patch confirmation does not establish whether compromise occurred beforehand.</p>
+<div class="detail-grid">
+<div class="detail-item">
+<span class="label">Escalation trigger</span>
+<div class="value">An exposed affected device has no verified remediation or investigation owner.</div>
+</div>
+<div class="detail-item">
+<span class="label">Evidence</span>
+<div class="value">Asset-specific patch proof, investigation window, detection results and closure decision.</div>
+</div>
+</div>
+<div class="action-box">
+<h4>Recommended actions</h4>
+<ol>
+<li>Ask hosting and managed-service providers for affected deployments, configurations, corrected builds and patch timestamps against the current vendor bulletin.</li>
+<li>Request retrospective investigation, findings and remediation; evaluate exposed sessions and credentials with the incident team.</li>
+<li>Record residual risk separately from patch completion and require a named business owner.</li>
+</ol>
+</div>
+<div class="source-row">Primary source: <a href="https://cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-011/">CERT-FR, updated 5 October 2026</a>
+</div>
+</article>
+<article class="briefing-card high">
+<div class="briefing-meta">
+<span class="pill high">High</span>
+<span class="pill">Continuity</span>
+<span class="pill">Retail ecosystem</span>
+</div>
+<h3>Ahold Delhaize illustrates the cost of protective shutdowns</h3>
+<p>
+<strong>Confirmed fact.</strong> In its 13 October statement, updated on 14 October, Ahold Delhaize described taking systems offline and starting a controlled restart of certain systems. Stores remained open, with differing effects across brands. The company said it had no evidence at that time of customer, associate or partner data being taken; the investigation was ongoing.</p>
+<p>
+<strong>Analytical implication.</strong> Containment can disrupt partners even without confirmed data theft. The cited statement does not establish a supplier origin or a connection to the refrigeration attacks.</p>
+<div class="detail-grid">
+<div class="detail-item">
+<span class="label">Supplier question</span>
+<div class="value">Which transactions can continue without your primary platform?</div>
+</div>
+<div class="detail-item">
+<span class="label">Evidence</span>
+<div class="value">Tested fallback, agreed reconciliation controls and restart criteria.</div>
+</div>
+</div>
+<div class="action-box">
+<h4>Recommended actions</h4>
+<ol>
+<li>Validate alternative ordering, delivery confirmation and reconciliation with critical partners.</li>
+<li>Define the service threshold that activates manual workarounds and the evidence required for safe reconnection.</li>
+</ol>
+</div>
+<div class="source-row">Primary source: <a href="https://newsroom.aholddelhaize.com/update-on-ahold-delhaizes-cybersecurity-incident/">Ahold Delhaize, 13 October; updated 14 October 2026</a>
+</div>
+</article>
+<article class="briefing-card high">
+<div class="briefing-meta">
+<span class="pill high">High</span>
+<span class="pill">Carry-forward</span>
+<span class="pill">CRA reporting</span>
+</div>
+<h3>One month into CRA reporting: test the handoff</h3>
+<p>
+<strong>Confirmed fact.</strong> Manufacturer reporting obligations have applied since 11 September 2026: an early warning within 24 hours of awareness and a notification within 72 hours for covered events. The Commission distinguishes open-source software stewards, whose Article 24(3) reporting obligations apply from 11 December 2027.</p>
+<p>
+<strong>Analytical implication.</strong> This is a follow-up to September, not a new October rule. Determine the supplier’s role and product scope before asking for evidence; a regulatory report does not replace a customer escalation process.</p>
+<div class="detail-grid">
+</div>
+<div class="action-box">
+<h4>Recommended actions</h4>
+<ol>
+<li>Exercise a product-specific supplier alert through procurement, security and the service owner.</li>
+<li>Keep regulatory reporting duties distinct from contractual customer-notification commitments.</li>
+</ol>
+</div>
+<div class="source-row">Primary source: <a href="https://digital-strategy.ec.europa.eu/en/policies/cra-reporting">European Commission — CRA reporting guidance</a>
+</div>
+</article>
+</div>
+</section>
+<section>
+<div class="section-label">03 — Decision Dashboard</div>
+<h2 class="section-title">Seven, thirty and ninety days</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Horizon</th>
+<th>Action</th>
+<th>Evidence of completion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Next 7 days</td>
+<td>Identify exposed OT and managed gateways; establish incident and fallback owners.</td>
+<td>Exposure list, remediation tickets and contact tree.</td>
+</tr>
+<tr>
+<td>Next 30 days</td>
+<td>Test restricted supplier access, retrospective investigation and offline transaction handling.</td>
+<td>Access review, incident closure and reconciled exercise output.</td>
+</tr>
+<tr>
+<td>Next 90 days</td>
+<td>Retire unsupported remote interfaces and incorporate tested recovery into supplier reviews.</td>
+<td>Approved replacement plan, measured recovery and contractual responsibilities.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section>
+<div class="section-label">04 — Questions for Leadership</div>
+<h2 class="section-title">Make the next review measurable</h2>
+<div class="panel">
+<h3>Could we operate safely if supplier access were removed today?</h3>
+<p>Ask for one critical service, its access owner, the maximum tolerable interruption and the last tested fallback. Missing answers are remediation work, even when the supplier questionnaire is complete.</p>
+</div>
+</section>
+<section>
+<div class="section-label">05 — Sources &amp; Method</div>
+<h2 class="section-title">Evidence and boundaries</h2>
+<p class="section-intro">Facts are attributed to the primary sources below. Recommendations, priorities and dashboard scores are editorial assessments, not source ratings. Forecasts remain forecasts. Corporate statements describe what the company disclosed, not an independently verified root cause. Apply the analysis to your contracts, assets and jurisdictions.</p>
+<div class="note-box">
+<h4>Comparable signal scores</h4>
+<p>Software &amp; updates 5; regulatory readiness 4; identity &amp; supplier access 5; concentration &amp; resilience 4.</p>
+<p>Scale: 0–5, from no material signal to critical. Scores describe this edition’s evidence and control urgency; they do not measure incident probability or imply that an unmentioned risk has disappeared.</p>
+</div>
+<ul class="source-list">
+<li>
+<a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-012/">CERT-FR, 12–13 October 2026</a>
+</li>
+<li>
+<a href="https://cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-011/">CERT-FR, updated 5 October 2026</a>
+</li>
+<li>
+<a href="https://newsroom.aholddelhaize.com/update-on-ahold-delhaizes-cybersecurity-incident/">Ahold Delhaize, 13 October; updated 14 October 2026</a>
+</li>
+<li>
+<a href="https://digital-strategy.ec.europa.eu/en/policies/cra-reporting">European Commission — CRA reporting guidance</a>
+</li>
+</ul>
+<a class="back-link" href="third-party-risk-intelligence-briefing.html">← All editions</a>
+</section>
+</main>
+<footer>
+<span>© 2026 Gabriel Hasik</span>
+<a href="monitoring.html">Monitoring hub</a>
+<span>Independent risk intelligence</span>
+</footer>
+</body>
+</html>
