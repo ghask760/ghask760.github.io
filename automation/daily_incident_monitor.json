@@ -1,6 +1,62 @@
 {
   "days": [
     {
+      "date": "2026-10-16",
+      "generated_at": "2026-10-16T08:21:46+02:00",
+      "incidents": [
+        {
+          "title": "UK Legal Aid Agency breach — records dating back to 1978 stolen",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The UK Legal Aid Agency (LAA) disclosed that an intrusion into its IT systems (breach reported April 2025) resulted in attackers stealing records dating back to 1978, including probation service data. The agency confirmed the theft to investigators and regulators.",
+          "why_it_matters": "The breach involves long-retained, potentially sensitive PII across decades, increasing exposure and compliance/remediation obligations for any third parties that processed or stored LAA data. Procurement and TPRM teams should assume widespread legacy-data impact and verify vendor controls for archived data.",
+          "hot_fix": [
+            "Confirm scope with LAA and request vendor/contractor data inventories",
+            "Audit suppliers/partners with access to LAA systems or archives",
+            "Enable mandatory credential resets and MFA where LAA credentials were used"
+          ],
+          "sources": [
+            {
+              "name": "Bleeping Computer",
+              "url": "https://www.bleepingcomputer.com/news/security/uk-legal-aid-agency-hackers-stole-records-dating-back-to-1978/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/10/15/legal-aid-agency-hackers-made-off-with-records-dating-back-to-1978/5303243"
+            }
+          ]
+        },
+        {
+          "title": "Palo Alto Networks patches PAN-OS RCE zero-day exploited in customer firewalls",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Palo Alto Networks released updates for a high-severity PAN-OS remote code execution zero-day (CVE-2026-0322) after confirming limited active exploitation targeting the management interface of customer firewalls; the vendor published IoCs.",
+          "why_it_matters": "Exploitation of firewall management interfaces can yield persistent network access and lateral movement across customer environments; organizations using PAN-OS should prioritize remediation to avoid third-party supplier compromise and business-impacting breaches.",
+          "hot_fix": [
+            "Apply Palo Alto Networks security updates immediately to affected PAN-OS versions",
+            "Implement vendor IoCs and scan firewall logs for signs of compromise",
+            "Isolate or restrict management plane access and rotate privileged credentials"
+          ],
+          "sources": [
+            {
+              "name": "Bleeping Computer",
+              "url": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/palo-alto-networks-patches-pan-os-zero-day-exploited-for-remote-code-execution/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/palo-alto-networks-patches-pan-os.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-15",
       "generated_at": "2026-10-15T08:21:19+02:00",
       "incidents": [

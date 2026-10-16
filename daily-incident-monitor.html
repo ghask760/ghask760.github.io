@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">15 Oct 2026</span>
+      <span id="last-updated">16 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>16 Oct 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>UK Legal Aid Agency breach — records dating back to 1978 stolen</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The UK Legal Aid Agency (LAA) disclosed that an intrusion into its IT systems (breach reported April 2025) resulted in attackers stealing records dating back to 1978, including probation service data. The agency confirmed the theft to investigators and regulators.</p>
+            <p><strong>Why it matters:</strong> The breach involves long-retained, potentially sensitive PII across decades, increasing exposure and compliance/remediation obligations for any third parties that processed or stored LAA data. Procurement and TPRM teams should assume widespread legacy-data impact and verify vendor controls for archived data.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm scope with LAA and request vendor/contractor data inventories</li>
+            <li>Audit suppliers/partners with access to LAA systems or archives</li>
+            <li>Enable mandatory credential resets and MFA where LAA credentials were used</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/uk-legal-aid-agency-hackers-stole-records-dating-back-to-1978/" rel="noopener" target="_blank">Bleeping Computer</a> <a href="https://www.theregister.com/security/2026/10/15/legal-aid-agency-hackers-made-off-with-records-dating-back-to-1978/5303243" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Palo Alto Networks patches PAN-OS RCE zero-day exploited in customer firewalls</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Palo Alto Networks released updates for a high-severity PAN-OS remote code execution zero-day (CVE-2026-0322) after confirming limited active exploitation targeting the management interface of customer firewalls; the vendor published IoCs.</p>
+            <p><strong>Why it matters:</strong> Exploitation of firewall management interfaces can yield persistent network access and lateral movement across customer environments; organizations using PAN-OS should prioritize remediation to avoid third-party supplier compromise and business-impacting breaches.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Palo Alto Networks security updates immediately to affected PAN-OS versions</li>
+            <li>Implement vendor IoCs and scan firewall logs for signs of compromise</li>
+            <li>Isolate or restrict management plane access and rotate privileged credentials</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/" rel="noopener" target="_blank">Bleeping Computer</a> <a href="https://www.securityweek.com/palo-alto-networks-patches-pan-os-zero-day-exploited-for-remote-code-execution/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://thehackernews.com/2026/10/palo-alto-networks-patches-pan-os.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>15 Oct 2026</span>
