@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">17 Oct 2026</span>
+      <span id="last-updated">18 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,35 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>18 Oct 2026</span>
+          <span>1 incident</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>ConnectWise Cloud Backup credential compromise led to Microsoft 365 tenant access</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers abused a compromised ConnectWise Cloud Backup (formerly SkyKick) Microsoft 365 application credential to sign in to customer M365 tenants; ConnectWise temporarily shut down customer access to the Cloud Backup service.</p>
+            <p><strong>Why it matters:</strong> Managed service provider (MSP) backup vendor compromise can provide attackers persistent access to multiple customer environments and backup data, increasing lateral compromise and data-exfiltration risk across supply chains.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Rotate and revoke all Cloud Backup/M365 app credentials and OAuth tokens</li>
+            <li>Force reauthorization for all customers and validate tenant app permissions</li>
+            <li>Audit tenant access logs and backup integrity for unauthorized activity</li>
+            <li>Notify affected customers and apply enhanced monitoring for lateral activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>17 Oct 2026</span>

@@ -1,6 +1,36 @@
 {
   "days": [
     {
+      "date": "2026-10-18",
+      "generated_at": "2026-10-18T08:21:19+02:00",
+      "incidents": [
+        {
+          "title": "ConnectWise Cloud Backup credential compromise led to Microsoft 365 tenant access",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Attackers abused a compromised ConnectWise Cloud Backup (formerly SkyKick) Microsoft 365 application credential to sign in to customer M365 tenants; ConnectWise temporarily shut down customer access to the Cloud Backup service.",
+          "why_it_matters": "Managed service provider (MSP) backup vendor compromise can provide attackers persistent access to multiple customer environments and backup data, increasing lateral compromise and data-exfiltration risk across supply chains.",
+          "hot_fix": [
+            "Rotate and revoke all Cloud Backup/M365 app credentials and OAuth tokens",
+            "Force reauthorization for all customers and validate tenant app permissions",
+            "Audit tenant access logs and backup integrity for unauthorized activity",
+            "Notify affected customers and apply enhanced monitoring for lateral activity"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-17",
       "generated_at": "2026-10-17T08:21:02+02:00",
       "incidents": [
