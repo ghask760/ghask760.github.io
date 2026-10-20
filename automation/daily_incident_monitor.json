@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-10-20",
+      "generated_at": "2026-10-20T08:21:39+02:00",
+      "incidents": [
+        {
+          "title": "Rank Math PRO WordPress plugin packages were backdoored in supply-chain compromise",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Malware was injected into Rank Math PRO plugin packages (version 3.0.123) distributed from the vendor's site between October 15–16, delivering hidden backdoors to affected WordPress sites.",
+          "why_it_matters": "Compromised plugin packages can provide persistent remote access to customer web environments, enabling site takeover, data theft, or further supply‑chain abuse across the vendor's customer base.",
+          "hot_fix": [
+            "Remove affected Rank Math PRO versions and update only to vendor-verified clean releases",
+            "Scan websites for webshells/backdoors and restore from known-good backups where needed",
+            "Rotate admin and API credentials used by affected sites and review third-party integrations"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/wordpress-seo-plugin-rank-math-compromised-to-backdoor-websites/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/rank-math-pro-wordpress-plugin-compromised-in-supply-chain-attack/"
+            }
+          ]
+        },
+        {
+          "title": "OpenCode Console breach may have exposed customer OpenAI, Anthropic and Google API keys",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "An intruder accessed a legacy OpenCode system on the night of October 16 and may have exposed third-party AI provider API keys that users had stored in the optional OpenCode Console service.",
+          "why_it_matters": "Exposed API keys can be abused to run model queries, access data, or incur costs at downstream providers; organizations using OpenCode should treat stored keys as potentially compromised and assess downstream risk.",
+          "hot_fix": [
+            "Revoke and rotate any API keys stored in OpenCode Console immediately",
+            "Audit provider usage and billing for anomalies and block suspicious activity",
+            "Require use of provider-managed secrets or ephemeral credentials where possible"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/opencode-hack-exposes-api-keys-amid-ai-distillation-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html"
+            }
+          ]
+        },
+        {
+          "title": "Plex2Shell exploit chain weaponized to deploy crypto miners and proxy backdoors on Plex servers",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors began exploiting a chain of vulnerabilities in Plex Media Server (dubbed Plex2Shell) to install cryptocurrency miners and reverse-proxy backdoors hours after a proof-of-concept was published.",
+          "why_it_matters": "Exposed Plex servers can be remotely compromised to consume resources, provide pivoting infrastructure, or host proxying/backdoor services—posing lateral-movement and risk amplification for networks that host them.",
+          "hot_fix": [
+            "Apply Plex vendor security updates immediately",
+            "Isolate and scan compromised Plex hosts for miners and backdoors",
+            "Monitor and block suspicious outbound proxy traffic and related indicators"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-plex2shell-flaws-to.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-19",
       "generated_at": "2026-10-19T08:21:36+02:00",
       "incidents": []

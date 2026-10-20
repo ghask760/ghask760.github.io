@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">19 Oct 2026</span>
+      <span id="last-updated">20 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>20 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Rank Math PRO WordPress plugin packages were backdoored in supply-chain compromise</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Malware was injected into Rank Math PRO plugin packages (version 3.0.123) distributed from the vendor&#x27;s site between October 15–16, delivering hidden backdoors to affected WordPress sites.</p>
+            <p><strong>Why it matters:</strong> Compromised plugin packages can provide persistent remote access to customer web environments, enabling site takeover, data theft, or further supply‑chain abuse across the vendor&#x27;s customer base.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Remove affected Rank Math PRO versions and update only to vendor-verified clean releases</li>
+            <li>Scan websites for webshells/backdoors and restore from known-good backups where needed</li>
+            <li>Rotate admin and API credentials used by affected sites and review third-party integrations</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/wordpress-seo-plugin-rank-math-compromised-to-backdoor-websites/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/rank-math-pro-wordpress-plugin-compromised-in-supply-chain-attack/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>OpenCode Console breach may have exposed customer OpenAI, Anthropic and Google API keys</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An intruder accessed a legacy OpenCode system on the night of October 16 and may have exposed third-party AI provider API keys that users had stored in the optional OpenCode Console service.</p>
+            <p><strong>Why it matters:</strong> Exposed API keys can be abused to run model queries, access data, or incur costs at downstream providers; organizations using OpenCode should treat stored keys as potentially compromised and assess downstream risk.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Revoke and rotate any API keys stored in OpenCode Console immediately</li>
+            <li>Audit provider usage and billing for anomalies and block suspicious activity</li>
+            <li>Require use of provider-managed secrets or ephemeral credentials where possible</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/opencode-hack-exposes-api-keys-amid-ai-distillation-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/opencode-console-breach-may-have.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Plex2Shell exploit chain weaponized to deploy crypto miners and proxy backdoors on Plex servers</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Threat actors began exploiting a chain of vulnerabilities in Plex Media Server (dubbed Plex2Shell) to install cryptocurrency miners and reverse-proxy backdoors hours after a proof-of-concept was published.</p>
+            <p><strong>Why it matters:</strong> Exposed Plex servers can be remotely compromised to consume resources, provide pivoting infrastructure, or host proxying/backdoor services—posing lateral-movement and risk amplification for networks that host them.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Plex vendor security updates immediately</li>
+            <li>Isolate and scan compromised Plex hosts for miners and backdoors</li>
+            <li>Monitor and block suspicious outbound proxy traffic and related indicators</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-plex2shell-flaws-to.html" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>19 Oct 2026</span>
