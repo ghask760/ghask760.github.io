@@ -1,6 +1,88 @@
 {
   "days": [
     {
+      "date": "2026-10-21",
+      "generated_at": "2026-10-21T08:22:04+02:00",
+      "incidents": [
+        {
+          "title": "OVHcloud CLI releases backdoored on GitHub to steal developer secrets",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "An attacker hijacked a contributor GitHub account and replaced download archives on five OVHcloud CLI releases with builds that include a secrets-stealing info‑stealer; the malicious releases were live for up to 94 minutes on Oct 19. Security analysis links the developer account compromise to a loader used earlier this year.",
+          "why_it_matters": "Official CLI releases were tampered with, exposing developer and CI secrets on any machine that ran the compromised binaries and creating downstream risk for customer environments and build pipelines.",
+          "hot_fix": [
+            "Revoke and remove the affected releases/tags on GitHub",
+            "Invalidate and rotate any potentially exposed credentials and secrets",
+            "Scan endpoints and CI systems for the malicious binary and related indicators",
+            "Harden developer accounts (MFA, token revocation) and rebuild releases from trusted CI"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/ovhcloud-cli-releases-backdoored-on-github-to-steal-developer-secrets/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/ovhcloud-cli-releases-backdoored-on-github-to-steal-developer-secrets/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/hijacked-developer-account-used-to-plant-stealer-in-ovhcloud-cli/"
+            }
+          ]
+        },
+        {
+          "title": "PHP out-of-cycle emergency patch planned for two critical RCEs (PHP2Shell)",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The PHP security team announced an out-of-cycle security release scheduled for 14:00 UTC on Oct 21 to fix two critical remote code execution vulnerabilities rated 9.2 (affecting supported branches 8.2–8.5); details were limited and no public exploitation had been reported at announcement time.",
+          "why_it_matters": "PHP is a ubiquitous runtime; an emergency RCE patch requires immediate inventory and rapid patch deployment across web servers, containers, and vendor products that embed PHP to prevent high-impact remote compromise.",
+          "hot_fix": [
+            "Inventory PHP runtime versions and impacted systems (8.2–8.5)",
+            "Prioritize testing and deploy the emergency PHP update as soon as available",
+            "Apply temporary WAF and network mitigations to block exploitation attempts",
+            "Monitor logs and threat feeds for post-disclosure exploit activity"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/php-warns-admins-of-two-critical-flaws-emergency-patches-coming-tomorrow/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html"
+            }
+          ]
+        },
+        {
+          "title": "Ransomware groups exploiting PAN-OS / Prisma Access authentication bypass (CVE-2026-0257)",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Palo Alto Networks has observed and reported exploitation of CVE-2026-0257, an authentication bypass in PAN-OS and Prisma Access that allowed attackers to establish unauthorized VPN connections and bypass MFA; security firms report multiple ransomware groups have targeted the firewall OS since at least June.",
+          "why_it_matters": "Active exploitation against a widely deployed firewall and VPN product enables unauthorized network access and lateral movement; organizations using affected Palo Alto products face elevated ransomware and data-theft risk until mitigations and patches are applied.",
+          "hot_fix": [
+            "Apply Palo Alto patches/mitigations immediately where available",
+            "Rotate administrative and VPN credentials and replace exposed application credentials",
+            "Hunt for unauthorized VPN sessions and anomalous firewall admin activity",
+            "Enforce additional network segmentation and MFA validation at multiple layers"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/qilin-and-inc-ransomware-groups-exploit.html"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/cyber-crime/2026/10/20/palo-altos-firewall-os-has-been-under-attack-from-multiple-ransomware-groups-since-june/5304226"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-20",
       "generated_at": "2026-10-20T08:21:39+02:00",
       "incidents": [

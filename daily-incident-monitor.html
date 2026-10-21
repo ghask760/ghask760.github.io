@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">20 Oct 2026</span>
+      <span id="last-updated">21 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,81 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>21 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>OVHcloud CLI releases backdoored on GitHub to steal developer secrets</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An attacker hijacked a contributor GitHub account and replaced download archives on five OVHcloud CLI releases with builds that include a secrets-stealing info‑stealer; the malicious releases were live for up to 94 minutes on Oct 19. Security analysis links the developer account compromise to a loader used earlier this year.</p>
+            <p><strong>Why it matters:</strong> Official CLI releases were tampered with, exposing developer and CI secrets on any machine that ran the compromised binaries and creating downstream risk for customer environments and build pipelines.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Revoke and remove the affected releases/tags on GitHub</li>
+            <li>Invalidate and rotate any potentially exposed credentials and secrets</li>
+            <li>Scan endpoints and CI systems for the malicious binary and related indicators</li>
+            <li>Harden developer accounts (MFA, token revocation) and rebuild releases from trusted CI</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/ovhcloud-cli-releases-backdoored-on-github-to-steal-developer-secrets/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/ovhcloud-cli-releases-backdoored-on-github-to-steal-developer-secrets/" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/hijacked-developer-account-used-to-plant-stealer-in-ovhcloud-cli/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>PHP out-of-cycle emergency patch planned for two critical RCEs (PHP2Shell)</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The PHP security team announced an out-of-cycle security release scheduled for 14:00 UTC on Oct 21 to fix two critical remote code execution vulnerabilities rated 9.2 (affecting supported branches 8.2–8.5); details were limited and no public exploitation had been reported at announcement time.</p>
+            <p><strong>Why it matters:</strong> PHP is a ubiquitous runtime; an emergency RCE patch requires immediate inventory and rapid patch deployment across web servers, containers, and vendor products that embed PHP to prevent high-impact remote compromise.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Inventory PHP runtime versions and impacted systems (8.2–8.5)</li>
+            <li>Prioritize testing and deploy the emergency PHP update as soon as available</li>
+            <li>Apply temporary WAF and network mitigations to block exploitation attempts</li>
+            <li>Monitor logs and threat feeds for post-disclosure exploit activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/php-warns-admins-of-two-critical-flaws-emergency-patches-coming-tomorrow/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Ransomware groups exploiting PAN-OS / Prisma Access authentication bypass (CVE-2026-0257)</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Palo Alto Networks has observed and reported exploitation of CVE-2026-0257, an authentication bypass in PAN-OS and Prisma Access that allowed attackers to establish unauthorized VPN connections and bypass MFA; security firms report multiple ransomware groups have targeted the firewall OS since at least June.</p>
+            <p><strong>Why it matters:</strong> Active exploitation against a widely deployed firewall and VPN product enables unauthorized network access and lateral movement; organizations using affected Palo Alto products face elevated ransomware and data-theft risk until mitigations and patches are applied.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Palo Alto patches/mitigations immediately where available</li>
+            <li>Rotate administrative and VPN credentials and replace exposed application credentials</li>
+            <li>Hunt for unauthorized VPN sessions and anomalous firewall admin activity</li>
+            <li>Enforce additional network segmentation and MFA validation at multiple layers</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/qilin-and-inc-ransomware-groups-exploit.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.theregister.com/cyber-crime/2026/10/20/palo-altos-firewall-os-has-been-under-attack-from-multiple-ransomware-groups-since-june/5304226" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>20 Oct 2026</span>
