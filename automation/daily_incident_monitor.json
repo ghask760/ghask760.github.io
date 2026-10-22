@@ -1,6 +1,62 @@
 {
   "days": [
     {
+      "date": "2026-10-22",
+      "generated_at": "2026-10-22T08:21:25+02:00",
+      "incidents": [
+        {
+          "title": "PHP emergency patches released for PHP2Shell RCEs (CVE-2026-109618 / CVE-2026-109619)",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The PHP project released emergency updates fixing two critical remote-code-execution vulnerabilities tracked as CVE-2026-109618 and CVE-2026-109619 (collectively “PHP2Shell”); exploitation attempts were observed and many sites require immediate updates.",
+          "why_it_matters": "The PHP runtime is widely deployed across web infrastructure; vulnerable servers can be fully compromised, may experience outages, and active exploitation increases urgency for patching or mitigations.",
+          "hot_fix": [
+            "Apply the PHP emergency updates (e.g., 8.5.12, 8.4.27, 8.3.36, 8.2.35) immediately",
+            "If unable to patch immediately, consider taking affected sites offline or block vulnerable endpoints via WAF/network controls",
+            "Monitor web/server logs and IDS for exploitation indicators and hunt for signs of compromise"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html"
+            },
+            {
+              "name": "KrebsOnSecurity",
+              "url": "https://krebsonsecurity.com/2026/10/widespread-php-flaw-may-cause-many-site-outages-today/"
+            }
+          ]
+        },
+        {
+          "title": "LiteLLM PyPI package (v1.107.0) compromised, delivered credential stealer and backdoor",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The LiteLLM Python package (v1.107.0) was compromised in a supply chain attack that delivered a credential stealer and a backdoor via PyPI wheels and Docker images; PyPI quarantined the affected package.",
+          "why_it_matters": "Organizations that pulled LiteLLM v1.107.0 into development, CI/CD, containers, or production could have had credentials and secrets exfiltrated and may have backdoors in runtime environments or artifacts.",
+          "hot_fix": [
+            "Remove or replace LiteLLM v1.107.0 from builds and container images and pin to trusted versions",
+            "Rotate any credentials, API keys, and secrets used in environments where the package was installed",
+            "Scan images and hosts for indicators of compromise and rebuild artifacts from trusted sources"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/10/21/litellm-supply-chain-attack-hoovers-up-passwords-and-secrets/5304548"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-21",
       "generated_at": "2026-10-21T08:22:04+02:00",
       "incidents": [

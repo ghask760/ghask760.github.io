@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">21 Oct 2026</span>
+      <span id="last-updated">22 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>22 Oct 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>PHP emergency patches released for PHP2Shell RCEs (CVE-2026-109618 / CVE-2026-109619)</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The PHP project released emergency updates fixing two critical remote-code-execution vulnerabilities tracked as CVE-2026-109618 and CVE-2026-109619 (collectively “PHP2Shell”); exploitation attempts were observed and many sites require immediate updates.</p>
+            <p><strong>Why it matters:</strong> The PHP runtime is widely deployed across web infrastructure; vulnerable servers can be fully compromised, may experience outages, and active exploitation increases urgency for patching or mitigations.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply the PHP emergency updates (e.g., 8.5.12, 8.4.27, 8.3.36, 8.2.35) immediately</li>
+            <li>If unable to patch immediately, consider taking affected sites offline or block vulnerable endpoints via WAF/network controls</li>
+            <li>Monitor web/server logs and IDS for exploitation indicators and hunt for signs of compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://krebsonsecurity.com/2026/10/widespread-php-flaw-may-cause-many-site-outages-today/" rel="noopener" target="_blank">KrebsOnSecurity</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>LiteLLM PyPI package (v1.107.0) compromised, delivered credential stealer and backdoor</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The LiteLLM Python package (v1.107.0) was compromised in a supply chain attack that delivered a credential stealer and a backdoor via PyPI wheels and Docker images; PyPI quarantined the affected package.</p>
+            <p><strong>Why it matters:</strong> Organizations that pulled LiteLLM v1.107.0 into development, CI/CD, containers, or production could have had credentials and secrets exfiltrated and may have backdoors in runtime environments or artifacts.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Remove or replace LiteLLM v1.107.0 from builds and container images and pin to trusted versions</li>
+            <li>Rotate any credentials, API keys, and secrets used in environments where the package was installed</li>
+            <li>Scan images and hosts for indicators of compromise and rebuild artifacts from trusted sources</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.theregister.com/security/2026/10/21/litellm-supply-chain-attack-hoovers-up-passwords-and-secrets/5304548" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>21 Oct 2026</span>
