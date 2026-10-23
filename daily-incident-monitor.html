@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">22 Oct 2026</span>
+      <span id="last-updated">23 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>23 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>LiteLLM release pipeline compromised; malicious PyPI package and Docker images distributed</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Maintainers say attackers compromised LiteLLM&#x27;s release pipeline and pushed a malicious 1.107.0 Python package to PyPI and Docker images to Docker Hub containing an info‑stealer and backdoor that harvests credentials and environment secrets.</p>
+            <p><strong>Why it matters:</strong> Downstream projects and CI/CD pipelines that pulled the compromised package or images may have had secrets and credentials exfiltrated, enabling broader cloud and repo compromise and lateral movement.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Block and remove the specific package/image versions from registries and internal caches</li>
+            <li>Rotate any tokens, keys, and secrets used by systems that built or pulled the package/images</li>
+            <li>Scan build systems and developer workstations for the presence of the malicious artifact and indicators of compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/litellm-suspects-github-token-leak-in.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Railway warns some customer environment variables may have been accessed; rotate secrets</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Railway detected anomalous activity in systems that store customer environment variables and said an unauthorized party may have accessed encrypted variables and, in some cases, the decrypted contents for a subset of users.</p>
+            <p><strong>Why it matters:</strong> Exposed environment variables and secrets can be used to compromise downstream cloud resources, third‑party services, and CI/CD pipelines; customers must treat provider incidents as direct TPRM risk.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Immediately rotate credentials, API keys, and tokens stored with Railway</li>
+            <li>Revoke and reissue any credentials that could be used for cloud or repo access</li>
+            <li>Audit Railway usage logs and any downstream systems for unauthorized activity</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/railway-warns-devs-to-rotate-secrets-after-potential-breach/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/railway-says-intruder-may-have-accessed.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Arista patches actively exploited VeloCloud Orchestrator SQL injection zero‑day</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Arista released updates for a zero‑day SQL injection in VeloCloud Orchestrator (VCO) On‑Prem that is being actively exploited and can allow an authenticated read‑only user to escalate to operator privileges.</p>
+            <p><strong>Why it matters:</strong> Compromise of SD‑WAN orchestration can give attackers control of network connectivity, allow traffic interception, and enable lateral movement across customer environments; timely vendor patching is critical.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Arista VCO security updates immediately to affected on‑prem deployments</li>
+            <li>Restrict access to VCO management interfaces and enforce strong admin MFA</li>
+            <li>Monitor and review VCO logs for unauthorized configuration changes or access</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>22 Oct 2026</span>

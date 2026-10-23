@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-10-23",
+      "generated_at": "2026-10-23T08:21:16+02:00",
+      "incidents": [
+        {
+          "title": "LiteLLM release pipeline compromised; malicious PyPI package and Docker images distributed",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Maintainers say attackers compromised LiteLLM's release pipeline and pushed a malicious 1.107.0 Python package to PyPI and Docker images to Docker Hub containing an info‑stealer and backdoor that harvests credentials and environment secrets.",
+          "why_it_matters": "Downstream projects and CI/CD pipelines that pulled the compromised package or images may have had secrets and credentials exfiltrated, enabling broader cloud and repo compromise and lateral movement.",
+          "hot_fix": [
+            "Block and remove the specific package/image versions from registries and internal caches",
+            "Rotate any tokens, keys, and secrets used by systems that built or pulled the package/images",
+            "Scan build systems and developer workstations for the presence of the malicious artifact and indicators of compromise"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/litellm-suspects-github-token-leak-in.html"
+            }
+          ]
+        },
+        {
+          "title": "Railway warns some customer environment variables may have been accessed; rotate secrets",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Railway detected anomalous activity in systems that store customer environment variables and said an unauthorized party may have accessed encrypted variables and, in some cases, the decrypted contents for a subset of users.",
+          "why_it_matters": "Exposed environment variables and secrets can be used to compromise downstream cloud resources, third‑party services, and CI/CD pipelines; customers must treat provider incidents as direct TPRM risk.",
+          "hot_fix": [
+            "Immediately rotate credentials, API keys, and tokens stored with Railway",
+            "Revoke and reissue any credentials that could be used for cloud or repo access",
+            "Audit Railway usage logs and any downstream systems for unauthorized activity"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/railway-warns-devs-to-rotate-secrets-after-potential-breach/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/railway-says-intruder-may-have-accessed.html"
+            }
+          ]
+        },
+        {
+          "title": "Arista patches actively exploited VeloCloud Orchestrator SQL injection zero‑day",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Arista released updates for a zero‑day SQL injection in VeloCloud Orchestrator (VCO) On‑Prem that is being actively exploited and can allow an authenticated read‑only user to escalate to operator privileges.",
+          "why_it_matters": "Compromise of SD‑WAN orchestration can give attackers control of network connectivity, allow traffic interception, and enable lateral movement across customer environments; timely vendor patching is critical.",
+          "hot_fix": [
+            "Apply Arista VCO security updates immediately to affected on‑prem deployments",
+            "Restrict access to VCO management interfaces and enforce strong admin MFA",
+            "Monitor and review VCO logs for unauthorized configuration changes or access"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-22",
       "generated_at": "2026-10-22T08:21:25+02:00",
       "incidents": [
