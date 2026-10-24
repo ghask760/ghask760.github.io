@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-10-24",
+      "generated_at": "2026-10-24T08:21:35+02:00",
+      "incidents": [
+        {
+          "title": "Quest Diagnostics confirms unauthorized access exposed patient records in Quanum LSM",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Quest Diagnostics reported unauthorized access to its Quanum Lab Services Manager platform, resulting in exposure of certain patient records.",
+          "why_it_matters": "A breach of a clinical-lab ordering system can expose sensitive health data and trigger regulatory reporting, continuity and vendor-management scrutiny for healthcare partners relying on that service.",
+          "hot_fix": [
+            "Confirm scope with vendor and affected client lists; prioritize notifications per law/regulation",
+            "Force credential resets and rotate API keys/integrations tied to Quanum LSM",
+            "Increase logging/monitoring of integrations and isolate impacted systems until cleanup complete"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/quest-diagnostics-confirms-data-breach-exposed-patient-records/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/quest-diagnostics-reports-cyber-breach-affecting-certain-patient-records/"
+            }
+          ]
+        },
+        {
+          "title": "Capcom confirms membership service breach exposing ~11.7 million CAPCOM ID records",
+          "category": "Data breach",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Capcom disclosed a breach of its CAPCOM ID membership service that exposed approximately 11.7 million customer email addresses and related account information; some account passwords were changed by attackers.",
+          "why_it_matters": "Large-scale theft of customer account data from a third-party vendor/service increases fraud and credential-stuffing risk for customers and business partners; impacted vendors must be treated as incident responses for downstream TPRM.",
+          "hot_fix": [
+            "Invalidate affected sessions and require password resets for CAPCOM ID integrations",
+            "Monitor for credential-stuffing and fraudulent transactions tied to exposed emails",
+            "Re-evaluate and document third-party authentication and data-sharing agreements with Capcom"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/capcom-confirms-data-breach-affecting-117-million-accounts/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/11-million-impacted-by-capcom-data-breach/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-23",
       "generated_at": "2026-10-23T08:21:16+02:00",
       "incidents": [
