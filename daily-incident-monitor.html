@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">24 Oct 2026</span>
+      <span id="last-updated">25 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>25 Oct 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>BlackX UEFI bootkit used to bypass Secure Boot in espionage campaign</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A UEFI bootkit called BlackX exploited the Baton Drop flaw to bypass Secure Boot and load a malicious driver that targeted security products; diplomatic organizations in Central Asia were reported targets.</p>
+            <p><strong>Why it matters:</strong> UEFI/firmware-level compromise evades many endpoint controls and can persist across OS reinstallation; organizations relying on affected Secure Boot revocation mechanisms or third-party drivers are at elevated risk.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Validate Secure Boot revocation lists and apply vendor revocations</li>
+            <li>Audit firmware/UEFI integrity on high-risk endpoints and reimage where compromise is suspected</li>
+            <li>Harden endpoint detection for boot-level persistence and coordinate with AV vendors</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>PHP2Shell exploitation surges; dozens of UK government services disrupted</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Exploitation of the PHP2Shell vulnerability has surged, with Mirai-linked activity observed and reports that dozens of UK government services (32 unavailable, 4 partly disrupted) were taken offline; some reports note attacks began before public disclosure.</p>
+            <p><strong>Why it matters:</strong> Widespread exploitation of a critical web-server flaw threatens service continuity for public-sector and private web apps; customers and vendors must triage internet-facing PHP services and shared hosting environments quickly.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply vendor patches; if unpatchable, block exploit vectors and harden PHP configurations</li>
+            <li>Audit internet-facing PHP applications and hosting for indicators of compromise</li>
+            <li>Implement WAF rules, isolate affected services, and rotate exposed credentials</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.theregister.com/security/2026/10/22/php2shell-puts-dozens-of-uk-government-services-out-of-service/5304840" rel="noopener" target="_blank">The Register</a> <a href="https://www.securityweek.com/mirai-botnet-operators-join-php2shell-attacks-as-aslr-bypass-exploits-emerge/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>24 Oct 2026</span>
