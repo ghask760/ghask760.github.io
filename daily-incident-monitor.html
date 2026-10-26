@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">25 Oct 2026</span>
+      <span id="last-updated">26 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>26 Oct 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>LiteLLM supply-chain compromise: leaked master key allowed malicious packages and pipeline hijack</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> LiteLLM disclosed that an Agent Platform master key was accidentally published to a public GitHub repo in May, enabling attackers to steal GitHub tokens and push a malicious Python package and Docker images into its release pipeline.</p>
+            <p><strong>Why it matters:</strong> Compromise of a supplier&#x27;s CI/CD credentials and package releases can distribute malicious code to downstream users and vendors; organizations should treat dependent packages and images as potentially tainted until verified.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Audit and rotate all exposed keys and OAuth tokens</li>
+            <li>Block and revoke malicious packages/images in registries</li>
+            <li>Verify integrity of dependent packages and rebuild from source</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/litellm-compromised-in-fresh-supply-chain-attack/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Arista VeloCloud Orchestrator zero-day exploited for operator privileges; CISA flags active exploitation</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical Arista VeloCloud Orchestrator SQL injection zero-day has been exploited to access privileged internal functionality and gain operator-level privileges; CISA added related flaws to its Known Exploited Vulnerabilities list.</p>
+            <p><strong>Why it matters:</strong> VCO is a network orchestration product; exploitation can lead to broad network control and interruption across customers using the vendor, increasing supplier concentration risk for managed network services.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply vendor patches or mitigations immediately</li>
+            <li>Audit VCO access logs and privileged accounts</li>
+            <li>Isolate and restrict VCO management access via network controls</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/attackers-exploit-third-velocloud-orchestrator-zero-day-in-four-months/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>25 Oct 2026</span>
