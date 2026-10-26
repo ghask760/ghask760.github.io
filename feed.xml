@@ -5,7 +5,7 @@
     <link>https://gabrielhasik.com/</link>
     <description>Cybersecurity, third-party risk, supply chain security, AI governance, regulatory resilience, and monitoring briefings by Gabriel Hasik.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Oct 2026 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 00:00:00 +0200</lastBuildDate>
     <atom:link href="https://gabrielhasik.com/feed.xml" rel="self" type="application/rss+xml"/>
 <item><title>Third-Party Risk Intelligence Briefing - October 2026</title><link>https://gabrielhasik.com/tprm-briefing-october-2026.html</link><guid isPermaLink="true">https://gabrielhasik.com/tprm-briefing-october-2026.html</guid><pubDate>Thu, 15 Oct 2026 09:00:00 +0200</pubDate><description>Refrigeration-controller attacks, NetScaler exploitation, partner continuity and CRA reporting follow-through.</description></item>
 <item><title>Geopolitical Supply Chain Risks - October 2026</title><link>https://gabrielhasik.com/geopolitical-supply-chain-risks-october-2026.html</link><guid isPermaLink="true">https://gabrielhasik.com/geopolitical-supply-chain-risks-october-2026.html</guid><pubDate>Thu, 15 Oct 2026 09:00:00 +0200</pubDate><description>Diesel availability, uneven trade growth, critical-material capacity and UK Iran sanctions follow-through.</description></item>
@@ -26,6 +26,14 @@
     </item>
 
     <!-- SCHEDULED_RSS_START -->
+    <item>
+      <title>Contract Clauses Are Not a Control: How to Make Supplier Commitments Verifiable</title>
+      <link>https://gabrielhasik.com/supplier-contract-clauses-are-not-a-control.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/supplier-contract-clauses-are-not-a-control.html</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 +0200</pubDate>
+      <description>Supplier contracts matter, but clauses only reduce risk when they are mapped to evidence, monitoring, and escalation.</description>
+    </item>
+
     <item>
       <title>The Supplier Risk Signals That Matter Most</title>
       <link>https://gabrielhasik.com/supplier-risk-signals-that-matter-most.html</link>
