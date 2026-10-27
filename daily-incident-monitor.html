@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">26 Oct 2026</span>
+      <span id="last-updated">27 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>27 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>PHP2Shell RCEs actively exploited; industrial vendors confirm affected products; added to CISA KEV</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Two critical PHP RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619, aka PHP2Shell) are being actively exploited in the wild; probes escalated to working shells and CISA added the flaws to its Known Exploited Vulnerabilities list. Major industrial vendors including Siemens, Schneider Electric and ABB have confirmed some products are affected.</p>
+            <p><strong>Why it matters:</strong> Unauthenticated RCEs in PHP components can lead to remote compromise of vendor devices and embedded appliances across supply chains; affected vendor products may create widespread downstream exposure for customers and service providers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Prioritize emergency patching of PHP runtimes and affected vendor products</li>
+            <li>Isolate and monitor hosts running exposed PHP versions for post-exploit indicators</li>
+            <li>Deploy WAF/IPS rules and network-level mitigations while applying vendor updates</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html" rel="noopener" target="_blank">The Hacker News (reports CISA KEV addition)</a> <a href="https://www.securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities/" rel="noopener" target="_blank">SecurityWeek (industrial vendors checking products)</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical Brotli compression flaw prompts emergency .NET and PHP Windows updates</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Microsoft released emergency .NET updates to address a critical code-corruption/code-execution flaw in the Brotli compression library; PHP rebuilt its official Windows packages for PHP 8.2–8.5 to fix CVE-2026-111497 in the Brotli implementation used via cURL.</p>
+            <p><strong>Why it matters:</strong> Runtime and language-distribution fixes indicate multiple vendor ecosystems are affected; unpatched runtimes and vendor-supplied binaries can propagate vulnerable components into downstream third-party products and services.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Microsoft .NET emergency updates immediately</li>
+            <li>Upgrade PHP Windows packages to rebuilt patched releases</li>
+            <li>Inventory deployments using Brotli via cURL and prioritize remediation</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw/" rel="noopener" target="_blank">BleepingComputer (Microsoft .NET emergency patches)</a> <a href="https://thehackernews.com/2026/10/php-issues-second-windows-security.html" rel="noopener" target="_blank">The Hacker News (PHP rebuilt Windows packages)</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Malicious AGENTS.md file tricks AI coding agent into installing rogue npm package</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Researchers discovered a malicious AGENTS.md instruction file in a customer&#x27;s Downloads folder that instructed an AI coding agent to install a known-malicious npm package; the attempt was detected and stopped before code execution. The file&#x27;s origin is unknown.</p>
+            <p><strong>Why it matters:</strong> Developer-facing AI agents that can auto-run installs or actions create a new vector for supply-chain compromise and unauthorized third-party code execution in build/dev environments; this can expose repositories, credentials and CI/CD pipelines.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Disable or restrict AI agent auto-install and auto-execute features</li>
+            <li>Block known-malicious npm packages and monitor package installs</li>
+            <li>Scan developer workstations and rotate any exposed repository or CI secrets</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>26 Oct 2026</span>

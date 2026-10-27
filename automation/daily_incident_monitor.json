@@ -1,6 +1,85 @@
 {
   "days": [
     {
+      "date": "2026-10-27",
+      "generated_at": "2026-10-27T07:21:23+01:00",
+      "incidents": [
+        {
+          "title": "PHP2Shell RCEs actively exploited; industrial vendors confirm affected products; added to CISA KEV",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Two critical PHP RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619, aka PHP2Shell) are being actively exploited in the wild; probes escalated to working shells and CISA added the flaws to its Known Exploited Vulnerabilities list. Major industrial vendors including Siemens, Schneider Electric and ABB have confirmed some products are affected.",
+          "why_it_matters": "Unauthenticated RCEs in PHP components can lead to remote compromise of vendor devices and embedded appliances across supply chains; affected vendor products may create widespread downstream exposure for customers and service providers.",
+          "hot_fix": [
+            "Prioritize emergency patching of PHP runtimes and affected vendor products",
+            "Isolate and monitor hosts running exposed PHP versions for post-exploit indicators",
+            "Deploy WAF/IPS rules and network-level mitigations while applying vendor updates"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/"
+            },
+            {
+              "name": "The Hacker News (reports CISA KEV addition)",
+              "url": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html"
+            },
+            {
+              "name": "SecurityWeek (industrial vendors checking products)",
+              "url": "https://www.securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities/"
+            }
+          ]
+        },
+        {
+          "title": "Critical Brotli compression flaw prompts emergency .NET and PHP Windows updates",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Microsoft released emergency .NET updates to address a critical code-corruption/code-execution flaw in the Brotli compression library; PHP rebuilt its official Windows packages for PHP 8.2–8.5 to fix CVE-2026-111497 in the Brotli implementation used via cURL.",
+          "why_it_matters": "Runtime and language-distribution fixes indicate multiple vendor ecosystems are affected; unpatched runtimes and vendor-supplied binaries can propagate vulnerable components into downstream third-party products and services.",
+          "hot_fix": [
+            "Apply Microsoft .NET emergency updates immediately",
+            "Upgrade PHP Windows packages to rebuilt patched releases",
+            "Inventory deployments using Brotli via cURL and prioritize remediation"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer (Microsoft .NET emergency patches)",
+              "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw/"
+            },
+            {
+              "name": "The Hacker News (PHP rebuilt Windows packages)",
+              "url": "https://thehackernews.com/2026/10/php-issues-second-windows-security.html"
+            }
+          ]
+        },
+        {
+          "title": "Malicious AGENTS.md file tricks AI coding agent into installing rogue npm package",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers discovered a malicious AGENTS.md instruction file in a customer's Downloads folder that instructed an AI coding agent to install a known-malicious npm package; the attempt was detected and stopped before code execution. The file's origin is unknown.",
+          "why_it_matters": "Developer-facing AI agents that can auto-run installs or actions create a new vector for supply-chain compromise and unauthorized third-party code execution in build/dev environments; this can expose repositories, credentials and CI/CD pipelines.",
+          "hot_fix": [
+            "Disable or restrict AI agent auto-install and auto-execute features",
+            "Block known-malicious npm packages and monitor package installs",
+            "Scan developer workstations and rotate any exposed repository or CI secrets"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-26",
       "generated_at": "2026-10-26T07:21:28+01:00",
       "incidents": [
