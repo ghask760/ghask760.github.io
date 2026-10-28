@@ -1,6 +1,62 @@
 {
   "days": [
     {
+      "date": "2026-10-28",
+      "generated_at": "2026-10-28T07:21:13+01:00",
+      "incidents": [
+        {
+          "title": "Apple backports CoreGraphics zero-day fixes to older iPhones and iPads",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Apple issued backported patches for a CoreGraphics zero-day (CVE-2026-86950) to older iPhone and iPad models after the flaw was observed exploited in targeted, sophisticated attacks.",
+          "why_it_matters": "Enterprises and partners relying on older iOS devices remain at risk of remote code execution via crafted files; unpatched endpoints can be used to access corporate resources or sensitive third-party data.",
+          "hot_fix": [
+            "Deploy Apple’s iOS/macOS updates to all managed devices immediately",
+            "Block or sandbox untrusted document/file formats at email/web gateways",
+            "Monitor endpoint telemetry for post-exploitation indicators and unusual app behavior"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18/"
+            }
+          ]
+        },
+        {
+          "title": "GMO Onamae Desktop Cloud breach; customers told to shut down PCs",
+          "category": "Vendor outage",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "GMO Group advised customers to disconnect systems from the internet and shut down computers after a threat actor that breached the Onamae Desktop Cloud threatened to launch a ransomware attack against the virtual desktop service.",
+          "why_it_matters": "Customers using this third-party desktop/cloud provider face immediate service continuity and ransomware risk; organizations must assume potential compromise of vendor-managed endpoints and plan continuity and containment.",
+          "hot_fix": [
+            "Follow vendor guidance to disconnect affected systems and isolate networks",
+            "Verify backups and activate business continuity plans for affected services",
+            "Coordinate with the vendor for incident details, credential rotation, and forensic evidence"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/10/27/japanese_virtual_desktop_cloud_hacked_so_hard_it_asks_to_be_banned/5305610"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-27",
       "generated_at": "2026-10-27T07:21:23+01:00",
       "incidents": [

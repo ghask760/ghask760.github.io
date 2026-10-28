@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">27 Oct 2026</span>
+      <span id="last-updated">28 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>28 Oct 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Apple backports CoreGraphics zero-day fixes to older iPhones and iPads</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Apple issued backported patches for a CoreGraphics zero-day (CVE-2026-86950) to older iPhone and iPad models after the flaw was observed exploited in targeted, sophisticated attacks.</p>
+            <p><strong>Why it matters:</strong> Enterprises and partners relying on older iOS devices remain at risk of remote code execution via crafted files; unpatched endpoints can be used to access corporate resources or sensitive third-party data.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Deploy Apple’s iOS/macOS updates to all managed devices immediately</li>
+            <li>Block or sandbox untrusted document/file formats at email/web gateways</li>
+            <li>Monitor endpoint telemetry for post-exploitation indicators and unusual app behavior</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Vendor outage</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>GMO Onamae Desktop Cloud breach; customers told to shut down PCs</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> GMO Group advised customers to disconnect systems from the internet and shut down computers after a threat actor that breached the Onamae Desktop Cloud threatened to launch a ransomware attack against the virtual desktop service.</p>
+            <p><strong>Why it matters:</strong> Customers using this third-party desktop/cloud provider face immediate service continuity and ransomware risk; organizations must assume potential compromise of vendor-managed endpoints and plan continuity and containment.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Follow vendor guidance to disconnect affected systems and isolate networks</li>
+            <li>Verify backups and activate business continuity plans for affected services</li>
+            <li>Coordinate with the vendor for incident details, credential rotation, and forensic evidence</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.theregister.com/security/2026/10/27/japanese_virtual_desktop_cloud_hacked_so_hard_it_asks_to_be_banned/5305610" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>27 Oct 2026</span>
