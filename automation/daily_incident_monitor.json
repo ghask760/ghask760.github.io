@@ -1,6 +1,108 @@
 {
   "days": [
     {
+      "date": "2026-10-29",
+      "generated_at": "2026-10-29T07:21:45+01:00",
+      "incidents": [
+        {
+          "title": "Volt Typhoon used 'Silent Train' covert access network for multiple zero-day campaigns",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers attribute multiple zero-day exploitation campaigns to China-nexus group Volt Typhoon that leveraged a covert access network called 'Silent Train' composed of rotating chains of compromised SOHO, IoT, and enterprise devices.",
+          "why_it_matters": "Third-party devices and small vendor-managed infrastructure can be abused as persistent, opaque access paths to enterprise targets; TPRM teams must treat service-provider and upstream device compromise as a strategic risk to supply chains and access controls.",
+          "hot_fix": [
+            "Inventory and monitor external/partner-managed devices and edge infrastructure",
+            "Enforce least-privilege and network segmentation for third-party connections",
+            "Consume threat intel feeds and block indicators associated with Silent Train"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html"
+            }
+          ]
+        },
+        {
+          "title": "PHP2Shell flaws actively exploited to root network appliances and breach systems",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Critical 'PHP2Shell' vulnerabilities in web-facing management interfaces are being actively exploited; researchers report attackers chaining PHP2Shell with privilege-escalation exploits to root firewalls and other appliances and to breach at least one U.S. government‑affiliated network.",
+          "why_it_matters": "Network and security appliances from third‑party vendors are being weaponized for strategic access; unpatched appliances present immediate continuity and supply‑chain compromise risk for organizations relying on vendor-managed devices.",
+          "hot_fix": [
+            "Identify and inventory appliances with vulnerable PHP interfaces",
+            "Apply vendor patches or mitigations immediately and isolate management interfaces",
+            "Conduct forensic checks for web shells, indicators of compromise, and lateral movement"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer (InfraTrust report)",
+              "url": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-of-exploited-flaws-in-critical-network-infrastructure/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/china-linked-hackers-exploit-php2shell-to-root-firewalls/"
+            }
+          ]
+        },
+        {
+          "title": "CISA confirms active exploitation of Brotli 'Node2Shell' (HTTP2Shell) vulnerabilities",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The U.S. Cybersecurity and Infrastructure Security Agency added multiple Brotli-related flaws (Node2Shell/HTTP2Shell/Broccoli2Shell) to its KEV list after observing exploit attempts and reporting of attackers actively targeting the issues.",
+          "why_it_matters": "Brotli-related vulnerabilities affect widely used HTTP components; active exploitation elevates urgency for patching across vendor stacks and for monitoring externally facing services to avoid compromise of hosted applications.",
+          "hot_fix": [
+            "Apply vendor patches or disable Brotli compression where patches are not available",
+            "Hunt for attempted exploit activity in webserver and application logs",
+            "Prioritize patching of internet-facing servers and vendor-managed hosting"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/cisa-warns-of-node2shell-exploitation-as-honeypots-log-attack-attempts/"
+            }
+          ]
+        },
+        {
+          "title": "Oracle E-Business Suite critical flaw being probed days after vendor patch",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors have begun probing for a newly patched critical Oracle E-Business Suite vulnerability (CVE-2026-101767); the issue was patched by Oracle in the most recent critical update.",
+          "why_it_matters": "Oracle EBS is business‑critical vendor software; active scanning/probing post-patch increases exploitation risk for organizations that have not applied vendor updates or that rely on third-party integrators for patching.",
+          "hot_fix": [
+            "Confirm Oracle EBS instances are patched to the latest vendor advisory",
+            "Restrict external access and monitor for probe attempts against EBS endpoints",
+            "Coordinate with managed service providers to verify patch deployments"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-28",
       "generated_at": "2026-10-28T07:21:13+01:00",
       "incidents": [
