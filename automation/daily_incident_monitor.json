@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-10-30",
+      "generated_at": "2026-10-30T07:21:13+01:00",
+      "incidents": [
+        {
+          "title": "Binance platform security incident impacts billions in on-chain assets",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Cryptocurrency exchange Binance reported a security incident that independent outlets report has impacted roughly $5.8B–$6.3B in user assets; on-chain freezes of nearly $3B were reported by stablecoin issuers. Investigations and asset freezes are ongoing.",
+          "why_it_matters": "Large-scale compromise of a major exchange creates counterparty, liquidity, and custodial risk for firms relying on Binance for trading, custody, or settlement; frozen or stolen assets can disrupt operations and recovery timelines.",
+          "hot_fix": [
+            "Suspend integrations with affected wallets/exchange APIs until Binance confirms remediation",
+            "Ensure blockchain-wallet monitoring and alerting for suspicious transfers",
+            "Coordinate with legal/finance to track frozen assets and update exposure figures"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/binance-probes-potential-58-billion-crypto-theft-hack/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/binance-suffers-security-breach.html"
+            }
+          ]
+        },
+        {
+          "title": "Cisco Catalyst SD‑WAN controllers exploited to deploy 'KeyDrift' malware",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "An APT tracked as UAT-11473 exploited an authentication-bypass in Cisco Catalyst SD‑WAN Controllers (CVE-2026-20127) to deploy a custom malware framework called KeyDrift; telemetry links the infrastructure used to activities overlapping Volt Typhoon's 'Silent Train' network.",
+          "why_it_matters": "Compromise of SD‑WAN controllers gives attackers lateral access and credential/keystream theft across distributed networks; customers using affected Cisco controllers should treat this as a high-priority third‑party control failure.",
+          "hot_fix": [
+            "Apply Cisco mitigations/patches for CVE-2026-20127 immediately",
+            "Isolate and rebuild compromised controllers and rotate private keys/credentials",
+            "Increase network and EDR monitoring for KeyDrift indicators and lateral movement"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/"
+            }
+          ]
+        },
+        {
+          "title": "Cisco ASA/FTD VPN zero‑day exploited; patches released for crashing vulnerability",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A high‑severity Remote Access SSL VPN vulnerability in Cisco Secure Firewall ASA and FTD (CVE-2026-76418) has been exploited in the wild to force firewalls to reload; Cisco has released patches addressing active exploitation.",
+          "why_it_matters": "Exploitation can disrupt firewall availability and remote access, creating immediate continuity and security control gaps for customers using affected Cisco appliances.",
+          "hot_fix": [
+            "Apply Cisco's available patches or vendor workarounds immediately",
+            "Monitor firewall stability and logs for forced reloads or exploitation indicators",
+            "Prepare failover and remote access contingencies while affected devices are remediated"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-29",
       "generated_at": "2026-10-29T07:21:45+01:00",
       "incidents": [

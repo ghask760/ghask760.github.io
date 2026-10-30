@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">29 Oct 2026</span>
+      <span id="last-updated">30 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>30 Oct 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Binance platform security incident impacts billions in on-chain assets</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Cryptocurrency exchange Binance reported a security incident that independent outlets report has impacted roughly $5.8B–$6.3B in user assets; on-chain freezes of nearly $3B were reported by stablecoin issuers. Investigations and asset freezes are ongoing.</p>
+            <p><strong>Why it matters:</strong> Large-scale compromise of a major exchange creates counterparty, liquidity, and custodial risk for firms relying on Binance for trading, custody, or settlement; frozen or stolen assets can disrupt operations and recovery timelines.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Suspend integrations with affected wallets/exchange APIs until Binance confirms remediation</li>
+            <li>Ensure blockchain-wallet monitoring and alerting for suspicious transfers</li>
+            <li>Coordinate with legal/finance to track frozen assets and update exposure figures</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/binance-probes-potential-58-billion-crypto-theft-hack/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/binance-suffers-security-breach.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Cisco Catalyst SD‑WAN controllers exploited to deploy &#x27;KeyDrift&#x27; malware</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An APT tracked as UAT-11473 exploited an authentication-bypass in Cisco Catalyst SD‑WAN Controllers (CVE-2026-20127) to deploy a custom malware framework called KeyDrift; telemetry links the infrastructure used to activities overlapping Volt Typhoon&#x27;s &#x27;Silent Train&#x27; network.</p>
+            <p><strong>Why it matters:</strong> Compromise of SD‑WAN controllers gives attackers lateral access and credential/keystream theft across distributed networks; customers using affected Cisco controllers should treat this as a high-priority third‑party control failure.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Cisco mitigations/patches for CVE-2026-20127 immediately</li>
+            <li>Isolate and rebuild compromised controllers and rotate private keys/credentials</li>
+            <li>Increase network and EDR monitoring for KeyDrift indicators and lateral movement</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Cisco ASA/FTD VPN zero‑day exploited; patches released for crashing vulnerability</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A high‑severity Remote Access SSL VPN vulnerability in Cisco Secure Firewall ASA and FTD (CVE-2026-76418) has been exploited in the wild to force firewalls to reload; Cisco has released patches addressing active exploitation.</p>
+            <p><strong>Why it matters:</strong> Exploitation can disrupt firewall availability and remote access, creating immediate continuity and security control gaps for customers using affected Cisco appliances.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Cisco&#x27;s available patches or vendor workarounds immediately</li>
+            <li>Monitor firewall stability and logs for forced reloads or exploitation indicators</li>
+            <li>Prepare failover and remote access contingencies while affected devices are remediated</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>29 Oct 2026</span>
