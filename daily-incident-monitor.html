@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">30 Oct 2026</span>
+      <span id="last-updated">31 Oct 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,122 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>31 Oct 2026</span>
+          <span>5 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Max-severity GitLab RCE (CVE-2026-97229) actively exploited; added to CISA KEV</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A maximum-severity GitLab vulnerability (CVE-2026-97229) allowing unauthenticated remote code execution is being actively exploited; CISA has added the issue to its Known Exploited Vulnerabilities list.</p>
+            <p><strong>Why it matters:</strong> Compromised GitLab servers can expose source code, CI/CD pipelines, tokens and credentials—enabling broad software supply chain and build-compromise risk.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply the vendor GitLab security patch immediately</li>
+            <li>Isolate internet-facing GitLab instances and block unnecessary access</li>
+            <li>Rotate repository and CI/CD credentials, tokens and deploy keys</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/max-severity-gitlab-vulnerability-exploited-against-alpine-linux/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Drupal Commerce Core access-bypass exploited in the wild</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical authorization bypass in the Drupal Commerce Core module is being actively exploited against online stores, per Drupal advisories and multiple reports.</p>
+            <p><strong>Why it matters:</strong> Compromise of e-commerce modules can lead to order manipulation, fraud, card-scraping, or insertion of malicious code into customer workflows—impacting merchants and downstream partners.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply the Commerce Core security update immediately</li>
+            <li>Audit recent orders, payment flows and administrative activity for anomalies</li>
+            <li>Hunt for and remove webshells, backdoors and unauthorized module changes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Trezor warns of suspected hardware implant in Safe 5 units sold by CryptoBilis</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Trezor received credible reports that Trezor Safe 5 units sold by reseller CryptoBilis contain an extra circuit board suspected of exfiltrating recovery phrases; Trezor has advised affected customers to move funds.</p>
+            <p><strong>Why it matters:</strong> A hardware implant at the reseller level is a critical supplier integrity failure—compromising custody devices undermines key control of digital assets and indicates supply-chain tampering.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Quarantine devices purchased from CryptoBilis and halt further procurement from that reseller</li>
+            <li>Move funds off affected devices and recreate wallets with new recovery phrases on trusted hardware</li>
+            <li>Open a supplier investigation and demand chain-of-custody proof from the vendor/reseller</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/trezor-warns-of-suspected-crypto-theft-implant-in-hardware-wallet/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/trezor-warns-of-suspected-hardware.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>TeamViewer flaw (CVE-2026-111585) fixed after host-to-viewer code-execution risk</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> An integer overflow in TeamViewer could allow a compromised host to execute code on the viewer (support technician) machine; TeamViewer has released a patch to address the issue.</p>
+            <p><strong>Why it matters:</strong> Remote support tools are high-risk third-party attack vectors—compromised hosts can pivot into privileged support environments and enterprise networks.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Install the TeamViewer security update immediately on viewer and host endpoints</li>
+            <li>Limit remote-control sessions to trusted hosts and enforce multi-factor authentication</li>
+            <li>Audit support technician endpoints and session logs for signs of compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/teamviewer-flaw-lets-remote-computers.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/teamviewer-flaw-could-let-malicious-hosts-take-over-support-technicians-machines/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>High-severity WordPress Core RCE patched after ~63,000 attack attempts in 24 hours</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A high-severity remote code execution flaw in WordPress Core (affecting multiple versions) was patched and was subject to nearly 63,000 exploitation attempts within 24 hours of public fixes being released.</p>
+            <p><strong>Why it matters:</strong> Widespread exploitation attempts against a dominant CMS increase risk to hosting providers, digital agencies and vendors that rely on WordPress—compromise can enable supply-chain tampering and mass defacement or payload delivery.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply the WordPress core update immediately across managed and self-hosted sites</li>
+            <li>Deploy or tune WAF rules to block exploitation patterns and scan for webshells</li>
+            <li>Verify integrity of plugins/themes and rotate admin credentials where exposures are suspected</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/fresh-wordpress-vulnerability-in-attackers-crosshairs/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>30 Oct 2026</span>
