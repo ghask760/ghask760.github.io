@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">31 Oct 2026</span>
+      <span id="last-updated">01 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,34 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>01 Nov 2026</span>
+          <span>1 incident</span>
+        </div>
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Chainalysis confirms intrusion exposing customer identity data</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Chainalysis said an external actor used &quot;offensive agentic techniques&quot; to access internal systems, exposing customer names, email addresses, user IDs and organizational roles; the company stated investigation content, authentication credentials and session tokens were not accessed.</p>
+            <p><strong>Why it matters:</strong> Exposed customer identity metadata can enable targeted phishing, account enumeration and erosion of trust with downstream customers and partners; vendor-integrations and data-sharing arrangements should be re-evaluated.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Request Chainalysis&#x27; incident summary and affected-customer guidance</li>
+            <li>Rotate any integration credentials and API keys tied to Chainalysis</li>
+            <li>Increase phishing monitoring and alerting for exposed customer addresses/roles</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>31 Oct 2026</span>

@@ -1,6 +1,35 @@
 {
   "days": [
     {
+      "date": "2026-11-01",
+      "generated_at": "2026-11-01T07:21:07+01:00",
+      "incidents": [
+        {
+          "title": "Chainalysis confirms intrusion exposing customer identity data",
+          "category": "Data breach",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Chainalysis said an external actor used \"offensive agentic techniques\" to access internal systems, exposing customer names, email addresses, user IDs and organizational roles; the company stated investigation content, authentication credentials and session tokens were not accessed.",
+          "why_it_matters": "Exposed customer identity metadata can enable targeted phishing, account enumeration and erosion of trust with downstream customers and partners; vendor-integrations and data-sharing arrangements should be re-evaluated.",
+          "hot_fix": [
+            "Request Chainalysis' incident summary and affected-customer guidance",
+            "Rotate any integration credentials and API keys tied to Chainalysis",
+            "Increase phishing monitoring and alerting for exposed customer addresses/roles"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/chainalysis-discloses-data-breach-from-offensive-agentic-techniques/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-31",
       "generated_at": "2026-10-31T07:21:36+01:00",
       "incidents": [
