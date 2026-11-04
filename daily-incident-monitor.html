@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">03 Nov 2026</span>
+      <span id="last-updated">04 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>04 Nov 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>LLMjacking attacks generating large fraudulent cloud AI charges</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Google warned that threat actors are hijacking enterprise access to large language models (LLMjacking) to run expensive cloud AI workloads, producing fraudulent charges—some organizations have seen losses exceeding $100,000 per day and campaigns have totaled up to $1 million in cloud costs.</p>
+            <p><strong>Why it matters:</strong> Compromise or leakage of API keys, secrets, or exposed client code can allow attackers to incur major cloud spend and disrupt budgets; TPRM teams must treat LLM API access and cloud billing as a third‑party risk vector.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Rotate and revoke exposed API keys immediately</li>
+            <li>Implement cloud spending caps and anomaly billing alerts</li>
+            <li>Enforce secrets scanning and restrict embedded keys in code/repos</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/google-llmjacking-attacks-rack-up-1-million-in-cloud-ai-charges/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/google-warns-llmjacking-attacks-are.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Binance $6.43B theft traced to tampered Homebrew install and fake job interviews</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Binance said the record $6.43 billion asset theft resulted from a sophisticated, multi-stage campaign that involved a tampered Homebrew installation and recruitment‑themed social engineering targeting two engineers.</p>
+            <p><strong>Why it matters:</strong> A compromised developer toolchain and successful targeted social engineering enabled catastrophic loss; vendor and supplier controls for developer environments and package sources are critical to prevent downstream compromise.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Audit developer build systems and affected endpoints</li>
+            <li>Enforce package signing, vetted package sources, and internal mirrors</li>
+            <li>Rotate credentials/keys used by impacted engineers and escalate monitoring</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.theregister.com/security/2026/11/03/north-korean-fake-job-interview-led-to-63b-binance-heist/5307398" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Logistics</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Remote attacks on supermarket refrigeration controls force food disposal across Europe</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers remotely changed settings on refrigeration controls at supermarkets in Belgium, Sweden, Estonia and other European countries, warming fridges/freezers; multiple stores reported spoiled chilled and frozen food and removed items from sale. Danfoss (maker of refrigeration controls) was named in reporting.</p>
+            <p><strong>Why it matters:</strong> Compromise of vendor OT controls caused direct inventory loss and retail disruption; supply‑chain and vendor continuity teams must assess vendor security, segmentation, and remote access controls for OT systems.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Isolate refrigeration control networks from corporate/Internet access</li>
+            <li>Validate vendor firmware integrity and apply vendor patches</li>
+            <li>Inventory and monitor OT telemetry for unauthorized configuration changes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.theregister.com/cyber-crime/2026/11/02/frozen-part-ii-hackers-remotely-defrost-produce-in-euro-supermarkets-again/5306924" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>03 Nov 2026</span>
