@@ -1,6 +1,36 @@
 {
   "days": [
     {
+      "date": "2026-11-05",
+      "generated_at": "2026-11-05T07:21:29+01:00",
+      "incidents": [
+        {
+          "title": "mSecure (mSeven) password manager vendor reports cyberattack; customers urged to reset credentials",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "mSeven Software, maker of the mSecure password manager, warned of a cyberattack that reportedly exposed an encrypted customer database; the vendor has instructed current and former customers to change passwords, reset two‑factor authentication, and remove passkeys.",
+          "why_it_matters": "A breach of a password manager can expose reused credentials or enable account takeover across customer environments; procurement and security teams must treat impacted credential stores as high risk and accelerate remediation.",
+          "hot_fix": [
+            "Force/complete password resets for accounts stored in mSecure",
+            "Reset 2FA and remove any passkeys tied to the vendor",
+            "Identify and rotate reused credentials across enterprise accounts",
+            "Request vendor incident details and timeline; log and monitor for suspicious access"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/msecure-password-manager-hack-prompts-password-reset-warnings/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/11/03/password-manager-msecure-tells-users-to-change-passwords-wont-say-why/5307296"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-04",
       "generated_at": "2026-11-04T07:21:33+01:00",
       "incidents": [
