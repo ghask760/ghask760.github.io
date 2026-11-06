@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">05 Nov 2026</span>
+      <span id="last-updated">06 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,80 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>06 Nov 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Zero-day in Zyxel GS1900 switches exploited; initial patch incomplete</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers exploited a zero-day (tracked as CVE-2026-107441) in Zyxel GS1900 series switches to execute OS commands via crafted HTTP requests; researchers say nearly 1,000 devices were compromised and an earlier Zyxel fix failed, prompting a new firmware release for 10 GS1900 models.</p>
+            <p><strong>Why it matters:</strong> Widely deployed vendor-managed switches exposed to the internet can provide attackers persistence, credential/configuration theft, and a foothold into customer networks — requiring immediate vendor-patch and network controls.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Zyxel&#x27;s latest firmware release for GS1900 models immediately</li>
+            <li>Block internet access to switch web management interfaces (ACLs or VPN-only access)</li>
+            <li>Rotate device credentials and audit switch configurations and backups</li>
+            <li>Monitor for anomalous management activity and indicators of compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>DreamHost breach exposes customers&#x27; FTP/SFTP credentials and webmail sessions</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers gained access to DreamHost&#x27;s File Manager platform for approximately two months and stole customers&#x27; FTP/SFTP usernames and passwords and active webmail sessions, according to vendor disclosures and reporting.</p>
+            <p><strong>Why it matters:</strong> Compromise of a hosting provider&#x27;s management platform exposes many downstream customer sites and credentials, enabling site takeover, data exfiltration, and supply-chain lateral movement.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Force rotation of FTP/SFTP credentials and require password resets for affected accounts</li>
+            <li>Invalidate all active webmail sessions and force reauthentication</li>
+            <li>Audit file integrity and web changes, and restore from known-good backups where necessary</li>
+            <li>Review access logs and apply added segmentation/least-privilege on management interfaces</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/dreamhost-confirms-data-breach-exposed-ftp-logins-and-webmail-sessions/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html" rel="noopener" target="_blank">The Hacker News (ThreatsDay)</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>OpenAI pipeline produced 948 Linux local-privilege-escalation exploits in research run</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> OpenAI detailed a research pipeline that used a cyber-focused model to analyze Linux kernel issues: it identified ~2,308 candidate findings, dynamically reproduced 1,724 vulnerabilities and produced 948 local privilege escalation exploits during a 30-hour run (reported cost ~$1.2M).</p>
+            <p><strong>Why it matters:</strong> Automated exploit generation at scale can accelerate weaponization of kernel flaws and raise operational risk; procurement and security teams should assess vendor controls, disclosure practices, and any exposed proof-of-concept handling.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Engage OpenAI and other AI vendors for clarity on exploit-generation controls and disclosure policies</li>
+            <li>Prioritize patching Linux hosts for escalations and increase monitoring for kernel-level exploit indicators</li>
+            <li>Update third-party risk assessments to account for rapid exploit synthesis from vendor AI tools</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/ai-agents-got-root-on-linux-via-948-kernel-flaws-in-openai-research/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>05 Nov 2026</span>

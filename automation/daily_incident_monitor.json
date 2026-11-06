@@ -1,6 +1,87 @@
 {
   "days": [
     {
+      "date": "2026-11-06",
+      "generated_at": "2026-11-06T07:21:24+01:00",
+      "incidents": [
+        {
+          "title": "Zero-day in Zyxel GS1900 switches exploited; initial patch incomplete",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Attackers exploited a zero-day (tracked as CVE-2026-107441) in Zyxel GS1900 series switches to execute OS commands via crafted HTTP requests; researchers say nearly 1,000 devices were compromised and an earlier Zyxel fix failed, prompting a new firmware release for 10 GS1900 models.",
+          "why_it_matters": "Widely deployed vendor-managed switches exposed to the internet can provide attackers persistence, credential/configuration theft, and a foothold into customer networks — requiring immediate vendor-patch and network controls.",
+          "hot_fix": [
+            "Apply Zyxel's latest firmware release for GS1900 models immediately",
+            "Block internet access to switch web management interfaces (ACLs or VPN-only access)",
+            "Rotate device credentials and audit switch configurations and backups",
+            "Monitor for anomalous management activity and indicators of compromise"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html"
+            }
+          ]
+        },
+        {
+          "title": "DreamHost breach exposes customers' FTP/SFTP credentials and webmail sessions",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Attackers gained access to DreamHost's File Manager platform for approximately two months and stole customers' FTP/SFTP usernames and passwords and active webmail sessions, according to vendor disclosures and reporting.",
+          "why_it_matters": "Compromise of a hosting provider's management platform exposes many downstream customer sites and credentials, enabling site takeover, data exfiltration, and supply-chain lateral movement.",
+          "hot_fix": [
+            "Force rotation of FTP/SFTP credentials and require password resets for affected accounts",
+            "Invalidate all active webmail sessions and force reauthentication",
+            "Audit file integrity and web changes, and restore from known-good backups where necessary",
+            "Review access logs and apply added segmentation/least-privilege on management interfaces"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/dreamhost-confirms-data-breach-exposed-ftp-logins-and-webmail-sessions/"
+            },
+            {
+              "name": "The Hacker News (ThreatsDay)",
+              "url": "https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI pipeline produced 948 Linux local-privilege-escalation exploits in research run",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "OpenAI detailed a research pipeline that used a cyber-focused model to analyze Linux kernel issues: it identified ~2,308 candidate findings, dynamically reproduced 1,724 vulnerabilities and produced 948 local privilege escalation exploits during a 30-hour run (reported cost ~$1.2M).",
+          "why_it_matters": "Automated exploit generation at scale can accelerate weaponization of kernel flaws and raise operational risk; procurement and security teams should assess vendor controls, disclosure practices, and any exposed proof-of-concept handling.",
+          "hot_fix": [
+            "Engage OpenAI and other AI vendors for clarity on exploit-generation controls and disclosure policies",
+            "Prioritize patching Linux hosts for escalations and increase monitoring for kernel-level exploit indicators",
+            "Update third-party risk assessments to account for rapid exploit synthesis from vendor AI tools"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/ai-agents-got-root-on-linux-via-948-kernel-flaws-in-openai-research/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-05",
       "generated_at": "2026-11-05T07:21:29+01:00",
       "incidents": [
