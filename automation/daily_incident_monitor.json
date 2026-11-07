@@ -1,6 +1,36 @@
 {
   "days": [
     {
+      "date": "2026-11-07",
+      "generated_at": "2026-11-07T07:20:42+01:00",
+      "incidents": [
+        {
+          "title": "Chainalysis breach exposed customer credentials and live tokens; key services taken offline",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Chainalysis says an agentic cyber attack exposed names, usernames, password hashes, and live tokens for all customers. The company removed access to its Reactor and Data Solutions products and shut down key services during the investigation.",
+          "why_it_matters": "This is a vendor compromise affecting account credentials and live tokens used to access customer investigations and APIs; customers and TPRM teams face credential theft, unauthorized access, and potential service disruption risks.",
+          "hot_fix": [
+            "Immediately rotate all Chainalysis API keys, tokens, and passwords used by your organisation",
+            "Disable or revoke vendor-linked credentials in your environment until Chainalysis confirms remediation",
+            "Increase logging and monitor for suspicious use of Chainalysis accounts and related integrations",
+            "Request from Chainalysis a forensic timeline, list of exposed data types, and remediation/attestation"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/chainalysis-says-breach-exposed-credentials-for-all-customers/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-06",
       "generated_at": "2026-11-06T07:21:24+01:00",
       "incidents": [

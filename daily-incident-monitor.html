@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">06 Nov 2026</span>
+      <span id="last-updated">07 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,35 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>07 Nov 2026</span>
+          <span>1 incident</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Chainalysis breach exposed customer credentials and live tokens; key services taken offline</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Chainalysis says an agentic cyber attack exposed names, usernames, password hashes, and live tokens for all customers. The company removed access to its Reactor and Data Solutions products and shut down key services during the investigation.</p>
+            <p><strong>Why it matters:</strong> This is a vendor compromise affecting account credentials and live tokens used to access customer investigations and APIs; customers and TPRM teams face credential theft, unauthorized access, and potential service disruption risks.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Immediately rotate all Chainalysis API keys, tokens, and passwords used by your organisation</li>
+            <li>Disable or revoke vendor-linked credentials in your environment until Chainalysis confirms remediation</li>
+            <li>Increase logging and monitor for suspicious use of Chainalysis accounts and related integrations</li>
+            <li>Request from Chainalysis a forensic timeline, list of exposed data types, and remediation/attestation</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/chainalysis-says-breach-exposed-credentials-for-all-customers/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>06 Nov 2026</span>
