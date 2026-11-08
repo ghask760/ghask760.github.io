@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">07 Nov 2026</span>
+      <span id="last-updated">08 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,34 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>08 Nov 2026</span>
+          <span>1 incident</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Primary source</span>
+          </div>
+          <h3>CISA adds SonicWall CVE-2026-19868 (SSL‑VPN MFA bypass) to KEV after exploitation evidence</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA added CVE-2026-19868 (SonicWall SonicOS SSL‑VPN authentication bypass) to its Known Exploited Vulnerabilities catalog based on evidence of active exploitation. SonicWall released fixes for multiple SonicOS issues including the exploited SSL‑VPN flaw.</p>
+            <p><strong>Why it matters:</strong> Active exploitation of a VPN authentication bypass can enable unauthorized remote access to vendor appliances and customer networks, increasing supply‑chain and third‑party access risk. Federal agencies and organizations using SonicWall appliances must prioritize remediation to reduce exposure.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply vendor SonicOS updates immediately</li>
+            <li>Isolate or block exposed SSL‑VPN services from the public internet until patched</li>
+            <li>Invalidate/MFA‑enforce any affected sessions and rotate credentials and tokens</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.cisa.gov/news-events/alerts/2026/11/06/cisa-adds-one-known-exploited-vulnerability-catalog" rel="noopener" target="_blank">CISA KEV Catalog entry</a> <a href="https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer - SonicWall warns of SSL‑VPN MFA bypass exploited in attacks</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>07 Nov 2026</span>

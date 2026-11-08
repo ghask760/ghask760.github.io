@@ -1,6 +1,35 @@
 {
   "days": [
     {
+      "date": "2026-11-08",
+      "generated_at": "2026-11-08T07:21:21+01:00",
+      "incidents": [
+        {
+          "title": "CISA adds SonicWall CVE-2026-19868 (SSL‑VPN MFA bypass) to KEV after exploitation evidence",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Primary source",
+          "what_happened": "CISA added CVE-2026-19868 (SonicWall SonicOS SSL‑VPN authentication bypass) to its Known Exploited Vulnerabilities catalog based on evidence of active exploitation. SonicWall released fixes for multiple SonicOS issues including the exploited SSL‑VPN flaw.",
+          "why_it_matters": "Active exploitation of a VPN authentication bypass can enable unauthorized remote access to vendor appliances and customer networks, increasing supply‑chain and third‑party access risk. Federal agencies and organizations using SonicWall appliances must prioritize remediation to reduce exposure.",
+          "hot_fix": [
+            "Apply vendor SonicOS updates immediately",
+            "Isolate or block exposed SSL‑VPN services from the public internet until patched",
+            "Invalidate/MFA‑enforce any affected sessions and rotate credentials and tokens"
+          ],
+          "sources": [
+            {
+              "name": "CISA KEV Catalog entry",
+              "url": "https://www.cisa.gov/news-events/alerts/2026/11/06/cisa-adds-one-known-exploited-vulnerability-catalog"
+            },
+            {
+              "name": "BleepingComputer - SonicWall warns of SSL‑VPN MFA bypass exploited in attacks",
+              "url": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-07",
       "generated_at": "2026-11-07T07:20:42+01:00",
       "incidents": [
