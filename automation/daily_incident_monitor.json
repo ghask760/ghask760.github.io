@@ -1,6 +1,62 @@
 {
   "days": [
     {
+      "date": "2026-11-10",
+      "generated_at": "2026-11-10T07:21:49+01:00",
+      "incidents": [
+        {
+          "title": "OpenSSH 'SSHole' (CVE-2026-123158) actively exploited to compromise Linux systems",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Primary source",
+          "what_happened": "The OpenSSH authentication-bypass flaw tracked as CVE-2026-123158 ('SSHole') is being actively exploited in the wild to execute commands, steal credentials, and establish persistent access; CISA added the CVE to its KEV catalog.",
+          "why_it_matters": "OpenSSH is widely deployed across servers, appliances, and managed services; exploitation risks compromise of vendor-supplied systems and cloud instances, increasing third-party and supply-chain attack surface.",
+          "hot_fix": [
+            "Apply vendor/OpenSSH patches immediately",
+            "Restrict SSH access (IP allowlists, bastion hosts) and disable affected auth methods",
+            "Rotate SSH keys and credentials and review logs for suspicious sessions"
+          ],
+          "sources": [
+            {
+              "name": "CISA KEV catalog",
+              "url": "https://www.cisa.gov/news-events/alerts/2026/11/09/cisa-adds-four-known-exploited-vulnerabilities-catalog"
+            },
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/hackers-exploiting-sshole-authentication-bypass-in-openssh/"
+            }
+          ]
+        },
+        {
+          "title": "Iris Plaza cloud compromise may have exposed 7.7M customer records and forced online store offline",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors compromised an external cloud service used by the Iris Plaza shopping platform; reports say personal information for approximately 7.7 million customers may have been stolen and the retailer pulled its online store offline.",
+          "why_it_matters": "Third-party cloud-service compromise directly impacts customer data exposure and business continuity for downstream merchants and suppliers; procurement and incident response teams must treat affected integrations as potential breach vectors.",
+          "hot_fix": [
+            "Engage the cloud provider for forensic details and containment actions",
+            "Suspend affected integrations, rotate credentials and API keys",
+            "Notify regulators/customers per legal requirements and review supply-chain dependencies"
+          ],
+          "sources": [
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/iris-plaza-breach-may-have-exposed-data-of-7-7-million-customers/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/cyber-crime/2026/11/09/japanese-homeware-giant-pulls-online-store-after-cloud-breach-puts-77m-records-at-risk/5308377"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-09",
       "generated_at": "2026-11-09T07:21:00+01:00",
       "incidents": []
