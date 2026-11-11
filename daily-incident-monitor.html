@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">10 Nov 2026</span>
+      <span id="last-updated">11 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,144 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>11 Nov 2026</span>
+          <span>6 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Qubole supply-chain compromise used stolen IAM credentials to breach multiple customer AWS environments</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers used compromised Qubole AWS IAM credentials to access and exfiltrate data from multiple customers&#x27; AWS environments, taking files, secrets, keys, environment variables and credentials.</p>
+            <p><strong>Why it matters:</strong> A provider-level credential compromise can expose numerous downstream customers and secrets; vendors and customers must treat provider identity controls and secret management as critical TPRM items.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Revoke and rotate any provider-linked IAM keys and tokens</li>
+            <li>Audit logs for lateral access and data exfiltration</li>
+            <li>Require provider to supply incident details and remediation timelines</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-trusted-aws-access-to-breach-multiple-cloud-environments/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/over-a-dozen-organizations-hit-in-qubole-supply-chain-attack/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Primary source</span>
+          </div>
+          <h3>Barracuda Email Security Gateway (ESG) flaws exploited to obtain root</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers began exploiting two recently patched Barracuda ESG vulnerabilities to run commands with root privileges on affected appliances; the related CVEs were added to CISA&#x27;s KEV catalog.</p>
+            <p><strong>Why it matters:</strong> Compromise of email security appliances can lead to broad mail interception, credential theft and lateral network access; vendors and customers should assume high priority impact for affected deployments.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Barracuda emergency patches immediately</li>
+            <li>Isolate and forensic-scan ESG appliances for post-compromise activity</li>
+            <li>Rotate credentials and inspect mail flows for suspicious changes</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.cisa.gov/news-events/alerts/2026/11/10/cisa-adds-six-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA</a> <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access/" rel="noopener" target="_blank">BleepingComputer</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical Xen Orchestra authentication-bypass being actively exploited to hijack virtualization hosts</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical authentication bypass in Xen Orchestra (VSA-2026-062) is being actively exploited to gain administrator privileges and take over XCP-ng virtualization hosts.</p>
+            <p><strong>Why it matters:</strong> Compromise of virtualization management can result in full control of tenant VMs and underlying infrastructure; host and hypervisor exposures are high priority for continuity and risk teams.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply vendor remediation or mitigations immediately</li>
+            <li>Restrict access to management interfaces and rotate admin credentials</li>
+            <li>Inspect virtualization hosts for signs of takeover</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Fireworks AI breach investigation widens — customer datasets, model weights and Notion AI chats affected for limited accounts</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Fireworks AI disclosed that its investigation uncovered further malicious activity impacting account and billing info, secrets, datasets, incomplete model weights and Notion AI chats for a limited set of accounts.</p>
+            <p><strong>Why it matters:</strong> Exposure of customer datasets and model weights risks intellectual property loss, regulatory exposure and downstream data leakage for organizations using the service.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Identify whether your organization used affected Fireworks accounts or datasets</li>
+            <li>Rotate any exposed secrets and keys tied to the service</li>
+            <li>Require vendor incident details, scope and mitigation plans</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.theregister.com/cyber-crime/2026/11/10/fireworks_ai_gets_burned_twice_as_customer_data_exposure_widens/5308722" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft November 2026 Patch Tuesday fixes &gt;1,000 flaws including an actively exploited Outlook zero-day</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Microsoft released fixes for over 1,000 vulnerabilities (reporting ~1,094–1,235 across sources), including an Outlook zero-day that Microsoft says is being actively exploited.</p>
+            <p><strong>Why it matters:</strong> Widespread Microsoft fixes including an exploited Outlook zero-day require immediate prioritization by patch teams to reduce active exploitation risk across enterprise estates and vendor-managed services.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Prioritize deployment of the Outlook and critical Windows updates</li>
+            <li>Test and roll out patches quickly to production</li>
+            <li>Monitor telemetry for exploitation indicators post-deploy</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Binance warns of iOS sandbox-escape that could expose other apps&#x27; files including crypto wallet secrets; no Apple fix confirmed</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Binance warned a reported iOS sandbox escape can let third-party apps read files stored by other apps on iOS 26/27, potentially exposing seed phrases, keys and credentials; Apple updates at time of reporting do not list a fix.</p>
+            <p><strong>Why it matters:</strong> Mobile app vendors and custodial services storing secrets on-device face elevated risk; TPRM should verify mobile security controls and monitor for an Apple patch.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Avoid storing sensitive keys/seeds in app-accessible files where possible</li>
+            <li>Monitor Apple security advisories for a vendor fix</li>
+            <li>Require mobile security attestations from affected vendors</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/binance-warns-of-ios-flaw-that-could-leak-crypto-wallet-secrets/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/binance-warns-of-ios-sandbox-escape.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>10 Nov 2026</span>
