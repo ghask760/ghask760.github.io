@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">11 Nov 2026</span>
+      <span id="last-updated">12 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,122 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>12 Nov 2026</span>
+          <span>5 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Active ScreenConnect attacks use compromised MSP environments to deploy rogue remote‑access clients</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A campaign abusing compromised ScreenConnect (ConnectWise) environments at MSPs has deployed rogue remote‑access clients to customer devices; reports cite at least 288 endpoints across 48 organizations and ConnectWise has disabled several partner extensions as a precaution.</p>
+            <p><strong>Why it matters:</strong> Compromise of MSP remote‑management tooling provides attackers broad access to many downstream customers, elevating third‑party and vendor‑tooling risk for organizations using affected MSPs or ScreenConnect.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Ask MSPs to confirm isolation/forensic of their ScreenConnect instances</li>
+            <li>Rotate privileged credentials and service accounts tied to RMM/RAC tools</li>
+            <li>Harden and monitor remote‑access tooling and disable unused extensions</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Railway breach exposed stored customer AI keys; $740,000 in fraudulent AI usage reported</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Railway disclosed a breach in which attackers stole customer API/AI keys stored on its platform and used them to incur approximately $740,000 in unauthorized AI usage charges.</p>
+            <p><strong>Why it matters:</strong> Cloud platform secret exposure can lead to financial fraud and lateral compromise of customer environments; organizations relying on PaaS secret storage should treat hosted credentials as high‑risk.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Rotate API keys and revoke affected tokens immediately</li>
+            <li>Audit secret storage practices on the platform and require MFA</li>
+            <li>Coordinate reimbursements and provider notifications where applicable</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Logistics</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Maersk confirms data theft from legacy acquired system; WhiteArmor demands $5M</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Maersk reported an IT security incident where a threat actor accessed a legacy system inherited via acquisition and extracted data; the attacker group WhiteArmor is publicly demanding $5 million.</p>
+            <p><strong>Why it matters:</strong> Maersk is a critical logistics supplier; data theft from its systems increases supply‑chain exposure and could disrupt shipping operations or customer confidence.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Isolate and remediate legacy/acquired systems immediately</li>
+            <li>Conduct forensic investigation and notify affected customers</li>
+            <li>Review acquisition‑integration security controls and segmentation</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.theregister.com/security/2026/11/11/shipping-giant-maersk-probes-it-security-incident-data-theft/5309096" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>AntiFox agentic pentesting platform tied to attacks that stole AWS credentials</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Researchers linked the open‑source agentic platform AntiFox, when self‑hosted on Alibaba Cloud, to campaigns that stole AWS credentials and enabled lateral access into customer environments.</p>
+            <p><strong>Why it matters:</strong> Malicious use of publicly available agentic tooling hosted by third parties raises risks for cloud credential theft and demonstrates that self‑hosted developer/test tooling can become a supply‑chain attack vector.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Detect and block unauthorized AntiFox infrastructure and activity</li>
+            <li>Rotate cloud access keys and enforce short‑lived credentials</li>
+            <li>Limit self‑hosted agent execution and tighten third‑party hosting policies</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/antifox-ai-pentesting-platform-linked.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Logistics</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>WhiteArmor cyber‑crime group targets transportation firms (Hunt, Ryder, Echo) and sparks lawsuits</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Reports link the WhiteArmor criminal group to attacks on multiple transportation companies leading to operational impact and resulting lawsuits; WhiteArmor is also linked to the Maersk incident.</p>
+            <p><strong>Why it matters:</strong> A focused criminal campaign against transport/logistics providers increases disruption risk across supply chains and elevates supplier continuity and legal exposure for affected firms.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Require transportation suppliers to provide incident response reports and attestations</li>
+            <li>Increase monitoring of logistics partners and contractual security requirements</li>
+            <li>Prepare contingency routing and supplier substitution plans</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.freightwaves.com/news/new-cyber-thief-gang-targets-transports-hunt-ryder-and-echo-hit" rel="noopener" target="_blank">FreightWaves</a> <a href="https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/" rel="noopener" target="_blank">BleepingComputer</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>11 Nov 2026</span>

@@ -1,6 +1,127 @@
 {
   "days": [
     {
+      "date": "2026-11-12",
+      "generated_at": "2026-11-12T07:21:28+01:00",
+      "incidents": [
+        {
+          "title": "Active ScreenConnect attacks use compromised MSP environments to deploy rogue remote‑access clients",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A campaign abusing compromised ScreenConnect (ConnectWise) environments at MSPs has deployed rogue remote‑access clients to customer devices; reports cite at least 288 endpoints across 48 organizations and ConnectWise has disabled several partner extensions as a precaution.",
+          "why_it_matters": "Compromise of MSP remote‑management tooling provides attackers broad access to many downstream customers, elevating third‑party and vendor‑tooling risk for organizations using affected MSPs or ScreenConnect.",
+          "hot_fix": [
+            "Ask MSPs to confirm isolation/forensic of their ScreenConnect instances",
+            "Rotate privileged credentials and service accounts tied to RMM/RAC tools",
+            "Harden and monitor remote‑access tooling and disable unused extensions"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html"
+            }
+          ]
+        },
+        {
+          "title": "Railway breach exposed stored customer AI keys; $740,000 in fraudulent AI usage reported",
+          "category": "Data breach",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Railway disclosed a breach in which attackers stole customer API/AI keys stored on its platform and used them to incur approximately $740,000 in unauthorized AI usage charges.",
+          "why_it_matters": "Cloud platform secret exposure can lead to financial fraud and lateral compromise of customer environments; organizations relying on PaaS secret storage should treat hosted credentials as high‑risk.",
+          "hot_fix": [
+            "Rotate API keys and revoke affected tokens immediately",
+            "Audit secret storage practices on the platform and require MFA",
+            "Coordinate reimbursements and provider notifications where applicable"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html"
+            }
+          ]
+        },
+        {
+          "title": "Maersk confirms data theft from legacy acquired system; WhiteArmor demands $5M",
+          "category": "Logistics",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Maersk reported an IT security incident where a threat actor accessed a legacy system inherited via acquisition and extracted data; the attacker group WhiteArmor is publicly demanding $5 million.",
+          "why_it_matters": "Maersk is a critical logistics supplier; data theft from its systems increases supply‑chain exposure and could disrupt shipping operations or customer confidence.",
+          "hot_fix": [
+            "Isolate and remediate legacy/acquired systems immediately",
+            "Conduct forensic investigation and notify affected customers",
+            "Review acquisition‑integration security controls and segmentation"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/11/11/shipping-giant-maersk-probes-it-security-incident-data-theft/5309096"
+            }
+          ]
+        },
+        {
+          "title": "AntiFox agentic pentesting platform tied to attacks that stole AWS credentials",
+          "category": "TPRM",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers linked the open‑source agentic platform AntiFox, when self‑hosted on Alibaba Cloud, to campaigns that stole AWS credentials and enabled lateral access into customer environments.",
+          "why_it_matters": "Malicious use of publicly available agentic tooling hosted by third parties raises risks for cloud credential theft and demonstrates that self‑hosted developer/test tooling can become a supply‑chain attack vector.",
+          "hot_fix": [
+            "Detect and block unauthorized AntiFox infrastructure and activity",
+            "Rotate cloud access keys and enforce short‑lived credentials",
+            "Limit self‑hosted agent execution and tighten third‑party hosting policies"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-use-antifox-ai-agents-in-aws-credential-theft-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/antifox-ai-pentesting-platform-linked.html"
+            }
+          ]
+        },
+        {
+          "title": "WhiteArmor cyber‑crime group targets transportation firms (Hunt, Ryder, Echo) and sparks lawsuits",
+          "category": "Logistics",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Reports link the WhiteArmor criminal group to attacks on multiple transportation companies leading to operational impact and resulting lawsuits; WhiteArmor is also linked to the Maersk incident.",
+          "why_it_matters": "A focused criminal campaign against transport/logistics providers increases disruption risk across supply chains and elevates supplier continuity and legal exposure for affected firms.",
+          "hot_fix": [
+            "Require transportation suppliers to provide incident response reports and attestations",
+            "Increase monitoring of logistics partners and contractual security requirements",
+            "Prepare contingency routing and supplier substitution plans"
+          ],
+          "sources": [
+            {
+              "name": "FreightWaves",
+              "url": "https://www.freightwaves.com/news/new-cyber-thief-gang-targets-transports-hunt-ryder-and-echo-hit"
+            },
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-11",
       "generated_at": "2026-11-11T07:21:30+01:00",
       "incidents": [
