@@ -1,6 +1,181 @@
 {
   "days": [
     {
+      "date": "2026-11-13",
+      "generated_at": "2026-11-13T07:21:31+01:00",
+      "incidents": [
+        {
+          "title": "CISA: Node2Shell/php2shell impact to multiple Siemens industrial and building products",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Primary source",
+          "what_happened": "CISA advisories report Siemens industrial and building automation products are affected by the Node2Shell (CVE-2026-111497) and php2shell (CVE-2026-109618/CVE-2026-109619) vulnerabilities; Siemens has released updated product versions and mitigations for impacted components.",
+          "why_it_matters": "Siemens devices are deployed in critical infrastructure and industrial environments; vulnerable firmware/software in these products can enable remote code execution and supply-chain exposure for downstream customers and service providers.",
+          "hot_fix": [
+            "Inventory Siemens products and versions",
+            "Apply Siemens released updates or vendor mitigations immediately",
+            "Isolate/segregate affected devices and restrict network access until patched"
+          ],
+          "sources": [
+            {
+              "name": "CISA ICSA-26-316-01 (Siemens Building Automation and Energy Products)",
+              "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-01"
+            },
+            {
+              "name": "CISA ICSA-26-316-02 (Siemens Desigo, Gridscale)",
+              "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-02"
+            },
+            {
+              "name": "CISA ICSA-26-316-04 (Siemens RUGGEDCOM APE1808 - Node2Shell)",
+              "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-04"
+            },
+            {
+              "name": "CISA ICSA-26-316-05 (Siemens RUGGEDCOM APE1808 - php2shell)",
+              "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-05"
+            }
+          ]
+        },
+        {
+          "title": "Active exploitation of N-able N-central (4EverAble2Shell/Agent2Shell) impacting MSPs and managed servers",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Public disclosures and reports show zero-days in N-able N-central (dubbed 4EverAble2Shell/Agent2Shell) are being exploited to gain root/RCE and Windows SYSTEM access on on-premises N-central servers; N-able is issuing hotfixes and restricting features while investigating.",
+          "why_it_matters": "N-central is an RMM platform used by MSPs; exploitation can provide attackers broad access to MSP-managed customer environments, creating cascading third‑party risk and potential supply-chain-wide compromise.",
+          "hot_fix": [
+            "Apply N-able mitigations and hotfixes immediately",
+            "Disable/limit exposed Legacy API and internet-facing management interfaces",
+            "Audit MSP credentials and remote access logs for suspicious activity"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer – N-able zero-day exploitation report",
+              "url": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/"
+            },
+            {
+              "name": "The Hacker News – N-able exploits and affected servers",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-n-central-flaws-to.html"
+            }
+          ]
+        },
+        {
+          "title": "Worm-like SCKit malware leverages ScreenConnect attacks to target MSP environments",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Researchers report a worm-like toolkit named SCKit was used in attacks exploiting a ScreenConnect plugin/authentication flaw to spread from customer devices into MSP technicians' machines and pivot across managed networks.",
+          "why_it_matters": "Compromise of MSP remote support tools creates outsized third‑party risk: attackers can move from a single customer to many of the MSP's clients, undermining incident containment and exposing enterprise supply chains.",
+          "hot_fix": [
+            "Disable affected ScreenConnect extensions and integrations",
+            "Verify MSP-supported sessions and rotate MSP technician credentials",
+            "Inspect MSP endpoints and remote-session logs for lateral movement indicators"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer – SCKit malware targets MSPs in ScreenConnect attacks",
+              "url": "https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/"
+            },
+            {
+              "name": "The Hacker News – SCKit/ScreenConnect campaign analysis",
+              "url": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html"
+            }
+          ]
+        },
+        {
+          "title": "Global Microsoft 365 outage disrupts Outlook, Teams, Copilot",
+          "category": "Vendor outage",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Microsoft reported and users confirmed a widespread outage affecting Microsoft 365 services—including Outlook, Exchange Online, Teams, and Copilot—caused by failed server health checks; Microsoft is investigating and has reported no evidence of a cyberattack.",
+          "why_it_matters": "Extended unavailability of Microsoft 365 disrupts business-critical communications and collaboration for large consumer and enterprise user bases, affecting third-party continuity and vendor SLAs.",
+          "hot_fix": [
+            "Escalate to Microsoft support and track incident updates",
+            "Activate alternate communication channels and business continuity plans",
+            "Assess vendor SLA impacts and third-party downstream dependencies"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer – Massive Microsoft 365 outage",
+              "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
+            },
+            {
+              "name": "SecurityWeek – Microsoft 365 outage report",
+              "url": "https://www.securityweek.com/microsoft-365-outage-disrupts-outlook-exchange-online-and-teams/"
+            }
+          ]
+        },
+        {
+          "title": "Credential-theft campaign compromises ~4,800 GitHub accounts to steal cloud secrets (wfx-loot)",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Threat actors using ~4,837 compromised GitHub accounts probed over 61,000 repositories, opened pull requests and planted CI secret-stealing malware; reports indicate the campaign (wfx-loot) ran secret stealers in many repositories.",
+          "why_it_matters": "Stolen CI/cloud credentials and pushed malware in developer repositories pose immediate supply-chain and cloud‑credential risk to vendors and customers, enabling downstream compromise of production systems and provider integrations.",
+          "hot_fix": [
+            "Rotate/evict exposed secrets and CI tokens",
+            "Scan repos and CI pipelines for malicious commits and remove injected workflows",
+            "Enforce MFA, review OAuth app grants, and audit recent PRs from external accounts"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer – GitHub account compromises to steal cloud credentials",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials/"
+            },
+            {
+              "name": "SecurityWeek – Attacker targets 60,000 GitHub repositories credential theft campaign",
+              "url": "https://www.securityweek.com/attacker-targets-60000-github-repositories-in-credential-theft-campaign/"
+            }
+          ]
+        },
+        {
+          "title": "Critical Red Hat Quay flaw lets unauthenticated users read/overwrite private container images",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A critical vulnerability in Red Hat Quay allows an attacker with access to a Quay registry (or anonymous access if enabled) to read and overwrite private container images across repositories; Red Hat released fixed builds.",
+          "why_it_matters": "Compromise of container registries can expose proprietary images, credentials, and CI/CD artifacts—undermining software supply-chain integrity and enabling widespread downstream compromise if images are tampered with.",
+          "hot_fix": [
+            "Apply Red Hat Quay fixed builds immediately",
+            "Disable anonymous registry access and audit user accounts",
+            "Verify image integrity and redeploy from trusted, verified sources"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News – Critical Red Hat Quay flaw report",
+              "url": "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html"
+            },
+            {
+              "name": "SecurityWeek – Critical Red Hat Quay vulnerability coverage",
+              "url": "https://www.securityweek.com/critical-red-hat-quay-vulnerability-could-expose-private-container-images/"
+            }
+          ]
+        },
+        {
+          "title": "Public SignDrop PoC enables local Windows SYSTEM escalation via CLFS",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A publicly released proof-of-concept (SignDrop) leverages a Common Log File System driver behavior to escalate a local Windows user to SYSTEM privileges; researcher-disclosed exploit code is circulating.",
+          "why_it_matters": "Public exploit code elevating privileges on Windows increases risk of post‑compromise escalation in vendor and supplier endpoints, potentially enabling lateral movement into critical systems used by third parties.",
+          "hot_fix": [
+            "Apply vendor mitigations or Microsoft patches if available",
+            "Harden endpoint protections and restrict untrusted local code execution",
+            "Monitor for local privilege escalation indicators and unusual service activity"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer – SignDrop zero-day report",
+              "url": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/"
+            },
+            {
+              "name": "The Hacker News – SignDrop PoC analysis",
+              "url": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-12",
       "generated_at": "2026-11-12T07:21:28+01:00",
       "incidents": [
