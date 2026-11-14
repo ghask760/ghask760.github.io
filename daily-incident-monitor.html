@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">13 Nov 2026</span>
+      <span id="last-updated">14 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,34 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>14 Nov 2026</span>
+          <span>1 incident</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Check Point gateways actively exploited via php2shell; root access and destructive payloads observed</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Reports indicate threat actors are exploiting php2shell vulnerabilities in unpatched Check Point Security Gateways to gain initial access, escalate to root, deploy a backdoor (TSGA), and wipe ESXi files in observed attacks.</p>
+            <p><strong>Why it matters:</strong> Exploitation of a perimeter security vendor product can yield broad network compromise and destructive outcomes; unpatched appliances increase third-party and downstream risk for customers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Check Point mitigations and emergency hotfixes immediately</li>
+            <li>Isolate or replace internet-facing gateway appliances until patched</li>
+            <li>Hunt for indicators of compromise and check for local privilege escalation artifacts</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/" rel="noopener" target="_blank">BleepingComputer — Check Point patches zero-day exploited for root access</a> <a href="https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html" rel="noopener" target="_blank">The Hacker News — PHP2Shell exploited in Check Point gateway attacks</a> <a href="https://www.securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks/" rel="noopener" target="_blank">SecurityWeek — PHP2Shell exploited in destructive Check Point Gateway attacks</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>13 Nov 2026</span>

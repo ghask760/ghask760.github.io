@@ -1,6 +1,39 @@
 {
   "days": [
     {
+      "date": "2026-11-14",
+      "generated_at": "2026-11-14T07:21:43+01:00",
+      "incidents": [
+        {
+          "title": "Check Point gateways actively exploited via php2shell; root access and destructive payloads observed",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Reports indicate threat actors are exploiting php2shell vulnerabilities in unpatched Check Point Security Gateways to gain initial access, escalate to root, deploy a backdoor (TSGA), and wipe ESXi files in observed attacks.",
+          "why_it_matters": "Exploitation of a perimeter security vendor product can yield broad network compromise and destructive outcomes; unpatched appliances increase third-party and downstream risk for customers.",
+          "hot_fix": [
+            "Apply Check Point mitigations and emergency hotfixes immediately",
+            "Isolate or replace internet-facing gateway appliances until patched",
+            "Hunt for indicators of compromise and check for local privilege escalation artifacts"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer — Check Point patches zero-day exploited for root access",
+              "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/"
+            },
+            {
+              "name": "The Hacker News — PHP2Shell exploited in Check Point gateway attacks",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html"
+            },
+            {
+              "name": "SecurityWeek — PHP2Shell exploited in destructive Check Point Gateway attacks",
+              "url": "https://www.securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-13",
       "generated_at": "2026-11-13T07:21:31+01:00",
       "incidents": [
