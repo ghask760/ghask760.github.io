@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">15 Nov 2026</span>
+      <span id="last-updated">16 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>16 Nov 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Primary source</span>
+          </div>
+          <h3>CISA adds UnrealIRCd CVE-2026-114713 to Known Exploited Vulnerabilities catalog</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA added CVE-2026-114713 (UnrealIRCd improper neutralization of delimiters) to its Known Exploited Vulnerabilities catalog citing evidence of active exploitation.</p>
+            <p><strong>Why it matters:</strong> Active exploitation of an open-source server component increases risk to organizations that run UnrealIRCd or embed it in tooling; federal agencies must prioritize remediation under BOD 26-04 and private-sector orgs should treat this as urgent.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Inventory and identify all UnrealIRCd instances in estate</li>
+            <li>Apply vendor/maintainer patches or available mitigations immediately</li>
+            <li>Monitor for exploitation indicators and block malicious traffic to affected services</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.cisa.gov/news-events/alerts/2026/11/13/cisa-adds-two-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA</a> <a href="https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Stolen Fireworks AI key led to trojanized Claude Code extension on Cursor marketplace</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Cursor confirmed a security breach in which an access key issued to AI infrastructure provider Fireworks AI was stolen; the attacker used the key to distribute a malicious Claude Code extension via Cursor&#x27;s extension marketplace.</p>
+            <p><strong>Why it matters:</strong> Supply-chain compromise of an extension marketplace can push malicious code to developer tooling and downstream users; organizations using third-party AI extensions should assume potential compromise of connected assets and secrets.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Revoke compromised Fireworks AI keys and rotate related credentials</li>
+            <li>Remove/take down the malicious extension, force updates, and verify marketplace integrity controls</li>
+            <li>Audit access logs for activity by the stolen key and notify/monitor affected customers</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>15 Nov 2026</span>

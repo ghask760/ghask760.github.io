@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-11-16",
+      "generated_at": "2026-11-16T07:21:08+01:00",
+      "incidents": [
+        {
+          "title": "CISA adds UnrealIRCd CVE-2026-114713 to Known Exploited Vulnerabilities catalog",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Primary source",
+          "what_happened": "CISA added CVE-2026-114713 (UnrealIRCd improper neutralization of delimiters) to its Known Exploited Vulnerabilities catalog citing evidence of active exploitation.",
+          "why_it_matters": "Active exploitation of an open-source server component increases risk to organizations that run UnrealIRCd or embed it in tooling; federal agencies must prioritize remediation under BOD 26-04 and private-sector orgs should treat this as urgent.",
+          "hot_fix": [
+            "Inventory and identify all UnrealIRCd instances in estate",
+            "Apply vendor/maintainer patches or available mitigations immediately",
+            "Monitor for exploitation indicators and block malicious traffic to affected services"
+          ],
+          "sources": [
+            {
+              "name": "CISA",
+              "url": "https://www.cisa.gov/news-events/alerts/2026/11/13/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html"
+            }
+          ]
+        },
+        {
+          "title": "Stolen Fireworks AI key led to trojanized Claude Code extension on Cursor marketplace",
+          "category": "Software supply chain",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Cursor confirmed a security breach in which an access key issued to AI infrastructure provider Fireworks AI was stolen; the attacker used the key to distribute a malicious Claude Code extension via Cursor's extension marketplace.",
+          "why_it_matters": "Supply-chain compromise of an extension marketplace can push malicious code to developer tooling and downstream users; organizations using third-party AI extensions should assume potential compromise of connected assets and secrets.",
+          "hot_fix": [
+            "Revoke compromised Fireworks AI keys and rotate related credentials",
+            "Remove/take down the malicious extension, force updates, and verify marketplace integrity controls",
+            "Audit access logs for activity by the stolen key and notify/monitor affected customers"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-15",
       "generated_at": "2026-11-15T07:21:31+01:00",
       "incidents": []
