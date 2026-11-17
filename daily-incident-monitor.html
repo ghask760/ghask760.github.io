@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">16 Nov 2026</span>
+      <span id="last-updated">17 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>17 Nov 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Vendor outage</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft: months-old bug caused global Microsoft 365 outage</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Microsoft says a software bug introduced in July triggered a cascading failure that left over 80% of its networking gateway servers unresponsive and caused last week&#x27;s worldwide Microsoft 365 outage; Microsoft also warned of phishing emails leveraging the outage.</p>
+            <p><strong>Why it matters:</strong> Widespread availability failure at a major SaaS provider disrupts business-critical email, collaboration and identity flows and increases phishing risk for downstream customers and vendors.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Validate vendor remediation timeline and patch deployment schedule</li>
+            <li>Confirm service restoration and verify gateway/server health with vendor</li>
+            <li>Increase phishing detection and user awareness for outage-themed lures</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/microsoft-rules-out-cyberattack-in-outage-warns-of-phishing-campaign/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Cursor supply-chain compromise originated at Fireworks AI access key theft</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Cursor says an attacker stole an access key issued to Fireworks AI and used it to copy credentials/data and push trojanized copies of the Anthropic/Claude Code extension on Cursor&#x27;s marketplace.</p>
+            <p><strong>Why it matters:</strong> A third-party key exposure enabled downstream tampering of an official code extension, demonstrating risk from upstream SaaS/third-party credential exposure to developer tools and extensions.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Revoke and rotate any keys issued to the impacted vendor (Fireworks)</li>
+            <li>Remove and replace trojanized extension copies and notify downstream users</li>
+            <li>Audit access logs and third-party key issuance and harden key handling</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/cursor-says-stolen-fireworks-ai-key-led-to-cursor.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/cursor-supply-chain-attack-started-at-fireworks/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Google finds AI-agentized attacks converting patches into working exploits; Project Zero cuts disclosure windows</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Google researchers report threat actors are using autonomous multi-agent AI frameworks to automatically convert security patches into working exploits and accelerate intrusions; Project Zero shortened disclosure timelines to 30 days in response.</p>
+            <p><strong>Why it matters:</strong> Automation of exploit development from patches shortens the window for secure patch testing and increases risk that newly released fixes will be weaponized against vendors and downstream customers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Treat newly published patches as potential exploitation vectors and prioritize testing/validation</li>
+            <li>Accelerate patch deployment for critical components and monitor for patch-derived exploit indicators</li>
+            <li>Increase threat hunting for exploit activity immediately following patch disclosures</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.bleepingcomputer.com/news/security/google-project-zero-cuts-bug-disclosure-deadline-to-30-days-amid-ai-threats/" rel="noopener" target="_blank">BleepingComputer</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>16 Nov 2026</span>
