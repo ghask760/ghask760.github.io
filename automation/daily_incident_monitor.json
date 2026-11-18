@@ -1,6 +1,81 @@
 {
   "days": [
     {
+      "date": "2026-11-18",
+      "generated_at": "2026-11-18T07:22:06+01:00",
+      "incidents": [
+        {
+          "title": "Node2Shell (CVE-2026-111497) impacts multiple Siemens products — vendor fixes & mitigations advised",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Primary source",
+          "what_happened": "CISA advisories note the Node.js 'Node2Shell' out-of-bounds write (CVE-2026-111497) affects Brotli decoder usage in numerous Siemens products; Siemens has released updates for some products and is preparing fixes and mitigations for others.",
+          "why_it_matters": "Widely deployed Siemens engineering and automation software may be subject to remote code execution if not updated, creating supply-chain exposure for manufacturers and service providers.",
+          "hot_fix": [
+            "Apply Siemens product updates listed in the advisory",
+            "Follow Siemens mitigations for products without fixes",
+            "Prioritize internet-facing and build/CI systems for patching"
+          ],
+          "sources": [
+            {
+              "name": "CISA ICSA-26-321-04 (Siemens Industrial Software Products)",
+              "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-04"
+            },
+            {
+              "name": "CISA ICSA-26-321-03 (Siemens Industrial Automation Software Products)",
+              "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-03"
+            }
+          ]
+        },
+        {
+          "title": "Optimizely compromise injected card skimmers and exploit kits into scripts served to ~178 top sites",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Attackers exploited Optimizely to alter scripts delivered to customers, resulting in infected pages (card skimmers and exploit kits) observed on at least 178 organizations' websites (including major news and service sites).",
+          "why_it_matters": "Third-party experimentation/optimization scripts are widely trusted and loaded across many domains; compromise of such a vendor can expose customer data and site visitors and magnify downstream vendor risk.",
+          "hot_fix": [
+            "Block or remove Optimizely-hosted scripts until vendor confirms remediation",
+            "Implement/verify strict Content Security Policy and subresource integrity",
+            "Rotate credentials and audit third-party script usage across sites"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News — Hijacked Optimizely scripts",
+              "url": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html"
+            },
+            {
+              "name": "KrebsOnSecurity — Attackers used Optimizely to A/B test malware",
+              "url": "https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/"
+            }
+          ]
+        },
+        {
+          "title": "ConnectWise ScreenConnect targeted in month-long campaign exploiting CVE-2026-84869 against MSP servers",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Reporting indicates more than 40 ScreenConnect servers received ~688,000 requests exploiting CVE-2026-84869 to execute guest-pushed files; ConnectWise recommends technician client update to 26.6.5 and warns activity continues where vulnerable extensions remain enabled.",
+          "why_it_matters": "Compromise of MSP remote-support tools provides high-impact access to multiple customer environments, raising acute third-party risk for service providers and their clients.",
+          "hot_fix": [
+            "Apply ConnectWise/ScreenConnect updates (technician client 26.6.5+)",
+            "Disable third-party extensions and isolate ScreenConnect servers",
+            "Rotate service credentials and audit recent technician sessions"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News — ConnectWise warns ScreenConnect attacks continue",
+              "url": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html"
+            },
+            {
+              "name": "SecurityWeek — MSP ScreenConnect Servers Targeted in Month-Long Campaign",
+              "url": "https://www.securityweek.com/msp-screenconnect-servers-targeted-in-month-long-campaign/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-17",
       "generated_at": "2026-11-17T07:21:03+01:00",
       "incidents": [
