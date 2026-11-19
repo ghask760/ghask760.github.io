@@ -1,6 +1,62 @@
 {
   "days": [
     {
+      "date": "2026-11-19",
+      "generated_at": "2026-11-19T07:22:04+01:00",
+      "incidents": [
+        {
+          "title": "Microsoft Agent Framework PyPI package published malicious versions that steal cloud credentials",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Attackers uploaded malicious versions (1.26.1 and 1.26.2) of Microsoft's agent-framework package to PyPI; the packages are designed to steal Azure, Azure DevOps, and GitHub Actions credentials when Python starts.",
+          "why_it_matters": "Supply-chain compromise of a widely used developer package risks immediate credential theft and downstream compromise of cloud and CI/CD environments across vendors and customers.",
+          "hot_fix": [
+            "Remove/uninstall affected package versions from developer/build environments",
+            "Rotate and revoke exposed cloud and CI credentials (Azure, GitHub, etc.)",
+            "Harden pip policies: pin approved package versions and enforce supply-chain scanning in CI"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/"
+            }
+          ]
+        },
+        {
+          "title": "Apache Roller RCE (CVE-2026-129448) under active exploitation",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "A critical unauthenticated deserialization vulnerability (CVE-2026-129448) in Apache Roller’s XML-RPC endpoint is being actively exploited to achieve remote code execution on vulnerable servers.",
+          "why_it_matters": "Roller is a third-party blogging platform; active exploitation of public-facing instances can be used to compromise vendor portals, content systems, and downstream sites that rely on hosted content.",
+          "hot_fix": [
+            "Apply Apache Roller security updates immediately",
+            "Block or rate-limit XML-RPC endpoints at the network edge until patched",
+            "Scan for and isolate web servers showing indicators of compromise"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/"
+            },
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-18",
       "generated_at": "2026-11-18T07:22:06+01:00",
       "incidents": [

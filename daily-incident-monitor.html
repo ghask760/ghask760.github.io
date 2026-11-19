@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">18 Nov 2026</span>
+      <span id="last-updated">19 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>19 Nov 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft Agent Framework PyPI package published malicious versions that steal cloud credentials</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers uploaded malicious versions (1.26.1 and 1.26.2) of Microsoft&#x27;s agent-framework package to PyPI; the packages are designed to steal Azure, Azure DevOps, and GitHub Actions credentials when Python starts.</p>
+            <p><strong>Why it matters:</strong> Supply-chain compromise of a widely used developer package risks immediate credential theft and downstream compromise of cloud and CI/CD environments across vendors and customers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Remove/uninstall affected package versions from developer/build environments</li>
+            <li>Rotate and revoke exposed cloud and CI credentials (Azure, GitHub, etc.)</li>
+            <li>Harden pip policies: pin approved package versions and enforce supply-chain scanning in CI</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.securityweek.com/microsoft-agent-framework-releases-poisoned-with-credential-stealer/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Apache Roller RCE (CVE-2026-129448) under active exploitation</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A critical unauthenticated deserialization vulnerability (CVE-2026-129448) in Apache Roller’s XML-RPC endpoint is being actively exploited to achieve remote code execution on vulnerable servers.</p>
+            <p><strong>Why it matters:</strong> Roller is a third-party blogging platform; active exploitation of public-facing instances can be used to compromise vendor portals, content systems, and downstream sites that rely on hosted content.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Apache Roller security updates immediately</li>
+            <li>Block or rate-limit XML-RPC endpoints at the network edge until patched</li>
+            <li>Scan for and isolate web servers showing indicators of compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html" rel="noopener" target="_blank">The Hacker News</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>18 Nov 2026</span>
