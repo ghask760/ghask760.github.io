@@ -1,6 +1,35 @@
 {
   "days": [
     {
+      "date": "2026-11-20",
+      "generated_at": "2026-11-20T07:21:26+01:00",
+      "incidents": [
+        {
+          "title": "VMware vCenter authentication‑bypass zero-day patched after active exploitation",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Broadcom/VMware released patches for a critical vCenter authentication‑bypass zero‑day that security researchers and vendors say was exploited in attacks since September 2026 by a China‑linked group.",
+          "why_it_matters": "vCenter is widely used to manage virtual infrastructure; exploited zero‑day activity plus available patches require immediate prioritization across customers and downstream service providers to prevent lateral compromise.",
+          "hot_fix": [
+            "Apply Broadcom/VMware vCenter security updates immediately",
+            "Isolate internet‑accessible vCenter instances and monitor logs for suspicious access",
+            "Rotate credentials and review inventory of hosts managed by vCenter"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer — VMware patches vCenter zero-day",
+              "url": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/"
+            },
+            {
+              "name": "SecurityWeek — Newly Patched VMware vCenter Flaw Exploited as Zero-Day",
+              "url": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-19",
       "generated_at": "2026-11-19T07:22:04+01:00",
       "incidents": [
