@@ -1,6 +1,85 @@
 {
   "days": [
     {
+      "date": "2026-11-21",
+      "generated_at": "2026-11-21T07:21:40+01:00",
+      "incidents": [
+        {
+          "title": "Cisco Expressway critical flaw (CVE-2026-76466) exploited to breach devices and reach internal networks",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Primary source",
+          "what_happened": "CVE-2026-76466 (Cisco Expressway hard-coded credentials/use of hard-coded credentials) was added to CISA's KEV catalog and has been observed exploited, with reports of breached devices used to access internal networks.",
+          "why_it_matters": "Expressway is a vendor network product used for unified communications; exploitation can enable unauthenticated access to corporate networks and compromise downstream services and suppliers.",
+          "hot_fix": [
+            "Apply Cisco's security updates or mitigations immediately",
+            "Block external access to affected Expressway instances until patched",
+            "Search for indicators of compromise and review authentication logs"
+          ],
+          "sources": [
+            {
+              "name": "CISA KEV Catalog",
+              "url": "https://www.cisa.gov/news-events/alerts/2026/11/20/cisa-adds-four-known-exploited-vulnerabilities-catalog"
+            },
+            {
+              "name": "The Hacker News — Hackers exploit critical Cisco Expressway flaw",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html"
+            }
+          ]
+        },
+        {
+          "title": "Third-party provider breach exposes customer data for Chase, Visa and Mastercard customers",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Reports indicate a cyberattack at a third-party service provider led J.P. Morgan Chase to warn of a data breach that exposed customer personal and marketing data; Visa and Mastercard also cite related third-party incidents after leaked data claims by the N0n extortion group.",
+          "why_it_matters": "Demonstrates cascading TPRM risk where a supplier breach impacts major financial institutions and their customers; requires coordinated contractual, incident-response and regulatory actions across vendor chains.",
+          "hot_fix": [
+            "Identify the impacted third-party and obtain their incident scope and remediation plan",
+            "Rotate exposed credentials/secrets and revoke affected tokens",
+            "Notify affected customers/regulators and require third-party forensics and corrective actions"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer — Vendor data breach exposes Chase, Visa, Mastercard customer info",
+              "url": "https://www.bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info/"
+            },
+            {
+              "name": "SecurityWeek — JPMorgan, Visa, Mastercard Cite Third-Party Incidents Amid Data Leak",
+              "url": "https://www.securityweek.com/jpmorgan-visa-mastercard-cite-third-party-incidents-amid-data-leak/"
+            },
+            {
+              "name": "The Register — Chase, Visa, Mastercard confirm third-party cyberattacks",
+              "url": "https://www.theregister.com/security/2026/11/19/chase-visa-mastercard-confirm-third-party-cyberattacks-that-may-have-exposed-customers-info/5311175"
+            }
+          ]
+        },
+        {
+          "title": "N-able security breach caused global outage of Mail Assure and SpamExperts hosted services",
+          "category": "Vendor outage",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "N-able reported attackers breached one of its servers, resulting in a major worldwide outage of its Mail Assure and SpamExperts hosted cloud services and reported potential credential theft.",
+          "why_it_matters": "N-able is an MSP/security vendor; the outage disrupts email security and delivery for customers and increases risk of downstream credential misuse and business continuity impact.",
+          "hot_fix": [
+            "Contact N-able for incident status and remediation timeline",
+            "Fail over to alternate email/security providers or apply local filtering",
+            "Reset credentials for affected accounts and review logs for compromise"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer — N-able says recent security breach led to major service outage",
+              "url": "https://www.bleepingcomputer.com/news/microsoft/n-able-says-recent-security-breach-led-to-major-service-outage/"
+            },
+            {
+              "name": "SecurityWeek — N-able Blames Service Disruption on Cyberattack",
+              "url": "https://www.securityweek.com/n-able-blames-service-disruption-on-cyberattack/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-20",
       "generated_at": "2026-11-20T07:21:26+01:00",
       "incidents": [

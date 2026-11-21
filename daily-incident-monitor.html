@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">20 Nov 2026</span>
+      <span id="last-updated">21 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,78 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>21 Nov 2026</span>
+          <span>3 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Primary source</span>
+          </div>
+          <h3>Cisco Expressway critical flaw (CVE-2026-76466) exploited to breach devices and reach internal networks</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CVE-2026-76466 (Cisco Expressway hard-coded credentials/use of hard-coded credentials) was added to CISA&#x27;s KEV catalog and has been observed exploited, with reports of breached devices used to access internal networks.</p>
+            <p><strong>Why it matters:</strong> Expressway is a vendor network product used for unified communications; exploitation can enable unauthenticated access to corporate networks and compromise downstream services and suppliers.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Cisco&#x27;s security updates or mitigations immediately</li>
+            <li>Block external access to affected Expressway instances until patched</li>
+            <li>Search for indicators of compromise and review authentication logs</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.cisa.gov/news-events/alerts/2026/11/20/cisa-adds-four-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA KEV Catalog</a> <a href="https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html" rel="noopener" target="_blank">The Hacker News — Hackers exploit critical Cisco Expressway flaw</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Third-party provider breach exposes customer data for Chase, Visa and Mastercard customers</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Reports indicate a cyberattack at a third-party service provider led J.P. Morgan Chase to warn of a data breach that exposed customer personal and marketing data; Visa and Mastercard also cite related third-party incidents after leaked data claims by the N0n extortion group.</p>
+            <p><strong>Why it matters:</strong> Demonstrates cascading TPRM risk where a supplier breach impacts major financial institutions and their customers; requires coordinated contractual, incident-response and regulatory actions across vendor chains.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Identify the impacted third-party and obtain their incident scope and remediation plan</li>
+            <li>Rotate exposed credentials/secrets and revoke affected tokens</li>
+            <li>Notify affected customers/regulators and require third-party forensics and corrective actions</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info/" rel="noopener" target="_blank">BleepingComputer — Vendor data breach exposes Chase, Visa, Mastercard customer info</a> <a href="https://www.securityweek.com/jpmorgan-visa-mastercard-cite-third-party-incidents-amid-data-leak/" rel="noopener" target="_blank">SecurityWeek — JPMorgan, Visa, Mastercard Cite Third-Party Incidents Amid Data Leak</a> <a href="https://www.theregister.com/security/2026/11/19/chase-visa-mastercard-confirm-third-party-cyberattacks-that-may-have-exposed-customers-info/5311175" rel="noopener" target="_blank">The Register — Chase, Visa, Mastercard confirm third-party cyberattacks</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Vendor outage</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>N-able security breach caused global outage of Mail Assure and SpamExperts hosted services</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> N-able reported attackers breached one of its servers, resulting in a major worldwide outage of its Mail Assure and SpamExperts hosted cloud services and reported potential credential theft.</p>
+            <p><strong>Why it matters:</strong> N-able is an MSP/security vendor; the outage disrupts email security and delivery for customers and increases risk of downstream credential misuse and business continuity impact.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Contact N-able for incident status and remediation timeline</li>
+            <li>Fail over to alternate email/security providers or apply local filtering</li>
+            <li>Reset credentials for affected accounts and review logs for compromise</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/microsoft/n-able-says-recent-security-breach-led-to-major-service-outage/" rel="noopener" target="_blank">BleepingComputer — N-able says recent security breach led to major service outage</a> <a href="https://www.securityweek.com/n-able-blames-service-disruption-on-cyberattack/" rel="noopener" target="_blank">SecurityWeek — N-able Blames Service Disruption on Cyberattack</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>20 Nov 2026</span>
