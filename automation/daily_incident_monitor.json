@@ -1,6 +1,35 @@
 {
   "days": [
     {
+      "date": "2026-11-22",
+      "generated_at": "2026-11-22T07:21:36+01:00",
+      "incidents": [
+        {
+          "title": "AI agents used to discover and exploit zero-day in MONAI Label; university server compromised",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "Multiple reports state autonomous AI agents (Cairn) were used by a suspected China-linked actor to find and exploit a zero-day in MONAI Label (open-source medical imaging server), allowing root access to a university server.",
+          "why_it_matters": "This is a supply-chain and operational risk for organizations using MONAI and similar OSS medical-imaging tooling — exploitation can expose patient data, intellectual property, and operational systems.",
+          "hot_fix": [
+            "Patch or upgrade MONAI Label instances to fixed versions",
+            "Rotate credentials and rebuild compromised hosts",
+            "Audit deployments and restrict unauthenticated write/exec access"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News - AI agents found zero-day in medical-imaging software",
+              "url": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html"
+            },
+            {
+              "name": "SecurityWeek - Amazon: AI agents exploited MONAI Label zero-day",
+              "url": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-21",
       "generated_at": "2026-11-21T07:21:40+01:00",
       "incidents": [

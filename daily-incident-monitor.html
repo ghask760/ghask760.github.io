@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">21 Nov 2026</span>
+      <span id="last-updated">22 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,34 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>22 Nov 2026</span>
+          <span>1 incident</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>AI agents used to discover and exploit zero-day in MONAI Label; university server compromised</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Multiple reports state autonomous AI agents (Cairn) were used by a suspected China-linked actor to find and exploit a zero-day in MONAI Label (open-source medical imaging server), allowing root access to a university server.</p>
+            <p><strong>Why it matters:</strong> This is a supply-chain and operational risk for organizations using MONAI and similar OSS medical-imaging tooling — exploitation can expose patient data, intellectual property, and operational systems.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Patch or upgrade MONAI Label instances to fixed versions</li>
+            <li>Rotate credentials and rebuild compromised hosts</li>
+            <li>Audit deployments and restrict unauthenticated write/exec access</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html" rel="noopener" target="_blank">The Hacker News - AI agents found zero-day in medical-imaging software</a> <a href="https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/" rel="noopener" target="_blank">SecurityWeek - Amazon: AI agents exploited MONAI Label zero-day</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>21 Nov 2026</span>
