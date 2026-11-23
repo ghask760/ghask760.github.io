@@ -5,7 +5,7 @@
     <link>https://gabrielhasik.com/</link>
     <description>Cybersecurity, third-party risk, supply chain security, AI governance, regulatory resilience, and monitoring briefings by Gabriel Hasik.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Nov 2026 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 +0200</lastBuildDate>
     <atom:link href="https://gabrielhasik.com/feed.xml" rel="self" type="application/rss+xml"/>
 <item><title>Third-Party Risk Intelligence Briefing - October 2026<item><title>Third-Party Risk Intelligence Briefing - November 2026</title><link>https://gabrielhasik.com/tprm-briefing-november-2026.html</link><guid isPermaLink="true">https://gabrielhasik.com/tprm-briefing-november-2026.html</guid><pubDate>Sun, 15 Nov 2026 14:51:00 +0100</pubDate><description>Connected refrigeration, NetScaler vulnerabilities, AI-assisted attacks and supplier resilience.</description></item>
 <item><title>Geopolitical Supply Chain Risks - November 2026</title><link>https://gabrielhasik.com/geopolitical-supply-chain-risks-november-2026.html</link><guid isPermaLink="true">https://gabrielhasik.com/geopolitical-supply-chain-risks-november-2026.html</guid><pubDate>Sun, 15 Nov 2026 14:51:00 +0100</pubDate><description>China export control reprieve, Hormuz maritime risk and sanctions exposure.</description></item>
@@ -28,6 +28,14 @@
     </item>
 
     <!-- SCHEDULED_RSS_START -->
+    <item>
+      <title>How to Turn Supplier Evidence Into Decision-Ready Risk Insights</title>
+      <link>https://gabrielhasik.com/supplier-evidence-to-risk-insights.html</link>
+      <guid isPermaLink="true">https://gabrielhasik.com/supplier-evidence-to-risk-insights.html</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0200</pubDate>
+      <description>Supplier evidence is useful only when it helps decision-makers understand risk, gaps, ownership, and next actions.</description>
+    </item>
+
     <item>
       <title>The Five Workflows Every Supply Chain Risk Tool Should Support</title>
       <link>https://gabrielhasik.com/five-workflows-every-supply-chain-risk-tool-should-support.html</link>
