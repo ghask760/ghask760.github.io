@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">23 Nov 2026</span>
+      <span id="last-updated">24 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,122 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>24 Nov 2026</span>
+          <span>5 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Microsoft Azure API Management (Classic) exploited to steal stored API credentials</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A vulnerability in Azure API Management Classic tiers was exploited to steal stored API credentials; Norwegian authorities linked the flaw to attacks against energy firms.</p>
+            <p><strong>Why it matters:</strong> Stolen API credentials can enable supply-chain access to cloud resources and downstream compromise of customer environments; treat secrets as potentially compromised.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Rotate exposed API keys, secrets, and service principals immediately</li>
+            <li>Apply Microsoft mitigations/updates or migrate off Classic tiers per vendor guidance</li>
+            <li>Audit APIM configurations and logs for unauthorized access</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/azure-flaw-exploited-to-target-secrets-at-norwegian-energy-firms/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Software supply chain</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>GL.iNet GoodCloud remote-management flaw used to push malware to routers and KVMs</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> Attackers abused a vulnerability in GL.iNet&#x27;s GoodCloud remote management service to install malware, backdoors, and reverse shells on customer routers and KVM devices; GL.iNet patched the flaw and blocked the attack vector.</p>
+            <p><strong>Why it matters:</strong> Compromise of vendor-managed remote services can propagate malware to many customer endpoints and require firmware reimages, creating operational and continuity risk.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply GL.iNet firmware updates and vendor-recommended mitigations</li>
+            <li>Isolate, inspect and rebuild suspected devices</li>
+            <li>Rotate credentials used by compromised devices and remote management accounts</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/gl-inet-routers-kvms-compromised-via-remote-management-service-flaw/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Cleverbridge confirms breach that exposed credit card numbers and CVVs</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> E-commerce platform Cleverbridge reported attackers breached its systems and stole customers&#x27; payment card numbers and CVV security codes.</p>
+            <p><strong>Why it matters:</strong> Exposure of full card data including CVV increases fraud risk and PCI-scope implications for merchants and processors that use this vendor; third-party payment vendors are high-risk TPRM controls.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Engage acquiring banks/brands and follow PCI breach notification requirements</li>
+            <li>Rotate payment system credentials/tokens where possible</li>
+            <li>Perform forensic containment and scope PCI environment exposure</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.theregister.com/cyber-crime/2026/11/23/cleverbridge-admits-attackers-stole-customers-credit-card-and-cvv-numbers-yep-you-read-that-right/5311573" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>TPRM</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Critical Cisco Expressway RCE observed exploited in the wild</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> A recently patched critical remote-code-execution vulnerability in Cisco Expressway appliances is being exploited in active attacks, prompting vendor and agency warnings.</p>
+            <p><strong>Why it matters:</strong> Exploited RCE in widely deployed communication gateway appliances can grant attackers root access to enterprise networks and disrupt business communications.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Cisco patches immediately or isolate affected appliances</li>
+            <li>Implement vendor and CISA mitigation guidance and monitor appliance logs</li>
+            <li>Restrict management interfaces and rotate administrative credentials</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/sap-netweaver-cisco-expressway-flaws-exploited-in-attacks/" rel="noopener" target="_blank">SecurityWeek</a> <a href="https://www.theregister.com/security/2026/11/23/critical-cisco-remote-code-execution-bug-under-attack/5311722" rel="noopener" target="_blank">The Register</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Primary source</span>
+          </div>
+          <h3>N-able says SSRF bug found during Mail Assure/SpamExperts breach investigation</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> N-able disclosed a critical SSRF vulnerability (CVE-2026-134624) discovered during investigation of a breach of its Mail Assure and SpamExperts Hosted Cloud, which could allow high-level API users to reach internal systems.</p>
+            <p><strong>Why it matters:</strong> Compromise or vulnerabilities in MSP-facing email-filtering services can expose MSP customers and internal resources; treat MSP platform incidents as multi-tenant supply chain risks.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Follow N-able advisories and apply vendor fixes or mitigations</li>
+            <li>Rotate API credentials and audit integrations that trust Mail Assure/SpamExperts</li>
+            <li>Notify and coordinate with affected MSP customers and audit internal-facing endpoints</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html" rel="noopener" target="_blank">The Hacker News</a> <a href="https://www.cisa.gov/news-events/alerts/2026/11/23/cisa-adds-two-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>23 Nov 2026</span>
