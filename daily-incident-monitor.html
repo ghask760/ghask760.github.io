@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">24 Nov 2026</span>
+      <span id="last-updated">25 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>25 Nov 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>European Commission confirms data theft from EU Academy online learning platform</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The European Commission confirmed attackers breached the EU Academy learning hub and stole personal data (names and email addresses) of users, discovered during an ongoing cyberattack investigation.</p>
+            <p><strong>Why it matters:</strong> Compromise of an EU executive body’s learning platform exposes user identities and could be used for targeted phishing or vishing against staff and third-party partners; vendors integrating with EU Academy should re-evaluate trust and access controls.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Revoke and rotate credentials tied to EU Academy integrations</li>
+            <li>Notify and monitor affected user accounts for phishing and account misuse</li>
+            <li>Review and tighten SSO, API, and provisioning connections with the platform</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/european-commission-confirms-data-theft-in-eu-academy-breach/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/european-commission-uncovers-data-breach-in-cyberattack-investigation/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>Korea Electric Power Corporation (KEPCO) discloses breach impacting ~1.5M</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> KEPCO confirmed a network compromise where attackers accessed systems containing customer, employee, and contractor data, affecting approximately 1.5 million individuals.</p>
+            <p><strong>Why it matters:</strong> KEPCO is a critical power supplier; exposure of customer and supplier data increases risk of targeted attacks, supply-chain disruptions, and regulatory/third-party remediation obligations for organizations relying on KEPCO services.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Require KEPCO and affected suppliers to provide incident scope, remediation timelines, and mitigation plans</li>
+            <li>Perform risk assessment for dependence on KEPCO systems and adjust continuity plans</li>
+            <li>Monitor for credential misuse and deploy enhanced detection for phishing and account takeovers</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/" rel="noopener" target="_blank">BleepingComputer</a> <a href="https://www.securityweek.com/1-5-million-impacted-by-data-breach-at-south-korean-electric-company-kepco/" rel="noopener" target="_blank">SecurityWeek</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>24 Nov 2026</span>

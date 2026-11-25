@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-11-25",
+      "generated_at": "2026-11-25T07:21:46+01:00",
+      "incidents": [
+        {
+          "title": "European Commission confirms data theft from EU Academy online learning platform",
+          "category": "Data breach",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The European Commission confirmed attackers breached the EU Academy learning hub and stole personal data (names and email addresses) of users, discovered during an ongoing cyberattack investigation.",
+          "why_it_matters": "Compromise of an EU executive body’s learning platform exposes user identities and could be used for targeted phishing or vishing against staff and third-party partners; vendors integrating with EU Academy should re-evaluate trust and access controls.",
+          "hot_fix": [
+            "Revoke and rotate credentials tied to EU Academy integrations",
+            "Notify and monitor affected user accounts for phishing and account misuse",
+            "Review and tighten SSO, API, and provisioning connections with the platform"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/european-commission-confirms-data-theft-in-eu-academy-breach/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/european-commission-uncovers-data-breach-in-cyberattack-investigation/"
+            }
+          ]
+        },
+        {
+          "title": "Korea Electric Power Corporation (KEPCO) discloses breach impacting ~1.5M",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "KEPCO confirmed a network compromise where attackers accessed systems containing customer, employee, and contractor data, affecting approximately 1.5 million individuals.",
+          "why_it_matters": "KEPCO is a critical power supplier; exposure of customer and supplier data increases risk of targeted attacks, supply-chain disruptions, and regulatory/third-party remediation obligations for organizations relying on KEPCO services.",
+          "hot_fix": [
+            "Require KEPCO and affected suppliers to provide incident scope, remediation timelines, and mitigation plans",
+            "Perform risk assessment for dependence on KEPCO systems and adjust continuity plans",
+            "Monitor for credential misuse and deploy enhanced detection for phishing and account takeovers"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/1-5-million-impacted-by-data-breach-at-south-korean-electric-company-kepco/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-24",
       "generated_at": "2026-11-24T07:22:20+01:00",
       "incidents": [
