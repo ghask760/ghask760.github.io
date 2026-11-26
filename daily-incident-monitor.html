@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">25 Nov 2026</span>
+      <span id="last-updated">26 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>26 Nov 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-medium">
+          <div class="incident-meta">
+            <span>Medium</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>FinCEN (U.S. Treasury) takes systems offline after cybersecurity incident</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> The U.S. Treasury’s Financial Crimes Enforcement Network (FinCEN) reported unauthorized access to a limited subset of systems and took some systems offline as a precaution; filing deadlines for affected filers were extended while the incident is investigated.</p>
+            <p><strong>Why it matters:</strong> FinCEN stores sensitive suspicious activity reports and filings used by banks and compliance teams; disruption can affect regulatory reporting, counterparty screening, and third-party compliance operations.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Confirm whether your filings/suppliers interact with impacted FinCEN systems and note extended deadlines</li>
+            <li>Increase monitoring of AML/transaction reporting processes for delayed or missing confirmations</li>
+            <li>Hold off on automated filings until FinCEN restores services and provides guidance</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://thehackernews.com/2026/11/us-treasurys-fincen-takes-some-systems.html" rel="noopener" target="_blank">The Hacker News - US Treasury&#x27;s FinCEN takes some systems offline after cyber intrusion</a> <a href="https://www.securityweek.com/us-treasurys-fincen-disconnects-systems-following-cyber-incident/" rel="noopener" target="_blank">SecurityWeek - US Treasury’s FinCEN Disconnects Systems Following Cyber Incident</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Data breach</span>
+            <span>Two-source corroborated</span>
+          </div>
+          <h3>1Password: attacker accessed backend after employee GitHub account compromise; some customer data stolen</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> 1Password disclosed a security incident where an employee corporate GitHub account was breached and used to deploy malicious code to backend systems, resulting in theft of some customer data; company stated that customer vaults and stored secrets were not accessed.</p>
+            <p><strong>Why it matters:</strong> 1Password is a critical security vendor; compromise of its development/deployment pipeline and customer data raises supply-chain and trust concerns for customers and integrators.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Require vendor attestation of scope, root cause, and containment; request SBOM/deployment integrity checks</li>
+            <li>Rotate any credentials or API keys that could have been exposed in affected systems</li>
+            <li>Apply additional monitoring on identity and secret-use telemetry for vendor-integrated systems</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/" rel="noopener" target="_blank">BleepingComputer - 1Password customer data stolen after employee GitHub account breach</a> <a href="https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html" rel="noopener" target="_blank">The Hacker News - 1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>25 Nov 2026</span>

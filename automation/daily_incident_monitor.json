@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-11-26",
+      "generated_at": "2026-11-26T07:21:40+01:00",
+      "incidents": [
+        {
+          "title": "FinCEN (U.S. Treasury) takes systems offline after cybersecurity incident",
+          "category": "Data breach",
+          "severity": "Medium",
+          "confidence": "Two-source corroborated",
+          "what_happened": "The U.S. Treasury’s Financial Crimes Enforcement Network (FinCEN) reported unauthorized access to a limited subset of systems and took some systems offline as a precaution; filing deadlines for affected filers were extended while the incident is investigated.",
+          "why_it_matters": "FinCEN stores sensitive suspicious activity reports and filings used by banks and compliance teams; disruption can affect regulatory reporting, counterparty screening, and third-party compliance operations.",
+          "hot_fix": [
+            "Confirm whether your filings/suppliers interact with impacted FinCEN systems and note extended deadlines",
+            "Increase monitoring of AML/transaction reporting processes for delayed or missing confirmations",
+            "Hold off on automated filings until FinCEN restores services and provides guidance"
+          ],
+          "sources": [
+            {
+              "name": "The Hacker News - US Treasury's FinCEN takes some systems offline after cyber intrusion",
+              "url": "https://thehackernews.com/2026/11/us-treasurys-fincen-takes-some-systems.html"
+            },
+            {
+              "name": "SecurityWeek - US Treasury’s FinCEN Disconnects Systems Following Cyber Incident",
+              "url": "https://www.securityweek.com/us-treasurys-fincen-disconnects-systems-following-cyber-incident/"
+            }
+          ]
+        },
+        {
+          "title": "1Password: attacker accessed backend after employee GitHub account compromise; some customer data stolen",
+          "category": "Data breach",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "1Password disclosed a security incident where an employee corporate GitHub account was breached and used to deploy malicious code to backend systems, resulting in theft of some customer data; company stated that customer vaults and stored secrets were not accessed.",
+          "why_it_matters": "1Password is a critical security vendor; compromise of its development/deployment pipeline and customer data raises supply-chain and trust concerns for customers and integrators.",
+          "hot_fix": [
+            "Require vendor attestation of scope, root cause, and containment; request SBOM/deployment integrity checks",
+            "Rotate any credentials or API keys that could have been exposed in affected systems",
+            "Apply additional monitoring on identity and secret-use telemetry for vendor-integrated systems"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer - 1Password customer data stolen after employee GitHub account breach",
+              "url": "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/"
+            },
+            {
+              "name": "The Hacker News - 1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach",
+              "url": "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-25",
       "generated_at": "2026-11-25T07:21:46+01:00",
       "incidents": [
