@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-11-27",
+      "generated_at": "2026-11-27T07:22:01+01:00",
+      "incidents": [
+        {
+          "title": "Mitel MiCollab vulnerabilities added to KEV; exploited before vendor advisory",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Primary source",
+          "what_happened": "CISA included multiple Mitel MiCollab vulnerabilities in its KEV additions and SecurityWeek reports those zero‑day flaws were exploited prior to Mitel’s advisory, reportedly in suspected AI‑assisted attacks and extortion attempts.",
+          "why_it_matters": "Mitel MiCollab is used for unified communications; exploitation risks compromise of voice/video systems, potential extortion and operational disruption across customer environments.",
+          "hot_fix": [
+            "Apply Mitel patches and vendor mitigations immediately",
+            "Limit network exposure of MiCollab services and enforce access controls",
+            "Monitor telephony/authentication logs for unauthorized access"
+          ],
+          "sources": [
+            {
+              "name": "CISA KEV - 10 additions (11/25/2026)",
+              "url": "https://www.cisa.gov/news-events/alerts/2026/11/25/cisa-adds-10-known-exploited-vulnerabilities-catalog"
+            },
+            {
+              "name": "SecurityWeek - Mitel MiCollab zero-days exploited",
+              "url": "https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/"
+            }
+          ]
+        },
+        {
+          "title": "Critical Juniper Session Smart Conductor/Router RCE (CVE-2026-103406) reported exploited",
+          "category": "Software supply chain",
+          "severity": "High",
+          "confidence": "Primary source",
+          "what_happened": "CVE-2026-103406 affecting Juniper Session Smart Conductor and Session Smart Router was added to CISA's KEV catalog and SecurityWeek reports active exploitation enabling remote command execution as root.",
+          "why_it_matters": "Exploitation of routing/conductor infrastructure can enable persistent access, traffic disruption or lateral movement affecting many downstream customers and vendors.",
+          "hot_fix": [
+            "Apply Juniper vendor patches or mitigations immediately",
+            "Remove or restrict internet exposure of management interfaces",
+            "Collect and review logs for signs of compromise and unauthorized commands"
+          ],
+          "sources": [
+            {
+              "name": "CISA KEV - 10 additions (11/25/2026)",
+              "url": "https://www.cisa.gov/news-events/alerts/2026/11/25/cisa-adds-10-known-exploited-vulnerabilities-catalog"
+            },
+            {
+              "name": "SecurityWeek - Critical Juniper Session Smart Conductor flaw exploited",
+              "url": "https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-26",
       "generated_at": "2026-11-26T07:21:40+01:00",
       "incidents": [

@@ -434,7 +434,7 @@
   <div class="status-strip">
     <div class="status-cell">
       <strong>Last updated</strong>
-      <span id="last-updated">26 Nov 2026</span>
+      <span id="last-updated">27 Nov 2026</span>
     </div>
     <div class="status-cell">
       <strong>Cadence</strong>
@@ -454,6 +454,56 @@
     <div class="section-label">Automated Daily Entries</div>
     <div class="daily-feed">
       <!-- DAILY_INCIDENTS_START -->
+      <section class="daily-block">
+        <div class="day-heading">
+          <span>27 Nov 2026</span>
+          <span>2 incidents</span>
+        </div>
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Primary source</span>
+          </div>
+          <h3>Mitel MiCollab vulnerabilities added to KEV; exploited before vendor advisory</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CISA included multiple Mitel MiCollab vulnerabilities in its KEV additions and SecurityWeek reports those zero‑day flaws were exploited prior to Mitel’s advisory, reportedly in suspected AI‑assisted attacks and extortion attempts.</p>
+            <p><strong>Why it matters:</strong> Mitel MiCollab is used for unified communications; exploitation risks compromise of voice/video systems, potential extortion and operational disruption across customer environments.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Mitel patches and vendor mitigations immediately</li>
+            <li>Limit network exposure of MiCollab services and enforce access controls</li>
+            <li>Monitor telephony/authentication logs for unauthorized access</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.cisa.gov/news-events/alerts/2026/11/25/cisa-adds-10-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA KEV - 10 additions (11/25/2026)</a> <a href="https://www.securityweek.com/mitel-micollab-zero-days-exploited-in-suspected-ai-assisted-attacks/" rel="noopener" target="_blank">SecurityWeek - Mitel MiCollab zero-days exploited</a></div>
+        </article>
+
+        <article class="incident-card severity-high">
+          <div class="incident-meta">
+            <span>High</span>
+            <span>Software supply chain</span>
+            <span>Primary source</span>
+          </div>
+          <h3>Critical Juniper Session Smart Conductor/Router RCE (CVE-2026-103406) reported exploited</h3>
+          <div class="incident-body">
+            <p><strong>What happened:</strong> CVE-2026-103406 affecting Juniper Session Smart Conductor and Session Smart Router was added to CISA&#x27;s KEV catalog and SecurityWeek reports active exploitation enabling remote command execution as root.</p>
+            <p><strong>Why it matters:</strong> Exploitation of routing/conductor infrastructure can enable persistent access, traffic disruption or lateral movement affecting many downstream customers and vendors.</p>
+            <div>
+              <strong>Hot fix:</strong>
+              <ol>
+            <li>Apply Juniper vendor patches or mitigations immediately</li>
+            <li>Remove or restrict internet exposure of management interfaces</li>
+            <li>Collect and review logs for signs of compromise and unauthorized commands</li>
+              </ol>
+            </div>
+          </div>
+          <div class="incident-sources">Sources: <a href="https://www.cisa.gov/news-events/alerts/2026/11/25/cisa-adds-10-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA KEV - 10 additions (11/25/2026)</a> <a href="https://www.securityweek.com/critical-juniper-session-smart-conductor-flaw-exploited-in-attacks/" rel="noopener" target="_blank">SecurityWeek - Critical Juniper Session Smart Conductor flaw exploited</a></div>
+        </article>
+      </section>
+
       <section class="daily-block">
         <div class="day-heading">
           <span>26 Nov 2026</span>
