@@ -1,6 +1,35 @@
 {
   "days": [
     {
+      "date": "2026-11-28",
+      "generated_at": "2026-11-28T07:21:50+01:00",
+      "incidents": [
+        {
+          "title": "SAP confirms security incident after suspicious GitHub activity; source code reportedly copied/altered",
+          "category": "TPRM",
+          "severity": "High",
+          "confidence": "Two-source corroborated",
+          "what_happened": "SAP detected suspicious activity in its environment and took urgent protective actions after reports that attackers used stolen employee tokens to copy and alter source code on GitHub.",
+          "why_it_matters": "Compromise of a major enterprise software vendor's code repositories can introduce supply-chain risk, potential backdoors, and require customers to validate update integrity and supply-chain provenance.",
+          "hot_fix": [
+            "Audit and verify authenticity of recent vendor updates; delay automatic upgrades until integrity is confirmed",
+            "Require vendor attestations or reproducible-build checks for incoming patches",
+            "Revoke/reissue any exposed tokens or credentials and monitor for malicious commits referencing SAP code"
+          ],
+          "sources": [
+            {
+              "name": "BleepingComputer - SAP confirms security incident after suspicious GitHub activity",
+              "url": "https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/"
+            },
+            {
+              "name": "SecurityWeek - SAP Confirms Cyberattack, Source Code Reportedly Compromised",
+              "url": "https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-27",
       "generated_at": "2026-11-27T07:22:01+01:00",
       "incidents": [
